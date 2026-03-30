@@ -11,10 +11,10 @@ namespace ScotWaterV1
 
         public int RecycledUnits { get; set; }
 
+        public decimal WaterTotalCost { get; set; }
 
 
-       
 
-        
+
     }
 }
