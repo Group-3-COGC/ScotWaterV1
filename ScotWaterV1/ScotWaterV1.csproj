@@ -58,7 +58,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\AdminUsers.cs" />
-    <Compile Include="Models\WaterCalculation.cs" />
+    <Compile Include="WaterCalculation.cs" />
     <Compile Include="Models\WaterRecyclingDiscount.cs" />
     <Compile Include="Models\WaterUsage.cs" />
     <EmbeddedResource Include="Form1.resx">
