@@ -8,7 +8,8 @@ namespace ScotWaterV1
 {
     public class AdminUsers
     {
-            public int AdminID { get; set; }
+        //Admin user class to hold the data for the admin users
+        public int AdminID { get; set; }
             public string AdminUsername { get; set; }
             public string AdminPassword { get; set; }
     }
