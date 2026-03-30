@@ -52,7 +52,7 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Business.cs" />
+    <Compile Include="Business.cs" />
     <Compile Include="Models\BusinessBills.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
