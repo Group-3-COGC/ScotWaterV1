@@ -64,8 +64,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\AdminUsers.cs" />
-    <Compile Include="WaterCalculation.cs" />
-    <Compile Include="WaterRecyclingDiscount.cs" />
+    <Compile Include="Water Classes\WaterCalculation.cs" />
+    <Compile Include="Water Classes\WaterRecyclingDiscount.cs" />
     <Compile Include="Models\WaterUsage.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

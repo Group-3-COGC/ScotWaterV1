@@ -43,8 +43,9 @@ namespace ScotWaterV1
             }
 
             // Apply recycling discount
-            decimal discountRate = discount.GetDiscountRate(usage.RecycledUnits);
-            decimal totalDiscount = units * discountRate;
+            decimal discountRate = discount.GetDiscountRate(usage);
+
+            decimal totalDiscount = usage.FreshwaterUnitsUsed * discountRate;
 
             usage.WaterTotalCost = cost - totalDiscount;
 
