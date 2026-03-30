@@ -9,7 +9,7 @@ namespace ScotWaterV1
     public class NormalUser
     {
         //get; set; attributes for normal users
-        public string CustomerID { get; set; }
+        public string CustomerID { get; set; }  //primary key
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }

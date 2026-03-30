@@ -4,7 +4,8 @@ namespace ScotWaterV1
 {
     public class WaterUsage
     {
-        public int FreshwaterUnitsUsed { get; set; }
+
+        public int FreshwaterUnitsUsed { get; set; } //primary Key
 
         // True = Low Reserve, False = Standard
         public bool IsLowReserve { get; set; }
