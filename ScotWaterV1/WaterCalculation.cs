@@ -4,10 +4,6 @@ namespace ScotWaterV1
 {
     public class WaterCalculation
     {
-        
-        // FRESHWATER RATE BANDS
-        
-
         // Standard Rates
         private const decimal Std_0_40 = 0.41m;
         private const decimal Std_41_80 = 0.64m;
@@ -18,22 +14,15 @@ namespace ScotWaterV1
         private const decimal Low_41_80 = 0.82m;
         private const decimal Low_81_Plus = 2.25m;
 
-     
-        // MAIN CALCULATION METHOD
-       
         public decimal Calculate(WaterUsage usage, WaterRecyclingDiscount discount)
         {
             decimal cost = 0;
             int units = usage.FreshwaterUnitsUsed;
 
-            // Select correct freshwater rate set
+            // Choose correct rate set
             decimal rate0to40 = usage.IsLowReserve ? Low_0_40 : Std_0_40;
             decimal rate41to80 = usage.IsLowReserve ? Low_41_80 : Std_41_80;
             decimal rate81plus = usage.IsLowReserve ? Low_81_Plus : Std_81_Plus;
-
-            
-            // APPLY FRESHWATER RATE BANDS
-            
 
             // Band 1: 0–40 units
             int band1 = Math.Min(units, 40);
@@ -53,17 +42,13 @@ namespace ScotWaterV1
                 cost += band3 * rate81plus;
             }
 
-            
-            // APPLY RECYCLING DISCOUNT
-            
+            // Apply recycling discount
             decimal discountRate = discount.GetDiscountRate(usage.RecycledUnits);
-
             decimal totalDiscount = units * discountRate;
 
-            // Final cost stored in WaterUsage
-            usage.FinalCost = cost - totalDiscount;
+            usage.WaterTotalCost = cost - totalDiscount;
 
-            return usage.FinalCost;
+            return usage.WaterTotalCost;
         }
     }
 }
