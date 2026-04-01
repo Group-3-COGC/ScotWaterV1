@@ -32,13 +32,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnViewBusinesses = new System.Windows.Forms.Button();
+            this.btnModifyWaterPrice = new System.Windows.Forms.Button();
+            this.btnGenerateBill = new System.Windows.Forms.Button();
+            this.btnMainMenuSignOut = new System.Windows.Forms.Button();
+            this.btnModifyWaterReserveLevels = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnWaterConsumption = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -76,61 +76,61 @@
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
-            // button1
+            // btnViewBusinesses
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Location = new System.Drawing.Point(12, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 136);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "View Businesses ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnViewBusinesses.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewBusinesses.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnViewBusinesses.Location = new System.Drawing.Point(12, 133);
+            this.btnViewBusinesses.Name = "btnViewBusinesses";
+            this.btnViewBusinesses.Size = new System.Drawing.Size(141, 136);
+            this.btnViewBusinesses.TabIndex = 4;
+            this.btnViewBusinesses.Text = "View Businesses ";
+            this.btnViewBusinesses.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnModifyWaterPrice
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button4.Location = new System.Drawing.Point(172, 284);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 136);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Modify Water Usage Pricing";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnModifyWaterPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifyWaterPrice.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnModifyWaterPrice.Location = new System.Drawing.Point(172, 284);
+            this.btnModifyWaterPrice.Name = "btnModifyWaterPrice";
+            this.btnModifyWaterPrice.Size = new System.Drawing.Size(141, 136);
+            this.btnModifyWaterPrice.TabIndex = 7;
+            this.btnModifyWaterPrice.Text = "Modify Water Usage Pricing";
+            this.btnModifyWaterPrice.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnGenerateBill
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button5.Location = new System.Drawing.Point(12, 284);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 136);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Generate Daily Bill ";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnGenerateBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateBill.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnGenerateBill.Location = new System.Drawing.Point(12, 284);
+            this.btnGenerateBill.Name = "btnGenerateBill";
+            this.btnGenerateBill.Size = new System.Drawing.Size(141, 136);
+            this.btnGenerateBill.TabIndex = 8;
+            this.btnGenerateBill.Text = "Generate Daily Bill ";
+            this.btnGenerateBill.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnMainMenuSignOut
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button6.Location = new System.Drawing.Point(412, 556);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 43);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Main Menu ";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnMainMenuSignOut.BackColor = System.Drawing.Color.White;
+            this.btnMainMenuSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainMenuSignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMainMenuSignOut.Location = new System.Drawing.Point(839, 24);
+            this.btnMainMenuSignOut.Name = "btnMainMenuSignOut";
+            this.btnMainMenuSignOut.Size = new System.Drawing.Size(133, 43);
+            this.btnMainMenuSignOut.TabIndex = 10;
+            this.btnMainMenuSignOut.Text = "Sign Out ";
+            this.btnMainMenuSignOut.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnModifyWaterReserveLevels
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.Location = new System.Drawing.Point(355, 207);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 136);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Modify Water Reserve Levels";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnModifyWaterReserveLevels.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifyWaterReserveLevels.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnModifyWaterReserveLevels.Location = new System.Drawing.Point(355, 207);
+            this.btnModifyWaterReserveLevels.Name = "btnModifyWaterReserveLevels";
+            this.btnModifyWaterReserveLevels.Size = new System.Drawing.Size(141, 136);
+            this.btnModifyWaterReserveLevels.TabIndex = 6;
+            this.btnModifyWaterReserveLevels.Text = "Modify Water Reserve Levels";
+            this.btnModifyWaterReserveLevels.UseVisualStyleBackColor = true;
             // 
             // lblWelcome
             // 
@@ -140,16 +140,16 @@
             this.lblWelcome.Size = new System.Drawing.Size(0, 18);
             this.lblWelcome.TabIndex = 12;
             // 
-            // button8
+            // btnWaterConsumption
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button8.Location = new System.Drawing.Point(172, 134);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(141, 136);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "Water Consumption";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnWaterConsumption.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWaterConsumption.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnWaterConsumption.Location = new System.Drawing.Point(172, 134);
+            this.btnWaterConsumption.Name = "btnWaterConsumption";
+            this.btnWaterConsumption.Size = new System.Drawing.Size(141, 136);
+            this.btnWaterConsumption.TabIndex = 13;
+            this.btnWaterConsumption.Text = "Water Consumption";
+            this.btnWaterConsumption.UseVisualStyleBackColor = true;
             // 
             // frmMainMenu
             // 
@@ -157,20 +157,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.btnWaterConsumption);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMainMenuSignOut);
+            this.Controls.Add(this.btnGenerateBill);
+            this.Controls.Add(this.btnModifyWaterPrice);
+            this.Controls.Add(this.btnModifyWaterReserveLevels);
+            this.Controls.Add(this.btnViewBusinesses);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmMainMenu";
-            this.Text = "MainMenu";
+            this.Text = "Sign Out";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -184,12 +184,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnViewBusinesses;
+        private System.Windows.Forms.Button btnModifyWaterPrice;
+        private System.Windows.Forms.Button btnGenerateBill;
+        private System.Windows.Forms.Button btnMainMenuSignOut;
+        private System.Windows.Forms.Button btnModifyWaterReserveLevels;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnWaterConsumption;
     }
 }

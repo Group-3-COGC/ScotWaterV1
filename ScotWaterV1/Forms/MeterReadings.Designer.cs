@@ -32,8 +32,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnM_R_MainMenu = new System.Windows.Forms.Button();
+            this.txtWaterUsage_MR = new System.Windows.Forms.TextBox();
+            this.lblWaterUsed_MR = new System.Windows.Forms.Label();
+            this.lblRecycleWaterUsed_MR = new System.Windows.Forms.Label();
+            this.txtRecycledWaterUsage_MR = new System.Windows.Forms.TextBox();
+            this.btnM_R_SignOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,24 +75,61 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // button6
+            // btnM_R_MainMenu
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button6.Location = new System.Drawing.Point(419, 532);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 43);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Main Menu ";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnM_R_MainMenu.BackColor = System.Drawing.Color.White;
+            this.btnM_R_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnM_R_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnM_R_MainMenu.Location = new System.Drawing.Point(419, 532);
+            this.btnM_R_MainMenu.Name = "btnM_R_MainMenu";
+            this.btnM_R_MainMenu.Size = new System.Drawing.Size(133, 43);
+            this.btnM_R_MainMenu.TabIndex = 11;
+            this.btnM_R_MainMenu.Text = "Main Menu ";
+            this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtWaterUsage_MR
             // 
-            this.textBox1.Location = new System.Drawing.Point(394, 190);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 22);
-            this.textBox1.TabIndex = 12;
+            this.txtWaterUsage_MR.Location = new System.Drawing.Point(394, 219);
+            this.txtWaterUsage_MR.Name = "txtWaterUsage_MR";
+            this.txtWaterUsage_MR.Size = new System.Drawing.Size(144, 22);
+            this.txtWaterUsage_MR.TabIndex = 12;
+            // 
+            // lblWaterUsed_MR
+            // 
+            this.lblWaterUsed_MR.AutoSize = true;
+            this.lblWaterUsed_MR.Location = new System.Drawing.Point(391, 188);
+            this.lblWaterUsed_MR.Name = "lblWaterUsed_MR";
+            this.lblWaterUsed_MR.Size = new System.Drawing.Size(135, 16);
+            this.lblWaterUsed_MR.TabIndex = 13;
+            this.lblWaterUsed_MR.Text = "Water Usage Amount";
+            // 
+            // lblRecycleWaterUsed_MR
+            // 
+            this.lblRecycleWaterUsed_MR.AutoSize = true;
+            this.lblRecycleWaterUsed_MR.Location = new System.Drawing.Point(370, 278);
+            this.lblRecycleWaterUsed_MR.Name = "lblRecycleWaterUsed_MR";
+            this.lblRecycleWaterUsed_MR.Size = new System.Drawing.Size(196, 16);
+            this.lblRecycleWaterUsed_MR.TabIndex = 14;
+            this.lblRecycleWaterUsed_MR.Text = "Recycled Water Usage Amount";
+            // 
+            // txtRecycledWaterUsage_MR
+            // 
+            this.txtRecycledWaterUsage_MR.Location = new System.Drawing.Point(394, 327);
+            this.txtRecycledWaterUsage_MR.Name = "txtRecycledWaterUsage_MR";
+            this.txtRecycledWaterUsage_MR.Size = new System.Drawing.Size(144, 22);
+            this.txtRecycledWaterUsage_MR.TabIndex = 15;
+            // 
+            // btnM_R_SignOut
+            // 
+            this.btnM_R_SignOut.BackColor = System.Drawing.Color.White;
+            this.btnM_R_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnM_R_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnM_R_SignOut.Location = new System.Drawing.Point(827, 56);
+            this.btnM_R_SignOut.Name = "btnM_R_SignOut";
+            this.btnM_R_SignOut.Size = new System.Drawing.Size(133, 43);
+            this.btnM_R_SignOut.TabIndex = 16;
+            this.btnM_R_SignOut.Text = "Sign Out";
+            this.btnM_R_SignOut.UseVisualStyleBackColor = false;
             // 
             // MeterReadings
             // 
@@ -96,8 +137,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnM_R_SignOut);
+            this.Controls.Add(this.txtRecycledWaterUsage_MR);
+            this.Controls.Add(this.lblRecycleWaterUsed_MR);
+            this.Controls.Add(this.lblWaterUsed_MR);
+            this.Controls.Add(this.txtWaterUsage_MR);
+            this.Controls.Add(this.btnM_R_MainMenu);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -116,7 +161,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnM_R_MainMenu;
+        private System.Windows.Forms.TextBox txtWaterUsage_MR;
+        private System.Windows.Forms.Label lblWaterUsed_MR;
+        private System.Windows.Forms.Label lblRecycleWaterUsed_MR;
+        private System.Windows.Forms.TextBox txtRecycledWaterUsage_MR;
+        private System.Windows.Forms.Button btnM_R_SignOut;
     }
 }
