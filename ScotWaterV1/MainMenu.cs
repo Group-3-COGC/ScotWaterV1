@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1
 {
-    public partial class MainMenu : Form
+    public partial class frmMainMenu : Form
     {
-        public MainMenu()
+        public frmMainMenu()
         {
             InitializeComponent();
         }

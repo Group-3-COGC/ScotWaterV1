@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
