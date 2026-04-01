@@ -21,5 +21,20 @@ namespace ScotWaterV1.Forms
         {
             
         }
+
+        private void MeterReadings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
