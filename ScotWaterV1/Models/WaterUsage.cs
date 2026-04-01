@@ -1,12 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using ScotWaterV1.Models;
 
 namespace ScotWaterV1
 {
     public class WaterUsage
     {
-
+        [Key]
         public int FreshwaterUnitsUsed { get; set; } //primary Key
 
+      
         // True = Low Reserve, False = Standard
         public bool IsLowReserve { get; set; }
 
@@ -20,7 +24,12 @@ namespace ScotWaterV1
         public decimal Discount21Plus { get; set; }
 
 
+        //Navigational properties
+        [ForeignKey("BusinessUser")]
 
+        public int CustomerID { get; set; }
+
+        public BusinessUser BusinessUser { get; set; }
 
     }
 }
