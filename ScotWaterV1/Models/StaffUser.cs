@@ -12,6 +12,10 @@ namespace ScotWaterV1.Models
         public string Username { get; set; }
         public string Password { get; set; }
 
+        //Navigational properties
+        [ForeignKey("AdminUsers")]
+
+        public int AdminID { get; set; }
 
     }
 }
