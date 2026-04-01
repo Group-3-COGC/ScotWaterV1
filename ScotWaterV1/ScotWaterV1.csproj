@@ -120,11 +120,17 @@
     <EmbeddedResource Include="Forms\BusinessWaterUsage.resx">
       <DependentUpon>BusinessWaterUsage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeWaterLevels.resx">
+      <DependentUpon>ChangeWaterLevels.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeterReadings.resx">
+      <DependentUpon>MeterReadings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewBusinesses.resx">
       <DependentUpon>ViewBusinesses.cs</DependentUpon>

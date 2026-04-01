@@ -114,11 +114,11 @@
             this.button6.BackColor = System.Drawing.Color.White;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button6.Location = new System.Drawing.Point(451, 556);
+            this.button6.Location = new System.Drawing.Point(412, 556);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(99, 43);
+            this.button6.Size = new System.Drawing.Size(133, 43);
             this.button6.TabIndex = 10;
-            this.button6.Text = "Home ";
+            this.button6.Text = "Main Menu ";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button3
