@@ -1,6 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using ScotWaterV1.Forms;
 using ScotWaterV1.Models;
+using System;
+using System.Windows.Forms;
 
 namespace ScotWaterV1
 {
@@ -18,6 +19,17 @@ namespace ScotWaterV1
         {
             InitializeComponent();
             lblWelcome.Text = $"Welcome Admin: {admin.AdminUsername}";
+        }
+
+        private void btnViewBusinesses_Click(object sender, EventArgs e)
+        {
+            frmViewBusinesses view = new frmViewBusinesses();
+
+            
+            
+
+            
+
         }
     }
 }

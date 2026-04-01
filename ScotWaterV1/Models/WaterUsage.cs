@@ -31,5 +31,11 @@ namespace ScotWaterV1
 
         public BusinessUser BusinessUser { get; set; }
 
+        [ForeignKey("StaffUser")]
+
+        public int UserID { get; set; }
+
+        public StaffUser StaffUser { get; set; }
+
     }
 }
