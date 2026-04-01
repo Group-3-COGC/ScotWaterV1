@@ -8,6 +8,7 @@ namespace ScotWaterV1
 {
     public class BusinessBills
     {
+        //get; set; attributes for business bills
         public string BillingPeriod { get; set; } //primary key
         public double TotalCharges { get; set; }
         public double TotalDiscount { get; set; }
@@ -15,7 +16,6 @@ namespace ScotWaterV1
         public double SubTotal { get; set; }
         public double VAT { get; set; }
         public double BusinessFinalCost { get; set; }
-
 
     }
 }
