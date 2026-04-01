@@ -73,7 +73,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BusinessDataContext.cs" />
-    <Compile Include="Models\NormalUser.cs" />
+    <Compile Include="Models\BusinessUser.cs" />
     <Compile Include="Models\StaffUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

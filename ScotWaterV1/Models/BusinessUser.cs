@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScotWaterV1
+namespace ScotWaterV1.Models
 {
-    public class NormalUser
+    public class BusinessUser
     {
         //get; set; attributes for normal users
-        public string CustomerID { get; set; }  //primary key
+        public string CustomerID { get; set; } //primary key
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
