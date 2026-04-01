@@ -126,7 +126,7 @@
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Log in ";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lnkForgotPassword
             // 
