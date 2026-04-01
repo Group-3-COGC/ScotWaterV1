@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,9 @@ namespace ScotWaterV1.Models
 {
     public class BusinessUser
     {
+        [Key]
         //get; set; attributes for normal users
-        public string CustomerID { get; set; } //primary key
+        public int CustomerID { get; set; } //primary key
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
@@ -20,6 +22,8 @@ namespace ScotWaterV1.Models
         public string ContactEmail { get; set; }
         public string AccountName { get; set; }
 
-
+        //navigational properties
+        public List<WaterUsage> WaterUsage { get; set; }
+        public List<BusinessBills> BusinessBills { get; set; }
     }
 }
