@@ -16,5 +16,10 @@ namespace ScotWaterV1.Forms
         {
             InitializeComponent();
         }
+
+        private void btnM_R_MainMenu_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
