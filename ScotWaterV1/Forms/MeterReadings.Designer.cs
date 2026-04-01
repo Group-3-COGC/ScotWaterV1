@@ -86,6 +86,7 @@
             this.btnM_R_MainMenu.TabIndex = 11;
             this.btnM_R_MainMenu.Text = "Main Menu ";
             this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
+            this.btnM_R_MainMenu.Click += new System.EventHandler(this.btnM_R_MainMenu_Click);
             // 
             // txtWaterUsage_MR
             // 

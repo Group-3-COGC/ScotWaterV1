@@ -121,6 +121,9 @@
     <EmbeddedResource Include="Forms\BusinessWaterUsage.resx">
       <DependentUpon>BusinessWaterUsage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeWaterCharges.resx">
+      <DependentUpon>ChangeWaterCharges.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeWaterLevels.resx">
       <DependentUpon>ChangeWaterLevels.cs</DependentUpon>
     </EmbeddedResource>
