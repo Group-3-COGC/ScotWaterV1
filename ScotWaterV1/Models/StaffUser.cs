@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,6 @@ namespace ScotWaterV1.Models
         public string Username { get; set; }
         public string Password { get; set; }
 
-        //Navigational properties
-        [ForeignKey("AdminUsers")]
-
-        public int AdminID { get; set; }
-
+       public List<WaterUsage> WaterUsage { get; set; }
     }
 }

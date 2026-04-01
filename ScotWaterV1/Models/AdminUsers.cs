@@ -16,9 +16,6 @@ namespace ScotWaterV1
         public string AdminUsername { get; set; }
         public string AdminPassword { get; set; }
 
-        //navigational properties
-        public List<StaffUser> UserID { get; set; }
-        public List<StaffUserRepository> users { get; set; }
-        public List<AdminUsers> admins { get; set; }
+   
     }
 }
