@@ -122,7 +122,7 @@
             this.txtWaterUsage_MR.Location = new System.Drawing.Point(218, 16);
             this.txtWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtWaterUsage_MR.Name = "txtWaterUsage_MR";
-            this.txtWaterUsage_MR.Size = new System.Drawing.Size(109, 20);
+            this.txtWaterUsage_MR.Size = new System.Drawing.Size(109, 22);
             this.txtWaterUsage_MR.TabIndex = 12;
             // 
             // lblWaterUsed_MR
@@ -156,7 +156,7 @@
             this.txtRecycledWaterUsage_MR.Location = new System.Drawing.Point(218, 45);
             this.txtRecycledWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRecycledWaterUsage_MR.Name = "txtRecycledWaterUsage_MR";
-            this.txtRecycledWaterUsage_MR.Size = new System.Drawing.Size(109, 20);
+            this.txtRecycledWaterUsage_MR.Size = new System.Drawing.Size(109, 22);
             this.txtRecycledWaterUsage_MR.TabIndex = 15;
             // 
             // btnM_R_SignOut
@@ -317,6 +317,8 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.groupBox1.Location = new System.Drawing.Point(12, 111);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(325, 100);
@@ -336,6 +338,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(13, 228);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(324, 152);
@@ -349,6 +352,8 @@
             this.groupBox3.Controls.Add(this.textBox9);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.WindowText;
             this.groupBox3.Location = new System.Drawing.Point(360, 111);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(360, 100);
@@ -363,6 +368,8 @@
             this.groupBox4.Controls.Add(this.lblRecycleWaterUsed_MR);
             this.groupBox4.Controls.Add(this.txtWaterUsage_MR);
             this.groupBox4.Controls.Add(this.txtRecycledWaterUsage_MR);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.WindowText;
             this.groupBox4.Location = new System.Drawing.Point(360, 244);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(360, 122);
@@ -445,9 +452,10 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(189, 101);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(117, 22);
             this.dateTimePicker1.TabIndex = 28;
             // 
             // comboBox2
@@ -455,7 +463,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(185, 127);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 29;
             // 
             // MeterReadings
