@@ -1,13 +1,7 @@
-﻿using ScotWaterV1.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using ScotWaterV1.Models;
+using ScotWaterV1.Repositories;
 
 namespace ScotWaterV1
 {
@@ -23,24 +17,33 @@ namespace ScotWaterV1
             string username = txtLoginUsername.Text.Trim();
             string password = txtLoginPassword.Text.Trim();
 
-            StaffUserRepository repo = new StaffUserRepository();
-            StaffUser user = repo.Login(username, password);
+            // Try Staff login
+            StaffUserRepository staffRepo = new StaffUserRepository();
+            StaffUser staff = staffRepo.Login(username, password);
 
-            if (user != null)
+            if (staff != null)
             {
-                MessageBox.Show("Login successful!");
-
-                // Open dashboard and pass logged-in user
-                StaffDashboard dashboard = new StaffDashboard(user);
-                dashboard.Show();
-
+                MessageBox.Show("Staff login successful!");
+                frmMainMenu menu = new frmMainMenu(staff);
+                menu.Show();
                 this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.");
+                return;
             }
 
+            // Try Admin login
+            AdminRepository adminRepo = new AdminRepository();
+            AdminUsers admin = adminRepo.Login(username, password);
+
+            if (admin != null)
+            {
+                MessageBox.Show("Admin login successful!");
+                frmMainMenu menu = new frmMainMenu(admin);
+                menu.Show();
+                this.Hide();
+                return;
+            }
+
+            MessageBox.Show("Invalid username or password.");
         }
     }
 }
