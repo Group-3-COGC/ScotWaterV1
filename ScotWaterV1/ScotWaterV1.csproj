@@ -58,6 +58,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BusinessWaterUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BusinessWaterUsage.Designer.cs">
+      <DependentUpon>BusinessWaterUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeWaterCharges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeWaterCharges.Designer.cs">
+      <DependentUpon>ChangeWaterCharges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeWaterLevels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeWaterLevels.Designer.cs">
+      <DependentUpon>ChangeWaterLevels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GenerateBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GenerateBill.Designer.cs">
+      <DependentUpon>GenerateBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +89,18 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Business.cs" />
+    <Compile Include="Forms\MeterReadings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MeterReadings.Designer.cs">
+      <DependentUpon>MeterReadings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewBusinesses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewBusinesses.Designer.cs">
+      <DependentUpon>ViewBusinesses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusinessBills.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -81,11 +117,17 @@
     <Compile Include="Models\WaterUsage.cs" />
     <Compile Include="Repositories\AdminRepository.cs" />
     <Compile Include="Repositories\StaffUserRepository.cs" />
+    <EmbeddedResource Include="Forms\BusinessWaterUsage.resx">
+      <DependentUpon>BusinessWaterUsage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewBusinesses.resx">
+      <DependentUpon>ViewBusinesses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
