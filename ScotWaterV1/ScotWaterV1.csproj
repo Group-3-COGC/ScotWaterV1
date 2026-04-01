@@ -76,6 +76,7 @@
     <Compile Include="Forms\ChangeWaterLevels.Designer.cs">
       <DependentUpon>ChangeWaterLevels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmViewBusinesses.cs" />
     <Compile Include="Forms\GenerateBill.cs">
       <SubType>Form</SubType>
     </Compile>
