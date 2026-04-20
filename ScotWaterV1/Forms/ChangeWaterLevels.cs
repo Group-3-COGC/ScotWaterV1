@@ -35,16 +35,18 @@ namespace ScotWaterV1.Forms
 
 
             //Determines what the Water Reserve Status Label displays.
-            lblWaterReserveStatus.Text = IsLowReserve;
+            WaterUsage usage = new WaterUsage();
+            bool isLowReserve = usage.IsLowReserve;
 
-            if (IsLowReserve = true)
+            if (isLowReserve)
             {
                 lblWaterReserveStatus.Text = "LOW RESERVE";
             }
-            else if (IsLowReserve = false)
+            else
             {
                 lblWaterReserveStatus.Text = "STANDARD";
             }
+
         }
 
         //Navigation button back to Main Menu
