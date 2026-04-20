@@ -250,7 +250,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Location = new System.Drawing.Point(6, 114);
+            this.label7.Location = new System.Drawing.Point(6, 125);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 24);
             this.label7.TabIndex = 23;
@@ -415,7 +415,7 @@
             this.txtAdditioanlNotesMR.Location = new System.Drawing.Point(118, 47);
             this.txtAdditioanlNotesMR.Multiline = true;
             this.txtAdditioanlNotesMR.Name = "txtAdditioanlNotesMR";
-            this.txtAdditioanlNotesMR.Size = new System.Drawing.Size(235, 20);
+            this.txtAdditioanlNotesMR.Size = new System.Drawing.Size(235, 41);
             this.txtAdditioanlNotesMR.TabIndex = 29;
             // 
             // txtStaffNameMR
@@ -423,7 +423,7 @@
             this.txtStaffNameMR.Location = new System.Drawing.Point(118, 21);
             this.txtStaffNameMR.Multiline = true;
             this.txtStaffNameMR.Name = "txtStaffNameMR";
-            this.txtStaffNameMR.Size = new System.Drawing.Size(117, 20);
+            this.txtStaffNameMR.Size = new System.Drawing.Size(235, 20);
             this.txtStaffNameMR.TabIndex = 28;
             // 
             // groupBox4
