@@ -49,22 +49,21 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBuisnessAddressMR = new System.Windows.Forms.TextBox();
+            this.txtAccountNumberMR = new System.Windows.Forms.TextBox();
+            this.txtCustomerNameMR = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxNumberofUnitsMR = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1MR = new System.Windows.Forms.DateTimePicker();
+            this.txtPreviousReadingMR = new System.Windows.Forms.TextBox();
+            this.txtCurrentReadingMR = new System.Windows.Forms.TextBox();
+            this.txtMeterNumberMR = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtAdditioanlNotesMR = new System.Windows.Forms.TextBox();
+            this.txtStaffNameMR = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtUsageAmountMR = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -109,7 +108,7 @@
             this.btnM_R_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnM_R_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnM_R_MainMenu.Location = new System.Drawing.Point(314, 432);
-            this.btnM_R_MainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnM_R_MainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnM_R_MainMenu.Name = "btnM_R_MainMenu";
             this.btnM_R_MainMenu.Size = new System.Drawing.Size(100, 35);
             this.btnM_R_MainMenu.TabIndex = 11;
@@ -120,7 +119,7 @@
             // txtWaterUsage_MR
             // 
             this.txtWaterUsage_MR.Location = new System.Drawing.Point(218, 16);
-            this.txtWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2);
             this.txtWaterUsage_MR.Name = "txtWaterUsage_MR";
             this.txtWaterUsage_MR.Size = new System.Drawing.Size(109, 20);
             this.txtWaterUsage_MR.TabIndex = 12;
@@ -154,7 +153,7 @@
             // txtRecycledWaterUsage_MR
             // 
             this.txtRecycledWaterUsage_MR.Location = new System.Drawing.Point(218, 45);
-            this.txtRecycledWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRecycledWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2);
             this.txtRecycledWaterUsage_MR.Name = "txtRecycledWaterUsage_MR";
             this.txtRecycledWaterUsage_MR.Size = new System.Drawing.Size(109, 20);
             this.txtRecycledWaterUsage_MR.TabIndex = 15;
@@ -165,7 +164,7 @@
             this.btnM_R_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnM_R_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnM_R_SignOut.Location = new System.Drawing.Point(620, 46);
-            this.btnM_R_SignOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnM_R_SignOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnM_R_SignOut.Name = "btnM_R_SignOut";
             this.btnM_R_SignOut.Size = new System.Drawing.Size(100, 35);
             this.btnM_R_SignOut.TabIndex = 16;
@@ -301,19 +300,11 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Notes ";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(578, 217);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 28;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtBuisnessAddressMR);
+            this.groupBox1.Controls.Add(this.txtAccountNumberMR);
+            this.groupBox1.Controls.Add(this.txtCustomerNameMR);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -324,13 +315,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Info";
             // 
+            // txtBuisnessAddressMR
+            // 
+            this.txtBuisnessAddressMR.Location = new System.Drawing.Point(190, 72);
+            this.txtBuisnessAddressMR.Multiline = true;
+            this.txtBuisnessAddressMR.Name = "txtBuisnessAddressMR";
+            this.txtBuisnessAddressMR.Size = new System.Drawing.Size(117, 20);
+            this.txtBuisnessAddressMR.TabIndex = 22;
+            // 
+            // txtAccountNumberMR
+            // 
+            this.txtAccountNumberMR.Location = new System.Drawing.Point(190, 46);
+            this.txtAccountNumberMR.Multiline = true;
+            this.txtAccountNumberMR.Name = "txtAccountNumberMR";
+            this.txtAccountNumberMR.Size = new System.Drawing.Size(117, 20);
+            this.txtAccountNumberMR.TabIndex = 21;
+            // 
+            // txtCustomerNameMR
+            // 
+            this.txtCustomerNameMR.Location = new System.Drawing.Point(190, 20);
+            this.txtCustomerNameMR.Multiline = true;
+            this.txtCustomerNameMR.Name = "txtCustomerNameMR";
+            this.txtCustomerNameMR.Size = new System.Drawing.Size(117, 20);
+            this.txtCustomerNameMR.TabIndex = 20;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.cbxNumberofUnitsMR);
+            this.groupBox2.Controls.Add(this.dateTimePicker1MR);
+            this.groupBox2.Controls.Add(this.txtPreviousReadingMR);
+            this.groupBox2.Controls.Add(this.txtCurrentReadingMR);
+            this.groupBox2.Controls.Add(this.txtMeterNumberMR);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
@@ -343,10 +358,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reading Details";
             // 
+            // cbxNumberofUnitsMR
+            // 
+            this.cbxNumberofUnitsMR.FormattingEnabled = true;
+            this.cbxNumberofUnitsMR.Location = new System.Drawing.Point(185, 127);
+            this.cbxNumberofUnitsMR.Name = "cbxNumberofUnitsMR";
+            this.cbxNumberofUnitsMR.Size = new System.Drawing.Size(121, 21);
+            this.cbxNumberofUnitsMR.TabIndex = 29;
+            // 
+            // dateTimePicker1MR
+            // 
+            this.dateTimePicker1MR.Location = new System.Drawing.Point(189, 101);
+            this.dateTimePicker1MR.Name = "dateTimePicker1MR";
+            this.dateTimePicker1MR.Size = new System.Drawing.Size(117, 20);
+            this.dateTimePicker1MR.TabIndex = 28;
+            // 
+            // txtPreviousReadingMR
+            // 
+            this.txtPreviousReadingMR.Location = new System.Drawing.Point(189, 71);
+            this.txtPreviousReadingMR.Multiline = true;
+            this.txtPreviousReadingMR.Name = "txtPreviousReadingMR";
+            this.txtPreviousReadingMR.Size = new System.Drawing.Size(117, 20);
+            this.txtPreviousReadingMR.TabIndex = 27;
+            // 
+            // txtCurrentReadingMR
+            // 
+            this.txtCurrentReadingMR.Location = new System.Drawing.Point(189, 45);
+            this.txtCurrentReadingMR.Multiline = true;
+            this.txtCurrentReadingMR.Name = "txtCurrentReadingMR";
+            this.txtCurrentReadingMR.Size = new System.Drawing.Size(117, 20);
+            this.txtCurrentReadingMR.TabIndex = 26;
+            // 
+            // txtMeterNumberMR
+            // 
+            this.txtMeterNumberMR.Location = new System.Drawing.Point(189, 19);
+            this.txtMeterNumberMR.Multiline = true;
+            this.txtMeterNumberMR.Name = "txtMeterNumberMR";
+            this.txtMeterNumberMR.Size = new System.Drawing.Size(117, 20);
+            this.txtMeterNumberMR.TabIndex = 25;
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.txtAdditioanlNotesMR);
+            this.groupBox3.Controls.Add(this.txtStaffNameMR);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Location = new System.Drawing.Point(360, 111);
@@ -356,9 +410,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reader Info";
             // 
+            // txtAdditioanlNotesMR
+            // 
+            this.txtAdditioanlNotesMR.Location = new System.Drawing.Point(118, 47);
+            this.txtAdditioanlNotesMR.Multiline = true;
+            this.txtAdditioanlNotesMR.Name = "txtAdditioanlNotesMR";
+            this.txtAdditioanlNotesMR.Size = new System.Drawing.Size(235, 20);
+            this.txtAdditioanlNotesMR.TabIndex = 29;
+            // 
+            // txtStaffNameMR
+            // 
+            this.txtStaffNameMR.Location = new System.Drawing.Point(118, 21);
+            this.txtStaffNameMR.Multiline = true;
+            this.txtStaffNameMR.Name = "txtStaffNameMR";
+            this.txtStaffNameMR.Size = new System.Drawing.Size(117, 20);
+            this.txtStaffNameMR.TabIndex = 28;
+            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.txtUsageAmountMR);
             this.groupBox4.Controls.Add(this.lblWaterUsed_MR);
             this.groupBox4.Controls.Add(this.lblRecycleWaterUsed_MR);
             this.groupBox4.Controls.Add(this.txtWaterUsage_MR);
@@ -371,92 +441,13 @@
             this.groupBox4.Text = "Water Information";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // textBox1
+            // txtUsageAmountMR
             // 
-            this.textBox1.Location = new System.Drawing.Point(190, 20);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 20;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(190, 46);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 20);
-            this.textBox2.TabIndex = 21;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(190, 72);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 20);
-            this.textBox3.TabIndex = 22;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(189, 19);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 20);
-            this.textBox4.TabIndex = 25;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(189, 45);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(117, 20);
-            this.textBox5.TabIndex = 26;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(189, 71);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(117, 20);
-            this.textBox6.TabIndex = 27;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(218, 72);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(117, 20);
-            this.textBox7.TabIndex = 28;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(118, 21);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(117, 20);
-            this.textBox9.TabIndex = 28;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(118, 47);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(235, 20);
-            this.textBox10.TabIndex = 29;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(189, 101);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 20);
-            this.dateTimePicker1.TabIndex = 28;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(185, 127);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 29;
+            this.txtUsageAmountMR.Location = new System.Drawing.Point(218, 72);
+            this.txtUsageAmountMR.Multiline = true;
+            this.txtUsageAmountMR.Name = "txtUsageAmountMR";
+            this.txtUsageAmountMR.Size = new System.Drawing.Size(117, 20);
+            this.txtUsageAmountMR.TabIndex = 28;
             // 
             // MeterReadings
             // 
@@ -468,14 +459,13 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnM_R_SignOut);
             this.Controls.Add(this.btnM_R_MainMenu);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MeterReadings";
             this.Text = "MeterReadings";
             this.Load += new System.EventHandler(this.MeterReadings_Load);
@@ -517,21 +507,20 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtBuisnessAddressMR;
+        private System.Windows.Forms.TextBox txtAccountNumberMR;
+        private System.Windows.Forms.TextBox txtCustomerNameMR;
+        private System.Windows.Forms.TextBox txtUsageAmountMR;
+        private System.Windows.Forms.TextBox txtPreviousReadingMR;
+        private System.Windows.Forms.TextBox txtCurrentReadingMR;
+        private System.Windows.Forms.TextBox txtMeterNumberMR;
+        private System.Windows.Forms.TextBox txtAdditioanlNotesMR;
+        private System.Windows.Forms.TextBox txtStaffNameMR;
+        private System.Windows.Forms.ComboBox cbxNumberofUnitsMR;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1MR;
     }
 }
