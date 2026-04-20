@@ -28,6 +28,24 @@ namespace ScotWaterV1
             
         }
 
-        
+        private void btnWaterConsumption_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerateBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModifyWaterPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModifyWaterReserveLevels_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
