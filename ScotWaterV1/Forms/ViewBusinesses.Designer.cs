@@ -316,6 +316,21 @@ namespace ScotWaterV1.Forms
             throw new NotImplementedException();
         }
 
+        private void dgvBusinesses_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+            // You can leave this empty or add logic as needed
+        }
+
+        private void btnV_B_MainMenu_Click(object sender, EventArgs e)
+        {
+            // TODO: Add logic to handle Main Menu button click
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // TODO: Add logic to handle Edit button click
+        }
+
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

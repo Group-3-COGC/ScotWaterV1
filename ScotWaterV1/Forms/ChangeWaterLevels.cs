@@ -15,15 +15,12 @@ namespace ScotWaterV1.Forms
     {
         private StaffUser _currentUser;
 
-        public ChangeWaterLevels()
+        public ChangeWaterLevels(StaffUser currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void trkReserveLevel_Scroll(object sender, EventArgs e)
         {
@@ -35,13 +32,30 @@ namespace ScotWaterV1.Forms
         {
             trkReserveLevel.Minimum = 0;
             trkReserveLevel.Maximum = 100;
+
+
+            //Determines what the Water Reserve Status Label displays.
+            lblWaterReserveStatus.Text = IsLowReserve;
+
+            if (IsLowReserve = true)
+            {
+                lblWaterReserveStatus.Text = "LOW RESERVE";
+            }
+            else if (IsLowReserve = false)
+            {
+                lblWaterReserveStatus.Text = "STANDARD";
+            }
         }
 
+        //Navigation button back to Main Menu
         private void btnM_R_MainMenu_Click(object sender, EventArgs e)
         {
             frmMainMenu frmMainMenu = new frmMainMenu(_currentUser);
             frmMainMenu.Show();
             this.Hide();
         }
+
+      
+
     }
 }
