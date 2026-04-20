@@ -34,12 +34,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnM_R_MainMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblWaterReserveStatus = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.trkReserveLevel = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.lblReserveValue = new System.Windows.Forms.Label();
-            this.lblWaterReserveStatus = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -107,13 +107,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Water Levels ";
             // 
-            // progressBar1
+            // lblWaterReserveStatus
             // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
-            this.progressBar1.Location = new System.Drawing.Point(225, 30);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(169, 23);
-            this.progressBar1.TabIndex = 19;
+            this.lblWaterReserveStatus.AutoSize = true;
+            this.lblWaterReserveStatus.Location = new System.Drawing.Point(231, 115);
+            this.lblWaterReserveStatus.Name = "lblWaterReserveStatus";
+            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 20);
+            this.lblWaterReserveStatus.TabIndex = 15;
             // 
             // btnSave
             // 
@@ -157,13 +157,13 @@
             this.lblReserveValue.TabIndex = 14;
             this.lblReserveValue.Text = "Water Reserve Level ";
             // 
-            // lblWaterReserveStatus
+            // progressBar1
             // 
-            this.lblWaterReserveStatus.AutoSize = true;
-            this.lblWaterReserveStatus.Location = new System.Drawing.Point(231, 115);
-            this.lblWaterReserveStatus.Name = "lblWaterReserveStatus";
-            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 20);
-            this.lblWaterReserveStatus.TabIndex = 15;
+            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
+            this.progressBar1.Location = new System.Drawing.Point(225, 30);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(169, 23);
+            this.progressBar1.TabIndex = 19;
             // 
             // ChangeWaterLevels
             // 
@@ -200,7 +200,7 @@
         private System.Windows.Forms.Label lblReserveValue;
         private System.Windows.Forms.TrackBar trkReserveLevel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lblWaterReserveStatus;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

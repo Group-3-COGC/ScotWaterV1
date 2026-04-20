@@ -44,8 +44,11 @@ namespace ScotWaterV1.Forms
             trkReserveLevel.Maximum = 100;
 
 
-            // Update label based on IsLowReserve property
-            if (IsLowReserve)
+            //Determines what the Water Reserve Status Label displays.
+            WaterUsage usage = new WaterUsage();
+            bool isLowReserve = usage.IsLowReserve;
+
+            if (isLowReserve)
             {
                 lblWaterReserveStatus.Text = "LOW RESERVE";
             }
@@ -53,6 +56,7 @@ namespace ScotWaterV1.Forms
             {
                 lblWaterReserveStatus.Text = "STANDARD";
             }
+
         }
 
         //Navigation button back to Main Menu
