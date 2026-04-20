@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScotWaterV1.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace ScotWaterV1.Forms
 {
     public partial class ChangeWaterLevels : Form
     {
+        private StaffUser _currentUser;
+
         public ChangeWaterLevels()
         {
             InitializeComponent();
@@ -32,6 +35,13 @@ namespace ScotWaterV1.Forms
         {
             trkReserveLevel.Minimum = 0;
             trkReserveLevel.Maximum = 100;
+        }
+
+        private void btnM_R_MainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu frmMainMenu = new frmMainMenu(_currentUser);
+            frmMainMenu.Show();
+            this.Hide();
         }
     }
 }

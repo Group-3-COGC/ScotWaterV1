@@ -86,7 +86,7 @@
             this.btnViewBusinesses.TabIndex = 4;
             this.btnViewBusinesses.Text = "View Businesses ";
             this.btnViewBusinesses.UseVisualStyleBackColor = true;
-       
+            this.btnViewBusinesses.Click += new System.EventHandler(this.btnViewBusinesses_Click);
             // 
             // btnModifyWaterPrice
             // 

@@ -36,5 +36,10 @@ namespace ScotWaterV1
         {
 
         }
+
+        private void btnViewBusinesses_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
