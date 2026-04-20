@@ -44,6 +44,7 @@
             this.Usage_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Water_Used = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Recycled_Water = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -116,7 +117,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(244, 213);
+            this.label2.Location = new System.Drawing.Point(244, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 24);
             this.label2.TabIndex = 25;
@@ -140,16 +141,16 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(310, 260);
+            this.dtpDate.Location = new System.Drawing.Point(413, 260);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDate.Size = new System.Drawing.Size(114, 20);
             this.dtpDate.TabIndex = 28;
             // 
             // btnAddUsage
             // 
             this.btnAddUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddUsage.Location = new System.Drawing.Point(348, 300);
+            this.btnAddUsage.Location = new System.Drawing.Point(348, 309);
             this.btnAddUsage.Name = "btnAddUsage";
             this.btnAddUsage.Size = new System.Drawing.Size(113, 33);
             this.btnAddUsage.TabIndex = 29;
@@ -183,11 +184,23 @@
             this.Recycled_Water.HeaderText = "Recycled Water ";
             this.Recycled_Water.Name = "Recycled_Water";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(244, 258);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 24);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Date";
+            // 
             // BusinessWaterUsage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 648);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAddUsage);
             this.Controls.Add(this.dtpDate);
@@ -200,7 +213,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnChangeWaterCharges_SignOut);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BusinessWaterUsage";
             this.Text = "BusinessWaterUsage";
             this.Load += new System.EventHandler(this.Businmess_Load);
@@ -230,5 +243,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usage_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Water_Used;
         private System.Windows.Forms.DataGridViewTextBoxColumn Recycled_Water;
+        private System.Windows.Forms.Label label1;
     }
 }
