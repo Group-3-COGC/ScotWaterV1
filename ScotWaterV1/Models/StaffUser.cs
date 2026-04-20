@@ -16,18 +16,6 @@ namespace ScotWaterV1.Models
 
         public List<WaterUsage> WaterUsage { get; set; }
 
-        public class StaffUserRepository
-        {
-            public StaffUser Login(string username, string password)
-            {
-                using (var db = new BusinessDataContext())
-                {
-                    return db.StaffUser
-                             .FirstOrDefault(s => s.staffUsername == username &&
-                                                  s.staffPassword == password);
-                }
-
-            }
-        }
+       
     }
 }
