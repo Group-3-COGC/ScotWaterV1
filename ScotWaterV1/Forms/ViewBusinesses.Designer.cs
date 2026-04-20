@@ -138,7 +138,7 @@ namespace ScotWaterV1.Forms
             this.btnViewBusiness_SignOut.TabIndex = 18;
             this.btnViewBusiness_SignOut.Text = "Sign Out";
             this.btnViewBusiness_SignOut.UseVisualStyleBackColor = false;
-            this.btnViewBusiness_SignOut.Click += new System.EventHandler(this.btnViewBusiness_SignOut_Click);
+            
             // 
             // button1
             // 
@@ -317,6 +317,21 @@ namespace ScotWaterV1.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void dgvBusinesses_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+            // You can leave this empty or add logic as needed
+        }
+
+        private void btnV_B_MainMenu_Click(object sender, EventArgs e)
+        {
+            // TODO: Add logic to handle Main Menu button click
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // TODO: Add logic to handle Edit button click
         }
 
         #endregion
