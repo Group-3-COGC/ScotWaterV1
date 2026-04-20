@@ -93,7 +93,40 @@ namespace ScotWaterV1.Models
             context.AdminUsers.Add(adminuser1);
             context.AdminUsers.Add(adminuser2);
 
-            
+            WaterUsage waterusage1 = new WaterUsage()
+            {
+                FreshwaterUnitsUsed = 120,
+                IsLowReserve = false,
+                RecycledUnits = 20,
+                ReadingDate = DateTime.Now,
+
+                BusinessID = business1.BusinessID,
+                StaffUserID = staffuser1.StaffUserID
+            };
+
+            WaterUsage waterusage2 = new WaterUsage()
+            {
+               FreshwaterUnitsUsed = 200,
+               IsLowReserve = true,
+               RecycledUnits = 40,
+               ReadingDate = DateTime.Now.AddDays(-10),
+
+               BusinessID = business2.BusinessID,
+               StaffUserID = staffuser2.StaffUserID
+            };
+
+            context.WaterUsage.Add(waterusage1);
+            context.WaterUsage.Add(waterusage2);
+            context.SaveChanges();
+
+            BusinessBills businessbill1 = new BusinessBills()
+            {
+                BillDate = waterusage1.ReadingDate,
+                TotalCharges = 25.00m,
+                TotalDiscount = 2.00m,
+                DiscountRate = 0.08m,
+                
+            }
 
         }//end of seed method
 
