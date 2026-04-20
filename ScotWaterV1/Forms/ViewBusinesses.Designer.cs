@@ -47,6 +47,7 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnM_R_MainMenu = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -90,6 +91,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnM_R_MainMenu);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.dgvBusinesses);
@@ -101,7 +103,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 611);
+            this.panel1.Size = new System.Drawing.Size(682, 611);
             this.panel1.TabIndex = 12;
             // 
             // label1
@@ -139,7 +141,7 @@
             this.textBox1.Location = new System.Drawing.Point(90, 110);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 20);
+            this.textBox1.Size = new System.Drawing.Size(134, 21);
             this.textBox1.TabIndex = 5;
             // 
             // BtnSearch
@@ -147,10 +149,10 @@
             this.BtnSearch.BackColor = System.Drawing.Color.White;
             this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtnSearch.Location = new System.Drawing.Point(229, 106);
+            this.BtnSearch.Location = new System.Drawing.Point(238, 109);
             this.BtnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(100, 35);
+            this.BtnSearch.Size = new System.Drawing.Size(100, 32);
             this.BtnSearch.TabIndex = 12;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
@@ -218,7 +220,7 @@
             this.btnM_R_MainMenu.BackColor = System.Drawing.Color.White;
             this.btnM_R_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnM_R_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnM_R_MainMenu.Location = new System.Drawing.Point(415, 541);
+            this.btnM_R_MainMenu.Location = new System.Drawing.Point(292, 541);
             this.btnM_R_MainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnM_R_MainMenu.Name = "btnM_R_MainMenu";
             this.btnM_R_MainMenu.Size = new System.Drawing.Size(100, 35);
@@ -226,12 +228,25 @@
             this.btnM_R_MainMenu.Text = "Main Menu ";
             this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Location = new System.Drawing.Point(540, 432);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 35);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Edit";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ViewBusinesses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(682, 611);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
@@ -271,5 +286,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btnM_R_MainMenu;
+        private System.Windows.Forms.Button button1;
     }
 }
