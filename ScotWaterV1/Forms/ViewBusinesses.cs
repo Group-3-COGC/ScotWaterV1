@@ -132,5 +132,10 @@ namespace ScotWaterV1.Forms
             menu.Show();
             this.Hide();
         }
+
+        private void dgvBusinesses_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
