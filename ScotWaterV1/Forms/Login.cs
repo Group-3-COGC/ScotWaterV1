@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using ScotWaterV1.Models;
 using ScotWaterV1.Repositories;
@@ -14,36 +15,27 @@ namespace ScotWaterV1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtLoginUsername.Text.Trim();
+            string email = txtLoginUsername.Text.Trim();
             string password = txtLoginPassword.Text.Trim();
 
-            // Try Staff login
-            StaffUserRepository staffRepo = new StaffUserRepository();
-            StaffUser staff = staffRepo.Login(username, password);
-
-            if (staff != null)
+            using (var context = new BusinessDataContext())
             {
-                MessageBox.Show("Staff login successful!");
-                frmMainMenu menu = new frmMainMenu(staff);
-                menu.Show();
-                this.Hide();
-                return;
+                //check admin
+                var adminUser = context.AdminUsers
+                    .FirstOrDefault(a => a.AdminUsername == email && a.AdminPassword == password);
+
+                if (adminUser != null)
+                {
+                    MessageBox.Show("Admin login successful");
+
+                    frmMainMenu frmmainMenu = new frmMainMenu();
+                    frmmainMenu.Show();
+                    this.Hide();
+                    return;
+                }
+
+
             }
-
-            // Try Admin login
-            AdminRepository adminRepo = new AdminRepository();
-            AdminUsers admin = adminRepo.Login(username, password);
-
-            if (admin != null)
-            {
-                MessageBox.Show("Admin login successful!");
-                frmMainMenu menu = new frmMainMenu(admin);
-                menu.Show();
-                this.Hide();
-                return;
-            }
-
-            MessageBox.Show("Invalid username or password.");
         }
     }
 }
