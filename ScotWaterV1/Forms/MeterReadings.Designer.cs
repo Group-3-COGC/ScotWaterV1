@@ -433,7 +433,7 @@
             this.groupBox4.Controls.Add(this.lblRecycleWaterUsed_MR);
             this.groupBox4.Controls.Add(this.txtWaterUsage_MR);
             this.groupBox4.Controls.Add(this.txtRecycledWaterUsage_MR);
-            this.groupBox4.Location = new System.Drawing.Point(360, 244);
+            this.groupBox4.Location = new System.Drawing.Point(360, 227);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(360, 122);
             this.groupBox4.TabIndex = 32;

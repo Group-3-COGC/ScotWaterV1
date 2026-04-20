@@ -15,14 +15,22 @@ namespace ScotWaterV1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+           
+        
+            string AdminUsername = txtLoginUsername.Text.Trim();
+            string AdminPassword = txtLoginPassword.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(AdminUsername) || string.IsNullOrWhiteSpace(AdminPassword))
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
             string email = txtLoginUsername.Text.Trim();
             string password = txtLoginPassword.Text.Trim();
 
-            using (var context = new BusinessDataContext())
-            {
-                //check admin
-                var adminUser = context.AdminUsers
-                    .FirstOrDefault(a => a.AdminUsername == email && a.AdminPassword == password);
+            // Try Staff login
+            StaffUserRepository staffRepo = new StaffUserRepository();
+            StaffUser staff = staffRepo.Login(username, password);
 
                 if (adminUser != null)
                 {
@@ -34,8 +42,12 @@ namespace ScotWaterV1
                     return;
                 }
 
+            // Try Admin login
+            AdminRepository adminRepo = new AdminRepository();
+            AdminUsers admin = adminRepo.Login(username, password);
 
             }
         }
+
     }
 }
