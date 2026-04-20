@@ -14,7 +14,7 @@ namespace ScotWaterV1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtLoginUsername.Text.Trim();
+             vstring username = txtLoginUsername.Text.Trim();
             string password = txtLoginPassword.Text.Trim();
 
             // Try Staff login
