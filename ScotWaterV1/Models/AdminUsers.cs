@@ -18,6 +18,19 @@ namespace ScotWaterV1
         public string AdminUsername { get; set; }
         public string AdminPassword { get; set; }
 
-   
+        public class AdminRepository
+        {
+            public AdminUsers Login(string username, string password)
+            {
+                using (var db = new BusinessDataContext())
+                {
+                    return db.AdminUsers
+                             .FirstOrDefault(a => a.AdminUsername == username &&
+                                                  a.AdminPassword == password);
+                }
+            }
+
+        }
     }
 }
+
