@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScotWaterV1.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,29 @@ namespace ScotWaterV1.Forms
 {
     public partial class frmGenerateBill : Form
     {
+        private StaffUser _currentUser;
         public frmGenerateBill()
         {
             InitializeComponent();
+        }
+        public frmGenerateBill(StaffUser user)
+        {
+            InitializeComponent();
+            _currentUser = user;
+        }
+
+        private void btnG_B_SignOut_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Hide();
+        }
+
+        private void btnG_B_MainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu frmMainMenu = new frmMainMenu(_currentUser);
+            frmMainMenu.Show();
+            this.Hide();
         }
     }
 }

@@ -82,6 +82,7 @@
             this.btnG_B_SignOut.TabIndex = 17;
             this.btnG_B_SignOut.Text = "Sign Out";
             this.btnG_B_SignOut.UseVisualStyleBackColor = false;
+            this.btnG_B_SignOut.Click += new System.EventHandler(this.btnG_B_SignOut_Click);
             // 
             // pictureBox2
             // 
@@ -104,6 +105,7 @@
             this.btnG_B_MainMenu.TabIndex = 19;
             this.btnG_B_MainMenu.Text = "Main Menu ";
             this.btnG_B_MainMenu.UseVisualStyleBackColor = false;
+            this.btnG_B_MainMenu.Click += new System.EventHandler(this.btnG_B_MainMenu_Click);
             // 
             // lblSelectBuisnessGB
             // 
