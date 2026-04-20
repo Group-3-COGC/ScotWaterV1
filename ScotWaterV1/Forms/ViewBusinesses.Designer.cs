@@ -1,4 +1,6 @@
-﻿namespace ScotWaterV1.Forms
+﻿using System;
+
+namespace ScotWaterV1.Forms
 {
     partial class ViewBusinesses
     {
@@ -310,6 +312,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
