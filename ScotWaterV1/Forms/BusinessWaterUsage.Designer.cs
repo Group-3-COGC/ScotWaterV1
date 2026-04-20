@@ -74,6 +74,7 @@
             this.btnChangeWaterCharges_SignOut.TabIndex = 20;
             this.btnChangeWaterCharges_SignOut.Text = "Sign Out";
             this.btnChangeWaterCharges_SignOut.UseVisualStyleBackColor = false;
+            this.btnChangeWaterCharges_SignOut.Click += new System.EventHandler(this.btnChangeWaterCharges_SignOut_Click);
             // 
             // pictureBox1
             // 
