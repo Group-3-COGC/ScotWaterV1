@@ -29,9 +29,6 @@ namespace ScotWaterV1
             this.Hide();
         }
 
-        private void btnViewBusinesses_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
