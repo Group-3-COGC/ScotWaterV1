@@ -23,16 +23,14 @@ namespace ScotWaterV1
             lblWelcome.Text = $"Welcome Admin: {admin.AdminUsername}";
         }
 
-        private void btnViewBusinesses_Click(object sender, EventArgs e)
-        {
-            frmViewBusinesses view = new frmViewBusinesses();
+      
 
             
             
 
             
 
-        }
+        
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
