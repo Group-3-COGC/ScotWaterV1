@@ -125,8 +125,8 @@ namespace ScotWaterV1.Models
                 TotalCharges = 25.00m,
                 TotalDiscount = 2.00m,
                 DiscountRate = 0.08m,
-                
-            }
+
+            };
 
         }//end of seed method
 
