@@ -98,6 +98,7 @@
             this.btnModifyWaterPrice.TabIndex = 7;
             this.btnModifyWaterPrice.Text = "Modify Water Usage Pricing";
             this.btnModifyWaterPrice.UseVisualStyleBackColor = true;
+            this.btnModifyWaterPrice.Click += new System.EventHandler(this.btnModifyWaterPrice_Click);
             // 
             // btnGenerateBill
             // 
@@ -109,6 +110,7 @@
             this.btnGenerateBill.TabIndex = 8;
             this.btnGenerateBill.Text = "Generate Daily Bill ";
             this.btnGenerateBill.UseVisualStyleBackColor = true;
+            this.btnGenerateBill.Click += new System.EventHandler(this.btnGenerateBill_Click);
             // 
             // btnMainMenuSignOut
             // 
@@ -132,6 +134,7 @@
             this.btnModifyWaterReserveLevels.TabIndex = 6;
             this.btnModifyWaterReserveLevels.Text = "Modify Water Reserve Levels";
             this.btnModifyWaterReserveLevels.UseVisualStyleBackColor = true;
+            this.btnModifyWaterReserveLevels.Click += new System.EventHandler(this.btnModifyWaterReserveLevels_Click);
             // 
             // lblWelcome
             // 
@@ -151,6 +154,7 @@
             this.btnWaterConsumption.TabIndex = 13;
             this.btnWaterConsumption.Text = "Water Consumption";
             this.btnWaterConsumption.UseVisualStyleBackColor = true;
+            this.btnWaterConsumption.Click += new System.EventHandler(this.btnWaterConsumption_Click);
             // 
             // frmMainMenu
             // 
@@ -172,7 +176,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmMainMenu";
             this.Text = "Main Menu";
-        
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

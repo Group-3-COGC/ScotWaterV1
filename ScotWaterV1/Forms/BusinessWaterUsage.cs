@@ -21,5 +21,10 @@ namespace ScotWaterV1.Forms
         {
 
         }
+
+        private void btnChangeWaterCharges_SignOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Signout and return to welcome screen?", "Confirm Signout");
+        }
     }
 }

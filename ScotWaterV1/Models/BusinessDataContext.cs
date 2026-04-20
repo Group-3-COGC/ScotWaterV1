@@ -93,7 +93,59 @@ namespace ScotWaterV1.Models
             context.AdminUsers.Add(adminuser1);
             context.AdminUsers.Add(adminuser2);
 
-            
+            WaterUsage waterusage1 = new WaterUsage()
+            {
+                FreshwaterUnitsUsed = 120,
+                IsLowReserve = false,
+                RecycledUnits = 20,
+                ReadingDate = DateTime.Now,
+
+                BusinessID = business1.BusinessID,
+                StaffUserID = staffuser1.StaffUserID
+            };
+
+            WaterUsage waterusage2 = new WaterUsage()
+            {
+               FreshwaterUnitsUsed = 200,
+               IsLowReserve = true,
+               RecycledUnits = 40,
+               ReadingDate = DateTime.Now.AddDays(-10),
+
+               BusinessID = business2.BusinessID,
+               StaffUserID = staffuser2.StaffUserID
+            };
+
+            context.WaterUsage.Add(waterusage1);
+            context.WaterUsage.Add(waterusage2);
+            context.SaveChanges();
+
+            BusinessBills businessbill1 = new BusinessBills()
+            {
+                BillDate = waterusage1.ReadingDate,
+                TotalCharges = 25.00m,
+                TotalDiscount = 2.00m,
+                DiscountRate = 0.08m,
+                SubTotal = 23.00m,
+                VAT = 4.60m,
+                BusinessFinalCost = 27.60m,
+                BusinessID = business1.BusinessID
+            };
+
+            BusinessBills businessbill2 = new BusinessBills()
+            {
+                BillDate = waterusage2.ReadingDate,
+                TotalCharges = 40.00m,
+                TotalDiscount = 5.00m,
+                DiscountRate = 0.125m,
+                SubTotal = 35.00m,
+                VAT = 7.00m,
+                BusinessFinalCost = 42.00m,
+                BusinessID = business2.BusinessID
+            };
+
+            context.BusinessBills.Add(businessbill1);
+            context.BusinessBills.Add(businessbill2);
+            context.SaveChanges();
 
         }//end of seed method
 

@@ -14,7 +14,7 @@ namespace ScotWaterV1
         [Key]
         //get; set; attributes for business bills
         public int BusinessBillID { get; set; } //primary key
-        public string BillingPeriod { get; set; } 
+        public DateTime BillDate { get; set; } 
         public decimal TotalCharges { get; set; }
         public decimal TotalDiscount { get; set; }
         public decimal DiscountRate { get; set; }

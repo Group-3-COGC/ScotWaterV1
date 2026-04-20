@@ -17,7 +17,13 @@ namespace ScotWaterV1
             string username = txtLoginUsername.Text.Trim();
             string password = txtLoginPassword.Text.Trim();
 
-            // Try Staff login
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
+
+            // STAFF LOGIN
             StaffUserRepository staffRepo = new StaffUserRepository();
             StaffUser staff = staffRepo.Login(username, password);
 
@@ -30,7 +36,7 @@ namespace ScotWaterV1
                 return;
             }
 
-            // Try Admin login
+            // ADMIN LOGIN
             AdminRepository adminRepo = new AdminRepository();
             AdminUsers admin = adminRepo.Login(username, password);
 

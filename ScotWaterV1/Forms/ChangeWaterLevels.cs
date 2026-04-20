@@ -15,9 +15,10 @@ namespace ScotWaterV1.Forms
     {
         private StaffUser _currentUser;
 
-        public ChangeWaterLevels()
+        public ChangeWaterLevels(StaffUser currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
         }
 
 
