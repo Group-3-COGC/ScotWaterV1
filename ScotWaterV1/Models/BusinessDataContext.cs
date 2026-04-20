@@ -125,8 +125,27 @@ namespace ScotWaterV1.Models
                 TotalCharges = 25.00m,
                 TotalDiscount = 2.00m,
                 DiscountRate = 0.08m,
-                
-            }
+                SubTotal = 23.00m,
+                VAT = 4.60m,
+                BusinessFinalCost = 27.60m,
+                BusinessID = business1.BusinessID
+            };
+
+            BusinessBills businessbill2 = new BusinessBills()
+            {
+                BillDate = waterusage2.ReadingDate,
+                TotalCharges = 40.00m,
+                TotalDiscount = 5.00m,
+                DiscountRate = 0.125m,
+                SubTotal = 35.00m,
+                VAT = 7.00m,
+                BusinessFinalCost = 42.00m,
+                BusinessID = business2.BusinessID
+            };
+
+            context.BusinessBills.Add(businessbill1);
+            context.BusinessBills.Add(businessbill2);
+            context.SaveChanges();
 
         }//end of seed method
 
