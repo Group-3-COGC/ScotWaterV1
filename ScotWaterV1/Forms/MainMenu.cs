@@ -13,7 +13,7 @@ namespace ScotWaterV1
 
         {
             InitializeComponent();
-            lblWelcome.Text = $"Welcome, {user.Username}";
+           
         }
 
         // ADMIN constructor

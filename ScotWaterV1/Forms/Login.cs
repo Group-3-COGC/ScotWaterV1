@@ -14,12 +14,20 @@ namespace ScotWaterV1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtLoginUsername.Text.Trim();
-            string password = txtLoginPassword.Text.Trim();
+           
+        
+            string AdminUsername = txtLoginUsername.Text.Trim();
+            string AdminPassword = txtLoginPassword.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(AdminUsername) || string.IsNullOrWhiteSpace(AdminPassword))
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
 
             // Try Staff login
             StaffUserRepository staffRepo = new StaffUserRepository();
-            StaffUser staff = staffRepo.Login(username, password);
+            StaffUser staff = staffRepo.Login(AdminUsername, AdminPassword);
 
             if (staff != null)
             {
@@ -32,7 +40,7 @@ namespace ScotWaterV1
 
             // Try Admin login
             AdminRepository adminRepo = new AdminRepository();
-            AdminUsers admin = adminRepo.Login(username, password);
+            AdminUsers admin = adminRepo.Login(AdminUsername, AdminPassword);
 
             if (admin != null)
             {
@@ -45,5 +53,6 @@ namespace ScotWaterV1
 
             MessageBox.Show("Invalid username or password.");
         }
+
     }
 }
