@@ -15,6 +15,16 @@ namespace ScotWaterV1.Forms
     {
         private StaffUser _currentUser;
 
+        // Add a property or field to represent IsLowReserve
+        private bool IsLowReserve
+        {
+            get
+            {
+                // Example logic: consider reserve low if trackbar value < 20
+                return trkReserveLevel.Value < 20;
+            }
+        }
+
         public ChangeWaterLevels(StaffUser currentUser)
         {
             InitializeComponent();
@@ -34,14 +44,12 @@ namespace ScotWaterV1.Forms
             trkReserveLevel.Maximum = 100;
 
 
-            //Determines what the Water Reserve Status Label displays.
-            lblWaterReserveStatus.Text = IsLowReserve;
-
-            if (IsLowReserve = true)
+            // Update label based on IsLowReserve property
+            if (IsLowReserve)
             {
                 lblWaterReserveStatus.Text = "LOW RESERVE";
             }
-            else if (IsLowReserve = false)
+            else
             {
                 lblWaterReserveStatus.Text = "STANDARD";
             }
@@ -54,8 +62,5 @@ namespace ScotWaterV1.Forms
             frmMainMenu.Show();
             this.Hide();
         }
-
-      
-
     }
 }
