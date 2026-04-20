@@ -86,7 +86,7 @@
             this.btnViewBusinesses.TabIndex = 4;
             this.btnViewBusinesses.Text = "View Businesses ";
             this.btnViewBusinesses.UseVisualStyleBackColor = true;
-            this.btnViewBusinesses.Click += new System.EventHandler(this.btnViewBusinesses_Click);
+       
             // 
             // btnModifyWaterPrice
             // 
@@ -126,7 +126,7 @@
             // 
             this.btnModifyWaterReserveLevels.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifyWaterReserveLevels.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnModifyWaterReserveLevels.Location = new System.Drawing.Point(355, 207);
+            this.btnModifyWaterReserveLevels.Location = new System.Drawing.Point(337, 205);
             this.btnModifyWaterReserveLevels.Name = "btnModifyWaterReserveLevels";
             this.btnModifyWaterReserveLevels.Size = new System.Drawing.Size(141, 136);
             this.btnModifyWaterReserveLevels.TabIndex = 6;
