@@ -22,19 +22,11 @@ namespace ScotWaterV1
             InitializeComponent();
             lblWelcome.Text = $"Welcome Admin: {admin.AdminUsername}";
         }
-
-      
-
-            
-            
-
-            
-
-        
-
-        private void frmMainMenu_Load(object sender, EventArgs e)
+        private void btnViewBusinesses_Click(object sender, EventArgs e)
         {
-
+            ViewBusinesses businesses = new ViewBusinesses();
+            this.Show();
+            this.Hide();
         }
     }
 }
