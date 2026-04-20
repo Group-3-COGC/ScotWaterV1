@@ -138,7 +138,7 @@ namespace ScotWaterV1.Forms
             this.btnViewBusiness_SignOut.TabIndex = 18;
             this.btnViewBusiness_SignOut.Text = "Sign Out";
             this.btnViewBusiness_SignOut.UseVisualStyleBackColor = false;
-            
+           
             // 
             // button1
             // 
@@ -152,7 +152,7 @@ namespace ScotWaterV1.Forms
             this.button1.TabIndex = 16;
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+         
             // 
             // btnV_B_MainMenu
             // 
@@ -166,7 +166,7 @@ namespace ScotWaterV1.Forms
             this.btnV_B_MainMenu.TabIndex = 15;
             this.btnV_B_MainMenu.Text = "Main Menu ";
             this.btnV_B_MainMenu.UseVisualStyleBackColor = false;
-            this.btnV_B_MainMenu.Click += new System.EventHandler(this.btnV_B_MainMenu_Click);
+           
             // 
             // pictureBox6
             // 
@@ -198,7 +198,7 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBusinesses.Size = new System.Drawing.Size(643, 331);
             this.dgvBusinesses.TabIndex = 13;
-            this.dgvBusinesses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellContentClick);
+            
             // 
             // Business_Name
             // 
