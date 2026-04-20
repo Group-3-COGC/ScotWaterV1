@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using ScotWaterV1.Models;
 using ScotWaterV1.Repositories;
@@ -15,39 +14,42 @@ namespace ScotWaterV1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
-        
-            string AdminUsername = txtLoginUsername.Text.Trim();
-            string AdminPassword = txtLoginPassword.Text.Trim();
+            string username = txtLoginUsername.Text.Trim();
+            string password = txtLoginPassword.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(AdminUsername) || string.IsNullOrWhiteSpace(AdminPassword))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please enter both username and password.");
                 return;
             }
-            string email = txtLoginUsername.Text.Trim();
-            string password = txtLoginPassword.Text.Trim();
 
-            // Try Staff login
+            // STAFF LOGIN
             StaffUserRepository staffRepo = new StaffUserRepository();
             StaffUser staff = staffRepo.Login(username, password);
 
-                if (adminUser != null)
-                {
-                    MessageBox.Show("Admin login successful");
+            if (staff != null)
+            {
+                MessageBox.Show("Staff login successful!");
+                frmMainMenu menu = new frmMainMenu(staff);
+                menu.Show();
+                this.Hide();
+                return;
+            }
 
-                    frmMainMenu frmmainMenu = new frmMainMenu();
-                    frmmainMenu.Show();
-                    this.Hide();
-                    return;
-                }
-
-            // Try Admin login
+            // ADMIN LOGIN
             AdminRepository adminRepo = new AdminRepository();
             AdminUsers admin = adminRepo.Login(username, password);
 
+            if (admin != null)
+            {
+                MessageBox.Show("Admin login successful!");
+                frmMainMenu menu = new frmMainMenu(admin);
+                menu.Show();
+                this.Hide();
+                return;
             }
-        }
 
+            MessageBox.Show("Invalid username or password.");
+        }
     }
 }
