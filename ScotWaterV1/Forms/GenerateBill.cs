@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
 {
-    public partial class GenerateBill : Form
+    public partial class frmGenerateBill : Form
     {
-        public GenerateBill()
+        public frmGenerateBill()
         {
             InitializeComponent();
         }
