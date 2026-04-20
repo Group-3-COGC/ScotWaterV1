@@ -21,5 +21,17 @@ namespace ScotWaterV1.Forms
         {
 
         }
+
+        private void trkReserveLevel_Scroll(object sender, EventArgs e)
+        {
+            trkReserveLevel.Minimum = 0;
+            trkReserveLevel.Maximum = 100;
+        }
+
+        private void ChangeWaterLevels_Load(object sender, EventArgs e)
+        {
+            trkReserveLevel.Minimum = 0;
+            trkReserveLevel.Maximum = 100;
+        }
     }
 }
