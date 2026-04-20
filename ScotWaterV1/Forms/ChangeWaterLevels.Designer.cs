@@ -34,12 +34,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnM_R_MainMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.trkReserveLevel = new System.Windows.Forms.TrackBar();
             this.lblWaterReserveStatus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblReserveValue = new System.Windows.Forms.Label();
-            this.trkReserveLevel = new System.Windows.Forms.TrackBar();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -88,6 +88,7 @@
             this.btnM_R_MainMenu.TabIndex = 12;
             this.btnM_R_MainMenu.Text = "Main Menu ";
             this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
+            this.btnM_R_MainMenu.Click += new System.EventHandler(this.btnM_R_MainMenu_Click);
             // 
             // groupBox1
             // 
@@ -106,6 +107,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Water Levels ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
+            this.progressBar1.Location = new System.Drawing.Point(226, 63);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(169, 23);
+            this.progressBar1.TabIndex = 19;
+            this.progressBar1.Value = 80;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSave.Location = new System.Drawing.Point(180, 136);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 30);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.Text = "Save ";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // trkReserveLevel
+            // 
+            this.trkReserveLevel.Location = new System.Drawing.Point(225, 19);
+            this.trkReserveLevel.Maximum = 100;
+            this.trkReserveLevel.Name = "trkReserveLevel";
+            this.trkReserveLevel.Size = new System.Drawing.Size(170, 45);
+            this.trkReserveLevel.TabIndex = 17;
+            this.trkReserveLevel.Scroll += new System.EventHandler(this.trkReserveLevel_Scroll);
             // 
             // lblWaterReserveStatus
             // 
@@ -137,35 +167,6 @@
             this.lblReserveValue.Size = new System.Drawing.Size(209, 24);
             this.lblReserveValue.TabIndex = 14;
             this.lblReserveValue.Text = "Water Reserve Level ";
-            // 
-            // trkReserveLevel
-            // 
-            this.trkReserveLevel.Location = new System.Drawing.Point(225, 19);
-            this.trkReserveLevel.Maximum = 100;
-            this.trkReserveLevel.Name = "trkReserveLevel";
-            this.trkReserveLevel.Size = new System.Drawing.Size(170, 45);
-            this.trkReserveLevel.TabIndex = 17;
-            this.trkReserveLevel.Scroll += new System.EventHandler(this.trkReserveLevel_Scroll);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSave.Location = new System.Drawing.Point(180, 136);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 30);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "Save ";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
-            this.progressBar1.Location = new System.Drawing.Point(226, 63);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(169, 23);
-            this.progressBar1.TabIndex = 19;
-            this.progressBar1.Value = 80;
             // 
             // ChangeWaterLevels
             // 

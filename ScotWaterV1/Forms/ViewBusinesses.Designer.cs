@@ -33,6 +33,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnViewBusiness_SignOut = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnV_B_MainMenu = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnViewBusiness_SignOut = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -92,6 +93,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnViewBusiness_SignOut);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnV_B_MainMenu);
@@ -108,12 +110,26 @@
             this.panel1.Size = new System.Drawing.Size(662, 611);
             this.panel1.TabIndex = 12;
             // 
+            // btnViewBusiness_SignOut
+            // 
+            this.btnViewBusiness_SignOut.BackColor = System.Drawing.Color.White;
+            this.btnViewBusiness_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewBusiness_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnViewBusiness_SignOut.Location = new System.Drawing.Point(522, 37);
+            this.btnViewBusiness_SignOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewBusiness_SignOut.Name = "btnViewBusiness_SignOut";
+            this.btnViewBusiness_SignOut.Size = new System.Drawing.Size(100, 35);
+            this.btnViewBusiness_SignOut.TabIndex = 18;
+            this.btnViewBusiness_SignOut.Text = "Sign Out";
+            this.btnViewBusiness_SignOut.UseVisualStyleBackColor = false;
+            this.btnViewBusiness_SignOut.Click += new System.EventHandler(this.btnViewBusiness_SignOut_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(540, 432);
+            this.button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.Location = new System.Drawing.Point(555, 482);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 35);
@@ -217,9 +233,9 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(-2, 507);
+            this.pictureBox5.Location = new System.Drawing.Point(-2, 526);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(986, 104);
+            this.pictureBox5.Size = new System.Drawing.Size(986, 85);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             // 
@@ -244,19 +260,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search ";
             // 
-            // btnViewBusiness_SignOut
+            // button2
             // 
-            this.btnViewBusiness_SignOut.BackColor = System.Drawing.Color.White;
-            this.btnViewBusiness_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewBusiness_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnViewBusiness_SignOut.Location = new System.Drawing.Point(522, 37);
-            this.btnViewBusiness_SignOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnViewBusiness_SignOut.Name = "btnViewBusiness_SignOut";
-            this.btnViewBusiness_SignOut.Size = new System.Drawing.Size(100, 35);
-            this.btnViewBusiness_SignOut.TabIndex = 18;
-            this.btnViewBusiness_SignOut.Text = "Sign Out";
-            this.btnViewBusiness_SignOut.UseVisualStyleBackColor = false;
-            this.btnViewBusiness_SignOut.Click += new System.EventHandler(this.btnViewBusiness_SignOut_Click);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.Location = new System.Drawing.Point(11, 482);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 35);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Add Business";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ViewBusinesses
             // 
@@ -305,5 +321,6 @@
         private System.Windows.Forms.Button btnV_B_MainMenu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnViewBusiness_SignOut;
+        private System.Windows.Forms.Button button2;
     }
 }
