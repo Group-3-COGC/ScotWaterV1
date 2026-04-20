@@ -30,5 +30,13 @@ namespace ScotWaterV1.Models
         {
 
         }
-    }
+    }//end of BusinessDataContext class
+
+    public class BusinessDatabaseInitialiser : DropCreateDatabaseAlways<BusinessDataContext>
+    {
+        protected override void Seed(BusinessDataContext context)
+        {
+            base.Seed(context);
+        }//end of seed method
+    }//end if BusinessDatabaseInitialiser class
 }
