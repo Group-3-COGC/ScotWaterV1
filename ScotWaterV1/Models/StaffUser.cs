@@ -13,7 +13,9 @@ namespace ScotWaterV1.Models
         public int StaffUserID { get; set; }
         public string staffUsername { get; set; }
         public string staffPassword { get; set; }
-        
-       public List<WaterUsage> WaterUsage { get; set; }
+
+        public List<WaterUsage> WaterUsage { get; set; }
+
+       
     }
 }

@@ -13,7 +13,7 @@ namespace ScotWaterV1
 
         {
             InitializeComponent();
-            lblWelcome.Text = $"Welcome, {user.Username}";
+           
         }
 
         // ADMIN constructor
@@ -29,9 +29,6 @@ namespace ScotWaterV1
             this.Hide();
         }
 
-        private void btnViewBusinesses_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
