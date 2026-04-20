@@ -13,18 +13,19 @@ namespace ScotWaterV1
     {
         [Key]
         //get; set; attributes for business bills
-        public string BillingPeriod { get; set; } //primary key
-        public double TotalCharges { get; set; }
-        public double TotalDiscount { get; set; }
-        public double DiscountRate { get; set; }
-        public double SubTotal { get; set; }
-        public double VAT { get; set; }
-        public double BusinessFinalCost { get; set; }
+        public int BusinessBillID { get; set; } //primary key
+        public string BillingPeriod { get; set; } 
+        public decimal TotalCharges { get; set; }
+        public decimal TotalDiscount { get; set; }
+        public decimal DiscountRate { get; set; }
+        public decimal SubTotal { get; set; }
+        public decimal VAT { get; set; }
+        public decimal BusinessFinalCost { get; set; }
 
         //navigational properties
         [ForeignKey("BusinessUser")]
 
-        public int CustomerID { get; set; }
+        public int BusinessID { get; set; }
 
         public BusinessUser BusinessUser { get; set; }
     }

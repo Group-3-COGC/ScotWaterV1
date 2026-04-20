@@ -10,10 +10,10 @@ namespace ScotWaterV1.Models
     public class StaffUser
     {
         [Key]
-        public int UserID { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-
+        public int StaffUserID { get; set; }
+        public string staffUsername { get; set; }
+        public string staffPassword { get; set; }
+        
        public List<WaterUsage> WaterUsage { get; set; }
     }
 }
