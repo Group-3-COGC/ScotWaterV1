@@ -6,9 +6,11 @@ using System.Windows.Forms;
 namespace ScotWaterV1
 {
     public partial class frmMainMenu : Form
+
     {
         // STAFF constructor
         public frmMainMenu(StaffUser user)
+
         {
             InitializeComponent();
             lblWelcome.Text = $"Welcome, {user.Username}";
@@ -29,6 +31,11 @@ namespace ScotWaterV1
             
 
             
+
+        }
+
+        private void frmMainMenu_Load(object sender, EventArgs e)
+        {
 
         }
     }

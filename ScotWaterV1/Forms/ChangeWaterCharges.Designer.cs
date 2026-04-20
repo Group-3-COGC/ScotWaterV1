@@ -1,6 +1,6 @@
 ﻿namespace ScotWaterV1.Forms
 {
-    partial class ChangeWaterCharges
+    partial class frmChangeWaterCharges
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeWaterCharges));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeWaterCharges));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnChangeWaterCharges_MainMenu = new System.Windows.Forms.Button();
@@ -91,12 +91,13 @@
             this.btnChangeWaterCharges_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeWaterCharges_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnChangeWaterCharges_MainMenu.Location = new System.Drawing.Point(302, 438);
-            this.btnChangeWaterCharges_MainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeWaterCharges_MainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeWaterCharges_MainMenu.Name = "btnChangeWaterCharges_MainMenu";
             this.btnChangeWaterCharges_MainMenu.Size = new System.Drawing.Size(100, 35);
             this.btnChangeWaterCharges_MainMenu.TabIndex = 12;
             this.btnChangeWaterCharges_MainMenu.Text = "Main Menu ";
             this.btnChangeWaterCharges_MainMenu.UseVisualStyleBackColor = false;
+            this.btnChangeWaterCharges_MainMenu.Click += new System.EventHandler(this.btnChangeWaterCharges_MainMenu_Click);
             // 
             // btnChangeWaterCharges_SignOut
             // 
@@ -104,12 +105,13 @@
             this.btnChangeWaterCharges_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeWaterCharges_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnChangeWaterCharges_SignOut.Location = new System.Drawing.Point(620, 34);
-            this.btnChangeWaterCharges_SignOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeWaterCharges_SignOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeWaterCharges_SignOut.Name = "btnChangeWaterCharges_SignOut";
             this.btnChangeWaterCharges_SignOut.Size = new System.Drawing.Size(100, 35);
             this.btnChangeWaterCharges_SignOut.TabIndex = 17;
             this.btnChangeWaterCharges_SignOut.Text = "Sign Out";
             this.btnChangeWaterCharges_SignOut.UseVisualStyleBackColor = false;
+            this.btnChangeWaterCharges_SignOut.Click += new System.EventHandler(this.btnChangeWaterCharges_SignOut_Click);
             // 
             // pictureBox3
             // 
@@ -363,9 +365,9 @@
             this.groupBox1.Controls.Add(this.lblNormalChargePrices);
             this.groupBox1.Controls.Add(this.lblCurrentWaterCharge);
             this.groupBox1.Location = new System.Drawing.Point(0, 108);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(458, 270);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
@@ -433,7 +435,7 @@
             "Recycled 6-20 Units",
             "Recycled 21+ Units"});
             this.comboChangeCharges.Location = new System.Drawing.Point(553, 156);
-            this.comboChangeCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboChangeCharges.Margin = new System.Windows.Forms.Padding(2);
             this.comboChangeCharges.Name = "comboChangeCharges";
             this.comboChangeCharges.Size = new System.Drawing.Size(92, 21);
             this.comboChangeCharges.TabIndex = 21;
@@ -456,7 +458,7 @@
             this.btnChangePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePrice.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnChangePrice.Location = new System.Drawing.Point(537, 328);
-            this.btnChangePrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangePrice.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePrice.Name = "btnChangePrice";
             this.btnChangePrice.Size = new System.Drawing.Size(120, 35);
             this.btnChangePrice.TabIndex = 36;
@@ -466,12 +468,12 @@
             // txtNewPrice
             // 
             this.txtNewPrice.Location = new System.Drawing.Point(546, 228);
-            this.txtNewPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewPrice.Name = "txtNewPrice";
             this.txtNewPrice.Size = new System.Drawing.Size(76, 20);
             this.txtNewPrice.TabIndex = 37;
             // 
-            // ChangeWaterCharges
+            // frmChangeWaterCharges
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -486,8 +488,8 @@
             this.Controls.Add(this.btnChangeWaterCharges_MainMenu);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "ChangeWaterCharges";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmChangeWaterCharges";
             this.Text = "ChangeW";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
