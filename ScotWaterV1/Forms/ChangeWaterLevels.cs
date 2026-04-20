@@ -16,5 +16,10 @@ namespace ScotWaterV1.Forms
         {
             InitializeComponent();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
