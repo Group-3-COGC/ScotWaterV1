@@ -133,7 +133,7 @@ namespace ScotWaterV1.Forms
             this.Hide();
         }
 
-        private void dgvBusinesses_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dgvBusinesses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

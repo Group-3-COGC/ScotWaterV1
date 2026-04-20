@@ -195,7 +195,7 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBusinesses.Size = new System.Drawing.Size(643, 331);
             this.dgvBusinesses.TabIndex = 13;
-            this.dgvBusinesses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellContentClick_1);
+            this.dgvBusinesses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellContentClick);
             // 
             // Business_Name
             // 

@@ -1,6 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using ScotWaterV1.Forms;
 using ScotWaterV1.Models;
+using System;
+using System.Windows.Forms;
 
 namespace ScotWaterV1
 {
@@ -25,7 +26,9 @@ namespace ScotWaterV1
     
         private void btnViewBusinesses_Click(object sender, EventArgs e)
         {
-            
+            ViewBusinesses businesses = new ViewBusinesses();
+            businesses.Show();
+            this.Hide();
         }
 
         private void btnWaterConsumption_Click(object sender, EventArgs e)
