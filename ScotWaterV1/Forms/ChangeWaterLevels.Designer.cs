@@ -179,7 +179,7 @@ namespace ScotWaterV1.Forms
         // MAIN MENU
         private void btnChangeWaterCharges_MainMenu_Click(object sender, EventArgs e)
         {
-            frmMainMenu main = new frmMainMenu(); // FIXED
+            frmMainMenu main = new frmMainMenu();
             main.Show();
             this.Close();
         }
