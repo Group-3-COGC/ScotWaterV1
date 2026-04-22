@@ -6,8 +6,6 @@ namespace ScotWaterV1.Forms
 {
     public partial class frmChangeWaterLevels : Form
     {
-
-
         public frmChangeWaterLevels()
         {
             InitializeComponent();
@@ -59,6 +57,12 @@ namespace ScotWaterV1.Forms
         {
             WaterUsage usage = new WaterUsage();
             usage.FreshwaterUnitsUsed = trkReserveLevel.Value;
+
+        }
+
+
+        private void frmChangeWaterLevels_Load(object sender, EventArgs e)
+        {
 
         }
     }
