@@ -176,7 +176,7 @@
             this.dgv_Business.RowHeadersWidth = 51;
             this.dgv_Business.Size = new System.Drawing.Size(975, 202);
             this.dgv_Business.TabIndex = 30;
-            this.dgv_Business.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            
             // 
             // label1
             // 
@@ -225,7 +225,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BusinessWaterUsage";
             this.Text = "BusinessWaterUsage";
-            this.Load += new System.EventHandler(this.Businmess_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
