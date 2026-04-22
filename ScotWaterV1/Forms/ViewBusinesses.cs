@@ -126,9 +126,11 @@ namespace ScotWaterV1.Forms
         // =========================
         // MAIN MENU
         // =========================
-        private void btnMainMenu_Click(object sender, EventArgs e)
+       
+
+        private void btnMainMenu_Click_1(object sender, EventArgs e)
         {
-            frmMainMenu menu = new frmMainMenu(_currentUser);
+            frmMainMenu menu = new frmMainMenu();
             menu.Show();
             this.Hide();
         }
