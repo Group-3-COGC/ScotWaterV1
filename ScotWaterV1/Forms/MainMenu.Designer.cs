@@ -152,7 +152,7 @@
             this.btnWaterConsumption.Name = "btnWaterConsumption";
             this.btnWaterConsumption.Size = new System.Drawing.Size(198, 136);
             this.btnWaterConsumption.TabIndex = 13;
-            this.btnWaterConsumption.Text = "Water Consumption";
+            this.btnWaterConsumption.Text = "Business Water Usage";
             this.btnWaterConsumption.UseVisualStyleBackColor = true;
             this.btnWaterConsumption.Click += new System.EventHandler(this.btnWaterConsumption_Click);
             // 
