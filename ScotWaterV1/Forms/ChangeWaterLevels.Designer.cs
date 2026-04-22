@@ -35,7 +35,6 @@
             this.btnM_R_MainMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblWaterReserveStatus = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBarReserveLevel = new System.Windows.Forms.ProgressBar();
             this.btnSave = new System.Windows.Forms.Button();
             this.trkReserveLevel = new System.Windows.Forms.TrackBar();
@@ -52,7 +51,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-15, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1069, 128);
             this.pictureBox1.TabIndex = 3;
@@ -63,7 +62,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(203, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -74,7 +73,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(-27, 485);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1069, 128);
             this.pictureBox2.TabIndex = 6;
@@ -105,9 +104,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox1.Location = new System.Drawing.Point(37, 156);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(561, 295);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
@@ -122,12 +121,19 @@
             this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 25);
             this.lblWaterReserveStatus.TabIndex = 15;
             // 
+            // progressBarReserveLevel
+            // 
+            this.progressBarReserveLevel.Location = new System.Drawing.Point(313, 37);
+            this.progressBarReserveLevel.Name = "progressBarReserveLevel";
+            this.progressBarReserveLevel.Size = new System.Drawing.Size(202, 29);
+            this.progressBarReserveLevel.TabIndex = 16;
+            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSave.Location = new System.Drawing.Point(241, 228);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(113, 37);
             this.btnSave.TabIndex = 18;
@@ -138,7 +144,7 @@
             // trkReserveLevel
             // 
             this.trkReserveLevel.Location = new System.Drawing.Point(299, 73);
-            this.trkReserveLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.trkReserveLevel.Margin = new System.Windows.Forms.Padding(4);
             this.trkReserveLevel.Maximum = 100;
             this.trkReserveLevel.Name = "trkReserveLevel";
             this.trkReserveLevel.Size = new System.Drawing.Size(227, 56);
@@ -169,15 +175,7 @@
             this.lblReserveValue.TabIndex = 14;
             this.lblReserveValue.Text = "Water Reserve Level ";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
-            this.progressBar1.Location = new System.Drawing.Point(225, 30);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(169, 23);
-            this.progressBar1.TabIndex = 19;
-            // 
-            // ChangeWaterLevels
+            // frmChangeWaterLevels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,7 +186,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ChangeWaterLevels";
+            this.Name = "frmChangeWaterLevels";
             this.Text = "ChangeWaterLevels";
             this.Load += new System.EventHandler(this.ChangeWaterLevels_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
