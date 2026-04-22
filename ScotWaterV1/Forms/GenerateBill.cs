@@ -32,5 +32,7 @@ namespace ScotWaterV1.Forms
             frmMainMenu.Show();
             this.Hide();
         }
+
+      
     }
 }
