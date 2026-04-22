@@ -2,37 +2,56 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ScotWaterV1.Forms
 {
     public partial class ViewBusinesses : Form
     {
-        private StaffUser _currentUser;
-
-        // Constructor (default)
         public ViewBusinesses()
         {
             InitializeComponent();
-        }
-
-        // Constructor with logged-in user
-        public ViewBusinesses(StaffUser currentUser) : this()
-        {
-            _currentUser = currentUser;
+            this.Load += ViewBusinesses_Load;
         }
 
         // =========================
-        // LOAD BUSINESSES
+        // LOAD DATA INTO GRID
         // =========================
         private void LoadBusinesses()
         {
             using (var db = new BusinessDataContext())
             {
-                dgvBusinesses.DataSource = db.BusinessUser.ToList();
-            }
+                var data = db.BusinessUser
+                    .Select(b => new
+                    {
+                        Name = b.CompanyName,
+                        Postcode = b.Postcode,
 
-            dgvBusinesses.Columns["BusinessID"].Visible = false; // optional cleanup
+                        TodayUsage = db.WaterUsage
+                            .Where(w => w.BusinessID == b.BusinessID &&
+                                        w.ReadingDate == DateTime.Today)
+                            .Sum(w => (int?)w.FreshwaterUnitsUsed) ?? 0,
+
+                        MonthlyUsage = db.WaterUsage
+                            .Where(w => w.BusinessID == b.BusinessID &&
+                                        w.ReadingDate.Month == DateTime.Now.Month)
+                            .Sum(w => (int?)w.FreshwaterUnitsUsed) ?? 0,
+
+                        RecycledWater = db.WaterUsage
+                            .Where(w => w.BusinessID == b.BusinessID)
+                            .Sum(w => (int?)w.RecycledUnits) ?? 0,
+
+                        Status = db.WaterUsage
+                            .Where(w => w.BusinessID == b.BusinessID)
+                            .OrderByDescending(w => w.ReadingDate)
+                            .Select(w => w.IsLowReserve ? "LOW" : "OK")
+                            .FirstOrDefault()
+                    })
+                    .ToList();
+
+                dgvBusinesses.AutoGenerateColumns = true;
+                dgvBusinesses.DataSource = data;
+            }
         }
 
         // =========================
@@ -40,10 +59,6 @@ namespace ScotWaterV1.Forms
         // =========================
         private void ViewBusinesses_Load(object sender, EventArgs e)
         {
-            dgvBusinesses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBusinesses.MultiSelect = false;
-            dgvBusinesses.ReadOnly = true;
-
             LoadBusinesses();
         }
 
@@ -52,15 +67,19 @@ namespace ScotWaterV1.Forms
         // =========================
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            string search = txt_search.Text.Trim().ToLower(); // FIXED HERE
+
             using (var db = new BusinessDataContext())
             {
-                string search = txtSearch.Text.ToLower();
-
                 var result = db.BusinessUser
                     .Where(b =>
                         b.CompanyName.ToLower().Contains(search) ||
-                        b.Postcode.ToLower().Contains(search) ||
-                        b.ContactEmail.ToLower().Contains(search))
+                        b.Postcode.ToLower().Contains(search))
+                    .Select(b => new
+                    {
+                        Name = b.CompanyName,
+                        Postcode = b.Postcode
+                    })
                     .ToList();
 
                 dgvBusinesses.DataSource = result;
@@ -68,59 +87,29 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // RESET / SHOW ALL (optional)
+        // ADD BUSINESS BUTTON
         // =========================
-        private void btnShowAll_Click(object sender, EventArgs e)
+        private void btn_Add_business_Click(object sender, EventArgs e)
         {
-            LoadBusinesses();
+            // FIX: You do NOT have Add_business form yet
+            MessageBox.Show("Add Business form not created yet.");
         }
 
         // =========================
         // EDIT BUTTON
         // =========================
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btn_Edit_Click(object sender, EventArgs e)
         {
-            if (dgvBusinesses.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a business.");
-                return;
-            }
-
-            int id = (int)dgvBusinesses.SelectedRows[0].Cells["BusinessID"].Value;
-
-            using (var db = new BusinessDataContext())
-            {
-                var business = db.BusinessUser.Find(id);
-
-                if (business == null)
-                {
-                    MessageBox.Show("Business not found.");
-                    return;
-                }
-
-                business.CompanyName = Microsoft.VisualBasic.Interaction.InputBox(
-                    "Edit Company Name:", "Edit Business", business.CompanyName);
-
-                business.Postcode = Microsoft.VisualBasic.Interaction.InputBox(
-                    "Edit Postcode:", "Edit Business", business.Postcode);
-
-                business.ContactEmail = Microsoft.VisualBasic.Interaction.InputBox(
-                    "Edit Email:", "Edit Business", business.ContactEmail);
-
-                db.SaveChanges();
-            }
-
-            LoadBusinesses();
+            MessageBox.Show("Edit feature coming next");
         }
 
         // =========================
         // SIGN OUT
         // =========================
-        private void btnSignOut_Click(object sender, EventArgs e)
+        private void btnViewBusiness_SignOut_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.Show();
-            this.Hide();
+            MessageBox.Show("Signing out...");
+            this.Close();
         }
 
         // =========================

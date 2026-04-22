@@ -30,7 +30,7 @@ namespace ScotWaterV1
             if (staff != null)
             {
                 MessageBox.Show("Staff login successful!");
-                frmMainMenu menu = new frmMainMenu(staff);
+                frmMainMenu menu = new frmMainMenu();
                 menu.Show();
                 this.Hide();
                 return;
@@ -43,7 +43,7 @@ namespace ScotWaterV1
             if (admin != null)
             {
                 MessageBox.Show("Admin login successful!");
-                frmMainMenu menu = new frmMainMenu(admin);
+                frmMainMenu menu = new frmMainMenu();
                 menu.Show();
                 this.Hide();
                 return;

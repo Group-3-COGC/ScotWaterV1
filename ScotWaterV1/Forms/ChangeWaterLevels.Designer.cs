@@ -1,6 +1,6 @@
 ﻿namespace ScotWaterV1.Forms
 {
-    partial class ChangeWaterLevels
+    partial class frmChangeWaterLevels
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeWaterLevels));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeWaterLevels));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnM_R_MainMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblWaterReserveStatus = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBarReserveLevel = new System.Windows.Forms.ProgressBar();
             this.btnSave = new System.Windows.Forms.Button();
             this.trkReserveLevel = new System.Windows.Forms.TrackBar();
@@ -121,16 +122,6 @@
             this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 25);
             this.lblWaterReserveStatus.TabIndex = 15;
             // 
-            // progressBarReserveLevel
-            // 
-            this.progressBarReserveLevel.BackColor = System.Drawing.SystemColors.Control;
-            this.progressBarReserveLevel.Location = new System.Drawing.Point(300, 37);
-            this.progressBarReserveLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.progressBarReserveLevel.Name = "progressBarReserveLevel";
-            this.progressBarReserveLevel.Size = new System.Drawing.Size(225, 28);
-            this.progressBarReserveLevel.TabIndex = 19;
-            this.progressBarReserveLevel.Click += new System.EventHandler(this.progressBarReserveLevel_Click);
-            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,6 +169,14 @@
             this.lblReserveValue.TabIndex = 14;
             this.lblReserveValue.Text = "Water Reserve Level ";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
+            this.progressBar1.Location = new System.Drawing.Point(225, 30);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(169, 23);
+            this.progressBar1.TabIndex = 19;
+            // 
             // ChangeWaterLevels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,7 +187,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeWaterLevels";
             this.Text = "ChangeWaterLevels";
             this.Load += new System.EventHandler(this.ChangeWaterLevels_Load);
