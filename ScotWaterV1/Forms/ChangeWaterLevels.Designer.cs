@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
 {
-    public partial class frmChangeWaterCharges : Form
+    public partial class frmChangeWaterLevels : Form
     {
-        
 
-        
-        
-       
+
+
+
+
 
         // SIGN OUT
         private void btnChangeWaterCharges_SignOut_Click(object sender, EventArgs e)
