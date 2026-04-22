@@ -91,18 +91,24 @@ namespace ScotWaterV1.Forms
         {
             string search = txt_search.Text.Trim().ToLower(); // FIXED HERE
 
+            if (search == "")
+            {
+                LoadBusinesses();
+                return;
+            }
+
             using (var db = new BusinessDataContext())
             {
                 var result = db.BusinessUser
                     .Where(b =>
-                        b.CompanyName.ToLower().Contains(search) ||
-                        b.Postcode.ToLower().Contains(search))
+                        (b.CompanyName != null && b.CompanyName.ToLower().Contains(search)) ||
+                        (b.Postcode != null && b.Postcode.ToLower().Contains(search)))
                     .Select(b => new
                     {
                         Name = b.CompanyName,
-                        Postcode = b.Postcode
+                        Postcode = b.Postcode,
                     })
-                    .ToList();
+                .ToList();
 
                 dgvBusinesses.DataSource = result;
             }
