@@ -16,11 +16,7 @@ namespace ScotWaterV1.Forms
         }
 
         // Update constructor to accept the user
-        public frmChangeWaterCharges(StaffUser user)
-        {
-            InitializeComponent();
-            _currentUser = user;
-        }
+      
 
         private void btnChangeWaterCharges_SignOut_Click(object sender, EventArgs e)
         {
@@ -31,7 +27,7 @@ namespace ScotWaterV1.Forms
 
         private void btnChangeWaterCharges_MainMenu_Click(object sender, EventArgs e)
         {
-            frmMainMenu frmMainMenu = new frmMainMenu(_currentUser);
+            frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
             this.Hide();
         }

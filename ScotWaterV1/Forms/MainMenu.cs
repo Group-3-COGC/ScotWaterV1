@@ -12,17 +12,7 @@ namespace ScotWaterV1
             InitializeComponent();
         }
 
-        public frmMainMenu(StaffUser user)
-        {
-            InitializeComponent();
-            lblWelcome.Text = $"Welcome, {user.staffUsername}";
-        }
-
-        public frmMainMenu(AdminUsers admin)
-        {
-            InitializeComponent();
-            lblWelcome.Text = $"Welcome Admin: {admin.AdminUsername}";
-        }
+        
     
         private void btnViewBusinesses_Click(object sender, EventArgs e)
         {
@@ -38,16 +28,28 @@ namespace ScotWaterV1
 
         private void btnGenerateBill_Click(object sender, EventArgs e)
         {
+            frmGenerateBill Bill = new frmGenerateBill();
+            Bill.Show();
+            this.Hide();
+
 
         }
 
         private void btnModifyWaterPrice_Click(object sender, EventArgs e)
         {
-
+            frmChangeWaterCharges Modify = new frmChangeWaterCharges();
+            Modify.Show();
+            this.Hide();
         }
 
         private void btnModifyWaterReserveLevels_Click(object sender, EventArgs e)
         {
+            frmChangeWaterLevels form = new frmChangeWaterLevels();
+            form.Show();
+            this.Hide();
+
+
+
 
         }
     }

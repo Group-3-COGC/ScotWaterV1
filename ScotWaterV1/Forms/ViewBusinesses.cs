@@ -115,13 +115,13 @@ namespace ScotWaterV1.Forms
         // =========================
         // MAIN MENU
         // =========================
-        private void btnV_B_MainMenu_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Going to Main Menu...");
-        }
+       
 
-        private void dgvBusinesses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnMainMenu_Click_1(object sender, EventArgs e)
         {
+            frmMainMenu menu = new frmMainMenu();
+            menu.Show();
+            this.Hide();
         }
     }
 }
