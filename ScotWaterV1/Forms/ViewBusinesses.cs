@@ -30,13 +30,13 @@ namespace ScotWaterV1.Forms
             using (var db = new BusinessDataContext())
             {
                 //Get the businesses
-                var businesses = db.BusinessBills.ToList();
+                var businesses = db.BusinessUser.ToList();
 
                 //get the water usages
                 var waterList = db.WaterUsage.ToList();
 
                 //create the result list
-                var data = new List<object>();
+                var data = new List<BusinessView>();
 
                 foreach (var b in businesses)
                 {
@@ -45,9 +45,41 @@ namespace ScotWaterV1.Forms
                     var usage = waterList.Where(w => w.BusinessID == b.BusinessID).ToList();
 
                     //calculations
+                    int todayUsage = usage
+                        .Where(w =>w.ReadingDate == DateTime.Today)
+                        .Sum(w => w.FreshwaterUnitsUsed);
 
+                    int monthlyUsage = usage
+                        .Where(w => w.ReadingDate.Month == DateTime.Now.Month)
+                        .Sum(w => w.FreshwaterUnitsUsed);
+
+                    int recycled = usage.Sum(w => w.RecycledUnits);
+
+                    var latest = usage
+                        .OrderByDescending(w => w.ReadingDate)
+                        .FirstOrDefault();
+
+                    string status = "OK";
+                    if(latest != null && latest.IsLowReserve)
+                    {
+                        status = "LOW";
+                    }
+
+                    //add all this data to list
+                    data.add(new BusinessView
+                    {
+                        Name = b.CompanyName,
+                        Postcode = b.Postcode,
+                        TodayUsage = todayUsage,
+                        MonthlyUsage = monthlyUsage,
+                        RecycledWater = recycled,
+                        Status = status
+                    });
 
                 }
+
+                dgvBusinesses.AutoGenerateColumns = true;
+                dgvBusinesses.DataSource = data;
             }
         }
 
