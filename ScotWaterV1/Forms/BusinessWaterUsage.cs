@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using ScotWaterV1.Models;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
@@ -15,16 +10,69 @@ namespace ScotWaterV1.Forms
         public BusinessWaterUsage()
         {
             InitializeComponent();
+            LoadBusinesses();
         }
 
-        private void Businmess_Load(object sender, EventArgs e)
+        
+        // LOAD COMBOBOX ON START
+        
+        private void LoadBusinesses()
         {
-
+            using (var db = new BusinessDataContext())
+            {
+                CmbBusiness.DataSource = db.BusinessUser.ToList();
+                CmbBusiness.DisplayMember = "CompanyName";
+                CmbBusiness.ValueMember = "BusinessID";
+            }
         }
 
+        
+        // SHOW BUSINESS IN GRID
+       
+        private void btn_Show_Click(object sender, EventArgs e)
+        {
+            if (CmbBusiness.SelectedValue == null)
+                return;
+
+            int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
+
+            using (var db = new BusinessDataContext())
+            {
+                var data = db.BusinessUser
+                    .Where(b => b.BusinessID == businessId)
+                    .Select(b => new
+                    {
+                        Name = b.CompanyName,
+                        Postcode = b.Postcode
+                    })
+                    .ToList();
+
+                dgv_Business.DataSource = data;
+            }
+        }
+
+        
+        // SIGN OUT
+        
         private void btnChangeWaterCharges_SignOut_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Signout and return to welcome screen?", "Confirm Signout");
+            DialogResult result = MessageBox.Show(
+                "Sign out and return to welcome screen?",
+                "Confirm Signout",
+                MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        
+        // COMBOBOX EVENT (NOT NEEDED FOR LOADING)
+        
+        private void CmbBusiness_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Leave empty or remove event entirely
         }
     }
 }

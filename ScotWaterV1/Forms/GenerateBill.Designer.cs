@@ -203,7 +203,7 @@
             // 
             // btnGenerateBill
             // 
-            this.btnGenerateBill.Location = new System.Drawing.Point(683, 165);
+            this.btnGenerateBill.Location = new System.Drawing.Point(707, 165);
             this.btnGenerateBill.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerateBill.Name = "btnGenerateBill";
             this.btnGenerateBill.Size = new System.Drawing.Size(239, 121);
