@@ -24,6 +24,11 @@ namespace ScotWaterV1.Forms
             _currentUser = user;
         }
 
+        private void frmGenerateBill_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnG_B_SignOut_Click(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
@@ -37,5 +42,7 @@ namespace ScotWaterV1.Forms
             frmMainMenu.Show();
             this.Hide();
         }
+
+      
     }
 }
