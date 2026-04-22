@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Collections.Generic;
 
 namespace ScotWaterV1.Forms
 {
@@ -66,7 +66,7 @@ namespace ScotWaterV1.Forms
                     }
 
                     //add all this data to list
-                    data.add(new BusinessView
+                    data.Add(new BusinessView
                     {
                         Name = b.CompanyName,
                         Postcode = b.Postcode,
@@ -82,10 +82,6 @@ namespace ScotWaterV1.Forms
                 dgvBusinesses.DataSource = data;
             }
         }
-
-        // =========================
-        // FORM LOAD
-        // =========================
        
 
         // =========================
