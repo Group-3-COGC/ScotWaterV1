@@ -13,6 +13,8 @@ namespace ScotWaterV1.Forms
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -35,20 +37,14 @@ namespace ScotWaterV1.Forms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Add_business = new System.Windows.Forms.Button();
             this.btnViewBusiness_SignOut = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Edit = new System.Windows.Forms.Button();
             this.btnV_B_MainMenu = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.dgvBusinesses = new System.Windows.Forms.DataGridView();
-            this.Business_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Postcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Today_Usage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monthly_Usage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Recycled_Water = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.Label();
@@ -65,19 +61,20 @@ namespace ScotWaterV1.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-20, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-27, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1053, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(1404, 123);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-11, 582);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(-15, 716);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1081, 29);
+            this.pictureBox2.Size = new System.Drawing.Size(1441, 36);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -85,82 +82,83 @@ namespace ScotWaterV1.Forms
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(-2, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(215, 100);
+            this.pictureBox4.Size = new System.Drawing.Size(287, 123);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btn_Add_business);
             this.panel1.Controls.Add(this.btnViewBusiness_SignOut);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_Edit);
             this.panel1.Controls.Add(this.btnV_B_MainMenu);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.dgvBusinesses);
             this.panel1.Controls.Add(this.BtnSearch);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_search);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(662, 611);
+            this.panel1.Size = new System.Drawing.Size(883, 752);
             this.panel1.TabIndex = 12;
             // 
-            // button2
+            // btn_Add_business
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(11, 482);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 35);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Add Business";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Add_business.BackColor = System.Drawing.Color.White;
+            this.btn_Add_business.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add_business.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Add_business.Location = new System.Drawing.Point(15, 593);
+            this.btn_Add_business.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Add_business.Name = "btn_Add_business";
+            this.btn_Add_business.Size = new System.Drawing.Size(181, 43);
+            this.btn_Add_business.TabIndex = 19;
+            this.btn_Add_business.Text = "Add Business";
+            this.btn_Add_business.UseVisualStyleBackColor = false;
+            this.btn_Add_business.Click += new System.EventHandler(this.btn_Add_business_Click);
             // 
             // btnViewBusiness_SignOut
             // 
             this.btnViewBusiness_SignOut.BackColor = System.Drawing.Color.White;
             this.btnViewBusiness_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewBusiness_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnViewBusiness_SignOut.Location = new System.Drawing.Point(522, 37);
-            this.btnViewBusiness_SignOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewBusiness_SignOut.Location = new System.Drawing.Point(696, 46);
+            this.btnViewBusiness_SignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewBusiness_SignOut.Name = "btnViewBusiness_SignOut";
-            this.btnViewBusiness_SignOut.Size = new System.Drawing.Size(100, 35);
+            this.btnViewBusiness_SignOut.Size = new System.Drawing.Size(133, 43);
             this.btnViewBusiness_SignOut.TabIndex = 18;
             this.btnViewBusiness_SignOut.Text = "Sign Out";
             this.btnViewBusiness_SignOut.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btn_Edit
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Location = new System.Drawing.Point(555, 482);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 35);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Edit.BackColor = System.Drawing.Color.White;
+            this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Edit.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Edit.Location = new System.Drawing.Point(740, 593);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(133, 43);
+            this.btn_Edit.TabIndex = 16;
+            this.btn_Edit.Text = "Edit";
+            this.btn_Edit.UseVisualStyleBackColor = false;
             // 
             // btnV_B_MainMenu
             // 
             this.btnV_B_MainMenu.BackColor = System.Drawing.Color.White;
             this.btnV_B_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnV_B_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnV_B_MainMenu.Location = new System.Drawing.Point(292, 541);
-            this.btnV_B_MainMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnV_B_MainMenu.Location = new System.Drawing.Point(389, 666);
+            this.btnV_B_MainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnV_B_MainMenu.Name = "btnV_B_MainMenu";
-            this.btnV_B_MainMenu.Size = new System.Drawing.Size(100, 35);
+            this.btnV_B_MainMenu.Size = new System.Drawing.Size(133, 43);
             this.btnV_B_MainMenu.TabIndex = 15;
             this.btnV_B_MainMenu.Text = "Main Menu ";
             this.btnV_B_MainMenu.UseVisualStyleBackColor = false;
@@ -169,9 +167,10 @@ namespace ScotWaterV1.Forms
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(0, -3);
+            this.pictureBox6.Location = new System.Drawing.Point(0, -4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(152, 107);
+            this.pictureBox6.Size = new System.Drawing.Size(203, 132);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 14;
             this.pictureBox6.TabStop = false;
@@ -180,96 +179,57 @@ namespace ScotWaterV1.Forms
             // 
             this.dgvBusinesses.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvBusinesses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusinesses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Business_Name,
-            this.Postcode,
-            this.Today_Usage,
-            this.Monthly_Usage,
-            this.Recycled_Water,
-            this.Status});
             this.dgvBusinesses.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvBusinesses.Location = new System.Drawing.Point(12, 146);
+            this.dgvBusinesses.Location = new System.Drawing.Point(16, 180);
+            this.dgvBusinesses.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBusinesses.MultiSelect = false;
             this.dgvBusinesses.Name = "dgvBusinesses";
             this.dgvBusinesses.ReadOnly = true;
+            this.dgvBusinesses.RowHeadersWidth = 51;
             this.dgvBusinesses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBusinesses.Size = new System.Drawing.Size(643, 331);
+            this.dgvBusinesses.Size = new System.Drawing.Size(857, 407);
             this.dgvBusinesses.TabIndex = 13;
-            this.dgvBusinesses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellContentClick);
-            // 
-            // Business_Name
-            // 
-            this.Business_Name.HeaderText = "Business Name ";
-            this.Business_Name.Name = "Business_Name";
-            this.Business_Name.ReadOnly = true;
-            // 
-            // Postcode
-            // 
-            this.Postcode.HeaderText = "Postcode";
-            this.Postcode.Name = "Postcode";
-            this.Postcode.ReadOnly = true;
-            // 
-            // Today_Usage
-            // 
-            this.Today_Usage.HeaderText = "Today Usage ";
-            this.Today_Usage.Name = "Today_Usage";
-            this.Today_Usage.ReadOnly = true;
-            // 
-            // Monthly_Usage
-            // 
-            this.Monthly_Usage.HeaderText = "Monthly Usage";
-            this.Monthly_Usage.Name = "Monthly_Usage";
-            this.Monthly_Usage.ReadOnly = true;
-            // 
-            // Recycled_Water
-            // 
-            this.Recycled_Water.HeaderText = "Recycled Water";
-            this.Recycled_Water.Name = "Recycled_Water";
-            this.Recycled_Water.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
             // 
             // BtnSearch
             // 
             this.BtnSearch.BackColor = System.Drawing.Color.White;
             this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtnSearch.Location = new System.Drawing.Point(238, 109);
-            this.BtnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnSearch.Location = new System.Drawing.Point(317, 134);
+            this.BtnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(100, 32);
+            this.BtnSearch.Size = new System.Drawing.Size(133, 39);
             this.BtnSearch.TabIndex = 12;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 110);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 21);
-            this.textBox1.TabIndex = 5;
+            this.txt_search.Location = new System.Drawing.Point(120, 135);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_search.Multiline = true;
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(177, 25);
+            this.txt_search.TabIndex = 5;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(-2, 526);
+            this.pictureBox5.Location = new System.Drawing.Point(-3, 647);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(986, 85);
+            this.pictureBox5.Size = new System.Drawing.Size(1315, 105);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-2, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(986, 104);
+            this.pictureBox3.Size = new System.Drawing.Size(1315, 128);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
@@ -279,23 +239,24 @@ namespace ScotWaterV1.Forms
             this.txtSearch.BackColor = System.Drawing.Color.Transparent;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtSearch.Location = new System.Drawing.Point(12, 107);
+            this.txtSearch.Location = new System.Drawing.Point(16, 132);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(82, 24);
+            this.txtSearch.Size = new System.Drawing.Size(102, 29);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Search ";
             // 
             // ViewBusinesses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(662, 611);
+            this.ClientSize = new System.Drawing.Size(883, 752);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ViewBusinesses";
             this.Text = "ViewBusinesses";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -311,25 +272,13 @@ namespace ScotWaterV1.Forms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        private void dgvBusinesses_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
-        {
-            // You can leave this empty or add logic as needed
-        }
+        
 
-        private void btnV_B_MainMenu_Click(object sender, EventArgs e)
-        {
-            // TODO: Add logic to handle Main Menu button click
-        }
+        
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // TODO: Add logic to handle Edit button click
-        }
+        
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -337,21 +286,15 @@ namespace ScotWaterV1.Forms
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label txtSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.DataGridView dgvBusinesses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Business_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Postcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Today_Usage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monthly_Usage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Recycled_Water;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btnV_B_MainMenu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btnViewBusiness_SignOut;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Add_business;
     }
 }
