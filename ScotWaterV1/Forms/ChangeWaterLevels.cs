@@ -50,6 +50,16 @@ namespace ScotWaterV1.Forms
             this.Hide();
         }
 
-    
+        private void progressBarReserveLevel_Click(object sender, EventArgs e)
+        {
+            progressBarReserveLevel.Value = trkReserveLevel.Value;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            WaterUsage usage = new WaterUsage();
+            usage.FreshwaterUnitsUsed = trkReserveLevel.Value;
+
+        }
     }
 }
