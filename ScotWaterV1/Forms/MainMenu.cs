@@ -38,16 +38,25 @@ namespace ScotWaterV1
 
         private void btnGenerateBill_Click(object sender, EventArgs e)
         {
+            frmGenerateBill Bill = new frmGenerateBill();
+            Bill.Show();
+            this.Hide();
+
 
         }
 
         private void btnModifyWaterPrice_Click(object sender, EventArgs e)
         {
-
+            frmChangeWaterCharges Modify = new frmChangeWaterCharges();
+            Modify.Show();
+            this.Hide();
         }
 
         private void btnModifyWaterReserveLevels_Click(object sender, EventArgs e)
         {
+            
+
+
 
         }
     }
