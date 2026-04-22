@@ -13,16 +13,22 @@ namespace ScotWaterV1.Forms
 {
     public partial class frmGenerateBill : Form
     {
-        private StaffUser _currentUser;
+       
         public frmGenerateBill()
         {
             InitializeComponent();
         }
-        public frmGenerateBill(StaffUser user)
+
+        private void frmGenerateBill_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            _currentUser = user;
+            using (var context = new BusinessDataContext())
+            {
+
+            }
         }
+
+
+
 
         private void btnG_B_SignOut_Click(object sender, EventArgs e)
         {
@@ -33,9 +39,11 @@ namespace ScotWaterV1.Forms
 
         private void btnG_B_MainMenu_Click(object sender, EventArgs e)
         {
-            frmMainMenu frmMainMenu = new frmMainMenu(_currentUser);
+            frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
             this.Hide();
         }
+
+       
     }
 }

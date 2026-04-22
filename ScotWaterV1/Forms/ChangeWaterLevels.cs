@@ -1,34 +1,17 @@
 ﻿using ScotWaterV1.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
 {
-    public partial class ChangeWaterLevels : Form
+    public partial class frmChangeWaterLevels : Form
     {
-        private StaffUser _currentUser;
 
-        // Add a property or field to represent IsLowReserve
-        private bool IsLowReserve
-        {
-            get
-            {
-                // Example logic: consider reserve low if trackbar value < 20
-                return trkReserveLevel.Value < 20;
-            }
-        }
 
-        public ChangeWaterLevels(StaffUser currentUser)
+        public frmChangeWaterLevels()
         {
             InitializeComponent();
-            _currentUser = currentUser;
+            
         }
 
 
@@ -62,9 +45,11 @@ namespace ScotWaterV1.Forms
         //Navigation button back to Main Menu
         private void btnM_R_MainMenu_Click(object sender, EventArgs e)
         {
-            frmMainMenu frmMainMenu = new frmMainMenu(_currentUser);
+            frmMainMenu frmMainMenu = new frmMainMenu();
             frmMainMenu.Show();
             this.Hide();
         }
+
+    
     }
 }
