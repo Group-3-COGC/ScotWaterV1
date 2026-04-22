@@ -18,7 +18,18 @@ namespace ScotWaterV1.Forms
         {
             InitializeComponent();
         }
-       
+
+        private void frmGenerateBill_Load(object sender, EventArgs e)
+        {
+            using (var context = new BusinessDataContext())
+            {
+
+            }
+        }
+
+
+
+
         private void btnG_B_SignOut_Click(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
@@ -33,6 +44,6 @@ namespace ScotWaterV1.Forms
             this.Hide();
         }
 
-      
+       
     }
 }

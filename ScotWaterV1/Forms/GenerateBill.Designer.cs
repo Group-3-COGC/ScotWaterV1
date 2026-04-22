@@ -54,7 +54,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1069, 128);
             this.pictureBox1.TabIndex = 3;
@@ -65,7 +65,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(203, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,7 +90,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 481);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1069, 79);
             this.pictureBox2.TabIndex = 18;
@@ -124,7 +124,7 @@
             // 
             this.cmbBusinessNames.FormattingEnabled = true;
             this.cmbBusinessNames.Location = new System.Drawing.Point(225, 165);
-            this.cmbBusinessNames.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBusinessNames.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBusinessNames.Name = "cmbBusinessNames";
             this.cmbBusinessNames.Size = new System.Drawing.Size(160, 24);
             this.cmbBusinessNames.TabIndex = 21;
@@ -142,7 +142,7 @@
             // txtUnitsUsedGB
             // 
             this.txtUnitsUsedGB.Location = new System.Drawing.Point(225, 236);
-            this.txtUnitsUsedGB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUnitsUsedGB.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnitsUsedGB.Name = "txtUnitsUsedGB";
             this.txtUnitsUsedGB.Size = new System.Drawing.Size(132, 22);
             this.txtUnitsUsedGB.TabIndex = 23;
@@ -160,7 +160,7 @@
             // txtRecycledGB
             // 
             this.txtRecycledGB.Location = new System.Drawing.Point(225, 292);
-            this.txtRecycledGB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRecycledGB.Margin = new System.Windows.Forms.Padding(4);
             this.txtRecycledGB.Name = "txtRecycledGB";
             this.txtRecycledGB.Size = new System.Drawing.Size(132, 22);
             this.txtRecycledGB.TabIndex = 25;
@@ -168,7 +168,7 @@
             // dateTimePicker2GB
             // 
             this.dateTimePicker2GB.Location = new System.Drawing.Point(225, 354);
-            this.dateTimePicker2GB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2GB.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2GB.Name = "dateTimePicker2GB";
             this.dateTimePicker2GB.Size = new System.Drawing.Size(265, 22);
             this.dateTimePicker2GB.TabIndex = 26;
@@ -196,7 +196,7 @@
             // txtGenerateBillTotal
             // 
             this.txtGenerateBillTotal.Location = new System.Drawing.Point(747, 394);
-            this.txtGenerateBillTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGenerateBillTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenerateBillTotal.Name = "txtGenerateBillTotal";
             this.txtGenerateBillTotal.Size = new System.Drawing.Size(132, 22);
             this.txtGenerateBillTotal.TabIndex = 29;
@@ -204,7 +204,7 @@
             // btnGenerateBill
             // 
             this.btnGenerateBill.Location = new System.Drawing.Point(683, 165);
-            this.btnGenerateBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGenerateBill.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerateBill.Name = "btnGenerateBill";
             this.btnGenerateBill.Size = new System.Drawing.Size(239, 121);
             this.btnGenerateBill.TabIndex = 30;
@@ -232,7 +232,7 @@
             this.Controls.Add(this.btnG_B_SignOut);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGenerateBill";
             this.Text = "GenerateBill";
             this.Load += new System.EventHandler(this.frmGenerateBill_Load);
