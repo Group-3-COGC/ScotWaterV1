@@ -21,42 +21,86 @@ namespace ScotWaterV1.Forms
         private void InitializeComponent()
         {
             this.dgvBusinesses = new System.Windows.Forms.DataGridView();
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.BtnSearch = new System.Windows.Forms.Button();
-            this.btn_Add_business = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnV_B_MainMenu = new System.Windows.Forms.Button();
-            this.btnViewBusiness_SignOut = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.Label();
-
             this.Business_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Postcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Today_Usage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monthly_Usage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Recycled_Water = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.btn_Add_business = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnV_B_MainMenu = new System.Windows.Forms.Button();
+            this.btnViewBusiness_SignOut = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinesses)).BeginInit();
             this.SuspendLayout();
-
             // 
             // dgvBusinesses
             // 
-            this.dgvBusinesses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusinesses.Columns.AddRange(new DataGridViewColumn[] {
-                this.Business_Name,
-                this.Postcode,
-                this.Today_Usage,
-                this.Monthly_Usage,
-                this.Recycled_Water,
-                this.Status
-            });
+            this.dgvBusinesses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBusinesses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Business_Name,
+            this.Postcode,
+            this.Today_Usage,
+            this.Monthly_Usage,
+            this.Recycled_Water,
+            this.Status});
             this.dgvBusinesses.Location = new System.Drawing.Point(20, 180);
             this.dgvBusinesses.Name = "dgvBusinesses";
             this.dgvBusinesses.ReadOnly = true;
+            this.dgvBusinesses.RowHeadersWidth = 51;
             this.dgvBusinesses.Size = new System.Drawing.Size(830, 350);
             this.dgvBusinesses.TabIndex = 0;
-
+            // 
+            // Business_Name
+            // 
+            this.Business_Name.HeaderText = "Business Name";
+            this.Business_Name.MinimumWidth = 6;
+            this.Business_Name.Name = "Business_Name";
+            this.Business_Name.ReadOnly = true;
+            this.Business_Name.Width = 125;
+            // 
+            // Postcode
+            // 
+            this.Postcode.HeaderText = "Postcode";
+            this.Postcode.MinimumWidth = 6;
+            this.Postcode.Name = "Postcode";
+            this.Postcode.ReadOnly = true;
+            this.Postcode.Width = 125;
+            // 
+            // Today_Usage
+            // 
+            this.Today_Usage.HeaderText = "Today Usage";
+            this.Today_Usage.MinimumWidth = 6;
+            this.Today_Usage.Name = "Today_Usage";
+            this.Today_Usage.ReadOnly = true;
+            this.Today_Usage.Width = 125;
+            // 
+            // Monthly_Usage
+            // 
+            this.Monthly_Usage.HeaderText = "Monthly Usage";
+            this.Monthly_Usage.MinimumWidth = 6;
+            this.Monthly_Usage.Name = "Monthly_Usage";
+            this.Monthly_Usage.ReadOnly = true;
+            this.Monthly_Usage.Width = 125;
+            // 
+            // Recycled_Water
+            // 
+            this.Recycled_Water.HeaderText = "Recycled Water";
+            this.Recycled_Water.MinimumWidth = 6;
+            this.Recycled_Water.Name = "Recycled_Water";
+            this.Recycled_Water.ReadOnly = true;
+            this.Recycled_Water.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 125;
             // 
             // txt_search
             // 
@@ -64,60 +108,56 @@ namespace ScotWaterV1.Forms
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(200, 22);
             this.txt_search.TabIndex = 1;
-
             // 
             // BtnSearch
             // 
             this.BtnSearch.Location = new System.Drawing.Point(240, 125);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(100, 30);
+            this.BtnSearch.TabIndex = 2;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-
             // 
             // btn_Add_business
             // 
             this.btn_Add_business.Location = new System.Drawing.Point(20, 560);
             this.btn_Add_business.Name = "btn_Add_business";
             this.btn_Add_business.Size = new System.Drawing.Size(150, 35);
+            this.btn_Add_business.TabIndex = 3;
             this.btn_Add_business.Text = "Add Business";
-            this.btn_Add_business.Click += new System.EventHandler(this.btn_Add_business_Click);
-
             // 
-            // button1 (Edit)
+            // btnEdit
             // 
-            this.button1.Location = new System.Drawing.Point(200, 560);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 35);
-            this.button1.Text = "Edit";
-            this.button1.Click += new System.EventHandler(this.btn_Edit_Click);
-
+            this.btnEdit.Location = new System.Drawing.Point(200, 560);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(100, 35);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnV_B_MainMenu
             // 
             this.btnV_B_MainMenu.Location = new System.Drawing.Point(320, 560);
             this.btnV_B_MainMenu.Name = "btnV_B_MainMenu";
             this.btnV_B_MainMenu.Size = new System.Drawing.Size(120, 35);
+            this.btnV_B_MainMenu.TabIndex = 5;
             this.btnV_B_MainMenu.Text = "Main Menu";
-
+            this.btnV_B_MainMenu.Click += new System.EventHandler(this.btnV_B_MainMenu_Click);
             // 
             // btnViewBusiness_SignOut
             // 
             this.btnViewBusiness_SignOut.Location = new System.Drawing.Point(720, 20);
             this.btnViewBusiness_SignOut.Name = "btnViewBusiness_SignOut";
             this.btnViewBusiness_SignOut.Size = new System.Drawing.Size(120, 35);
+            this.btnViewBusiness_SignOut.TabIndex = 6;
             this.btnViewBusiness_SignOut.Text = "Sign Out";
-
             // 
-            // Columns
+            // txtSearch
             // 
-            this.Business_Name.HeaderText = "Business Name";
-            this.Postcode.HeaderText = "Postcode";
-            this.Today_Usage.HeaderText = "Today Usage";
-            this.Monthly_Usage.HeaderText = "Monthly Usage";
-            this.Recycled_Water.HeaderText = "Recycled Water";
-            this.Status.HeaderText = "Status";
-
+            this.txtSearch.Location = new System.Drawing.Point(0, 0);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 23);
+            this.txtSearch.TabIndex = 7;
             // 
             // ViewBusinesses
             // 
@@ -126,16 +166,16 @@ namespace ScotWaterV1.Forms
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.btn_Add_business);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnV_B_MainMenu);
             this.Controls.Add(this.btnViewBusiness_SignOut);
             this.Controls.Add(this.txtSearch);
             this.Name = "ViewBusinesses";
             this.Text = "View Businesses";
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinesses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -144,7 +184,7 @@ namespace ScotWaterV1.Forms
         private TextBox txt_search;
         private Button BtnSearch;
         private Button btn_Add_business;
-        private Button button1;
+        private Button btnEdit;
         private Button btnV_B_MainMenu;
         private Button btnViewBusiness_SignOut;
         private Label txtSearch;

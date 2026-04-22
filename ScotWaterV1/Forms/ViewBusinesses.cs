@@ -114,47 +114,26 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // =========================
-        // ADD BUSINESS BUTTON
-        // =========================
-        private void btn_Add_business_Click(object sender, EventArgs e)
+        
+
+        private void dgvBusinesses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // FIX: You do NOT have Add_business form yet
-            MessageBox.Show("Add Business form not created yet.");
+            // You can leave this empty or add your logic here
         }
 
-        // =========================
-        // EDIT BUTTON
-        // =========================
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Edit feature coming next");
-        }
-
-        // =========================
-        // SIGN OUT
-        // =========================
-        private void btnViewBusiness_SignOut_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Signing out...");
-            this.Close();
-        }
-
-        // =========================
-        // MAIN MENU
-        // =========================
-       
-
-        private void btnMainMenu_Click_1(object sender, EventArgs e)
+        private void btnV_B_MainMenu_Click(object sender, EventArgs e)
         {
             frmMainMenu menu = new frmMainMenu();
             menu.Show();
             this.Hide();
         }
 
-        private void dgvBusinesses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            // You can leave this empty or add your logic here
+            AddBusiness form = new AddBusiness();
+            form.ShowDialog();
+
+            LoadBusinesses();
         }
     }
 }
