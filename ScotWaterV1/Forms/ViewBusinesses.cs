@@ -11,8 +11,16 @@ namespace ScotWaterV1.Forms
         public ViewBusinesses()
         {
             InitializeComponent();
-            this.Load += ViewBusinesses_Load;
+           
         }
+
+        private void ViewBusinesses_Load(object sender, EventArgs e)
+        {
+            LoadBusinesses();
+        }
+
+
+
 
         // =========================
         // LOAD DATA INTO GRID
@@ -21,46 +29,32 @@ namespace ScotWaterV1.Forms
         {
             using (var db = new BusinessDataContext())
             {
-                var data = db.BusinessUser
-                    .Select(b => new
-                    {
-                        Name = b.CompanyName,
-                        Postcode = b.Postcode,
+                //Get the businesses
+                var businesses = db.BusinessBills.ToList();
 
-                        TodayUsage = db.WaterUsage
-                            .Where(w => w.BusinessID == b.BusinessID &&
-                                        w.ReadingDate == DateTime.Today)
-                            .Sum(w => (int?)w.FreshwaterUnitsUsed) ?? 0,
+                //get the water usages
+                var waterList = db.WaterUsage.ToList();
 
-                        MonthlyUsage = db.WaterUsage
-                            .Where(w => w.BusinessID == b.BusinessID &&
-                                        w.ReadingDate.Month == DateTime.Now.Month)
-                            .Sum(w => (int?)w.FreshwaterUnitsUsed) ?? 0,
+                //create the result list
+                var data = new List<object>();
 
-                        RecycledWater = db.WaterUsage
-                            .Where(w => w.BusinessID == b.BusinessID)
-                            .Sum(w => (int?)w.RecycledUnits) ?? 0,
+                foreach (var b in businesses)
+                {
 
-                        Status = db.WaterUsage
-                            .Where(w => w.BusinessID == b.BusinessID)
-                            .OrderByDescending(w => w.ReadingDate)
-                            .Select(w => w.IsLowReserve ? "LOW" : "OK")
-                            .FirstOrDefault()
-                    })
-                    .ToList();
+                    //filter usages using Where function
+                    var usage = waterList.Where(w => w.BusinessID == b.BusinessID).ToList();
 
-                dgvBusinesses.AutoGenerateColumns = true;
-                dgvBusinesses.DataSource = data;
+                    //calculations
+
+
+                }
             }
         }
 
         // =========================
         // FORM LOAD
         // =========================
-        private void ViewBusinesses_Load(object sender, EventArgs e)
-        {
-            LoadBusinesses();
-        }
+       
 
         // =========================
         // SEARCH BUTTON
