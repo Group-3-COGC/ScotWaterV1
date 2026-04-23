@@ -18,7 +18,7 @@ namespace ScotWaterV1.Forms
             this.lblWaterReserveStatus = new System.Windows.Forms.Label();
             this.trkReserveLevel = new System.Windows.Forms.TrackBar();
             this.progressBarReserveLevel = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblValue = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnM_R_MainMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -66,7 +66,7 @@ namespace ScotWaterV1.Forms
             this.groupBox1.Controls.Add(this.lblWaterReserveStatus);
             this.groupBox1.Controls.Add(this.trkReserveLevel);
             this.groupBox1.Controls.Add(this.progressBarReserveLevel);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblValue);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -89,21 +89,24 @@ namespace ScotWaterV1.Forms
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblWaterReserveStatus
             // 
             this.lblWaterReserveStatus.AutoSize = true;
             this.lblWaterReserveStatus.Location = new System.Drawing.Point(256, 158);
             this.lblWaterReserveStatus.Name = "lblWaterReserveStatus";
-            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 25);
+            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 20);
             this.lblWaterReserveStatus.TabIndex = 4;
             // 
             // trkReserveLevel
             // 
             this.trkReserveLevel.Location = new System.Drawing.Point(229, 99);
+            this.trkReserveLevel.Maximum = 100;
             this.trkReserveLevel.Name = "trkReserveLevel";
-            this.trkReserveLevel.Size = new System.Drawing.Size(291, 56);
+            this.trkReserveLevel.Size = new System.Drawing.Size(291, 45);
             this.trkReserveLevel.TabIndex = 3;
+            this.trkReserveLevel.Scroll += new System.EventHandler(this.trkReserveLevel_Scroll);
             // 
             // progressBarReserveLevel
             // 
@@ -112,21 +115,21 @@ namespace ScotWaterV1.Forms
             this.progressBarReserveLevel.Size = new System.Drawing.Size(268, 50);
             this.progressBarReserveLevel.TabIndex = 2;
             // 
-            // label2
+            // lblValue
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 158);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Water Reserve Status:";
+            this.lblValue.AutoSize = true;
+            this.lblValue.Location = new System.Drawing.Point(12, 158);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(191, 20);
+            this.lblValue.TabIndex = 1;
+            this.lblValue.Text = "Water Reserve Status:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 25);
+            this.label1.Size = new System.Drawing.Size(175, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Water Reserve Level";
             // 
@@ -191,7 +194,7 @@ namespace ScotWaterV1.Forms
         private Label lblWaterReserveStatus;
         private TrackBar trkReserveLevel;
         private ProgressBar progressBarReserveLevel;
-        private Label label2;
+        private Label lblValue;
         private Label label1;
         private Button btnSave;
         private Button btnM_R_MainMenu;
