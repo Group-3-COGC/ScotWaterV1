@@ -50,6 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbBusiness = new System.Windows.Forms.ComboBox();
             this.txtBuisnessAddressMR = new System.Windows.Forms.TextBox();
             this.txtAccountNumberMR = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -59,12 +60,11 @@
             this.txtCurrentReadingMR = new System.Windows.Forms.TextBox();
             this.txtMeterNumberMR = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbStaff = new System.Windows.Forms.ComboBox();
             this.txtAdditioanlNotesMR = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtUsageAmountMR = new System.Windows.Forms.TextBox();
             this.btnSaveMeterReading = new System.Windows.Forms.Button();
-            this.cmbBusiness = new System.Windows.Forms.ComboBox();
-            this.cmbStaff = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -316,6 +316,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Info";
             // 
+            // cmbBusiness
+            // 
+            this.cmbBusiness.FormattingEnabled = true;
+            this.cmbBusiness.Location = new System.Drawing.Point(190, 20);
+            this.cmbBusiness.Name = "cmbBusiness";
+            this.cmbBusiness.Size = new System.Drawing.Size(121, 21);
+            this.cmbBusiness.TabIndex = 23;
+            // 
             // txtBuisnessAddressMR
             // 
             this.txtBuisnessAddressMR.Location = new System.Drawing.Point(190, 72);
@@ -403,6 +411,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reader Info";
             // 
+            // cmbStaff
+            // 
+            this.cmbStaff.FormattingEnabled = true;
+            this.cmbStaff.Location = new System.Drawing.Point(118, 20);
+            this.cmbStaff.Name = "cmbStaff";
+            this.cmbStaff.Size = new System.Drawing.Size(121, 21);
+            this.cmbStaff.TabIndex = 30;
+            // 
             // txtAdditioanlNotesMR
             // 
             this.txtAdditioanlNotesMR.Location = new System.Drawing.Point(118, 47);
@@ -448,28 +464,12 @@
             this.btnSaveMeterReading.UseVisualStyleBackColor = false;
             this.btnSaveMeterReading.Click += new System.EventHandler(this.btnSaveMeterReading_Click);
             // 
-            // cmbBusiness
-            // 
-            this.cmbBusiness.FormattingEnabled = true;
-            this.cmbBusiness.Location = new System.Drawing.Point(190, 20);
-            this.cmbBusiness.Name = "cmbBusiness";
-            this.cmbBusiness.Size = new System.Drawing.Size(121, 21);
-            this.cmbBusiness.TabIndex = 23;
-            // 
-            // cmbStaff
-            // 
-            this.cmbStaff.FormattingEnabled = true;
-            this.cmbStaff.Location = new System.Drawing.Point(118, 20);
-            this.cmbStaff.Name = "cmbStaff";
-            this.cmbStaff.Size = new System.Drawing.Size(121, 21);
-            this.cmbStaff.TabIndex = 30;
-            // 
             // MeterReadings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(738, 496);
+            this.ClientSize = new System.Drawing.Size(899, 496);
             this.Controls.Add(this.btnSaveMeterReading);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
