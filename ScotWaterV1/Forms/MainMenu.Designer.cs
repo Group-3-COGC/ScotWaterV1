@@ -39,6 +39,8 @@
             this.btnModifyWaterReserveLevels = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnWaterConsumption = new System.Windows.Forms.Button();
+            this.btnMeterReadings = new System.Windows.Forms.Button();
+            this.btnAddBusiness = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -108,7 +110,7 @@
             this.btnGenerateBill.Name = "btnGenerateBill";
             this.btnGenerateBill.Size = new System.Drawing.Size(141, 136);
             this.btnGenerateBill.TabIndex = 8;
-            this.btnGenerateBill.Text = "Generate Daily Bill ";
+            this.btnGenerateBill.Text = "Generate Business Bill ";
             this.btnGenerateBill.UseVisualStyleBackColor = true;
             this.btnGenerateBill.Click += new System.EventHandler(this.btnGenerateBill_Click);
             // 
@@ -141,7 +143,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(389, 134);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(0, 18);
+            this.lblWelcome.Size = new System.Drawing.Size(0, 15);
             this.lblWelcome.TabIndex = 12;
             // 
             // btnWaterConsumption
@@ -156,12 +158,38 @@
             this.btnWaterConsumption.UseVisualStyleBackColor = true;
             this.btnWaterConsumption.Click += new System.EventHandler(this.btnWaterConsumption_Click);
             // 
+            // btnMeterReadings
+            // 
+            this.btnMeterReadings.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMeterReadings.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMeterReadings.Location = new System.Drawing.Point(460, 133);
+            this.btnMeterReadings.Name = "btnMeterReadings";
+            this.btnMeterReadings.Size = new System.Drawing.Size(198, 136);
+            this.btnMeterReadings.TabIndex = 14;
+            this.btnMeterReadings.Text = "Business Meter Readings";
+            this.btnMeterReadings.UseVisualStyleBackColor = true;
+            this.btnMeterReadings.Click += new System.EventHandler(this.btnMeterReadings_Click);
+            // 
+            // btnAddBusiness
+            // 
+            this.btnAddBusiness.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBusiness.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAddBusiness.Location = new System.Drawing.Point(503, 284);
+            this.btnAddBusiness.Name = "btnAddBusiness";
+            this.btnAddBusiness.Size = new System.Drawing.Size(141, 136);
+            this.btnAddBusiness.TabIndex = 15;
+            this.btnAddBusiness.Text = "Add New Business";
+            this.btnAddBusiness.UseVisualStyleBackColor = true;
+            this.btnAddBusiness.Click += new System.EventHandler(this.btnAddBusiness_Click);
+            // 
             // frmMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.btnAddBusiness);
+            this.Controls.Add(this.btnMeterReadings);
             this.Controls.Add(this.btnWaterConsumption);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnMainMenuSignOut);
@@ -196,5 +224,7 @@
         private System.Windows.Forms.Button btnModifyWaterReserveLevels;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnWaterConsumption;
+        private System.Windows.Forms.Button btnMeterReadings;
+        private System.Windows.Forms.Button btnAddBusiness;
     }
 }

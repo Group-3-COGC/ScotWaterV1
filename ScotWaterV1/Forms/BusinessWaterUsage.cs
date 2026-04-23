@@ -10,12 +10,12 @@ namespace ScotWaterV1.Forms
         public BusinessWaterUsage()
         {
             InitializeComponent();
-            LoadBusinesses();
+            LoadBusinesses(); // load dropdown on start
         }
 
-        
-        // LOAD COMBOBOX ON START
-        
+        // =========================
+        // LOAD COMBOBOX
+        // =========================
         private void LoadBusinesses()
         {
             using (var db = new BusinessDataContext())
@@ -26,10 +26,10 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        
-        // SHOW BUSINESS IN GRID
-       
-        private void btn_Show_Click(object sender, EventArgs e)
+        // =========================
+        // SHOW USAGE IN GRID (AUTO OR BUTTON)
+        // =========================
+        private void LoadUsageForBusiness()
         {
             if (CmbBusiness.SelectedValue == null)
                 return;
@@ -38,26 +38,99 @@ namespace ScotWaterV1.Forms
 
             using (var db = new BusinessDataContext())
             {
-                var data = db.BusinessUser
-                    .Where(b => b.BusinessID == businessId)
-                    .Select(b => new
+                dgv_Business.DataSource = db.WaterUsage
+                    .Where(w => w.BusinessID == businessId)
+                    .Select(w => new
                     {
-                        Name = b.CompanyName,
-                        Postcode = b.Postcode
+                        Business = w.BusinessUser.CompanyName,
+                        Date = w.ReadingDate,
+                        WaterUsed = w.FreshwaterUnitsUsed,
+                        Recycled = w.RecycledUnits,
+                        Status = w.IsLowReserve ? "LOW" : "OK"
                     })
                     .ToList();
-
-                dgv_Business.DataSource = data;
             }
         }
 
-        
+        // =========================
+        // SHOW BUTTON
+        // =========================
+        private void btn_Show_Click(object sender, EventArgs e)
+        {
+            using (var db = new BusinessDataContext())
+            {
+                dgv_Business.DataSource = db.BusinessUser
+                    .Select(b => new
+                    {
+                        b.BusinessID,
+                        b.CompanyName,
+                        b.Address1,
+                        b.Address2,
+                        b.City,
+                        b.Postcode,
+                        b.ContactName,
+                        b.ContactNumber,
+                        b.ContactEmail,
+                        b.AccountName
+                    })
+                    .ToList();
+            }
+        }
+
+        // =========================
+        // ADD USAGE
+        // =========================
+        private void btn_AddUsage_Click(object sender, EventArgs e)
+        {
+            if (CmbBusiness.SelectedValue == null)
+            {
+                MessageBox.Show("Please select a business");
+                return;
+            }
+
+            int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
+
+            int used;
+            int recycled;
+
+            if (!int.TryParse(txt_Water_Used.Text, out used) ||
+                !int.TryParse(txtRecycledWater.Text, out recycled))
+            {
+                MessageBox.Show("Enter valid numbers");
+                return;
+            }
+
+            using (var db = new BusinessDataContext())
+            {
+                WaterUsage usage = new WaterUsage
+                {
+                    BusinessID = businessId,
+                    StaffUserID = 1,
+                    FreshwaterUnitsUsed = used,
+                    RecycledUnits = recycled,
+                    ReadingDate = dtpDate.Value,
+                    IsLowReserve = false
+                };
+
+                db.WaterUsage.Add(usage);
+                db.SaveChanges();
+            }
+
+            MessageBox.Show("Usage saved successfully");
+
+            LoadUsageForBusiness();
+
+            txt_Water_Used.Clear();
+            txtRecycledWater.Clear();
+        }
+
+        // =========================
         // SIGN OUT
-        
+        // =========================
         private void btnChangeWaterCharges_SignOut_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "Sign out and return to welcome screen?",
+                "Sign out and return to login?",
                 "Confirm Signout",
                 MessageBoxButtons.YesNo);
 
@@ -67,12 +140,18 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        
-        // COMBOBOX EVENT (NOT NEEDED FOR LOADING)
-        
+        // =========================
+        // COMBOBOX EVENT (OPTIONAL)
+        // =========================
         private void CmbBusiness_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Leave empty or remove event entirely
+            // optional auto-refresh:
+            // LoadUsageForBusiness();
+        }
+
+        private void BusinessWaterUsage_Load(object sender, EventArgs e)
+        {
+            // optional
         }
     }
 }

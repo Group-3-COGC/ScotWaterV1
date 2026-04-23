@@ -20,6 +20,48 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
+
+
+
+
+        // End of Save Method
+
+        private void ClearFields()
+        {
+            txtCustomerNameMR.Clear();
+            txtAccountNumberMR.Clear();
+            txtBuisnessAddressMR.Clear();
+            txtMeterNumberMR.Clear();
+            txtCurrentReadingMR.Clear();
+            txtPreviousReadingMR.Clear();
+            txtStaffNameMR.Clear();
+            txtAdditioanlNotesMR.Clear();
+            txtWaterUsage_MR.Clear();
+            txtRecycledWaterUsage_MR.Clear();
+            txtUsageAmountMR.Clear();
+            dateTimePicker1MR.Value = DateTime.Now;
+        }
+
+        private void btnM_R_MainMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MeterReadings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSaveMeterReading_Click(object sender, EventArgs e)
         {
             //Validation to check if all textboxes are filled
@@ -79,43 +121,6 @@ namespace ScotWaterV1.Forms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-
-        } // End of Save Method
-
-        private void ClearFields()
-        {
-            txtCustomerNameMR.Clear();
-            txtAccountNumberMR.Clear();
-            txtBuisnessAddressMR.Clear();
-            txtMeterNumberMR.Clear();
-            txtCurrentReadingMR.Clear();
-            txtPreviousReadingMR.Clear();
-            txtStaffNameMR.Clear();
-            txtAdditioanlNotesMR.Clear();
-            txtWaterUsage_MR.Clear();
-            txtRecycledWaterUsage_MR.Clear();
-            txtUsageAmountMR.Clear();
-            dateTimePicker1MR.Value = DateTime.Now;
-        }
-
-        private void btnM_R_MainMenu_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MeterReadings_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
