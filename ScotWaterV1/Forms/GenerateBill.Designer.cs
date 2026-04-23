@@ -40,7 +40,7 @@
             this.txtUnitsUsedGB = new System.Windows.Forms.TextBox();
             this.lblRecycledUnitsGB = new System.Windows.Forms.Label();
             this.txtRecycledGB = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2GB = new System.Windows.Forms.DateTimePicker();
+            this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
             this.lblGenerateBillsDate = new System.Windows.Forms.Label();
             this.lblGeneateBillTotal = new System.Windows.Forms.Label();
             this.txtGenerateBillTotal = new System.Windows.Forms.TextBox();
@@ -76,13 +76,12 @@
             this.btnG_B_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnG_B_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnG_B_SignOut.Location = new System.Drawing.Point(873, 11);
-            this.btnG_B_SignOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnG_B_SignOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnG_B_SignOut.Name = "btnG_B_SignOut";
             this.btnG_B_SignOut.Size = new System.Drawing.Size(100, 35);
             this.btnG_B_SignOut.TabIndex = 17;
             this.btnG_B_SignOut.Text = "Sign Out";
             this.btnG_B_SignOut.UseVisualStyleBackColor = false;
-            this.btnG_B_SignOut.Click += new System.EventHandler(this.btnG_B_SignOut_Click);
             // 
             // pictureBox2
             // 
@@ -99,13 +98,12 @@
             this.btnG_B_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnG_B_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnG_B_MainMenu.Location = new System.Drawing.Point(454, 565);
-            this.btnG_B_MainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnG_B_MainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnG_B_MainMenu.Name = "btnG_B_MainMenu";
             this.btnG_B_MainMenu.Size = new System.Drawing.Size(100, 35);
             this.btnG_B_MainMenu.TabIndex = 19;
             this.btnG_B_MainMenu.Text = "Main Menu ";
             this.btnG_B_MainMenu.UseVisualStyleBackColor = false;
-            this.btnG_B_MainMenu.Click += new System.EventHandler(this.btnG_B_MainMenu_Click);
             // 
             // lblSelectBuisnessGB
             // 
@@ -156,12 +154,12 @@
             this.txtRecycledGB.Size = new System.Drawing.Size(100, 20);
             this.txtRecycledGB.TabIndex = 25;
             // 
-            // dateTimePicker2GB
+            // dtpBillDate
             // 
-            this.dateTimePicker2GB.Location = new System.Drawing.Point(169, 288);
-            this.dateTimePicker2GB.Name = "dateTimePicker2GB";
-            this.dateTimePicker2GB.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2GB.TabIndex = 26;
+            this.dtpBillDate.Location = new System.Drawing.Point(169, 288);
+            this.dtpBillDate.Name = "dtpBillDate";
+            this.dtpBillDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpBillDate.TabIndex = 26;
             // 
             // lblGenerateBillsDate
             // 
@@ -206,7 +204,7 @@
             this.Controls.Add(this.txtGenerateBillTotal);
             this.Controls.Add(this.lblGeneateBillTotal);
             this.Controls.Add(this.lblGenerateBillsDate);
-            this.Controls.Add(this.dateTimePicker2GB);
+            this.Controls.Add(this.dtpBillDate);
             this.Controls.Add(this.txtRecycledGB);
             this.Controls.Add(this.lblRecycledUnitsGB);
             this.Controls.Add(this.txtUnitsUsedGB);
@@ -242,7 +240,7 @@
         private System.Windows.Forms.TextBox txtUnitsUsedGB;
         private System.Windows.Forms.Label lblRecycledUnitsGB;
         private System.Windows.Forms.TextBox txtRecycledGB;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2GB;
+        private System.Windows.Forms.DateTimePicker dtpBillDate;
         private System.Windows.Forms.Label lblGenerateBillsDate;
         private System.Windows.Forms.Label lblGeneateBillTotal;
         private System.Windows.Forms.TextBox txtGenerateBillTotal;
