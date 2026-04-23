@@ -36,14 +36,8 @@
             this.btnG_B_MainMenu = new System.Windows.Forms.Button();
             this.lblSelectBuisnessGB = new System.Windows.Forms.Label();
             this.cmbBusinessNames = new System.Windows.Forms.ComboBox();
-            this.lblUnitsUsedGB = new System.Windows.Forms.Label();
-            this.txtUnitsUsedGB = new System.Windows.Forms.TextBox();
-            this.lblRecycledUnitsGB = new System.Windows.Forms.Label();
-            this.txtRecycledGB = new System.Windows.Forms.TextBox();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
             this.lblGenerateBillsDate = new System.Windows.Forms.Label();
-            this.lblGeneateBillTotal = new System.Windows.Forms.Label();
-            this.txtGenerateBillTotal = new System.Windows.Forms.TextBox();
             this.btnGenerateBill = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -108,7 +102,7 @@
             // lblSelectBuisnessGB
             // 
             this.lblSelectBuisnessGB.AutoSize = true;
-            this.lblSelectBuisnessGB.Location = new System.Drawing.Point(27, 137);
+            this.lblSelectBuisnessGB.Location = new System.Drawing.Point(37, 199);
             this.lblSelectBuisnessGB.Name = "lblSelectBuisnessGB";
             this.lblSelectBuisnessGB.Size = new System.Drawing.Size(92, 13);
             this.lblSelectBuisnessGB.TabIndex = 20;
@@ -117,46 +111,14 @@
             // cmbBusinessNames
             // 
             this.cmbBusinessNames.FormattingEnabled = true;
-            this.cmbBusinessNames.Location = new System.Drawing.Point(169, 134);
+            this.cmbBusinessNames.Location = new System.Drawing.Point(169, 191);
             this.cmbBusinessNames.Name = "cmbBusinessNames";
             this.cmbBusinessNames.Size = new System.Drawing.Size(121, 21);
             this.cmbBusinessNames.TabIndex = 21;
             // 
-            // lblUnitsUsedGB
-            // 
-            this.lblUnitsUsedGB.AutoSize = true;
-            this.lblUnitsUsedGB.Location = new System.Drawing.Point(27, 195);
-            this.lblUnitsUsedGB.Name = "lblUnitsUsedGB";
-            this.lblUnitsUsedGB.Size = new System.Drawing.Size(110, 13);
-            this.lblUnitsUsedGB.TabIndex = 22;
-            this.lblUnitsUsedGB.Text = "Amount of Units Used";
-            // 
-            // txtUnitsUsedGB
-            // 
-            this.txtUnitsUsedGB.Location = new System.Drawing.Point(169, 192);
-            this.txtUnitsUsedGB.Name = "txtUnitsUsedGB";
-            this.txtUnitsUsedGB.Size = new System.Drawing.Size(100, 20);
-            this.txtUnitsUsedGB.TabIndex = 23;
-            // 
-            // lblRecycledUnitsGB
-            // 
-            this.lblRecycledUnitsGB.AutoSize = true;
-            this.lblRecycledUnitsGB.Location = new System.Drawing.Point(27, 240);
-            this.lblRecycledUnitsGB.Name = "lblRecycledUnitsGB";
-            this.lblRecycledUnitsGB.Size = new System.Drawing.Size(130, 13);
-            this.lblRecycledUnitsGB.TabIndex = 24;
-            this.lblRecycledUnitsGB.Text = "Amount of Units Recycled";
-            // 
-            // txtRecycledGB
-            // 
-            this.txtRecycledGB.Location = new System.Drawing.Point(169, 237);
-            this.txtRecycledGB.Name = "txtRecycledGB";
-            this.txtRecycledGB.Size = new System.Drawing.Size(100, 20);
-            this.txtRecycledGB.TabIndex = 25;
-            // 
             // dtpBillDate
             // 
-            this.dtpBillDate.Location = new System.Drawing.Point(169, 288);
+            this.dtpBillDate.Location = new System.Drawing.Point(169, 241);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBillDate.TabIndex = 26;
@@ -164,31 +126,15 @@
             // lblGenerateBillsDate
             // 
             this.lblGenerateBillsDate.AutoSize = true;
-            this.lblGenerateBillsDate.Location = new System.Drawing.Point(28, 295);
+            this.lblGenerateBillsDate.Location = new System.Drawing.Point(37, 241);
             this.lblGenerateBillsDate.Name = "lblGenerateBillsDate";
             this.lblGenerateBillsDate.Size = new System.Drawing.Size(91, 13);
             this.lblGenerateBillsDate.TabIndex = 27;
             this.lblGenerateBillsDate.Text = "Select Date of Bill";
             // 
-            // lblGeneateBillTotal
-            // 
-            this.lblGeneateBillTotal.AutoSize = true;
-            this.lblGeneateBillTotal.Location = new System.Drawing.Point(584, 288);
-            this.lblGeneateBillTotal.Name = "lblGeneateBillTotal";
-            this.lblGeneateBillTotal.Size = new System.Drawing.Size(54, 13);
-            this.lblGeneateBillTotal.TabIndex = 28;
-            this.lblGeneateBillTotal.Text = "Total Due";
-            // 
-            // txtGenerateBillTotal
-            // 
-            this.txtGenerateBillTotal.Location = new System.Drawing.Point(560, 320);
-            this.txtGenerateBillTotal.Name = "txtGenerateBillTotal";
-            this.txtGenerateBillTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtGenerateBillTotal.TabIndex = 29;
-            // 
             // btnGenerateBill
             // 
-            this.btnGenerateBill.Location = new System.Drawing.Point(537, 134);
+            this.btnGenerateBill.Location = new System.Drawing.Point(403, 156);
             this.btnGenerateBill.Name = "btnGenerateBill";
             this.btnGenerateBill.Size = new System.Drawing.Size(179, 98);
             this.btnGenerateBill.TabIndex = 30;
@@ -201,14 +147,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.btnGenerateBill);
-            this.Controls.Add(this.txtGenerateBillTotal);
-            this.Controls.Add(this.lblGeneateBillTotal);
             this.Controls.Add(this.lblGenerateBillsDate);
             this.Controls.Add(this.dtpBillDate);
-            this.Controls.Add(this.txtRecycledGB);
-            this.Controls.Add(this.lblRecycledUnitsGB);
-            this.Controls.Add(this.txtUnitsUsedGB);
-            this.Controls.Add(this.lblUnitsUsedGB);
             this.Controls.Add(this.cmbBusinessNames);
             this.Controls.Add(this.lblSelectBuisnessGB);
             this.Controls.Add(this.btnG_B_MainMenu);
@@ -236,14 +176,8 @@
         private System.Windows.Forms.Button btnG_B_MainMenu;
         private System.Windows.Forms.Label lblSelectBuisnessGB;
         private System.Windows.Forms.ComboBox cmbBusinessNames;
-        private System.Windows.Forms.Label lblUnitsUsedGB;
-        private System.Windows.Forms.TextBox txtUnitsUsedGB;
-        private System.Windows.Forms.Label lblRecycledUnitsGB;
-        private System.Windows.Forms.TextBox txtRecycledGB;
         private System.Windows.Forms.DateTimePicker dtpBillDate;
         private System.Windows.Forms.Label lblGenerateBillsDate;
-        private System.Windows.Forms.Label lblGeneateBillTotal;
-        private System.Windows.Forms.TextBox txtGenerateBillTotal;
         private System.Windows.Forms.Button btnGenerateBill;
     }
 }
