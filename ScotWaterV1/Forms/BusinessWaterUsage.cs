@@ -27,12 +27,11 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // SHOW BUSINESS DETAILS (SELECTED ONLY)
+        // SHOW BUSINESS DETAILS
         // =========================
         private void btn_ShowDetails_Click(object sender, EventArgs e)
         {
-            if (CmbBusiness.SelectedValue == null)
-                return;
+            if (CmbBusiness.SelectedValue == null) return;
 
             int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
 
@@ -87,7 +86,7 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // ADD USAGE
+        // ADD USAGE (SAVE TO DB)
         // =========================
         private void btn_AddUsage_Click(object sender, EventArgs e)
         {
@@ -106,29 +105,41 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
-            using (var db = new BusinessDataContext())
+            try
             {
-                WaterUsage usage = new WaterUsage
+                using (var db = new BusinessDataContext())
                 {
-                    BusinessID = businessId,
-                    StaffUserID = 1,
-                    FreshwaterUnitsUsed = used,
-                    RecycledUnits = recycled,
-                    ReadingDate = dtpDate.Value,
-                    IsLowReserve = false
-                };
+                    var usage = new WaterUsage
+                    {
+                        BusinessID = businessId,
+                        StaffUserID = 1, // IMPORTANT: must exist in StaffUsers table
+                        FreshwaterUnitsUsed = used,
+                        RecycledUnits = recycled,
+                        ReadingDate = dtpDate.Value,
+                        IsLowReserve = used < 30
+                    };
 
-                db.WaterUsage.Add(usage);
-                db.SaveChanges();
+                    db.WaterUsage.Add(usage);
+                    db.SaveChanges();
+                }
+
+                MessageBox.Show("Usage saved successfully!");
+
+                // refresh grid immediately
+                btn_ShowUsage_Click(null, null);
+
+                // clear inputs
+                txt_Water_Used.Clear();
+                txtRecycledWater.Clear();
             }
-
-            MessageBox.Show("Usage saved");
-
-            btn_ShowUsage_Click(null, null); // refresh grid
+            catch (Exception ex)
+            {
+                MessageBox.Show("SAVE FAILED: " + ex.Message);
+            }
         }
 
         // =========================
-        // DROP DOWN (OPTIONAL AUTO LOAD)
+        // OPTIONAL AUTO REFRESH
         // =========================
         private void CmbBusiness_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -146,6 +157,13 @@ namespace ScotWaterV1.Forms
             {
                 this.Close();
             }
+        }
+
+        private void btnMainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu main = new frmMainMenu();
+            main.Show();
+            this.Close();
         }
     }
 }
