@@ -52,7 +52,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuisnessAddressMR = new System.Windows.Forms.TextBox();
             this.txtAccountNumberMR = new System.Windows.Forms.TextBox();
-            this.txtCustomerNameMR = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbxNumberofUnitsMR = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1MR = new System.Windows.Forms.DateTimePicker();
@@ -61,10 +60,11 @@
             this.txtMeterNumberMR = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtAdditioanlNotesMR = new System.Windows.Forms.TextBox();
-            this.txtStaffNameMR = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtUsageAmountMR = new System.Windows.Forms.TextBox();
             this.btnSaveMeterReading = new System.Windows.Forms.Button();
+            this.cmbBusiness = new System.Windows.Forms.ComboBox();
+            this.cmbStaff = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -303,9 +303,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbBusiness);
             this.groupBox1.Controls.Add(this.txtBuisnessAddressMR);
             this.groupBox1.Controls.Add(this.txtAccountNumberMR);
-            this.groupBox1.Controls.Add(this.txtCustomerNameMR);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -331,14 +331,6 @@
             this.txtAccountNumberMR.Name = "txtAccountNumberMR";
             this.txtAccountNumberMR.Size = new System.Drawing.Size(117, 20);
             this.txtAccountNumberMR.TabIndex = 21;
-            // 
-            // txtCustomerNameMR
-            // 
-            this.txtCustomerNameMR.Location = new System.Drawing.Point(190, 20);
-            this.txtCustomerNameMR.Multiline = true;
-            this.txtCustomerNameMR.Name = "txtCustomerNameMR";
-            this.txtCustomerNameMR.Size = new System.Drawing.Size(117, 20);
-            this.txtCustomerNameMR.TabIndex = 20;
             // 
             // groupBox2
             // 
@@ -400,8 +392,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cmbStaff);
             this.groupBox3.Controls.Add(this.txtAdditioanlNotesMR);
-            this.groupBox3.Controls.Add(this.txtStaffNameMR);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Location = new System.Drawing.Point(360, 111);
@@ -418,14 +410,6 @@
             this.txtAdditioanlNotesMR.Name = "txtAdditioanlNotesMR";
             this.txtAdditioanlNotesMR.Size = new System.Drawing.Size(235, 41);
             this.txtAdditioanlNotesMR.TabIndex = 29;
-            // 
-            // txtStaffNameMR
-            // 
-            this.txtStaffNameMR.Location = new System.Drawing.Point(118, 21);
-            this.txtStaffNameMR.Multiline = true;
-            this.txtStaffNameMR.Name = "txtStaffNameMR";
-            this.txtStaffNameMR.Size = new System.Drawing.Size(235, 20);
-            this.txtStaffNameMR.TabIndex = 28;
             // 
             // groupBox4
             // 
@@ -463,6 +447,22 @@
             this.btnSaveMeterReading.Text = "Save ";
             this.btnSaveMeterReading.UseVisualStyleBackColor = false;
             this.btnSaveMeterReading.Click += new System.EventHandler(this.btnSaveMeterReading_Click);
+            // 
+            // cmbBusiness
+            // 
+            this.cmbBusiness.FormattingEnabled = true;
+            this.cmbBusiness.Location = new System.Drawing.Point(190, 20);
+            this.cmbBusiness.Name = "cmbBusiness";
+            this.cmbBusiness.Size = new System.Drawing.Size(121, 21);
+            this.cmbBusiness.TabIndex = 23;
+            // 
+            // cmbStaff
+            // 
+            this.cmbStaff.FormattingEnabled = true;
+            this.cmbStaff.Location = new System.Drawing.Point(118, 20);
+            this.cmbStaff.Name = "cmbStaff";
+            this.cmbStaff.Size = new System.Drawing.Size(121, 21);
+            this.cmbStaff.TabIndex = 30;
             // 
             // MeterReadings
             // 
@@ -529,15 +529,15 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtBuisnessAddressMR;
         private System.Windows.Forms.TextBox txtAccountNumberMR;
-        private System.Windows.Forms.TextBox txtCustomerNameMR;
         private System.Windows.Forms.TextBox txtUsageAmountMR;
         private System.Windows.Forms.TextBox txtPreviousReadingMR;
         private System.Windows.Forms.TextBox txtCurrentReadingMR;
         private System.Windows.Forms.TextBox txtMeterNumberMR;
         private System.Windows.Forms.TextBox txtAdditioanlNotesMR;
-        private System.Windows.Forms.TextBox txtStaffNameMR;
         private System.Windows.Forms.ComboBox cbxNumberofUnitsMR;
         private System.Windows.Forms.DateTimePicker dateTimePicker1MR;
         private System.Windows.Forms.Button btnSaveMeterReading;
+        private System.Windows.Forms.ComboBox cmbBusiness;
+        private System.Windows.Forms.ComboBox cmbStaff;
     }
 }
