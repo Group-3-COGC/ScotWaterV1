@@ -68,5 +68,12 @@ namespace ScotWaterV1
             NewBusiness.Show();
             this.Hide();
         }
+
+        private void btnMainMenuSignOut_Click(object sender, EventArgs e)
+        {
+            frmLogin SignOut = new frmLogin();
+            SignOut.Show();
+            this.Close();
+        }
     }
 }

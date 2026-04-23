@@ -125,6 +125,7 @@
             this.btnMainMenuSignOut.TabIndex = 10;
             this.btnMainMenuSignOut.Text = "Sign Out ";
             this.btnMainMenuSignOut.UseVisualStyleBackColor = false;
+            this.btnMainMenuSignOut.Click += new System.EventHandler(this.btnMainMenuSignOut_Click);
             // 
             // btnModifyWaterReserveLevels
             // 
