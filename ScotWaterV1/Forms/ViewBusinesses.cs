@@ -14,7 +14,7 @@ namespace ScotWaterV1.Forms
         public ViewBusinesses()
         {
             InitializeComponent();
-           
+            LoadBusinesses();
         }
 
         private void ViewBusinesses_Load(object sender, EventArgs e)
