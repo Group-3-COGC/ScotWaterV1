@@ -20,21 +20,14 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
-
-
-
-
-        // End of Save Method
-
         private void ClearFields()
         {
-            txtCustomerNameMR.Clear();
+            
             txtAccountNumberMR.Clear();
             txtBuisnessAddressMR.Clear();
             txtMeterNumberMR.Clear();
             txtCurrentReadingMR.Clear();
             txtPreviousReadingMR.Clear();
-            txtStaffNameMR.Clear();
             txtAdditioanlNotesMR.Clear();
             txtWaterUsage_MR.Clear();
             txtRecycledWaterUsage_MR.Clear();
@@ -49,7 +42,22 @@ namespace ScotWaterV1.Forms
 
         private void MeterReadings_Load(object sender, EventArgs e)
         {
+            LoadBusinesses();
+            LoadStaff();
+        }
 
+        private void LoadBusinesses()
+        {
+            cmbBusiness.DataSource = _context.BusinessUser.ToList();
+            cmbBusiness.DisplayMember = "CompanyName";
+            cmbBusiness.ValueMember = "BusinessID";
+        }
+
+        private void LoadStaff()
+        {
+            cmbStaff.DataSource = _context.StaffUser.ToList();
+            cmbStaff.DisplayMember = "staffUsername";
+            cmbStaff.ValueMember = "StaffUserID";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -65,13 +73,13 @@ namespace ScotWaterV1.Forms
         private void btnSaveMeterReading_Click(object sender, EventArgs e)
         {
             //Validation to check if all textboxes are filled
-            if (string.IsNullOrWhiteSpace(txtCustomerNameMR.Text) ||
-                string.IsNullOrWhiteSpace(txtAccountNumberMR.Text) ||
+            if ( string.IsNullOrWhiteSpace(txtAccountNumberMR.Text) ||
                 string.IsNullOrWhiteSpace(txtBuisnessAddressMR.Text) ||
                 string.IsNullOrWhiteSpace(txtMeterNumberMR.Text) ||
                 string.IsNullOrWhiteSpace(txtCurrentReadingMR.Text) ||
                 string.IsNullOrWhiteSpace(txtPreviousReadingMR.Text) ||
-                string.IsNullOrWhiteSpace(txtStaffNameMR.Text))
+                cmbBusiness.SelectedValue == null ||
+                cmbStaff.SelectedValue == null)
             {
                 MessageBox.Show("Please fill in all required fields.",
                     "Validation Error",
@@ -102,6 +110,9 @@ namespace ScotWaterV1.Forms
                     RecycledUnits = int.Parse(txtRecycledWaterUsage_MR.Text),
                     ReadingDate = dateTimePicker1MR.Value,
 
+                    BusinessID = (int)cmbBusiness.SelectedValue,
+                    StaffUserID = (int)cmbStaff.SelectedValue
+
                 };
 
                 //Save a new record to the database database
@@ -120,6 +131,7 @@ namespace ScotWaterV1.Forms
                     "Input Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                // End of Save Method
             }
         }
     }
