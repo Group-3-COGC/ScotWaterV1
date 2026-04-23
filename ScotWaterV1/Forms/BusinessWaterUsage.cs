@@ -14,7 +14,7 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // LOAD COMBOBOX (BUSINESSES)
+        // LOAD COMBOBOX
         // =========================
         private void LoadBusinesses()
         {
@@ -27,7 +27,7 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // SHOW USAGE IN GRID
+        // SHOW USAGE IN GRID (AUTO OR BUTTON)
         // =========================
         private void LoadUsageForBusiness()
         {
@@ -57,11 +57,28 @@ namespace ScotWaterV1.Forms
         // =========================
         private void btn_Show_Click(object sender, EventArgs e)
         {
-            LoadUsageForBusiness();
+            using (var db = new BusinessDataContext())
+            {
+                dgv_Business.DataSource = db.BusinessUser
+                    .Select(b => new
+                    {
+                        b.BusinessID,
+                        b.CompanyName,
+                        b.Address1,
+                        b.Address2,
+                        b.City,
+                        b.Postcode,
+                        b.ContactName,
+                        b.ContactNumber,
+                        b.ContactEmail,
+                        b.AccountName
+                    })
+                    .ToList();
+            }
         }
 
         // =========================
-        // ADD WATER USAGE
+        // ADD USAGE
         // =========================
         private void btn_AddUsage_Click(object sender, EventArgs e)
         {
@@ -88,7 +105,7 @@ namespace ScotWaterV1.Forms
                 WaterUsage usage = new WaterUsage
                 {
                     BusinessID = businessId,
-                    StaffUserID = 1, // required for FK
+                    StaffUserID = 1,
                     FreshwaterUnitsUsed = used,
                     RecycledUnits = recycled,
                     ReadingDate = dtpDate.Value,
@@ -101,10 +118,8 @@ namespace ScotWaterV1.Forms
 
             MessageBox.Show("Usage saved successfully");
 
-            // refresh grid
             LoadUsageForBusiness();
 
-            // clear inputs
             txt_Water_Used.Clear();
             txtRecycledWater.Clear();
         }
@@ -126,11 +141,12 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // EMPTY EVENTS (SAFE)
+        // COMBOBOX EVENT (OPTIONAL)
         // =========================
         private void CmbBusiness_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // optional - leave empty
+            // optional auto-refresh:
+            // LoadUsageForBusiness();
         }
 
         private void BusinessWaterUsage_Load(object sender, EventArgs e)
