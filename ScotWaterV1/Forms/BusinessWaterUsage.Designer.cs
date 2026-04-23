@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Show = new System.Windows.Forms.Button();
             this.btn_ShowUsage = new System.Windows.Forms.Button();
+            this.btnMainMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -204,11 +205,26 @@
             this.btn_ShowUsage.UseVisualStyleBackColor = true;
             this.btn_ShowUsage.Click += new System.EventHandler(this.btn_ShowUsage_Click);
             // 
+            // btnMainMenu
+            // 
+            this.btnMainMenu.BackColor = System.Drawing.Color.White;
+            this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMainMenu.Location = new System.Drawing.Point(348, 582);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMainMenu.Name = "btnMainMenu";
+            this.btnMainMenu.Size = new System.Drawing.Size(100, 35);
+            this.btnMainMenu.TabIndex = 34;
+            this.btnMainMenu.Text = "Main Menu";
+            this.btnMainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
+            // 
             // BusinessWaterUsage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 648);
+            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.btn_ShowUsage);
             this.Controls.Add(this.btn_Show);
             this.Controls.Add(this.label1);
@@ -253,5 +269,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Show;
         private System.Windows.Forms.Button btn_ShowUsage;
+        private System.Windows.Forms.Button btnMainMenu;
     }
 }

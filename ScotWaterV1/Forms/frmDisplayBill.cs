@@ -17,7 +17,7 @@ namespace ScotWaterV1.Forms
 
        
 
-        private void DisplayBill_Load_1(object sender, EventArgs e)
+        private void DisplayBill_Load(object sender, EventArgs e)
         {
             using (var context = new BusinessDataContext())
             {

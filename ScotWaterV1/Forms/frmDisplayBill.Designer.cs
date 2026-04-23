@@ -217,7 +217,6 @@
             this.Controls.Add(this.lblCompanyName);
             this.Controls.Add(this.lblBillDetails);
             this.Name = "DisplayBill";
-            this.Load += new System.EventHandler(this.DisplayBill_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
