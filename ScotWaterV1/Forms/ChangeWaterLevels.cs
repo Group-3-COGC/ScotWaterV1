@@ -1,5 +1,6 @@
 ﻿using ScotWaterV1.Models;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
@@ -9,61 +10,130 @@ namespace ScotWaterV1.Forms
         public frmChangeWaterLevels()
         {
             InitializeComponent();
-            
         }
 
+        // =========================
+        // FORM LOAD
+        // =========================
+        private void frmChangeWaterLevels_Load(object sender, EventArgs e)
+        {
+            trkReserveLevel.Minimum = 0;
+            trkReserveLevel.Maximum = 100;
 
+            progressBarReserveLevel.Minimum = 0;
+            progressBarReserveLevel.Maximum = 100;
+
+            LoadLatestLevel();
+        }
+
+        // =========================
+        // TRACKBAR LIVE UPDATE
+        // =========================
         private void trkReserveLevel_Scroll(object sender, EventArgs e)
         {
-            trkReserveLevel.Minimum = 0;
-            trkReserveLevel.Maximum = 100;
+            UpdateUI(trkReserveLevel.Value);
         }
 
-        private void ChangeWaterLevels_Load(object sender, EventArgs e)
+        // =========================
+        // UPDATE UI SAFELY
+        // =========================
+        private void UpdateUI(int value)
         {
-            trkReserveLevel.Minimum = 0;
-            trkReserveLevel.Maximum = 100;
+            // clamp safety
+            if (value < 0) value = 0;
+            if (value > 100) value = 100;
 
+            lblValue.Text = value + "%";
+            progressBarReserveLevel.Value = value;
+            trkReserveLevel.Value = value;
 
-            //Determines what the Water Reserve Status Label displays.
-            WaterUsage usage = new WaterUsage();
-            bool isLowReserve = usage.IsLowReserve;
-
-            if (isLowReserve)
+            if (value < 30)
             {
                 lblWaterReserveStatus.Text = "LOW RESERVE";
+                lblWaterReserveStatus.ForeColor = System.Drawing.Color.Red;
+            }
+            else if (value < 70)
+            {
+                lblWaterReserveStatus.Text = "MEDIUM RESERVE";
+                lblWaterReserveStatus.ForeColor = System.Drawing.Color.Orange;
             }
             else
             {
                 lblWaterReserveStatus.Text = "STANDARD";
+                lblWaterReserveStatus.ForeColor = System.Drawing.Color.Green;
             }
-
         }
 
-        //Navigation button back to Main Menu
-        private void btnM_R_MainMenu_Click(object sender, EventArgs e)
-        {
-            frmMainMenu frmMainMenu = new frmMainMenu();
-            frmMainMenu.Show();
-            this.Hide();
-        }
-
-        private void progressBarReserveLevel_Click(object sender, EventArgs e)
-        {
-            progressBarReserveLevel.Value = trkReserveLevel.Value;
-        }
-
+        // =========================
+        // SAVE BUTTON
+        // =========================
         private void btnSave_Click(object sender, EventArgs e)
         {
-            WaterUsage usage = new WaterUsage();
-            usage.FreshwaterUnitsUsed = trkReserveLevel.Value;
+            try
+            {
+                using (var db = new BusinessDataContext())
+                {
+                    var usage = new WaterUsage
+                    {
+                        FreshwaterUnitsUsed = trkReserveLevel.Value,
+                        RecycledUnits = 0,
+                        ReadingDate = DateTime.Now,
+                        IsLowReserve = trkReserveLevel.Value < 30,
 
+                        // TEMP FIX (you should later replace with real selected business)
+                        BusinessID = 1,
+                        StaffUserID = 1
+                    };
+
+                    db.WaterUsage.Add(usage);
+                    db.SaveChanges();
+                }
+
+                MessageBox.Show("Water level saved!");
+
+                LoadLatestLevel();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Save failed: " + ex.Message);
+            }
         }
 
-
-        private void frmChangeWaterLevels_Load(object sender, EventArgs e)
+        // =========================
+        // LOAD LAST SAVED VALUE
+        // =========================
+        private void LoadLatestLevel()
         {
+            using (var db = new BusinessDataContext())
+            {
+                var latest = db.WaterUsage
+                    .OrderByDescending(w => w.ReadingDate)
+                    .FirstOrDefault();
 
+                if (latest == null)
+                {
+                    UpdateUI(0);
+                    return;
+                }
+
+                int value = latest.FreshwaterUnitsUsed;
+
+                // SAFE CLAMP (THIS FIXES YOUR CRASH)
+                if (value < 0) value = 0;
+                if (value > 100) value = 100;
+
+                UpdateUI(value);
+            }
+        }
+
+        // =========================
+        // MAIN MENU
+        // =========================
+        private void btnM_R_MainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu menu = new frmMainMenu();
+            menu.Show();
+            this.Hide();
         }
 
         private void btnM_R_MainMenu_Click_1(object sender, EventArgs e)
