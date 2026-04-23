@@ -451,20 +451,6 @@
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSignOut
-            // 
-            this.btnSignOut.BackColor = System.Drawing.Color.White;
-            this.btnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSignOut.Location = new System.Drawing.Point(679, 21);
-            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Size = new System.Drawing.Size(100, 35);
-            this.btnSignOut.TabIndex = 25;
-            this.btnSignOut.Text = "Sign Out";
-            this.btnSignOut.UseVisualStyleBackColor = false;
-            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
-            // 
             // AddBusiness
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
