@@ -101,7 +101,7 @@
             this.lblLoginUsername.Location = new System.Drawing.Point(421, 283);
             this.lblLoginUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginUsername.Name = "lblLoginUsername";
-            this.lblLoginUsername.Size = new System.Drawing.Size(111, 23);
+            this.lblLoginUsername.Size = new System.Drawing.Size(86, 18);
             this.lblLoginUsername.TabIndex = 5;
             this.lblLoginUsername.Text = "Username";
             // 
@@ -113,7 +113,7 @@
             this.lblLoginPassword.Location = new System.Drawing.Point(421, 346);
             this.lblLoginPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginPassword.Name = "lblLoginPassword";
-            this.lblLoginPassword.Size = new System.Drawing.Size(110, 23);
+            this.lblLoginPassword.Size = new System.Drawing.Size(86, 18);
             this.lblLoginPassword.TabIndex = 6;
             this.lblLoginPassword.Text = "Password ";
             // 
@@ -138,7 +138,7 @@
             this.lnkForgotPassword.Location = new System.Drawing.Point(468, 445);
             this.lnkForgotPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkForgotPassword.Name = "lnkForgotPassword";
-            this.lnkForgotPassword.Size = new System.Drawing.Size(151, 20);
+            this.lnkForgotPassword.Size = new System.Drawing.Size(123, 16);
             this.lnkForgotPassword.TabIndex = 8;
             this.lnkForgotPassword.TabStop = true;
             this.lnkForgotPassword.Text = "Forgot Password ? ";
@@ -146,7 +146,7 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 611);
@@ -162,7 +162,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
-            this.Text = "Log in";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
