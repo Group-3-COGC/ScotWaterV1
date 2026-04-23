@@ -109,7 +109,7 @@
             this.btnGenerateBill.Name = "btnGenerateBill";
             this.btnGenerateBill.Size = new System.Drawing.Size(141, 136);
             this.btnGenerateBill.TabIndex = 8;
-            this.btnGenerateBill.Text = "Generate Daily Bill ";
+            this.btnGenerateBill.Text = "Generate Business Bill ";
             this.btnGenerateBill.UseVisualStyleBackColor = true;
             this.btnGenerateBill.Click += new System.EventHandler(this.btnGenerateBill_Click);
             // 
