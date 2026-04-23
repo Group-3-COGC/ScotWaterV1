@@ -95,14 +95,14 @@ namespace ScotWaterV1.Forms
             this.lblWaterReserveStatus.AutoSize = true;
             this.lblWaterReserveStatus.Location = new System.Drawing.Point(256, 158);
             this.lblWaterReserveStatus.Name = "lblWaterReserveStatus";
-            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 25);
+            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 20);
             this.lblWaterReserveStatus.TabIndex = 4;
             // 
             // trkReserveLevel
             // 
             this.trkReserveLevel.Location = new System.Drawing.Point(229, 99);
             this.trkReserveLevel.Name = "trkReserveLevel";
-            this.trkReserveLevel.Size = new System.Drawing.Size(291, 56);
+            this.trkReserveLevel.Size = new System.Drawing.Size(291, 45);
             this.trkReserveLevel.TabIndex = 3;
             // 
             // progressBarReserveLevel
@@ -117,7 +117,7 @@ namespace ScotWaterV1.Forms
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 158);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 25);
+            this.label2.Size = new System.Drawing.Size(191, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Water Reserve Status:";
             // 
@@ -126,7 +126,7 @@ namespace ScotWaterV1.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 25);
+            this.label1.Size = new System.Drawing.Size(175, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Water Reserve Level";
             // 
@@ -142,6 +142,7 @@ namespace ScotWaterV1.Forms
             this.btnM_R_MainMenu.TabIndex = 13;
             this.btnM_R_MainMenu.Text = "Main Menu ";
             this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
+            this.btnM_R_MainMenu.Click += new System.EventHandler(this.btnM_R_MainMenu_Click_1);
             // 
             // frmChangeWaterLevels
             // 
