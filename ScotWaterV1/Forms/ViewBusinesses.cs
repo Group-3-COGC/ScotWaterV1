@@ -14,7 +14,7 @@ namespace ScotWaterV1.Forms
         public ViewBusinesses()
         {
             InitializeComponent();
-           
+            LoadBusinesses();
         }
 
         private void ViewBusinesses_Load(object sender, EventArgs e)
@@ -122,10 +122,23 @@ namespace ScotWaterV1.Forms
 
                 if (business !=null)
                 {
+                    bool noChanges =
+                        business.CompanyName == txtCompanyName.Text.Trim() &&
+                        business.Postcode == txtPostcode.Text.Trim() &&
+                        business.ContactName == txtContactName.Text.Trim() &&
+                        business.ContactEmail == txtContactEmail.Text.Trim();
+
+                    if (noChanges)
+                    {
+                        MessageBox.Show("No changes were made. Please make any changes before clicking edit");
+                        return;
+                    }
+
                     business.CompanyName = txtCompanyName.Text;
                     business.Postcode = txtPostcode.Text;
-                    business.ContactName = txtContactName.Text;
+                    business.ContactName = txtContactName.Text; 
                     business.ContactEmail = txtContactEmail.Text;
+
 
                     db.SaveChanges();
                     MessageBox.Show("Business updated successfully");
