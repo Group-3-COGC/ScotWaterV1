@@ -10,6 +10,8 @@ namespace ScotWaterV1
         public frmLogin()
         {
             InitializeComponent();
+            txtLoginPassword.UseSystemPasswordChar = true;
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -51,5 +53,7 @@ namespace ScotWaterV1
 
             MessageBox.Show("Invalid username or password.");
         }
+
+       
     }
 }

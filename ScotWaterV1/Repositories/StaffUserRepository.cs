@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Collections.Generic;
 using ScotWaterV1.Models;
 
 namespace ScotWaterV1.Repositories
@@ -10,9 +9,17 @@ namespace ScotWaterV1.Repositories
         {
             using (var context = new BusinessDataContext())
             {
-                return context.StaffUser
-                    .FirstOrDefault(s => s.staffUsername == username
-                                      && s.staffPassword == password);
+                // Step 1: Find user by username ONLY
+                var user = context.StaffUser
+                    .FirstOrDefault(s => s.staffUsername == username);
+
+                if (user == null)
+                    return null;
+
+                // Step 2: Verify hashed password
+                bool isValid = PasswordSecurity.VerifyPassword(password, user.staffPassword);
+
+                return isValid ? user : null;
             }
         }
     }

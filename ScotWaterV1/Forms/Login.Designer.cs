@@ -92,6 +92,8 @@
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.Size = new System.Drawing.Size(229, 30);
             this.txtLoginPassword.TabIndex = 4;
+            this.txtLoginPassword.UseSystemPasswordChar = true;
+           
             // 
             // lblLoginUsername
             // 
