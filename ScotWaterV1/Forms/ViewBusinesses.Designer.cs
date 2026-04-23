@@ -108,28 +108,28 @@ namespace ScotWaterV1.Forms
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(1012, 222);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(100, 20);
+            this.txtCompanyName.Size = new System.Drawing.Size(141, 20);
             this.txtCompanyName.TabIndex = 8;
             // 
             // txtPostcode
             // 
             this.txtPostcode.Location = new System.Drawing.Point(1012, 274);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(100, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(141, 20);
             this.txtPostcode.TabIndex = 9;
             // 
             // txtContactName
             // 
             this.txtContactName.Location = new System.Drawing.Point(1012, 332);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(100, 20);
+            this.txtContactName.Size = new System.Drawing.Size(141, 20);
             this.txtContactName.TabIndex = 10;
             // 
             // txtContactEmail
             // 
             this.txtContactEmail.Location = new System.Drawing.Point(1012, 399);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtContactEmail.Size = new System.Drawing.Size(141, 20);
             this.txtContactEmail.TabIndex = 11;
             // 
             // lblEdit
