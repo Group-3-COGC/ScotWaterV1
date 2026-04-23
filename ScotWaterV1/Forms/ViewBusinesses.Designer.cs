@@ -21,12 +21,6 @@ namespace ScotWaterV1.Forms
         private void InitializeComponent()
         {
             this.dgvBusinesses = new System.Windows.Forms.DataGridView();
-            this.Business_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Postcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Today_Usage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monthly_Usage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Recycled_Water = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.btn_Add_business = new System.Windows.Forms.Button();
@@ -40,13 +34,6 @@ namespace ScotWaterV1.Forms
             // dgvBusinesses
             // 
             this.dgvBusinesses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusinesses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Business_Name,
-            this.Postcode,
-            this.Today_Usage,
-            this.Monthly_Usage,
-            this.Recycled_Water,
-            this.Status});
             this.dgvBusinesses.Location = new System.Drawing.Point(20, 180);
             this.dgvBusinesses.Name = "dgvBusinesses";
             this.dgvBusinesses.ReadOnly = true;
@@ -54,59 +41,11 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses.Size = new System.Drawing.Size(830, 350);
             this.dgvBusinesses.TabIndex = 0;
             // 
-            // Business_Name
-            // 
-            this.Business_Name.HeaderText = "Business Name";
-            this.Business_Name.MinimumWidth = 6;
-            this.Business_Name.Name = "Business_Name";
-            this.Business_Name.ReadOnly = true;
-            this.Business_Name.Width = 125;
-            // 
-            // Postcode
-            // 
-            this.Postcode.HeaderText = "Postcode";
-            this.Postcode.MinimumWidth = 6;
-            this.Postcode.Name = "Postcode";
-            this.Postcode.ReadOnly = true;
-            this.Postcode.Width = 125;
-            // 
-            // Today_Usage
-            // 
-            this.Today_Usage.HeaderText = "Today Usage";
-            this.Today_Usage.MinimumWidth = 6;
-            this.Today_Usage.Name = "Today_Usage";
-            this.Today_Usage.ReadOnly = true;
-            this.Today_Usage.Width = 125;
-            // 
-            // Monthly_Usage
-            // 
-            this.Monthly_Usage.HeaderText = "Monthly Usage";
-            this.Monthly_Usage.MinimumWidth = 6;
-            this.Monthly_Usage.Name = "Monthly_Usage";
-            this.Monthly_Usage.ReadOnly = true;
-            this.Monthly_Usage.Width = 125;
-            // 
-            // Recycled_Water
-            // 
-            this.Recycled_Water.HeaderText = "Recycled Water";
-            this.Recycled_Water.MinimumWidth = 6;
-            this.Recycled_Water.Name = "Recycled_Water";
-            this.Recycled_Water.ReadOnly = true;
-            this.Recycled_Water.Width = 125;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 125;
-            // 
             // txt_search
             // 
             this.txt_search.Location = new System.Drawing.Point(20, 130);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(200, 22);
+            this.txt_search.Size = new System.Drawing.Size(200, 20);
             this.txt_search.TabIndex = 1;
             // 
             // BtnSearch
@@ -188,12 +127,5 @@ namespace ScotWaterV1.Forms
         private Button btnV_B_MainMenu;
         private Button btnViewBusiness_SignOut;
         private Label txtSearch;
-
-        private DataGridViewTextBoxColumn Business_Name;
-        private DataGridViewTextBoxColumn Postcode;
-        private DataGridViewTextBoxColumn Today_Usage;
-        private DataGridViewTextBoxColumn Monthly_Usage;
-        private DataGridViewTextBoxColumn Recycled_Water;
-        private DataGridViewTextBoxColumn Status;
     }
 }
