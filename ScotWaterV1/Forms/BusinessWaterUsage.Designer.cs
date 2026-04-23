@@ -43,6 +43,7 @@
             this.dgv_Business = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Show = new System.Windows.Forms.Button();
+            this.btn_ShowUsage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -95,7 +96,7 @@
             // CmbBusiness
             // 
             this.CmbBusiness.FormattingEnabled = true;
-            this.CmbBusiness.Location = new System.Drawing.Point(348, 126);
+            this.CmbBusiness.Location = new System.Drawing.Point(362, 126);
             this.CmbBusiness.Name = "CmbBusiness";
             this.CmbBusiness.Size = new System.Drawing.Size(133, 21);
             this.CmbBusiness.TabIndex = 23;
@@ -160,6 +161,7 @@
             // 
             // dgv_Business
             // 
+            this.dgv_Business.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dgv_Business.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Business.Location = new System.Drawing.Point(34, 359);
             this.dgv_Business.Name = "dgv_Business";
@@ -182,19 +184,32 @@
             // 
             this.btn_Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Show.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Show.Location = new System.Drawing.Point(520, 118);
+            this.btn_Show.Location = new System.Drawing.Point(522, 119);
             this.btn_Show.Name = "btn_Show";
             this.btn_Show.Size = new System.Drawing.Size(113, 33);
             this.btn_Show.TabIndex = 32;
-            this.btn_Show.Text = "Show";
+            this.btn_Show.Text = "Show Details ";
             this.btn_Show.UseVisualStyleBackColor = true;
-            this.btn_Show.Click += new System.EventHandler(this.btn_Show_Click);
+            this.btn_Show.Click += new System.EventHandler(this.btn_ShowDetails_Click);
+            // 
+            // btn_ShowUsage
+            // 
+            this.btn_ShowUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ShowUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_ShowUsage.Location = new System.Drawing.Point(639, 320);
+            this.btn_ShowUsage.Name = "btn_ShowUsage";
+            this.btn_ShowUsage.Size = new System.Drawing.Size(113, 33);
+            this.btn_ShowUsage.TabIndex = 33;
+            this.btn_ShowUsage.Text = "Show Usage ";
+            this.btn_ShowUsage.UseVisualStyleBackColor = true;
+            this.btn_ShowUsage.Click += new System.EventHandler(this.btn_ShowUsage_Click);
             // 
             // BusinessWaterUsage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 648);
+            this.Controls.Add(this.btn_ShowUsage);
             this.Controls.Add(this.btn_Show);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_Business);
@@ -212,7 +227,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BusinessWaterUsage";
             this.Text = "BusinessWaterUsage";
-            this.Load += new System.EventHandler(this.BusinessWaterUsage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -238,5 +252,6 @@
         private System.Windows.Forms.DataGridView dgv_Business;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Show;
+        private System.Windows.Forms.Button btn_ShowUsage;
     }
 }
