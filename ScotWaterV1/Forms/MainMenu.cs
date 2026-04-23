@@ -61,5 +61,12 @@ namespace ScotWaterV1
             Meter.Show();
             this.Hide();
         }
+
+        private void btnAddBusiness_Click(object sender, EventArgs e)
+        {
+            AddBusiness NewBusiness = new AddBusiness();
+            NewBusiness.Show();
+            this.Hide();
+        }
     }
 }
