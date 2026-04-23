@@ -43,8 +43,9 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses.Name = "dgvBusinesses";
             this.dgvBusinesses.ReadOnly = true;
             this.dgvBusinesses.RowHeadersWidth = 51;
-            this.dgvBusinesses.Size = new System.Drawing.Size(583, 350);
+            this.dgvBusinesses.Size = new System.Drawing.Size(709, 350);
             this.dgvBusinesses.TabIndex = 0;
+            this.dgvBusinesses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellClick);
             // 
             // txt_search
             // 
@@ -72,7 +73,7 @@ namespace ScotWaterV1.Forms
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(625, 324);
+            this.btnEdit.Location = new System.Drawing.Point(796, 297);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(100, 35);
             this.btnEdit.TabIndex = 4;
@@ -105,36 +106,36 @@ namespace ScotWaterV1.Forms
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(754, 241);
+            this.txtCompanyName.Location = new System.Drawing.Point(1012, 222);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(100, 20);
+            this.txtCompanyName.Size = new System.Drawing.Size(141, 20);
             this.txtCompanyName.TabIndex = 8;
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Location = new System.Drawing.Point(754, 296);
+            this.txtPostcode.Location = new System.Drawing.Point(1012, 274);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(100, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(141, 20);
             this.txtPostcode.TabIndex = 9;
             // 
             // txtContactName
             // 
-            this.txtContactName.Location = new System.Drawing.Point(754, 355);
+            this.txtContactName.Location = new System.Drawing.Point(1012, 332);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(100, 20);
+            this.txtContactName.Size = new System.Drawing.Size(141, 20);
             this.txtContactName.TabIndex = 10;
             // 
             // txtContactEmail
             // 
-            this.txtContactEmail.Location = new System.Drawing.Point(754, 428);
+            this.txtContactEmail.Location = new System.Drawing.Point(1012, 399);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtContactEmail.Size = new System.Drawing.Size(141, 20);
             this.txtContactEmail.TabIndex = 11;
             // 
             // lblEdit
             // 
             this.lblEdit.AutoSize = true;
-            this.lblEdit.Location = new System.Drawing.Point(717, 180);
+            this.lblEdit.Location = new System.Drawing.Point(926, 152);
             this.lblEdit.Name = "lblEdit";
             this.lblEdit.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblEdit.Size = new System.Drawing.Size(107, 13);
@@ -143,7 +144,7 @@ namespace ScotWaterV1.Forms
             // 
             // ViewBusinesses
             // 
-            this.ClientSize = new System.Drawing.Size(900, 650);
+            this.ClientSize = new System.Drawing.Size(1192, 650);
             this.Controls.Add(this.lblEdit);
             this.Controls.Add(this.txtContactEmail);
             this.Controls.Add(this.txtContactName);

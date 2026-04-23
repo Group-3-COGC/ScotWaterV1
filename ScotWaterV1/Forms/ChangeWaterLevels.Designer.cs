@@ -145,6 +145,7 @@ namespace ScotWaterV1.Forms
             this.btnM_R_MainMenu.TabIndex = 13;
             this.btnM_R_MainMenu.Text = "Main Menu ";
             this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
+            this.btnM_R_MainMenu.Click += new System.EventHandler(this.btnM_R_MainMenu_Click_1);
             // 
             // frmChangeWaterLevels
             // 

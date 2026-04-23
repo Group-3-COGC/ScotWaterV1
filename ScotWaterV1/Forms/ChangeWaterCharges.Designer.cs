@@ -333,7 +333,7 @@
             this.lblRecycleLowDiscountPrice.AutoSize = true;
             this.lblRecycleLowDiscountPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecycleLowDiscountPrice.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblRecycleLowDiscountPrice.Location = new System.Drawing.Point(103, 202);
+            this.lblRecycleLowDiscountPrice.Location = new System.Drawing.Point(97, 202);
             this.lblRecycleLowDiscountPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecycleLowDiscountPrice.Name = "lblRecycleLowDiscountPrice";
             this.lblRecycleLowDiscountPrice.Size = new System.Drawing.Size(44, 17);
@@ -463,6 +463,7 @@
             this.btnChangePrice.TabIndex = 36;
             this.btnChangePrice.Text = "Change Price";
             this.btnChangePrice.UseVisualStyleBackColor = false;
+            this.btnChangePrice.Click += new System.EventHandler(this.btnChangePrice_Click);
             // 
             // txtNewPrice
             // 

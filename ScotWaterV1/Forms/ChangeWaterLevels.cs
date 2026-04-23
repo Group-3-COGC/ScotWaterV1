@@ -135,5 +135,10 @@ namespace ScotWaterV1.Forms
             menu.Show();
             this.Hide();
         }
+
+        private void btnM_R_MainMenu_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
