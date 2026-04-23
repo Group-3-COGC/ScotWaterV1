@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using ScotWaterV1.Forms; // Add this using directive at the top with the others
 
 namespace ScotWaterV1.Forms
 {
@@ -131,6 +132,7 @@ namespace ScotWaterV1.Forms
         private void btnEdit_Click(object sender, EventArgs e)
         {
             AddBusiness form = new AddBusiness();
+            using ScotWaterV1.Forms; // Add this if AddBusiness is in the same namespace as other forms
             form.ShowDialog();
 
             LoadBusinesses();
