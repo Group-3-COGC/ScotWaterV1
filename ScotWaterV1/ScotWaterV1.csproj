@@ -131,6 +131,9 @@
     <Compile Include="Models\WaterUsage.cs" />
     <Compile Include="Repositories\AdminRepository.cs" />
     <Compile Include="Repositories\StaffUserRepository.cs" />
+    <EmbeddedResource Include="Forms\AddBusiness.resx">
+      <DependentUpon>AddBusiness.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BusinessWaterUsage.resx">
       <DependentUpon>BusinessWaterUsage.cs</DependentUpon>
     </EmbeddedResource>
