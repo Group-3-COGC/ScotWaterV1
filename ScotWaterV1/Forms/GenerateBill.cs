@@ -1,5 +1,6 @@
 ﻿using ScotWaterV1.Models;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -28,14 +29,28 @@ namespace ScotWaterV1.Forms
                 cmbBusinessNames.ValueMember = "BusinessID";
             }
 
-            // Set DateTimePicker to today's date
             dtpBillDate.Value = DateTime.Now;
         }
 
         // ----------------------------------------------------
         // GENERATE BILL BUTTON CLICK
         // ----------------------------------------------------
-        private void btnGenerateBill_Click(object sender, EventArgs e)
+        
+        private void btnG_B_SignOut_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Hide();
+        }
+
+        private void btnG_B_MainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu frmMainMenu = new frmMainMenu();
+            frmMainMenu.Show();
+            this.Hide();
+        }
+
+        private void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
             if (cmbBusinessNames.SelectedValue == null)
             {
@@ -48,9 +63,11 @@ namespace ScotWaterV1.Forms
 
             using (var context = new BusinessDataContext())
             {
+
                 var usage = context.WaterUsage
-                    .FirstOrDefault(w => w.BusinessID == businessId &&
-                                         w.ReadingDate == billDate);
+               .FirstOrDefault(w => w.BusinessID == businessId &&
+                         DbFunctions.TruncateTime(w.ReadingDate) == billDate);
+
 
                 if (usage == null)
                 {
@@ -99,22 +116,6 @@ namespace ScotWaterV1.Forms
                 this.Hide();
             }
         }
-
-        // ----------------------------------------------------
-        // NAVIGATION BUTTONS
-        // ----------------------------------------------------
-        private void btnG_B_SignOut_Click(object sender, EventArgs e)
-        {
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
-            this.Hide();
-        }
-
-        private void btnG_B_MainMenu_Click(object sender, EventArgs e)
-        {
-            frmMainMenu frmMainMenu = new frmMainMenu();
-            frmMainMenu.Show();
-            this.Hide();
-        }
     }
-}
+    }
+

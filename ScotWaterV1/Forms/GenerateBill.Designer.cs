@@ -140,6 +140,7 @@
             this.btnGenerateBill.TabIndex = 30;
             this.btnGenerateBill.Text = "Generate Bill";
             this.btnGenerateBill.UseVisualStyleBackColor = true;
+            this.btnGenerateBill.Click += new System.EventHandler(this.btnGenerateBill_Click_1);
             // 
             // frmGenerateBill
             // 

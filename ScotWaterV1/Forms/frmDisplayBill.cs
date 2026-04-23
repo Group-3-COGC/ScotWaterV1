@@ -9,15 +9,15 @@ namespace ScotWaterV1.Forms
     {
         private int _billId;
 
-        // Constructor that receives the Bill ID
         public DisplayBill(int billId)
         {
             InitializeComponent();
             _billId = billId;
         }
 
-        // Load bill details when the form opens
-        private void DisplayBill_Load(object sender, EventArgs e)
+       
+
+        private void DisplayBill_Load_1(object sender, EventArgs e)
         {
             using (var context = new BusinessDataContext())
             {
@@ -28,7 +28,6 @@ namespace ScotWaterV1.Forms
                         b.BillDate,
                         b.TotalCharges,
                         b.TotalDiscount,
-                        b.DiscountRate,
                         b.SubTotal,
                         b.VAT,
                         b.BusinessFinalCost,
@@ -42,7 +41,6 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
-                // Fill labels on the form
                 lblCompanyName.Text = bill.CompanyName;
                 lblBillDate.Text = bill.BillDate.ToShortDateString();
                 lblTotalCharges.Text = bill.TotalCharges.ToString("C");
@@ -52,19 +50,6 @@ namespace ScotWaterV1.Forms
                 lblFinalCost.Text = bill.BusinessFinalCost.ToString("C");
             }
         }
-
-        // Close button
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        // Back to main menu
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            frmMainMenu menu = new frmMainMenu();
-            menu.Show();
-            this.Hide();
-        }
     }
 }
+
