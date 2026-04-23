@@ -23,7 +23,9 @@ namespace ScotWaterV1
 
         private void btnWaterConsumption_Click(object sender, EventArgs e)
         {
-
+            BusinessWaterUsage businessWaterUsage = new BusinessWaterUsage();
+            businessWaterUsage.Show();
+            this.Hide();
         }
 
         private void btnGenerateBill_Click(object sender, EventArgs e)
@@ -51,6 +53,13 @@ namespace ScotWaterV1
 
 
 
+        }
+
+        private void btnMeterReadings_Click(object sender, EventArgs e)
+        {
+            MeterReadings Meter = new MeterReadings();
+            Meter.Show();
+            this.Hide();
         }
     }
 }
