@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ScotWaterV1
 {
     internal static class Program
@@ -16,6 +17,8 @@ namespace ScotWaterV1
         [STAThread]
         static void Main()
         {
+
+            Database.SetInitializer<BusinessDataContext>(null);
             Database.SetInitializer(new BusinessDatabaseInitialiser());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
