@@ -16,5 +16,10 @@ namespace ScotWaterV1.Forms
         {
             InitializeComponent();
         }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

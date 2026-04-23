@@ -20,7 +20,8 @@ namespace ScotWaterV1.Forms
             this.progressBarReserveLevel = new System.Windows.Forms.ProgressBar();
             this.lblValue = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnM_R_MainMenu = new System.Windows.Forms.Button();
+            this.btnMainMenu = new System.Windows.Forms.Button();
+            this.btnSignOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,24 +134,39 @@ namespace ScotWaterV1.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "Water Reserve Level";
             // 
-            // btnM_R_MainMenu
+            // btnMainMenu
             // 
-            this.btnM_R_MainMenu.BackColor = System.Drawing.Color.White;
-            this.btnM_R_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnM_R_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnM_R_MainMenu.Location = new System.Drawing.Point(437, 479);
-            this.btnM_R_MainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnM_R_MainMenu.Name = "btnM_R_MainMenu";
-            this.btnM_R_MainMenu.Size = new System.Drawing.Size(133, 43);
-            this.btnM_R_MainMenu.TabIndex = 13;
-            this.btnM_R_MainMenu.Text = "Main Menu ";
-            this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
-            this.btnM_R_MainMenu.Click += new System.EventHandler(this.btnM_R_MainMenu_Click_1);
+            this.btnMainMenu.BackColor = System.Drawing.Color.White;
+            this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMainMenu.Location = new System.Drawing.Point(437, 479);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMainMenu.Name = "btnMainMenu";
+            this.btnMainMenu.Size = new System.Drawing.Size(133, 43);
+            this.btnMainMenu.TabIndex = 13;
+            this.btnMainMenu.Text = "Main Menu ";
+            this.btnMainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.BackColor = System.Drawing.Color.White;
+            this.btnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSignOut.Location = new System.Drawing.Point(786, 43);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(100, 35);
+            this.btnSignOut.TabIndex = 18;
+            this.btnSignOut.Text = "Sign Out";
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // frmChangeWaterLevels
             // 
             this.ClientSize = new System.Drawing.Size(943, 544);
-            this.Controls.Add(this.btnM_R_MainMenu);
+            this.Controls.Add(this.btnSignOut);
+            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -198,6 +214,7 @@ namespace ScotWaterV1.Forms
         private Label lblValue;
         private Label label1;
         private Button btnSave;
-        private Button btnM_R_MainMenu;
+        private Button btnMainMenu;
+        private Button btnSignOut;
     }
 }

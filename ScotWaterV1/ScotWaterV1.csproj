@@ -83,11 +83,11 @@
     <Compile Include="Forms\ChangeWaterLevels.Designer.cs">
       <DependentUpon>ChangeWaterLevels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmDisplayBill.cs">
+    <Compile Include="Forms\DisplayBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDisplayBill.Designer.cs">
-      <DependentUpon>frmDisplayBill.cs</DependentUpon>
+    <Compile Include="Forms\DisplayBill.Designer.cs">
+      <DependentUpon>DisplayBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GenerateBill.cs">
       <SubType>Form</SubType>
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="Forms\ChangeWaterLevels.resx">
       <DependentUpon>ChangeWaterLevels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDisplayBill.resx">
-      <DependentUpon>frmDisplayBill.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DisplayBill.resx">
+      <DependentUpon>DisplayBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GenerateBill.resx">
       <DependentUpon>GenerateBill.cs</DependentUpon>

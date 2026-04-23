@@ -14,9 +14,11 @@ namespace ScotWaterV1.Forms
         // SIGN OUT
         private void btnChangeWaterCharges_SignOut_Click(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.Show();
-            this.Close();
+            if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo)
+                == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         

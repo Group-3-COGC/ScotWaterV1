@@ -129,16 +129,23 @@ namespace ScotWaterV1.Forms
         // =========================
         // MAIN MENU
         // =========================
-        private void btnM_R_MainMenu_Click(object sender, EventArgs e)
+       
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo)
+                == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnMainMenu_Click(object sender, EventArgs e)
         {
             frmMainMenu menu = new frmMainMenu();
             menu.Show();
             this.Hide();
-        }
-
-        private void btnM_R_MainMenu_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
