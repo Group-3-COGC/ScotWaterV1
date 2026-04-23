@@ -14,5 +14,6 @@ namespace ScotWaterV1.Models
         public int MonthlyUsage { get; set; }
         public int RecycledWater { get; set; }
         public string Status { get; set; }
+        public int BusinessID { get; set; }
     }
 }
