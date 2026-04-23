@@ -55,9 +55,18 @@ namespace ScotWaterV1.Models
                 Postcode = "G2 3CD"
             };
 
+            BusinessUser business3 = new BusinessUser()
+            {
+                CompanyName = "City of Glasgow College",
+                ContactName = "Mohammed Manasereh",
+                ContactEmail = "mohammed@test.com",
+                Postcode = "G3 BGD"
+            };
+
             //add BusinessUsers to their respective tables
             context.BusinessUser.Add(business1);
             context.BusinessUser.Add(business2);
+            context.BusinessUser.Add(business3);
             context.SaveChanges();
 
             //create staff user

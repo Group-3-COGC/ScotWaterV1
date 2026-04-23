@@ -22,13 +22,7 @@ namespace ScotWaterV1.Forms
             LoadBusinesses();
         }
 
-
-
-
-        // =========================
-        // LOAD DATA INTO GRID
-        // =========================
-        private void LoadBusinesses()
+        private void LoadBusinesses(string searchText = "")
         {
             using (var db = new BusinessDataContext())
             {
@@ -37,6 +31,19 @@ namespace ScotWaterV1.Forms
 
                 //get the water usages
                 var waterList = db.WaterUsage.ToList();
+
+                if (searchText != "")
+                {
+                    searchText = searchText.ToLower();
+
+                    businesses = businesses
+                        .Where(b => b.CompanyName.ToLower().Contains(searchText) ||
+                                    b.Postcode.ToLower().Contains(searchText) ||
+                                    b.ContactName.ToLower().Contains(searchText) ||
+                                    b.ContactEmail.ToLower().Contains(searchText))
+                        .ToList();
+                }
+
 
                 //create the result list
                 var data = new List<BusinessView>();
@@ -49,7 +56,7 @@ namespace ScotWaterV1.Forms
 
                     //calculations
                     int todayUsage = usage
-                        .Where(w =>w.ReadingDate == DateTime.Today)
+                        .Where(w =>w.ReadingDate.Date == DateTime.Today)
                         .Sum(w => w.FreshwaterUnitsUsed);
 
                     int monthlyUsage = usage
@@ -82,68 +89,24 @@ namespace ScotWaterV1.Forms
 
                 }
 
-              
+                dgvBusinesses.AutoGenerateColumns = true;
                 dgvBusinesses.DataSource = data;
-                dgvBusinesses.Columns["BusinessID"].Visible = false;
+
+
+                if (dgvBusinesses.Columns["BusinessID"] != null)
+                {
+                    dgvBusinesses.Columns["BusinessID"].Visible = false;
+                }
             }
         }
-       
-
-        // =========================
-        // SEARCH BUTTON
-        // =========================
+      
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             string search = txt_search.Text.Trim().ToLower(); // FIXED HERE
 
-            if (search == "")
-            {
-                LoadBusinesses();
-                return;
-            }
-
-            //query the database and search for the specified business based on what user enters
-            using (var db = new BusinessDataContext())
-            {
-                var result = db.BusinessUser
-                    .Where(b =>
-                        (b.CompanyName != null && b.CompanyName.ToLower().Contains(search)) ||
-                        (b.Postcode != null && b.Postcode.ToLower().Contains(search)))
-                    .Select(b => new
-                    {
-                        Name = b.CompanyName,
-                        Postcode = b.Postcode,
-                    })
-                .ToList();
-
-                dgvBusinesses.DataSource = result;
-            }
-        }
-
-        
-
-        private void dgvBusinesses_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //check the collections in the rows based on what user has clicked then display on the text boxes
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvBusinesses.Rows[e.RowIndex];
-
-                selectedBusinessID = Convert.ToInt32(row.Cells["BusinessID"].Value);
-
-                txtCompanyName.Text = row.Cells["Business Name"].Value.ToString();
-                txtPostcode.Text = row.Cells["Postcode"].Value.ToString();
-                txtContactName.Text = row.Cells["Contact Name"].Value.ToString();
-                txtContactEmail.Text = row.Cells["Contact Email"].Value.ToString();
-            }
-        }
-
-        private void btnV_B_MainMenu_Click(object sender, EventArgs e)
-        {
-            frmMainMenu menu = new frmMainMenu();
-            menu.Show();
-            this.Hide();
-        }
+            LoadBusinesses(search);
+            
+        }   
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -171,5 +134,39 @@ namespace ScotWaterV1.Forms
 
             LoadBusinesses();
         }
+       
+        private void dgvBusinesses_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            //check the collections in the rows based on what user has clicked then display on the text boxes
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvBusinesses.Rows[e.RowIndex];
+
+                selectedBusinessID = Convert.ToInt32(row.Cells["BusinessID"].Value);
+
+                using (var db = new BusinessDataContext())
+                {
+                    var business = db.BusinessUser.FirstOrDefault(b => b.BusinessID == selectedBusinessID);
+
+                    if (business != null)
+                    {
+                        txtCompanyName.Text = business.CompanyName;
+                        txtPostcode.Text = business.Postcode;
+                        txtContactName.Text = business.ContactName;
+                        txtContactEmail.Text = business.ContactEmail; 
+                    }
+                }
+               
+            }
+        }
+
+        private void btnV_B_MainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu menu = new frmMainMenu();
+            menu.Show();
+            this.Hide();
+        }
+
     }
 }
