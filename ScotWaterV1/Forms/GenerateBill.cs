@@ -36,19 +36,7 @@ namespace ScotWaterV1.Forms
         // GENERATE BILL BUTTON CLICK
         // ----------------------------------------------------
         
-        private void btnG_B_SignOut_Click(object sender, EventArgs e)
-        {
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
-            this.Hide();
-        }
-
-        private void btnG_B_MainMenu_Click(object sender, EventArgs e)
-        {
-            frmMainMenu frmMainMenu = new frmMainMenu();
-            frmMainMenu.Show();
-            this.Hide();
-        }
+        
 
         private void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
@@ -115,6 +103,20 @@ namespace ScotWaterV1.Forms
                 displayForm.Show();
                 this.Hide();
             }
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            frmLogin SignOut = new frmLogin();
+            SignOut.Show();
+            this.Hide();
+        }
+
+        private void btnMainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu Main = new frmMainMenu();
+            Main.Show();
+            this.Hide();
         }
     }
     }

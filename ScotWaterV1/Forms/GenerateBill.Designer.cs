@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGenerateBill));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnG_B_SignOut = new System.Windows.Forms.Button();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnG_B_MainMenu = new System.Windows.Forms.Button();
+            this.btnMainMenu = new System.Windows.Forms.Button();
             this.lblSelectBuisnessGB = new System.Windows.Forms.Label();
             this.cmbBusinessNames = new System.Windows.Forms.ComboBox();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
@@ -64,18 +64,19 @@
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
-            // btnG_B_SignOut
+            // btnSignOut
             // 
-            this.btnG_B_SignOut.BackColor = System.Drawing.Color.White;
-            this.btnG_B_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnG_B_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnG_B_SignOut.Location = new System.Drawing.Point(873, 11);
-            this.btnG_B_SignOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnG_B_SignOut.Name = "btnG_B_SignOut";
-            this.btnG_B_SignOut.Size = new System.Drawing.Size(100, 35);
-            this.btnG_B_SignOut.TabIndex = 17;
-            this.btnG_B_SignOut.Text = "Sign Out";
-            this.btnG_B_SignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.BackColor = System.Drawing.Color.White;
+            this.btnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSignOut.Location = new System.Drawing.Point(873, 11);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(100, 35);
+            this.btnSignOut.TabIndex = 17;
+            this.btnSignOut.Text = "Sign Out";
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // pictureBox2
             // 
@@ -86,18 +87,19 @@
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
             // 
-            // btnG_B_MainMenu
+            // btnMainMenu
             // 
-            this.btnG_B_MainMenu.BackColor = System.Drawing.Color.White;
-            this.btnG_B_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnG_B_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnG_B_MainMenu.Location = new System.Drawing.Point(454, 565);
-            this.btnG_B_MainMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnG_B_MainMenu.Name = "btnG_B_MainMenu";
-            this.btnG_B_MainMenu.Size = new System.Drawing.Size(100, 35);
-            this.btnG_B_MainMenu.TabIndex = 19;
-            this.btnG_B_MainMenu.Text = "Main Menu ";
-            this.btnG_B_MainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.BackColor = System.Drawing.Color.White;
+            this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMainMenu.Location = new System.Drawing.Point(454, 565);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMainMenu.Name = "btnMainMenu";
+            this.btnMainMenu.Size = new System.Drawing.Size(100, 35);
+            this.btnMainMenu.TabIndex = 19;
+            this.btnMainMenu.Text = "Main Menu ";
+            this.btnMainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
             // 
             // lblSelectBuisnessGB
             // 
@@ -152,9 +154,9 @@
             this.Controls.Add(this.dtpBillDate);
             this.Controls.Add(this.cmbBusinessNames);
             this.Controls.Add(this.lblSelectBuisnessGB);
-            this.Controls.Add(this.btnG_B_MainMenu);
+            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnG_B_SignOut);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmGenerateBill";
@@ -172,9 +174,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button btnG_B_SignOut;
+        private System.Windows.Forms.Button btnSignOut;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnG_B_MainMenu;
+        private System.Windows.Forms.Button btnMainMenu;
         private System.Windows.Forms.Label lblSelectBuisnessGB;
         private System.Windows.Forms.ComboBox cmbBusinessNames;
         private System.Windows.Forms.DateTimePicker dtpBillDate;
