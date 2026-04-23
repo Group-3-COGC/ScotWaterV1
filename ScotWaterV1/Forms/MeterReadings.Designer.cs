@@ -64,6 +64,7 @@
             this.txtStaffNameMR = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtUsageAmountMR = new System.Windows.Forms.TextBox();
+            this.btnSaveMeterReading = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -449,12 +450,27 @@
             this.txtUsageAmountMR.Size = new System.Drawing.Size(117, 20);
             this.txtUsageAmountMR.TabIndex = 28;
             // 
+            // btnSaveMeterReading
+            // 
+            this.btnSaveMeterReading.BackColor = System.Drawing.Color.White;
+            this.btnSaveMeterReading.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveMeterReading.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSaveMeterReading.Location = new System.Drawing.Point(444, 432);
+            this.btnSaveMeterReading.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveMeterReading.Name = "btnSaveMeterReading";
+            this.btnSaveMeterReading.Size = new System.Drawing.Size(100, 35);
+            this.btnSaveMeterReading.TabIndex = 33;
+            this.btnSaveMeterReading.Text = "Save ";
+            this.btnSaveMeterReading.UseVisualStyleBackColor = false;
+            this.btnSaveMeterReading.Click += new System.EventHandler(this.btnSaveMeterReading_Click);
+            // 
             // MeterReadings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(738, 496);
+            this.Controls.Add(this.btnSaveMeterReading);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -522,5 +538,6 @@
         private System.Windows.Forms.TextBox txtStaffNameMR;
         private System.Windows.Forms.ComboBox cbxNumberofUnitsMR;
         private System.Windows.Forms.DateTimePicker dateTimePicker1MR;
+        private System.Windows.Forms.Button btnSaveMeterReading;
     }
 }

@@ -52,5 +52,12 @@ namespace ScotWaterV1
 
 
         }
+
+        private void btnMeterReadings_Click(object sender, EventArgs e)
+        {
+            MeterReadings Meter = new MeterReadings();
+            Meter.Show();
+            this.Hide();
+        }
     }
 }
