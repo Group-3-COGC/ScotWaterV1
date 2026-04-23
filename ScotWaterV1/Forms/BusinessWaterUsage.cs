@@ -10,7 +10,7 @@ namespace ScotWaterV1.Forms
         public BusinessWaterUsage()
         {
             InitializeComponent();
-            LoadBusinesses(); // load dropdown on start
+            LoadBusinesses();
         }
 
         // =========================
@@ -27,12 +27,46 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // SHOW USAGE IN GRID (AUTO OR BUTTON)
+        // SHOW BUSINESS DETAILS (SELECTED ONLY)
         // =========================
-        private void LoadUsageForBusiness()
+        private void btn_ShowDetails_Click(object sender, EventArgs e)
         {
             if (CmbBusiness.SelectedValue == null)
                 return;
+
+            int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
+
+            using (var db = new BusinessDataContext())
+            {
+                dgv_Business.DataSource = db.BusinessUser
+                    .Where(b => b.BusinessID == businessId)
+                    .Select(b => new
+                    {
+                        b.BusinessID,
+                        b.CompanyName,
+                        b.Address1,
+                        b.Address2,
+                        b.City,
+                        b.Postcode,
+                        b.ContactName,
+                        b.ContactNumber,
+                        b.ContactEmail,
+                        b.AccountName
+                    })
+                    .ToList();
+            }
+        }
+
+        // =========================
+        // SHOW WATER USAGE
+        // =========================
+        private void btn_ShowUsage_Click(object sender, EventArgs e)
+        {
+            if (CmbBusiness.SelectedValue == null)
+            {
+                MessageBox.Show("Select a business first");
+                return;
+            }
 
             int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
 
@@ -53,31 +87,6 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // SHOW BUTTON
-        // =========================
-        private void btn_Show_Click(object sender, EventArgs e)
-        {
-            using (var db = new BusinessDataContext())
-            {
-                dgv_Business.DataSource = db.BusinessUser
-                    .Select(b => new
-                    {
-                        b.BusinessID,
-                        b.CompanyName,
-                        b.Address1,
-                        b.Address2,
-                        b.City,
-                        b.Postcode,
-                        b.ContactName,
-                        b.ContactNumber,
-                        b.ContactEmail,
-                        b.AccountName
-                    })
-                    .ToList();
-            }
-        }
-
-        // =========================
         // ADD USAGE
         // =========================
         private void btn_AddUsage_Click(object sender, EventArgs e)
@@ -90,11 +99,8 @@ namespace ScotWaterV1.Forms
 
             int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
 
-            int used;
-            int recycled;
-
-            if (!int.TryParse(txt_Water_Used.Text, out used) ||
-                !int.TryParse(txtRecycledWater.Text, out recycled))
+            if (!int.TryParse(txt_Water_Used.Text, out int used) ||
+                !int.TryParse(txtRecycledWater.Text, out int recycled))
             {
                 MessageBox.Show("Enter valid numbers");
                 return;
@@ -116,12 +122,18 @@ namespace ScotWaterV1.Forms
                 db.SaveChanges();
             }
 
-            MessageBox.Show("Usage saved successfully");
+            MessageBox.Show("Usage saved");
 
-            LoadUsageForBusiness();
+            btn_ShowUsage_Click(null, null); // refresh grid
+        }
 
-            txt_Water_Used.Clear();
-            txtRecycledWater.Clear();
+        // =========================
+        // DROP DOWN (OPTIONAL AUTO LOAD)
+        // =========================
+        private void CmbBusiness_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // optional:
+            // btn_ShowUsage_Click(null, null);
         }
 
         // =========================
@@ -129,29 +141,11 @@ namespace ScotWaterV1.Forms
         // =========================
         private void btnChangeWaterCharges_SignOut_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-                "Sign out and return to login?",
-                "Confirm Signout",
-                MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo)
+                == DialogResult.Yes)
             {
                 this.Close();
             }
-        }
-
-        // =========================
-        // COMBOBOX EVENT (OPTIONAL)
-        // =========================
-        private void CmbBusiness_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // optional auto-refresh:
-            // LoadUsageForBusiness();
-        }
-
-        private void BusinessWaterUsage_Load(object sender, EventArgs e)
-        {
-            // optional
         }
     }
 }
