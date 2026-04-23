@@ -96,7 +96,7 @@
             // CmbBusiness
             // 
             this.CmbBusiness.FormattingEnabled = true;
-            this.CmbBusiness.Location = new System.Drawing.Point(348, 126);
+            this.CmbBusiness.Location = new System.Drawing.Point(362, 126);
             this.CmbBusiness.Name = "CmbBusiness";
             this.CmbBusiness.Size = new System.Drawing.Size(133, 21);
             this.CmbBusiness.TabIndex = 23;
