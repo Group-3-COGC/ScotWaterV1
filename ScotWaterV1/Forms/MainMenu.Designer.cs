@@ -37,10 +37,15 @@
             this.btnWaterConsumption = new System.Windows.Forms.Button();
             this.btnMeterReadings = new System.Windows.Forms.Button();
             this.btnAddBusiness = new System.Windows.Forms.Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnAddNewStaff = new System.Windows.Forms.Button();
+            this.btnChangeWaterLevel = new System.Windows.Forms.Button();
+            this.btnChangeWaterCharges = new System.Windows.Forms.Button();
+            this.BtnDsplayBill = new System.Windows.Forms.Button();
+            this.BtnMeter = new System.Windows.Forms.Button();
+            this.BtnBill = new System.Windows.Forms.Button();
+            this.PanelMenu = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelMenu.SuspendLayout();
-            this.panelMain.SuspendLayout();
+            this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnViewBusinesses
@@ -102,7 +107,7 @@
             this.btnModifyWaterReserveLevels.TabIndex = 6;
             this.btnModifyWaterReserveLevels.Text = "Modify Water Reserve Levels";
             this.btnModifyWaterReserveLevels.UseVisualStyleBackColor = true;
-            this.btnModifyWaterReserveLevels.Click += new System.EventHandler(this.btnModifyWaterReserveLevels_Click);
+            
             // 
             // lblWelcome
             // 
@@ -116,9 +121,9 @@
             // 
             this.btnWaterConsumption.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWaterConsumption.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnWaterConsumption.Location = new System.Drawing.Point(10, 339);
+            this.btnWaterConsumption.Location = new System.Drawing.Point(3, 318);
             this.btnWaterConsumption.Name = "btnWaterConsumption";
-            this.btnWaterConsumption.Size = new System.Drawing.Size(141, 84);
+            this.btnWaterConsumption.Size = new System.Drawing.Size(165, 58);
             this.btnWaterConsumption.TabIndex = 13;
             this.btnWaterConsumption.Text = "Business Water Usage";
             this.btnWaterConsumption.UseVisualStyleBackColor = true;
@@ -128,9 +133,9 @@
             // 
             this.btnMeterReadings.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMeterReadings.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMeterReadings.Location = new System.Drawing.Point(10, 245);
+            this.btnMeterReadings.Location = new System.Drawing.Point(3, 3);
             this.btnMeterReadings.Name = "btnMeterReadings";
-            this.btnMeterReadings.Size = new System.Drawing.Size(141, 88);
+            this.btnMeterReadings.Size = new System.Drawing.Size(165, 60);
             this.btnMeterReadings.TabIndex = 14;
             this.btnMeterReadings.Text = "Business Meter Readings";
             this.btnMeterReadings.UseVisualStyleBackColor = true;
@@ -140,31 +145,117 @@
             // 
             this.btnAddBusiness.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBusiness.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddBusiness.Location = new System.Drawing.Point(11, 547);
+            this.btnAddBusiness.Location = new System.Drawing.Point(3, 382);
             this.btnAddBusiness.Name = "btnAddBusiness";
-            this.btnAddBusiness.Size = new System.Drawing.Size(141, 69);
+            this.btnAddBusiness.Size = new System.Drawing.Size(165, 65);
             this.btnAddBusiness.TabIndex = 15;
             this.btnAddBusiness.Text = "Add New Business";
             this.btnAddBusiness.UseVisualStyleBackColor = true;
             this.btnAddBusiness.Click += new System.EventHandler(this.btnAddBusiness_Click);
+            // 
+            // btnAddNewStaff
+            // 
+            this.btnAddNewStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewStaff.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAddNewStaff.Location = new System.Drawing.Point(3, 453);
+            this.btnAddNewStaff.Name = "btnAddNewStaff";
+            this.btnAddNewStaff.Size = new System.Drawing.Size(165, 60);
+            this.btnAddNewStaff.TabIndex = 18;
+            this.btnAddNewStaff.Text = "Add New Staff Member ";
+            this.btnAddNewStaff.UseVisualStyleBackColor = true;
+            // 
+            // btnChangeWaterLevel
+            // 
+            this.btnChangeWaterLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeWaterLevel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnChangeWaterLevel.Location = new System.Drawing.Point(3, 74);
+            this.btnChangeWaterLevel.Name = "btnChangeWaterLevel";
+            this.btnChangeWaterLevel.Size = new System.Drawing.Size(165, 58);
+            this.btnChangeWaterLevel.TabIndex = 17;
+            this.btnChangeWaterLevel.Text = "Change Water Levels ";
+            this.btnChangeWaterLevel.UseVisualStyleBackColor = true;
+            // 
+            // btnChangeWaterCharges
+            // 
+            this.btnChangeWaterCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeWaterCharges.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnChangeWaterCharges.Location = new System.Drawing.Point(3, 254);
+            this.btnChangeWaterCharges.Name = "btnChangeWaterCharges";
+            this.btnChangeWaterCharges.Size = new System.Drawing.Size(165, 58);
+            this.btnChangeWaterCharges.TabIndex = 16;
+            this.btnChangeWaterCharges.Text = "Change Water Charges";
+            this.btnChangeWaterCharges.UseVisualStyleBackColor = true;
+            // 
+            // BtnDsplayBill
+            // 
+            this.BtnDsplayBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDsplayBill.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BtnDsplayBill.Location = new System.Drawing.Point(3, 519);
+            this.BtnDsplayBill.Name = "BtnDsplayBill";
+            this.BtnDsplayBill.Size = new System.Drawing.Size(165, 34);
+            this.BtnDsplayBill.TabIndex = 21;
+            this.BtnDsplayBill.Text = "Display Bill ";
+            this.BtnDsplayBill.UseVisualStyleBackColor = true;
+            // 
+            // BtnMeter
+            // 
+            this.BtnMeter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMeter.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BtnMeter.Location = new System.Drawing.Point(3, 138);
+            this.BtnMeter.Name = "BtnMeter";
+            this.BtnMeter.Size = new System.Drawing.Size(165, 63);
+            this.BtnMeter.TabIndex = 20;
+            this.BtnMeter.Text = "Meter Reading ";
+            this.BtnMeter.UseVisualStyleBackColor = true;
+            // 
+            // BtnBill
+            // 
+            this.BtnBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBill.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BtnBill.Location = new System.Drawing.Point(3, 207);
+            this.BtnBill.Name = "BtnBill";
+            this.BtnBill.Size = new System.Drawing.Size(165, 41);
+            this.BtnBill.TabIndex = 19;
+            this.BtnBill.Text = "Generate Bill ";
+            this.BtnBill.UseVisualStyleBackColor = true;
+            // 
+            // PanelMenu
+            // 
+            this.PanelMenu.Controls.Add(this.btnWaterConsumption);
+            this.PanelMenu.Controls.Add(this.BtnDsplayBill);
+            this.PanelMenu.Controls.Add(this.btnMeterReadings);
+            this.PanelMenu.Controls.Add(this.BtnMeter);
+            this.PanelMenu.Controls.Add(this.btnAddBusiness);
+            this.PanelMenu.Controls.Add(this.BtnBill);
+            this.PanelMenu.Controls.Add(this.btnChangeWaterCharges);
+            this.PanelMenu.Controls.Add(this.btnAddNewStaff);
+            this.PanelMenu.Controls.Add(this.btnChangeWaterLevel);
+            this.PanelMenu.Location = new System.Drawing.Point(1109, -1);
+            this.PanelMenu.Name = "PanelMenu";
+            this.PanelMenu.Size = new System.Drawing.Size(172, 614);
+            this.PanelMenu.TabIndex = 22;
+            // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(0, 2);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1106, 611);
+            this.panelMain.TabIndex = 23;
             // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.btnAddBusiness);
-            this.Controls.Add(this.btnMeterReadings);
-            this.Controls.Add(this.btnWaterConsumption);
+            this.ClientSize = new System.Drawing.Size(1282, 611);
+            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.lblWelcome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmMainMenu";
             this.Text = "Main Menu";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.PanelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +271,13 @@
         private System.Windows.Forms.Button btnWaterConsumption;
         private System.Windows.Forms.Button btnMeterReadings;
         private System.Windows.Forms.Button btnAddBusiness;
+        private System.Windows.Forms.Button btnAddNewStaff;
+        private System.Windows.Forms.Button btnChangeWaterLevel;
+        private System.Windows.Forms.Button btnChangeWaterCharges;
+        private System.Windows.Forms.Button BtnDsplayBill;
+        private System.Windows.Forms.Button BtnMeter;
+        private System.Windows.Forms.Button BtnBill;
+        private System.Windows.Forms.Panel PanelMenu;
+        private System.Windows.Forms.Panel panelMain;
     }
 }
