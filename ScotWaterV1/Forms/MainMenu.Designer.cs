@@ -194,6 +194,7 @@
             this.btnAddNewStaffMember.TabIndex = 16;
             this.btnAddNewStaffMember.Text = "Add new Staff Member";
             this.btnAddNewStaffMember.UseVisualStyleBackColor = true;
+            this.btnAddNewStaffMember.Click += new System.EventHandler(this.btnAddNewStaffMember_Click);
             // 
             // frmMainMenu
             // 

@@ -7,6 +7,9 @@ namespace ScotWaterV1
 {
     public partial class frmMainMenu : Form
     {
+        private AdminUsers currentAdmin;
+        private StaffUser currentStaff;
+
         public frmMainMenu()
         {
             InitializeComponent();
@@ -14,7 +17,7 @@ namespace ScotWaterV1
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-
+            btnAddNewStaffMember.Visible = currentAdmin != null;
         }
 
         private void btnViewBusinesses_Click(object sender, EventArgs e)
@@ -78,6 +81,13 @@ namespace ScotWaterV1
             SignOut.Show();
             this.Close();
         }
-        
+
+        private void btnAddNewStaffMember_Click(object sender, EventArgs e)
+        {
+            if (currentAdmin == null)
+            {
+                Message
+            }
+        }
     }
 }
