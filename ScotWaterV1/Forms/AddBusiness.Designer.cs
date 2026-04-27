@@ -392,9 +392,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label3.Location = new System.Drawing.Point(6, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 24);
+            this.label3.Size = new System.Drawing.Size(93, 24);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Adress ";
+            this.label3.Text = "Address ";
             // 
             // btnM_R_SignOut
             // 
