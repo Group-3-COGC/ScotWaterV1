@@ -17,6 +17,17 @@ namespace ScotWaterV1
             InitializeComponent();
         }
 
+        private void frmMainMenu_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("IsAdmin = " + IsAdmin);
+            btnAddNewStaff.Visible = IsAdmin;
+
+
+            StyleMenuButtons();
+        }
+
+
+
         // =========================
         // LOAD FORM INTO MAIN PANEL
         // =========================
@@ -101,17 +112,7 @@ namespace ScotWaterV1
             this.Close();
         }
 
-        // =========================
-        // FORM LOAD
-        // =========================
-        private void frmMainMenu_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show("IsAdmin = " + IsAdmin);
-            btnAddNewStaff.Visible = IsAdmin;
-            
-
-            StyleMenuButtons();
-        }
+      
 
         // =========================
         // STYLE MENU BUTTONS
