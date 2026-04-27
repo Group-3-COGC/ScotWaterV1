@@ -164,7 +164,7 @@
             this.btnM_R_SignOut.BackColor = System.Drawing.Color.White;
             this.btnM_R_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnM_R_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnM_R_SignOut.Location = new System.Drawing.Point(620, 46);
+            this.btnM_R_SignOut.Location = new System.Drawing.Point(664, 51);
             this.btnM_R_SignOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnM_R_SignOut.Name = "btnM_R_SignOut";
             this.btnM_R_SignOut.Size = new System.Drawing.Size(100, 35);
