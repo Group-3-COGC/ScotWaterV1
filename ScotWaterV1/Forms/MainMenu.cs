@@ -74,46 +74,22 @@ namespace ScotWaterV1
         {
             OpenForm(new frmChangeWaterCharges());
         }
-
-        
-
         private void btnAddBusiness_Click(object sender, EventArgs e)
         {
             OpenForm(new frmAddBusiness());
         }
         
-        
-
         private void BtnBill_Click(object sender, EventArgs e)
         {
             OpenForm(new frmGenerateBill());
         }
-
         
-
-        private void BtnMeter_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMeterReadings_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        // =========================
-        // SIGN OUT
-        // =========================
         private void btnMainMenuSignOut_Click(object sender, EventArgs e)
         {
             new frmLogin().Show();
             this.Close();
         }
 
-      
-
-        // =========================
-        // STYLE MENU BUTTONS
-        // =========================
         private void StyleMenuButtons()
         {
             foreach (Control ctrl in PanelMenu.Controls)
@@ -133,9 +109,6 @@ namespace ScotWaterV1
             }
         }
 
-        // =========================
-        // HOVER EFFECT
-        // =========================
         private void MenuHover(object sender, EventArgs e)
         {
             ((Button)sender).BackColor = Color.FromArgb(45, 60, 80);
@@ -145,7 +118,6 @@ namespace ScotWaterV1
         {
             ((Button)sender).BackColor = Color.FromArgb(30, 42, 56);
         }
-
 
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
@@ -158,7 +130,6 @@ namespace ScotWaterV1
 
             OpenForm(new AddNewStaffMember());
 
-  
         }
         private void BtnDsplayBill_Click(object sender, EventArgs e)
         {
