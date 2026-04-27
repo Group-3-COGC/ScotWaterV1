@@ -67,7 +67,7 @@ namespace ScotWaterV1
 
         private void btnAddBusiness_Click(object sender, EventArgs e)
         {
-            AddBusiness NewBusiness = new AddBusiness();
+            frmAddBusiness NewBusiness = new frmAddBusiness();
             NewBusiness.Show();
             this.Hide();
         }
