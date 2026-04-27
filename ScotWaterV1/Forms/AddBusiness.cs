@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScotWaterV1.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,10 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
 {
-    public partial class AddBusiness : Form
+    public partial class frmAddBusiness : Form
     {
-        public AddBusiness()
+        private readonly BusinessDataContext _context = new BusinessDataContext();
+        public frmAddBusiness()
         {
             InitializeComponent();
         }
@@ -21,5 +23,63 @@ namespace ScotWaterV1.Forms
         {
 
         }
+
+        private void btnAddNewBusiness_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var newBusiness = new Business
+                {
+                    BusinessID = 
+                    BusinessName = txtBusinessName.Text,
+                    AddressLine1 = txtAddress1.Text,
+                    AddressLine2 = txtAddress2.Text,
+                    City = txtCity.Text,
+                    Postcode = txtPostcode.Text,
+                    Region = cbxRegion.Text,
+                    ContactName = txtContactName.Text,
+                    EmailAddress = txtEmailAddress.Text,
+                    PhoneNumber = txtPhoneNumber.Text,
+                    AccountName = txtAccountName.Text,
+                    SortCode = txtSortCode.Text,
+                    AccountNumber = txtAccountNumber.Text
+                };
+
+                _context.BusinessUser.Add(newBusiness);
+                _context.SaveChanges();
+
+                MessageBox.Show("Business saved successfully.",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving business: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearFields()
+        {
+            txtBusinessName.Clear();
+            txtAddress1.Clear();
+            txtAddress2.Clear();
+            txtCity.Clear();
+            txtPostcode.Clear();
+            cbxRegion.SelectedIndex = -1;
+            txtContactName.Clear();
+            txtEmailAddress.Clear();
+            txtPhoneNumber.Clear();
+            txtAccountName.Clear();
+            txtSortCode.Clear();
+            txtAccountNumber.Clear();
+        }
     }
 }
+    
+

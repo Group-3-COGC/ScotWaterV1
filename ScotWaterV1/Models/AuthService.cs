@@ -76,8 +76,8 @@ namespace ScotWaterV1.Services
                 return false;
             }
 
-            // Set session
-            Session.SetAdminSession(admin.AdminID, admin.AdminUsername);
+            // Set session (FIXED)
+            Session.SetAdminSession(admin.AdminUserID, admin.AdminUsername);
 
             return true;
         }
@@ -87,7 +87,7 @@ namespace ScotWaterV1.Services
         // -----------------------------
         public void Logout()
         {
-            Session.Clear();
+            Session.ClearSession(); // FIXED
         }
     }
 }

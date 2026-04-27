@@ -16,7 +16,7 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // LOAD FORM INTO PANEL
+        // LOAD FORM INTO MAIN PANEL
         // =========================
         private void OpenForm(Form form)
         {
@@ -33,6 +33,7 @@ namespace ScotWaterV1
         // =========================
         // BUTTON EVENTS
         // =========================
+
         private void btnViewBusinesses_Click(object sender, EventArgs e)
         {
             OpenForm(new ViewBusinesses());
@@ -53,19 +54,40 @@ namespace ScotWaterV1
             OpenForm(new frmChangeWaterCharges());
         }
 
-        private void btnModifyWaterReserveLevels_Click(object sender, EventArgs e)
+        private void btnChangeWaterLevel_Click(object sender, EventArgs e)
         {
             OpenForm(new frmChangeWaterLevels());
+        }
+
+        private void btnChangeWaterCharges_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmChangeWaterCharges());
+        }
+
+        
+
+        private void btnAddBusiness_Click(object sender, EventArgs e)
+        {
+            OpenForm(new AddBusiness());
+        }
+
+        
+
+        private void BtnBill_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmGenerateBill());
+        }
+
+        
+
+        private void BtnMeter_Click(object sender, EventArgs e)
+        {
+            OpenForm(new MeterReadings());
         }
 
         private void btnMeterReadings_Click(object sender, EventArgs e)
         {
             OpenForm(new MeterReadings());
-        }
-
-        private void btnAddBusiness_Click(object sender, EventArgs e)
-        {
-            OpenForm(new AddBusiness());
         }
 
         // =========================
@@ -86,11 +108,11 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // STYLE BUTTONS (MODERN LOOK)
+        // STYLE MENU BUTTONS
         // =========================
         private void StyleMenuButtons()
         {
-            foreach (Control ctrl in panelMenu.Controls)
+            foreach (Control ctrl in PanelMenu.Controls)
             {
                 if (ctrl is Button btn)
                 {
@@ -112,7 +134,9 @@ namespace ScotWaterV1
         // =========================
         private void MenuHover(object sender, EventArgs e)
         {
-            ((Button)sender).BackColor = Color.FromArgb(50, 70, 90);
+            frmAddBusiness NewBusiness = new frmAddBusiness();
+            NewBusiness.Show();
+            this.Hide();
         }
 
         private void MenuLeave(object sender, EventArgs e)
@@ -122,15 +146,10 @@ namespace ScotWaterV1
 
         private void btnAddNewStaffMember_Click(object sender, EventArgs e)
         {
-           if (!IsAdmin)
+            if (currentAdmin == null)
             {
-                MessageBox.Show("Only admin users can add new staff members");
-                return;
+                Message
             }
-
-            AddNewStaffMember newStaffMember = new AddNewStaffMember();
-            newStaffMember.Show();
-            this.Hide();
         }
     }
 }
