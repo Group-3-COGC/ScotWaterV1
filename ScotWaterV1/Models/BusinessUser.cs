@@ -21,6 +21,10 @@ namespace ScotWaterV1.Models
         public string ContactNumber { get; set; }
         public string ContactEmail { get; set; }
         public string AccountName { get; set; }
+        public string Region { get; set; }
+        public string AccountNumber { get; set; }
+        public string SortCode { get; set; }
+
 
         //navigational properties
         public List<WaterUsage> WaterUsage { get; set; }

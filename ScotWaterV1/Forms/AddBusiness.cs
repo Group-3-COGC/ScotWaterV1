@@ -28,18 +28,18 @@ namespace ScotWaterV1.Forms
         {
             try
             {
-                var newBusiness = new Business
+                var newBusiness = new BusinessUser
                 {
-                    BusinessID = 
-                    BusinessName = txtBusinessName.Text,
-                    AddressLine1 = txtAddress1.Text,
-                    AddressLine2 = txtAddress2.Text,
+                    BusinessID = int.Parse(txtBusinessID.Text),
+                    CompanyName = txtBusinessName.Text,
+                    Address1 = txtAddress1.Text,
+                    Address2 = txtAddress2.Text,
                     City = txtCity.Text,
                     Postcode = txtPostcode.Text,
                     Region = cbxRegion.Text,
                     ContactName = txtContactName.Text,
-                    EmailAddress = txtEmailAddress.Text,
-                    PhoneNumber = txtPhoneNumber.Text,
+                    ContactEmail = txtEmailAddress.Text,
+                    ContactNumber = txtPhoneNumber.Text,
                     AccountName = txtAccountName.Text,
                     SortCode = txtSortCode.Text,
                     AccountNumber = txtAccountNumber.Text
