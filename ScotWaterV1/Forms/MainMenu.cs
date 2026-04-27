@@ -184,8 +184,7 @@ namespace ScotWaterV1
 
             OpenForm(new AddNewStaffMember());
 
-
-            OpenForm(new AddNewStaffMember());
+  
         }
 
         private void BtnDsplayBill_Click(object sender, EventArgs e)
