@@ -125,6 +125,7 @@
     <Compile Include="Models\BusinessUser.cs" />
     <Compile Include="Models\BusinessView.cs" />
     <Compile Include="Models\PasswordSecurity.cs" />
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Models\StaffUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
