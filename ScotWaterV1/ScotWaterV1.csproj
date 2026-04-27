@@ -101,6 +101,7 @@
     <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthService.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Forms\MeterReadings.cs">
       <SubType>Form</SubType>
