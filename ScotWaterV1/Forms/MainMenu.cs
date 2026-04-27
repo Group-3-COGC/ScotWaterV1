@@ -7,8 +7,7 @@ namespace ScotWaterV1
 {
     public partial class frmMainMenu : Form
     {
-        private AdminUsers currentAdmin;
-        private StaffUser currentStaff;
+        public bool IsAdmin { get; set; }
 
         public frmMainMenu()
         {
@@ -17,7 +16,7 @@ namespace ScotWaterV1
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            btnAddNewStaffMember.Visible = currentAdmin != null;
+            btnAddNewStaffMember.Visible = IsAdmin;
         }
 
         private void btnViewBusinesses_Click(object sender, EventArgs e)
@@ -84,10 +83,15 @@ namespace ScotWaterV1
 
         private void btnAddNewStaffMember_Click(object sender, EventArgs e)
         {
-            if (currentAdmin == null)
+           if (!IsAdmin)
             {
-                Message
+                MessageBox.Show("Only admin users can add new staff members");
+                return;
             }
+
+            AddNewStaffMember newStaffMember = new AddNewStaffMember();
+            newStaffMember.Show();
+            this.Hide();
         }
     }
 }
