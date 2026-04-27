@@ -1,5 +1,6 @@
 ﻿using ScotWaterV1.Forms;
 using ScotWaterV1.Models;
+using ScotWaterV1.Services;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -146,7 +147,7 @@ namespace ScotWaterV1
             ((Button)sender).BackColor = Color.FromArgb(30, 42, 56);
         }
 
-        private void btnAddNewStaffMember_Click(object sender, EventArgs e)
+        private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
             if (!IsAdmin)
             {
@@ -155,6 +156,8 @@ namespace ScotWaterV1
             }
 
             OpenForm(new AddNewStaffMember());
+
         }
     }
+    
 }

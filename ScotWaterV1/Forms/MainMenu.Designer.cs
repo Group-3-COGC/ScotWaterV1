@@ -107,7 +107,6 @@
             this.btnModifyWaterReserveLevels.TabIndex = 6;
             this.btnModifyWaterReserveLevels.Text = "Modify Water Reserve Levels";
             this.btnModifyWaterReserveLevels.UseVisualStyleBackColor = true;
-            
             // 
             // lblWelcome
             // 
@@ -163,6 +162,7 @@
             this.btnAddNewStaff.TabIndex = 18;
             this.btnAddNewStaff.Text = "Add New Staff Member ";
             this.btnAddNewStaff.UseVisualStyleBackColor = true;
+            this.btnAddNewStaff.Click += new System.EventHandler(this.btnAddNewStaff_Click);
             // 
             // btnChangeWaterLevel
             // 
