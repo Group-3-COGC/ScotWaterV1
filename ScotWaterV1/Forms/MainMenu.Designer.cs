@@ -174,6 +174,7 @@
             this.btnChangeWaterLevel.TabIndex = 17;
             this.btnChangeWaterLevel.Text = "Change Water Levels ";
             this.btnChangeWaterLevel.UseVisualStyleBackColor = true;
+            this.btnChangeWaterLevel.Click += new System.EventHandler(this.btnChangeWaterLevel_Click_1);
             // 
             // btnChangeWaterCharges
             // 
@@ -185,6 +186,7 @@
             this.btnChangeWaterCharges.TabIndex = 16;
             this.btnChangeWaterCharges.Text = "Change Water Charges";
             this.btnChangeWaterCharges.UseVisualStyleBackColor = true;
+            this.btnChangeWaterCharges.Click += new System.EventHandler(this.btnChangeWaterCharges_Click_1);
             // 
             // BtnDsplayBill
             // 
@@ -196,6 +198,7 @@
             this.BtnDsplayBill.TabIndex = 21;
             this.BtnDsplayBill.Text = "Display Bill ";
             this.BtnDsplayBill.UseVisualStyleBackColor = true;
+            this.BtnDsplayBill.Click += new System.EventHandler(this.BtnDsplayBill_Click);
             // 
             // BtnMeter
             // 
@@ -207,6 +210,7 @@
             this.BtnMeter.TabIndex = 20;
             this.BtnMeter.Text = "Meter Reading ";
             this.BtnMeter.UseVisualStyleBackColor = true;
+            this.BtnMeter.Click += new System.EventHandler(this.BtnMeter_Click_1);
             // 
             // BtnBill
             // 
@@ -218,6 +222,7 @@
             this.BtnBill.TabIndex = 19;
             this.BtnBill.Text = "Generate Bill ";
             this.BtnBill.UseVisualStyleBackColor = true;
+            this.BtnBill.Click += new System.EventHandler(this.BtnBill_Click_1);
             // 
             // PanelMenu
             // 

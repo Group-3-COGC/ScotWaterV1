@@ -162,6 +162,38 @@ namespace ScotWaterV1
             OpenForm(new AddNewStaffMember());
 
         }
+
+        private void btnChangeWaterLevel_Click_1(object sender, EventArgs e)
+        {
+            OpenForm(new frmChangeWaterLevels());
+        }
+
+        private void BtnMeter_Click_1(object sender, EventArgs e)
+        {
+            OpenForm(new MeterReadings());
+        }
+
+        private void BtnBill_Click_1(object sender, EventArgs e)
+        {
+            OpenForm(new frmGenerateBill());
+        }
+
+        private void btnChangeWaterCharges_Click_1(object sender, EventArgs e)
+        {
+            OpenForm(new frmChangeWaterCharges());
+        }
+
+        private void btnAddNewStaff_Click(object sender, EventArgs e)
+        {
+            OpenForm(new AddNewStaffMember());
+        }
+
+        private void BtnDsplayBill_Click(object sender, EventArgs e)
+        {
+            
+            int someBillId = 1; 
+            OpenForm(new DisplayBill(someBillId));
+        }
     }
     
 }
