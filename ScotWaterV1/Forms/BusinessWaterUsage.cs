@@ -98,12 +98,33 @@ namespace ScotWaterV1.Forms
 
             int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
 
-            if (!int.TryParse(txt_Water_Used.Text, out int used) ||
-                !int.TryParse(txtRecycledWater.Text, out int recycled))
+            if (!int.TryParse(txt_Water_Used.Text, out int used) || used < 0)
             {
-                MessageBox.Show("Enter valid numbers");
+                MessageBox.Show("Freshwater units must be a valid number greater than or equaly to 0.");
                 return;
             }
+
+            if (!int.TryParse(txtRecycledWater.Text, out int recycled) || recycled < 0)
+            {
+                MessageBox.Show("Recycled units must be a valid number greater than or equal to 0");
+                return;
+
+            }
+
+            if (recycled > used)
+            {
+                MessageBox.Show("Recyled units cannot be greater than freshwater units used");
+                return;
+            }
+
+            var reserve = db.ReserveConfigs.FirstOrDefault();
+
+            if (reserve  == null)
+            {
+                MessageBox.Show
+            }
+       
+
 
             try
             {
@@ -116,7 +137,7 @@ namespace ScotWaterV1.Forms
                         FreshwaterUnitsUsed = used,
                         RecycledUnits = recycled,
                         ReadingDate = dtpDate.Value,
-                        IsLowReserve = used < 30
+                        IsLowReserve = isLowReserve
                     };
 
                     db.WaterUsage.Add(usage);
