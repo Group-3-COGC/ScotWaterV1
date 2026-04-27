@@ -151,17 +151,7 @@ namespace ScotWaterV1
             ((Button)sender).BackColor = Color.FromArgb(30, 42, 56);
         }
 
-        private void btnAddNewStaff_Click(object sender, EventArgs e)
-        {
-            if (!IsAdmin)
-            {
-                MessageBox.Show("Only admin users can add new staff members");
-                return;
-            }
-
-            OpenForm(new AddNewStaffMember());
-
-        }
+       
 
         private void btnChangeWaterLevel_Click_1(object sender, EventArgs e)
         {
@@ -185,6 +175,16 @@ namespace ScotWaterV1
 
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
+
+            if (!IsAdmin)
+            {
+                MessageBox.Show("Only admin users can add new staff members");
+                return;
+            }
+
+            OpenForm(new AddNewStaffMember());
+
+
             OpenForm(new AddNewStaffMember());
         }
 
