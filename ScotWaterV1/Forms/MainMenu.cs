@@ -93,12 +93,11 @@ namespace ScotWaterV1
 
         private void BtnMeter_Click(object sender, EventArgs e)
         {
-            OpenForm(new MeterReadings());
         }
 
         private void btnMeterReadings_Click(object sender, EventArgs e)
         {
-            OpenForm(new MeterReadings());
+            
         }
 
         // =========================
