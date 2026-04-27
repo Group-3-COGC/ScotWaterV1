@@ -60,33 +60,8 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
-                // -------------------------------
-                // BILL CALCULATION LOGIC
-                // -------------------------------
-                decimal chargePerUnit = 0.20m;
-                decimal discountRate = usage.IsLowReserve ? 0.10m : 0.05m;
-                decimal vatRate = 0.20m;
-
-                decimal totalCharges = usage.FreshwaterUnitsUsed * chargePerUnit;
-                decimal totalDiscount = totalCharges * discountRate;
-                decimal subTotal = totalCharges - totalDiscount;
-                decimal vat = subTotal * vatRate;
-                decimal finalCost = subTotal + vat;
-
-                // -------------------------------
-                // SAVE BILL TO DATABASE
-                // -------------------------------
-                BusinessBills bill = new BusinessBills()
-                {
-                    BusinessID = businessId,
-                    BillDate = billDate,
-                    TotalCharges = totalCharges,
-                    TotalDiscount = totalDiscount,
-                    DiscountRate = discountRate,
-                    SubTotal = subTotal,
-                    VAT = vat,
-                    BusinessFinalCost = finalCost
-                };
+                var billingService = new BillingService();
+                BusinessBills bill = billingService.GenerateBill(usage);
 
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();

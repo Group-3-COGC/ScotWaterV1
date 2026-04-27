@@ -218,7 +218,7 @@
             this.BtnBill.TabIndex = 19;
             this.BtnBill.Text = "Generate Bill ";
             this.BtnBill.UseVisualStyleBackColor = true;
-            this.BtnBill.Click += new System.EventHandler(this.BtnBill_Click_1);
+
             // 
             // PanelMenu
             // 
@@ -248,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1282, 611);
+            this.ClientSize = new System.Drawing.Size(1352, 777);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.lblWelcome);

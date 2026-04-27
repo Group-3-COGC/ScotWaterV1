@@ -15,6 +15,7 @@ namespace ScotWaterV1
         public frmMainMenu()
         {
             InitializeComponent();
+            this.Load += frmMainMenu_Load;
         }
 
         private void frmMainMenu_Load(object sender, EventArgs e)
@@ -70,10 +71,7 @@ namespace ScotWaterV1
             OpenForm(new frmChangeWaterLevels());
         }
 
-        private void btnChangeWaterCharges_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmChangeWaterCharges());
-        }
+     
         private void btnAddBusiness_Click(object sender, EventArgs e)
         {
             OpenForm(new frmAddBusiness());
