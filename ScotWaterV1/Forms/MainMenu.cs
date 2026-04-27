@@ -106,10 +106,9 @@ namespace ScotWaterV1
         // =========================
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            if (IsAdmin)
-            {
-                btnAddNewStaff.Enabled = false;
-            }
+            MessageBox.Show("IsAdmin = " + IsAdmin);
+            btnAddNewStaff.Visible = IsAdmin;
+            
 
             StyleMenuButtons();
         }
