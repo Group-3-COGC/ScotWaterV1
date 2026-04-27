@@ -52,11 +52,7 @@ namespace ScotWaterV1.Forms
                 lblWaterReserveStatus.Text = "LOW RESERVE";
                 lblWaterReserveStatus.ForeColor = System.Drawing.Color.Red;
             }
-            else if (value < 70)
-            {
-                lblWaterReserveStatus.Text = "MEDIUM RESERVE";
-                lblWaterReserveStatus.ForeColor = System.Drawing.Color.Orange;
-            }
+           
             else
             {
                 lblWaterReserveStatus.Text = "STANDARD";
