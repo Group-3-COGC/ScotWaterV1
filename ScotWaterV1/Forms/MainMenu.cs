@@ -137,6 +137,11 @@ namespace ScotWaterV1
             int someBillId = 1; 
             OpenForm(new DisplayBill(someBillId));
         }
+
+        private void BtnBill_Click_1(object sender, EventArgs e)
+        {
+           OpenForm(new frmGenerateBill());
+        }
     }
     
 }

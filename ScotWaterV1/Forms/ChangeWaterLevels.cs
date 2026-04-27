@@ -12,9 +12,7 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
-        // =========================
-        // FORM LOAD
-        // =========================
+        
         private void frmChangeWaterLevels_Load(object sender, EventArgs e)
         {
             trkReserveLevel.Minimum = 0;
@@ -26,20 +24,15 @@ namespace ScotWaterV1.Forms
             LoadLatestLevel();
         }
 
-        // =========================
-        // TRACKBAR LIVE UPDATE
-        // =========================
+       
         private void trkReserveLevel_Scroll(object sender, EventArgs e)
         {
             UpdateUI(trkReserveLevel.Value);
         }
 
-        // =========================
-        // UPDATE UI SAFELY
-        // =========================
         private void UpdateUI(int value)
         {
-            // clamp safety
+            
             if (value < 0) value = 0;
             if (value > 100) value = 100;
 
@@ -60,9 +53,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // =========================
-        // SAVE BUTTON
-        // =========================
+      
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -76,7 +67,7 @@ namespace ScotWaterV1.Forms
                         ReadingDate = DateTime.Now,
                         IsLowReserve = trkReserveLevel.Value < 30,
 
-                        // TEMP FIX (you should later replace with real selected business)
+                       
                         BusinessID = 1,
                         StaffUserID = 1
                     };
@@ -95,9 +86,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // =========================
-        // LOAD LAST SAVED VALUE
-        // =========================
+       
         private void LoadLatestLevel()
         {
             using (var db = new BusinessDataContext())
@@ -114,7 +103,7 @@ namespace ScotWaterV1.Forms
 
                 int value = latest.FreshwaterUnitsUsed;
 
-                // SAFE CLAMP (THIS FIXES YOUR CRASH)
+                
                 if (value < 0) value = 0;
                 if (value > 100) value = 100;
 
@@ -122,9 +111,9 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // =========================
-        // MAIN MENU
-        // =========================
+        
+       
+      
        
 
         private void btnSignOut_Click(object sender, EventArgs e)

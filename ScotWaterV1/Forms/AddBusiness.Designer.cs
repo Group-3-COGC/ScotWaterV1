@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddBusiness));
             this.btnAddNewBusiness = new System.Windows.Forms.Button();
             this.btnM_R_SignOut = new System.Windows.Forms.Button();
-            this.btnM_R_MainMenu = new System.Windows.Forms.Button();
+            this.btnMainMenu = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -93,18 +93,19 @@
             this.btnM_R_SignOut.Text = "Sign Out";
             this.btnM_R_SignOut.UseVisualStyleBackColor = false;
             // 
-            // btnM_R_MainMenu
+            // btnMainMenu
             // 
-            this.btnM_R_MainMenu.BackColor = System.Drawing.Color.White;
-            this.btnM_R_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnM_R_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnM_R_MainMenu.Location = new System.Drawing.Point(315, 427);
-            this.btnM_R_MainMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnM_R_MainMenu.Name = "btnM_R_MainMenu";
-            this.btnM_R_MainMenu.Size = new System.Drawing.Size(100, 35);
-            this.btnM_R_MainMenu.TabIndex = 37;
-            this.btnM_R_MainMenu.Text = "Main Menu ";
-            this.btnM_R_MainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.BackColor = System.Drawing.Color.White;
+            this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMainMenu.Location = new System.Drawing.Point(315, 427);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMainMenu.Name = "btnMainMenu";
+            this.btnMainMenu.Size = new System.Drawing.Size(100, 35);
+            this.btnMainMenu.TabIndex = 37;
+            this.btnMainMenu.Text = "Main Menu ";
+            this.btnMainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
             // 
             // pictureBox3
             // 
@@ -382,7 +383,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddNewBusiness);
             this.Controls.Add(this.btnM_R_SignOut);
-            this.Controls.Add(this.btnM_R_MainMenu);
+            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -400,7 +401,7 @@
 
         private System.Windows.Forms.Button btnAddNewBusiness;
         private System.Windows.Forms.Button btnM_R_SignOut;
-        private System.Windows.Forms.Button btnM_R_MainMenu;
+        private System.Windows.Forms.Button btnMainMenu;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;

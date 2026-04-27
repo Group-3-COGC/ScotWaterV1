@@ -79,6 +79,11 @@ namespace ScotWaterV1.Forms
             txtSortCode.Clear();
             txtAccountNumber.Clear();
         }
+
+        private void btnMainMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     
