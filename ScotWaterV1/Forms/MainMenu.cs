@@ -20,10 +20,8 @@ namespace ScotWaterV1
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             MessageBox.Show("IsAdmin = " + IsAdmin);
-            btnAddNewStaff.Visible = IsAdmin;
-
-
             StyleMenuButtons();
+            btnAddNewStaff.Visible = IsAdmin;
         }
 
 
@@ -141,9 +139,7 @@ namespace ScotWaterV1
         // =========================
         private void MenuHover(object sender, EventArgs e)
         {
-            frmAddBusiness NewBusiness = new frmAddBusiness();
-            NewBusiness.Show();
-            this.Hide();
+            ((Button)sender).BackColor = Color.FromArgb(45, 60, 80);
         }
 
         private void MenuLeave(object sender, EventArgs e)
@@ -151,27 +147,6 @@ namespace ScotWaterV1
             ((Button)sender).BackColor = Color.FromArgb(30, 42, 56);
         }
 
-       
-
-        private void btnChangeWaterLevel_Click_1(object sender, EventArgs e)
-        {
-            OpenForm(new frmChangeWaterLevels());
-        }
-
-        private void BtnMeter_Click_1(object sender, EventArgs e)
-        {
-            OpenForm(new MeterReadings());
-        }
-
-        private void BtnBill_Click_1(object sender, EventArgs e)
-        {
-            OpenForm(new frmGenerateBill());
-        }
-
-        private void btnChangeWaterCharges_Click_1(object sender, EventArgs e)
-        {
-            OpenForm(new frmChangeWaterCharges());
-        }
 
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
@@ -186,7 +161,6 @@ namespace ScotWaterV1
 
   
         }
-
         private void BtnDsplayBill_Click(object sender, EventArgs e)
         {
             
