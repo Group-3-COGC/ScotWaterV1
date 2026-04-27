@@ -69,7 +69,7 @@ namespace ScotWaterV1
 
         private void btnAddBusiness_Click(object sender, EventArgs e)
         {
-            OpenForm(new AddBusiness());
+            OpenForm(new frmAddBusiness());
         }
         
         
