@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1
 {
+    
     public partial class frmMainMenu : Form
     {
         public bool IsAdmin { get; set; }
@@ -70,7 +71,7 @@ namespace ScotWaterV1
         {
             OpenForm(new AddBusiness());
         }
-
+        
         
 
         private void BtnBill_Click(object sender, EventArgs e)
@@ -104,6 +105,7 @@ namespace ScotWaterV1
         // =========================
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+            btnAddNewStaff.Visible = IsAdmin;
             StyleMenuButtons();
         }
 
@@ -146,10 +148,13 @@ namespace ScotWaterV1
 
         private void btnAddNewStaffMember_Click(object sender, EventArgs e)
         {
-            if (currentAdmin == null)
+            if (!IsAdmin)
             {
-                Message
+                MessageBox.Show("Only admin users can add new staff members");
+                return;
             }
+
+            OpenForm(new AddNewStaffMember());
         }
     }
 }
