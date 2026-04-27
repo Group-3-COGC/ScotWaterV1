@@ -145,6 +145,7 @@
             this.lnkForgotPassword.TabStop = true;
             this.lnkForgotPassword.Text = "Forgot Password ? ";
             this.lnkForgotPassword.VisitedLinkColor = System.Drawing.Color.DodgerBlue;
+            this.lnkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkForgotPassword_LinkClicked);
             // 
             // frmLogin
             // 
