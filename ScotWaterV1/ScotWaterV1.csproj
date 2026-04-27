@@ -110,12 +110,6 @@
     <Compile Include="Models\AuthService.cs" />
     <Compile Include="Models\BillingService.cs" />
     <Compile Include="Models\Business.cs" />
-    <Compile Include="Forms\MeterReadings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MeterReadings.Designer.cs">
-      <DependentUpon>MeterReadings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ViewBusinesses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MeterReadings.resx">
-      <DependentUpon>MeterReadings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewBusinesses.resx">
       <DependentUpon>ViewBusinesses.cs</DependentUpon>
