@@ -1,37 +1,31 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using ScotWaterV1.Models;
 
-namespace ScotWaterV1
+namespace ScotWaterV1.Models
 {
     public class WaterUsage
     {
         [Key]
-        public int WaterUsageID { get; set; } //primary Key
+        public int WaterUsageID { get; set; }
 
-        public int FreshwaterUnitsUsed { get; set; } 
-        
-        public bool IsLowReserve { get; set; }
+        [Required]
+        public int FreshwaterUnitsUsed { get; set; }
 
+        [Required]
         public int RecycledUnits { get; set; }
 
+        [Required]
         public DateTime ReadingDate { get; set; }
 
-     
-
-        //Navigational properties
-        [ForeignKey("BusinessUser")]
-
+        [Required]
         public int BusinessID { get; set; }
 
-        public BusinessUser BusinessUser { get; set; }
-
-        [ForeignKey("StaffUser")]
-
+        [Required]
         public int StaffUserID { get; set; }
 
-        public StaffUser StaffUser { get; set; }
+        public bool IsLowReserve { get; set; }
 
+        public BusinessUser BusinessUser { get; set; }
+        public StaffUser StaffUser { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ScotWaterV1.Forms
 {
-    partial class AddBusiness
+    partial class frmAddBusiness
     {
         /// <summary>
         /// Required designer variable.
@@ -28,373 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBusiness));
-            this.btnSaveMeterReading = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtUsageAmountMR = new System.Windows.Forms.TextBox();
-            this.lblWaterUsed_MR = new System.Windows.Forms.Label();
-            this.lblRecycleWaterUsed_MR = new System.Windows.Forms.Label();
-            this.txtWaterUsage_MR = new System.Windows.Forms.TextBox();
-            this.txtRecycledWaterUsage_MR = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmbStaff = new System.Windows.Forms.ComboBox();
-            this.txtAdditioanlNotesMR = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbxNumberofUnitsMR = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1MR = new System.Windows.Forms.DateTimePicker();
-            this.txtPreviousReadingMR = new System.Windows.Forms.TextBox();
-            this.txtCurrentReadingMR = new System.Windows.Forms.TextBox();
-            this.txtMeterNumberMR = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbBusiness = new System.Windows.Forms.ComboBox();
-            this.txtBuisnessAddressMR = new System.Windows.Forms.TextBox();
-            this.txtAccountNumberMR = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddBusiness));
+            this.btnAddNewBusiness = new System.Windows.Forms.Button();
             this.btnM_R_SignOut = new System.Windows.Forms.Button();
             this.btnM_R_MainMenu = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtBusinessName = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtAddress1 = new System.Windows.Forms.TextBox();
+            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.txtPostcode = new System.Windows.Forms.TextBox();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtEmailAddress = new System.Windows.Forms.TextBox();
+            this.txtAccountName = new System.Windows.Forms.TextBox();
+            this.txtSortCode = new System.Windows.Forms.TextBox();
+            this.txtAccountNumber = new System.Windows.Forms.TextBox();
+            this.cbxRegion = new System.Windows.Forms.ComboBox();
+            this.txtBusinessID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSaveMeterReading
+            // btnAddNewBusiness
             // 
-            this.btnSaveMeterReading.BackColor = System.Drawing.Color.White;
-            this.btnSaveMeterReading.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveMeterReading.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSaveMeterReading.Location = new System.Drawing.Point(445, 427);
-            this.btnSaveMeterReading.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSaveMeterReading.Name = "btnSaveMeterReading";
-            this.btnSaveMeterReading.Size = new System.Drawing.Size(100, 35);
-            this.btnSaveMeterReading.TabIndex = 43;
-            this.btnSaveMeterReading.Text = "Save ";
-            this.btnSaveMeterReading.UseVisualStyleBackColor = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtUsageAmountMR);
-            this.groupBox4.Controls.Add(this.lblWaterUsed_MR);
-            this.groupBox4.Controls.Add(this.lblRecycleWaterUsed_MR);
-            this.groupBox4.Controls.Add(this.txtWaterUsage_MR);
-            this.groupBox4.Controls.Add(this.txtRecycledWaterUsage_MR);
-            this.groupBox4.Location = new System.Drawing.Point(361, 222);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(360, 122);
-            this.groupBox4.TabIndex = 42;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Water Information";
-            // 
-            // txtUsageAmountMR
-            // 
-            this.txtUsageAmountMR.Location = new System.Drawing.Point(218, 72);
-            this.txtUsageAmountMR.Multiline = true;
-            this.txtUsageAmountMR.Name = "txtUsageAmountMR";
-            this.txtUsageAmountMR.Size = new System.Drawing.Size(117, 20);
-            this.txtUsageAmountMR.TabIndex = 28;
-            // 
-            // lblWaterUsed_MR
-            // 
-            this.lblWaterUsed_MR.AutoSize = true;
-            this.lblWaterUsed_MR.BackColor = System.Drawing.Color.Transparent;
-            this.lblWaterUsed_MR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWaterUsed_MR.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblWaterUsed_MR.Location = new System.Drawing.Point(6, 16);
-            this.lblWaterUsed_MR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWaterUsed_MR.Name = "lblWaterUsed_MR";
-            this.lblWaterUsed_MR.Size = new System.Drawing.Size(207, 24);
-            this.lblWaterUsed_MR.TabIndex = 13;
-            this.lblWaterUsed_MR.Text = "Water Usage Amount";
-            // 
-            // lblRecycleWaterUsed_MR
-            // 
-            this.lblRecycleWaterUsed_MR.AutoSize = true;
-            this.lblRecycleWaterUsed_MR.BackColor = System.Drawing.Color.Transparent;
-            this.lblRecycleWaterUsed_MR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecycleWaterUsed_MR.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblRecycleWaterUsed_MR.Location = new System.Drawing.Point(6, 40);
-            this.lblRecycleWaterUsed_MR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRecycleWaterUsed_MR.Name = "lblRecycleWaterUsed_MR";
-            this.lblRecycleWaterUsed_MR.Size = new System.Drawing.Size(163, 48);
-            this.lblRecycleWaterUsed_MR.TabIndex = 14;
-            this.lblRecycleWaterUsed_MR.Text = "Recycled Water \r\nUsage Amount";
-            // 
-            // txtWaterUsage_MR
-            // 
-            this.txtWaterUsage_MR.Location = new System.Drawing.Point(218, 16);
-            this.txtWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtWaterUsage_MR.Name = "txtWaterUsage_MR";
-            this.txtWaterUsage_MR.Size = new System.Drawing.Size(109, 20);
-            this.txtWaterUsage_MR.TabIndex = 12;
-            // 
-            // txtRecycledWaterUsage_MR
-            // 
-            this.txtRecycledWaterUsage_MR.Location = new System.Drawing.Point(218, 45);
-            this.txtRecycledWaterUsage_MR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRecycledWaterUsage_MR.Name = "txtRecycledWaterUsage_MR";
-            this.txtRecycledWaterUsage_MR.Size = new System.Drawing.Size(109, 20);
-            this.txtRecycledWaterUsage_MR.TabIndex = 15;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.cmbStaff);
-            this.groupBox3.Controls.Add(this.txtAdditioanlNotesMR);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(361, 106);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(360, 100);
-            this.groupBox3.TabIndex = 41;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Reader Info";
-            // 
-            // cmbStaff
-            // 
-            this.cmbStaff.FormattingEnabled = true;
-            this.cmbStaff.Location = new System.Drawing.Point(118, 20);
-            this.cmbStaff.Name = "cmbStaff";
-            this.cmbStaff.Size = new System.Drawing.Size(121, 21);
-            this.cmbStaff.TabIndex = 30;
-            // 
-            // txtAdditioanlNotesMR
-            // 
-            this.txtAdditioanlNotesMR.Location = new System.Drawing.Point(118, 47);
-            this.txtAdditioanlNotesMR.Multiline = true;
-            this.txtAdditioanlNotesMR.Name = "txtAdditioanlNotesMR";
-            this.txtAdditioanlNotesMR.Size = new System.Drawing.Size(235, 41);
-            this.txtAdditioanlNotesMR.TabIndex = 29;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label10.Location = new System.Drawing.Point(6, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 24);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Staff Name ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label11.Location = new System.Drawing.Point(6, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 24);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Notes ";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cbxNumberofUnitsMR);
-            this.groupBox2.Controls.Add(this.dateTimePicker1MR);
-            this.groupBox2.Controls.Add(this.txtPreviousReadingMR);
-            this.groupBox2.Controls.Add(this.txtCurrentReadingMR);
-            this.groupBox2.Controls.Add(this.txtMeterNumberMR);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(14, 223);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(324, 152);
-            this.groupBox2.TabIndex = 40;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Reading Details";
-            // 
-            // cbxNumberofUnitsMR
-            // 
-            this.cbxNumberofUnitsMR.FormattingEnabled = true;
-            this.cbxNumberofUnitsMR.Location = new System.Drawing.Point(185, 127);
-            this.cbxNumberofUnitsMR.Name = "cbxNumberofUnitsMR";
-            this.cbxNumberofUnitsMR.Size = new System.Drawing.Size(121, 21);
-            this.cbxNumberofUnitsMR.TabIndex = 29;
-            // 
-            // dateTimePicker1MR
-            // 
-            this.dateTimePicker1MR.Location = new System.Drawing.Point(189, 101);
-            this.dateTimePicker1MR.Name = "dateTimePicker1MR";
-            this.dateTimePicker1MR.Size = new System.Drawing.Size(117, 20);
-            this.dateTimePicker1MR.TabIndex = 28;
-            // 
-            // txtPreviousReadingMR
-            // 
-            this.txtPreviousReadingMR.Location = new System.Drawing.Point(189, 71);
-            this.txtPreviousReadingMR.Multiline = true;
-            this.txtPreviousReadingMR.Name = "txtPreviousReadingMR";
-            this.txtPreviousReadingMR.Size = new System.Drawing.Size(117, 20);
-            this.txtPreviousReadingMR.TabIndex = 27;
-            // 
-            // txtCurrentReadingMR
-            // 
-            this.txtCurrentReadingMR.Location = new System.Drawing.Point(189, 45);
-            this.txtCurrentReadingMR.Multiline = true;
-            this.txtCurrentReadingMR.Name = "txtCurrentReadingMR";
-            this.txtCurrentReadingMR.Size = new System.Drawing.Size(117, 20);
-            this.txtCurrentReadingMR.TabIndex = 26;
-            // 
-            // txtMeterNumberMR
-            // 
-            this.txtMeterNumberMR.Location = new System.Drawing.Point(189, 19);
-            this.txtMeterNumberMR.Multiline = true;
-            this.txtMeterNumberMR.Name = "txtMeterNumberMR";
-            this.txtMeterNumberMR.Size = new System.Drawing.Size(117, 20);
-            this.txtMeterNumberMR.TabIndex = 25;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 24);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Meter Number ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Location = new System.Drawing.Point(6, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 24);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Current Reading ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Location = new System.Drawing.Point(6, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 24);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Previous Reading ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label8.Location = new System.Drawing.Point(6, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(165, 24);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Date of Reading ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Location = new System.Drawing.Point(6, 125);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 24);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Units ";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmbBusiness);
-            this.groupBox1.Controls.Add(this.txtBuisnessAddressMR);
-            this.groupBox1.Controls.Add(this.txtAccountNumberMR);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(13, 106);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 100);
-            this.groupBox1.TabIndex = 39;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Account Info";
-            // 
-            // cmbBusiness
-            // 
-            this.cmbBusiness.FormattingEnabled = true;
-            this.cmbBusiness.Location = new System.Drawing.Point(190, 20);
-            this.cmbBusiness.Name = "cmbBusiness";
-            this.cmbBusiness.Size = new System.Drawing.Size(121, 21);
-            this.cmbBusiness.TabIndex = 23;
-            // 
-            // txtBuisnessAddressMR
-            // 
-            this.txtBuisnessAddressMR.Location = new System.Drawing.Point(190, 72);
-            this.txtBuisnessAddressMR.Multiline = true;
-            this.txtBuisnessAddressMR.Name = "txtBuisnessAddressMR";
-            this.txtBuisnessAddressMR.Size = new System.Drawing.Size(117, 20);
-            this.txtBuisnessAddressMR.TabIndex = 22;
-            // 
-            // txtAccountNumberMR
-            // 
-            this.txtAccountNumberMR.Location = new System.Drawing.Point(190, 46);
-            this.txtAccountNumberMR.Multiline = true;
-            this.txtAccountNumberMR.Name = "txtAccountNumberMR";
-            this.txtAccountNumberMR.Size = new System.Drawing.Size(117, 20);
-            this.txtAccountNumberMR.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 24);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Customer Name ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(6, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 24);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Account Number ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(6, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 24);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Address ";
+            this.btnAddNewBusiness.BackColor = System.Drawing.Color.White;
+            this.btnAddNewBusiness.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewBusiness.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAddNewBusiness.Location = new System.Drawing.Point(445, 427);
+            this.btnAddNewBusiness.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddNewBusiness.Name = "btnAddNewBusiness";
+            this.btnAddNewBusiness.Size = new System.Drawing.Size(100, 35);
+            this.btnAddNewBusiness.TabIndex = 43;
+            this.btnAddNewBusiness.Text = "Save ";
+            this.btnAddNewBusiness.UseVisualStyleBackColor = false;
+            this.btnAddNewBusiness.Click += new System.EventHandler(this.btnAddNewBusiness_Click);
             // 
             // btnM_R_SignOut
             // 
@@ -451,74 +135,300 @@
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
-            // AddBusiness
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Business ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(51, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Business Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(51, 198);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "City";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 226);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Address Line 1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(51, 256);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 13);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Address Line 2 (Optional)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(51, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Postcode";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(51, 320);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Region";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(442, 173);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(126, 13);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Phone Number (Optional)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(442, 145);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Contact Name";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(442, 198);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "Email Address";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(442, 226);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 13);
+            this.label11.TabIndex = 54;
+            this.label11.Text = "Account Name";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(442, 256);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "Sort Code";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(442, 288);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 13);
+            this.label13.TabIndex = 56;
+            this.label13.Text = "Account Number";
+            // 
+            // txtBusinessName
+            // 
+            this.txtBusinessName.Location = new System.Drawing.Point(252, 173);
+            this.txtBusinessName.Name = "txtBusinessName";
+            this.txtBusinessName.Size = new System.Drawing.Size(100, 20);
+            this.txtBusinessName.TabIndex = 57;
+            // 
+            // txtCity
+            // 
+            this.txtCity.Location = new System.Drawing.Point(252, 199);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 20);
+            this.txtCity.TabIndex = 58;
+            // 
+            // txtAddress1
+            // 
+            this.txtAddress1.Location = new System.Drawing.Point(252, 226);
+            this.txtAddress1.Name = "txtAddress1";
+            this.txtAddress1.Size = new System.Drawing.Size(100, 20);
+            this.txtAddress1.TabIndex = 59;
+            // 
+            // txtAddress2
+            // 
+            this.txtAddress2.Location = new System.Drawing.Point(252, 256);
+            this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.Size = new System.Drawing.Size(100, 20);
+            this.txtAddress2.TabIndex = 60;
+            // 
+            // txtPostcode
+            // 
+            this.txtPostcode.Location = new System.Drawing.Point(252, 280);
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(100, 20);
+            this.txtPostcode.TabIndex = 61;
+            // 
+            // txtContactName
+            // 
+            this.txtContactName.Location = new System.Drawing.Point(646, 137);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(100, 20);
+            this.txtContactName.TabIndex = 62;
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(646, 166);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtPhoneNumber.TabIndex = 63;
+            // 
+            // txtEmailAddress
+            // 
+            this.txtEmailAddress.Location = new System.Drawing.Point(646, 195);
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailAddress.TabIndex = 64;
+            // 
+            // txtAccountName
+            // 
+            this.txtAccountName.Location = new System.Drawing.Point(646, 225);
+            this.txtAccountName.Name = "txtAccountName";
+            this.txtAccountName.Size = new System.Drawing.Size(100, 20);
+            this.txtAccountName.TabIndex = 65;
+            // 
+            // txtSortCode
+            // 
+            this.txtSortCode.Location = new System.Drawing.Point(646, 253);
+            this.txtSortCode.Name = "txtSortCode";
+            this.txtSortCode.Size = new System.Drawing.Size(100, 20);
+            this.txtSortCode.TabIndex = 66;
+            // 
+            // txtAccountNumber
+            // 
+            this.txtAccountNumber.Location = new System.Drawing.Point(646, 288);
+            this.txtAccountNumber.Name = "txtAccountNumber";
+            this.txtAccountNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtAccountNumber.TabIndex = 67;
+            // 
+            // cbxRegion
+            // 
+            this.cbxRegion.FormattingEnabled = true;
+            this.cbxRegion.Items.AddRange(new object[] {
+            "North",
+            "South",
+            "East",
+            "West"});
+            this.cbxRegion.Location = new System.Drawing.Point(252, 311);
+            this.cbxRegion.Name = "cbxRegion";
+            this.cbxRegion.Size = new System.Drawing.Size(121, 21);
+            this.cbxRegion.TabIndex = 68;
+            // 
+            // txtBusinessID
+            // 
+            this.txtBusinessID.Location = new System.Drawing.Point(252, 145);
+            this.txtBusinessID.Name = "txtBusinessID";
+            this.txtBusinessID.Size = new System.Drawing.Size(100, 20);
+            this.txtBusinessID.TabIndex = 69;
+            // 
+            // frmAddBusiness
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 492);
-            this.Controls.Add(this.btnSaveMeterReading);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtBusinessID);
+            this.Controls.Add(this.cbxRegion);
+            this.Controls.Add(this.txtAccountNumber);
+            this.Controls.Add(this.txtSortCode);
+            this.Controls.Add(this.txtAccountName);
+            this.Controls.Add(this.txtEmailAddress);
+            this.Controls.Add(this.txtPhoneNumber);
+            this.Controls.Add(this.txtContactName);
+            this.Controls.Add(this.txtPostcode);
+            this.Controls.Add(this.txtAddress2);
+            this.Controls.Add(this.txtAddress1);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtBusinessName);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAddNewBusiness);
             this.Controls.Add(this.btnM_R_SignOut);
             this.Controls.Add(this.btnM_R_MainMenu);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "AddBusiness";
+            this.Name = "frmAddBusiness";
             this.Text = "AddBusiness";
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnSaveMeterReading;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtUsageAmountMR;
-        private System.Windows.Forms.Label lblWaterUsed_MR;
-        private System.Windows.Forms.Label lblRecycleWaterUsed_MR;
-        private System.Windows.Forms.TextBox txtWaterUsage_MR;
-        private System.Windows.Forms.TextBox txtRecycledWaterUsage_MR;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cmbStaff;
-        private System.Windows.Forms.TextBox txtAdditioanlNotesMR;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbxNumberofUnitsMR;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1MR;
-        private System.Windows.Forms.TextBox txtPreviousReadingMR;
-        private System.Windows.Forms.TextBox txtCurrentReadingMR;
-        private System.Windows.Forms.TextBox txtMeterNumberMR;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbBusiness;
-        private System.Windows.Forms.TextBox txtBuisnessAddressMR;
-        private System.Windows.Forms.TextBox txtAccountNumberMR;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAddNewBusiness;
         private System.Windows.Forms.Button btnM_R_SignOut;
         private System.Windows.Forms.Button btnM_R_MainMenu;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtBusinessName;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtAddress1;
+        private System.Windows.Forms.TextBox txtAddress2;
+        private System.Windows.Forms.TextBox txtPostcode;
+        private System.Windows.Forms.TextBox txtContactName;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
+        private System.Windows.Forms.TextBox txtEmailAddress;
+        private System.Windows.Forms.TextBox txtAccountName;
+        private System.Windows.Forms.TextBox txtSortCode;
+        private System.Windows.Forms.TextBox txtAccountNumber;
+        private System.Windows.Forms.ComboBox cbxRegion;
+        private System.Windows.Forms.TextBox txtBusinessID;
     }
 }

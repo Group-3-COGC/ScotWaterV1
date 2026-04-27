@@ -135,7 +135,9 @@ namespace ScotWaterV1
         // =========================
         private void MenuHover(object sender, EventArgs e)
         {
-            ((Button)sender).BackColor = Color.FromArgb(50, 70, 90);
+            frmAddBusiness NewBusiness = new frmAddBusiness();
+            NewBusiness.Show();
+            this.Hide();
         }
 
         private void MenuLeave(object sender, EventArgs e)

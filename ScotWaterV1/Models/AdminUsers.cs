@@ -1,24 +1,16 @@
-﻿using ScotWaterV1.Models;
-using ScotWaterV1.Repositories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ScotWaterV1
+namespace ScotWaterV1.Models
 {
     public class AdminUsers
     {
-        //Admin user class to hold the data for the admin users
         [Key]
-        public int AdminID { get; set; }  //primary key
-        public string AdminUsername { get; set; }
-        public string AdminPassword { get; set; }
+        public int AdminUserID { get; set; }
 
-       
+        [Required]
+        public string AdminUsername { get; set; }
+
+        [Required]
+        public string AdminPassword { get; set; }
     }
 }
-
