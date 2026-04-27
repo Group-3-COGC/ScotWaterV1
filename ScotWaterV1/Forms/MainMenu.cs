@@ -106,6 +106,8 @@ namespace ScotWaterV1
         // =========================
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("IsAdmin = " + IsAdmin);
+            btnAddNewStaff.Visible = IsAdmin;
             
 
             StyleMenuButtons();
@@ -177,12 +179,6 @@ namespace ScotWaterV1
             {
                 MessageBox.Show("Only admin users can add new staff members");
                 return;
-            }
-
-
-            if (!IsAdmin)
-            {
-                btnAddNewStaff.Enabled = false;
             }
 
             OpenForm(new AddNewStaffMember());
