@@ -1,5 +1,6 @@
-﻿using ScotWaterV1.Models;
-using ScotWaterV1.Repositories;
+﻿using ScotWaterV1.Core;
+using ScotWaterV1.Models;
+using ScotWaterV1.Services;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,7 +13,6 @@ namespace ScotWaterV1
         {
             InitializeComponent();
             txtLoginPassword.UseSystemPasswordChar = true;
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -26,13 +26,13 @@ namespace ScotWaterV1
                 return;
             }
 
-            // STAFF LOGIN
-            StaffUserRepository staffRepo = new StaffUserRepository();
-            StaffUser staff = staffRepo.Login(username, password);
+            var auth = new AuthService();
 
-            if (staff != null)
+            // STAFF LOGIN
+            if (auth.LoginStaff(username, password, out string staffError))
             {
                 MessageBox.Show("Staff login successful!");
+
                 frmMainMenu menu = new frmMainMenu();
                 menu.Show();
                 this.Hide();
@@ -40,24 +40,22 @@ namespace ScotWaterV1
             }
 
             // ADMIN LOGIN
-            AdminRepository adminRepo = new AdminRepository();
-            AdminUsers admin = adminRepo.Login(username, password);
-
-            if (admin != null)
+            if (auth.LoginAdmin(username, password, out string adminError))
             {
                 MessageBox.Show("Admin login successful!");
+
                 frmMainMenu menu = new frmMainMenu();
                 menu.Show();
                 this.Hide();
                 return;
             }
 
+            // If both failed
             MessageBox.Show("Invalid username or password.");
         }
 
         private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-         
             string username = Microsoft.VisualBasic.Interaction.InputBox(
                 "Enter your username:",
                 "Reset Password",
@@ -89,7 +87,7 @@ namespace ScotWaterV1
                     return;
                 }
 
-                // SAVE NEW PASSWORD
+                // SAVE NEW PASSWORD (PBKDF2)
                 user.staffPassword = PasswordSecurity.HashPassword(newPassword);
                 db.SaveChanges();
 
@@ -97,6 +95,4 @@ namespace ScotWaterV1
             }
         }
     }
-        }
-    
-
+}

@@ -148,44 +148,23 @@
             this.btnAddBusiness.UseVisualStyleBackColor = true;
             this.btnAddBusiness.Click += new System.EventHandler(this.btnAddBusiness_Click);
             // 
-            // panelMenu
-            // 
-            this.panelMenu.Controls.Add(this.btnViewBusinesses);
-            this.panelMenu.Controls.Add(this.btnMeterReadings);
-            this.panelMenu.Controls.Add(this.btnAddBusiness);
-            this.panelMenu.Controls.Add(this.btnWaterConsumption);
-            this.panelMenu.Controls.Add(this.btnGenerateBill);
-            this.panelMenu.Controls.Add(this.btnModifyWaterPrice);
-            this.panelMenu.Controls.Add(this.btnModifyWaterReserveLevels);
-            this.panelMenu.Location = new System.Drawing.Point(1240, -1);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(216, 613);
-            this.panelMenu.TabIndex = 16;
-            // 
-            // panelMain
-            // 
-            this.panelMain.Controls.Add(this.btnMainMenuSignOut);
-            this.panelMain.Location = new System.Drawing.Point(-3, -1);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1237, 613);
-            this.panelMain.TabIndex = 17;
-            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1457, 611);
-            this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelMenu);
+            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.btnAddBusiness);
+            this.Controls.Add(this.btnMeterReadings);
+            this.Controls.Add(this.btnWaterConsumption);
             this.Controls.Add(this.lblWelcome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmMainMenu";
             this.Text = "Main Menu";
-            this.Load += new System.EventHandler(this.frmMainMenu_Load);
-            this.panelMenu.ResumeLayout(false);
-            this.panelMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +180,5 @@
         private System.Windows.Forms.Button btnWaterConsumption;
         private System.Windows.Forms.Button btnMeterReadings;
         private System.Windows.Forms.Button btnAddBusiness;
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelMain;
     }
 }
