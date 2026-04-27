@@ -98,7 +98,7 @@ namespace ScotWaterV1.Forms
                 // -------------------------------
                 DisplayBill displayForm = new DisplayBill(bill.BusinessBillID);
                 displayForm.Show();
-                this.Hide();
+                this.Close();
             }
         }
 
