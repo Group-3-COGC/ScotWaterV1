@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using ScotWaterV1.Core;
 using ScotWaterV1.Models;
 
 namespace ScotWaterV1.Repositories
@@ -16,7 +17,7 @@ namespace ScotWaterV1.Repositories
                 if (user == null)
                     return null;
 
-                // Step 2: Verify hashed password
+                // Step 2: Verify hashed password (PBKDF2)
                 bool isValid = PasswordSecurity.VerifyPassword(password, user.staffPassword);
 
                 return isValid ? user : null;

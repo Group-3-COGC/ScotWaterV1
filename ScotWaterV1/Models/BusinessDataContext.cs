@@ -1,6 +1,6 @@
-﻿using ScotWaterV1.Models;
-using System;
+﻿using System;
 using System.Data.Entity;
+using ScotWaterV1.Core;
 
 namespace ScotWaterV1.Models
 {
@@ -14,6 +14,8 @@ namespace ScotWaterV1.Models
 
         public BusinessDataContext() : base("BusinessAppConnection")
         {
+            // Optional: enable automatic DB creation
+            Database.SetInitializer(new BusinessDatabaseInitialiser());
         }
     }
 
@@ -23,8 +25,10 @@ namespace ScotWaterV1.Models
         {
             base.Seed(context);
 
+            // -------------------------
             // BUSINESS USERS
-            BusinessUser business1 = new BusinessUser()
+            // -------------------------
+            var business1 = new BusinessUser()
             {
                 CompanyName = "Business 1",
                 ContactName = "John Smith",
@@ -32,7 +36,7 @@ namespace ScotWaterV1.Models
                 Postcode = "G1 2AB"
             };
 
-            BusinessUser business2 = new BusinessUser()
+            var business2 = new BusinessUser()
             {
                 CompanyName = "Business 2",
                 ContactName = "James May",
@@ -40,7 +44,7 @@ namespace ScotWaterV1.Models
                 Postcode = "G2 3CD"
             };
 
-            BusinessUser business3 = new BusinessUser()
+            var business3 = new BusinessUser()
             {
                 CompanyName = "City of Glasgow College",
                 ContactName = "Mohammed Manasereh",
@@ -53,14 +57,16 @@ namespace ScotWaterV1.Models
             context.BusinessUser.Add(business3);
             context.SaveChanges();
 
+            // -------------------------
             // STAFF USERS (HASHED PASSWORDS)
-            StaffUser staffuser1 = new StaffUser()
+            // -------------------------
+            var staffuser1 = new StaffUser()
             {
                 staffUsername = "Jack",
                 staffPassword = PasswordSecurity.HashPassword("5678")
             };
 
-            StaffUser staffuser2 = new StaffUser()
+            var staffuser2 = new StaffUser()
             {
                 staffUsername = "Leon",
                 staffPassword = PasswordSecurity.HashPassword("3456")
@@ -70,14 +76,16 @@ namespace ScotWaterV1.Models
             context.StaffUser.Add(staffuser2);
             context.SaveChanges();
 
+            // -------------------------
             // ADMIN USERS (HASHED PASSWORDS)
-            AdminUsers adminuser1 = new AdminUsers()
+            // -------------------------
+            var adminuser1 = new AdminUsers()
             {
                 AdminUsername = "Dean",
                 AdminPassword = PasswordSecurity.HashPassword("333")
             };
 
-            AdminUsers adminuser2 = new AdminUsers()
+            var adminuser2 = new AdminUsers()
             {
                 AdminUsername = "Antoin",
                 AdminPassword = PasswordSecurity.HashPassword("444")
@@ -87,8 +95,10 @@ namespace ScotWaterV1.Models
             context.AdminUsers.Add(adminuser2);
             context.SaveChanges();
 
+            // -------------------------
             // WATER USAGE
-            WaterUsage waterusage1 = new WaterUsage()
+            // -------------------------
+            var waterusage1 = new WaterUsage()
             {
                 FreshwaterUnitsUsed = 120,
                 IsLowReserve = false,
@@ -98,7 +108,7 @@ namespace ScotWaterV1.Models
                 StaffUserID = staffuser1.StaffUserID
             };
 
-            WaterUsage waterusage2 = new WaterUsage()
+            var waterusage2 = new WaterUsage()
             {
                 FreshwaterUnitsUsed = 200,
                 IsLowReserve = true,
@@ -112,8 +122,10 @@ namespace ScotWaterV1.Models
             context.WaterUsage.Add(waterusage2);
             context.SaveChanges();
 
+            // -------------------------
             // BUSINESS BILLS
-            BusinessBills businessbill1 = new BusinessBills()
+            // -------------------------
+            var businessbill1 = new BusinessBills()
             {
                 BillDate = waterusage1.ReadingDate,
                 TotalCharges = 25.00m,
@@ -125,7 +137,7 @@ namespace ScotWaterV1.Models
                 BusinessID = business1.BusinessID
             };
 
-            BusinessBills businessbill2 = new BusinessBills()
+            var businessbill2 = new BusinessBills()
             {
                 BillDate = waterusage2.ReadingDate,
                 TotalCharges = 40.00m,
