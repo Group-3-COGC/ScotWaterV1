@@ -13,9 +13,8 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
-        // ----------------------------------------------------
         // LOAD BUSINESSES INTO COMBO BOX WHEN FORM LOADS
-        // ----------------------------------------------------
+  
         private void frmGenerateBill_Load(object sender, EventArgs e)
         {
             using (var context = new BusinessDataContext())
@@ -32,10 +31,8 @@ namespace ScotWaterV1.Forms
             dtpBillDate.Value = DateTime.Now;
         }
 
-        // ----------------------------------------------------
-        // GENERATE BILL BUTTON CLICK
-        // ----------------------------------------------------
         
+        // GENERATE BILL BUTTON CLICK
         
 
         private void btnGenerateBill_Click_1(object sender, EventArgs e)

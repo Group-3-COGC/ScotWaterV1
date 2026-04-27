@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblBillDetails = new System.Windows.Forms.Label();
-            this.lblCompanyName = new System.Windows.Forms.Label();
+            this.lblBusinessName = new System.Windows.Forms.Label();
             this.lblBillDate = new System.Windows.Forms.Label();
             this.lblTotalCharges = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
@@ -55,15 +55,15 @@
             this.lblBillDetails.TabIndex = 0;
             this.lblBillDetails.Text = "Bill Details";
             // 
-            // lblCompanyName
+            // lblBusinessName
             // 
-            this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyName.Location = new System.Drawing.Point(275, 130);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(165, 25);
-            this.lblCompanyName.TabIndex = 1;
-            this.lblCompanyName.Text = "Company Name";
+            this.lblBusinessName.AutoSize = true;
+            this.lblBusinessName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusinessName.Location = new System.Drawing.Point(275, 130);
+            this.lblBusinessName.Name = "lblBusinessName";
+            this.lblBusinessName.Size = new System.Drawing.Size(165, 25);
+            this.lblBusinessName.TabIndex = 1;
+            this.lblBusinessName.Text = "Company Name";
             // 
             // lblBillDate
             // 
@@ -214,7 +214,7 @@
             this.Controls.Add(this.lblDiscount);
             this.Controls.Add(this.lblTotalCharges);
             this.Controls.Add(this.lblBillDate);
-            this.Controls.Add(this.lblCompanyName);
+            this.Controls.Add(this.lblBusinessName);
             this.Controls.Add(this.lblBillDetails);
             this.Name = "DisplayBill";
             this.ResumeLayout(false);
@@ -225,7 +225,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblBillDetails;
-        private System.Windows.Forms.Label lblCompanyName;
+        private System.Windows.Forms.Label lblBusinessName;
         private System.Windows.Forms.Label lblBillDate;
         private System.Windows.Forms.Label lblTotalCharges;
         private System.Windows.Forms.Label lblDiscount;

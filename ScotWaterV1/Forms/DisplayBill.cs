@@ -41,7 +41,7 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
-                lblCompanyName.Text = bill.CompanyName;
+                lblBusinessName.Text = bill.CompanyName;
                 lblBillDate.Text = bill.BillDate.ToShortDateString();
                 lblTotalCharges.Text = bill.TotalCharges.ToString("C");
                 lblDiscount.Text = bill.TotalDiscount.ToString("C");
