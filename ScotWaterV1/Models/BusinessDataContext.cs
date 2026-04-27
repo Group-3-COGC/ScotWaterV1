@@ -19,7 +19,9 @@ namespace ScotWaterV1.Models
         }
     }
 
-    public class BusinessDatabaseInitialiser : DropCreateDatabaseAlways<BusinessDataContext>
+    public class BusinessDatabaseInitialiser
+    : CreateDatabaseIfNotExists<BusinessDataContext>
+
     {
         protected override void Seed(BusinessDataContext context)
         {
