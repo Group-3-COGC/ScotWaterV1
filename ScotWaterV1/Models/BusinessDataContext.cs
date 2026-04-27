@@ -4,32 +4,38 @@ using ScotWaterV1.Core;
 
 namespace ScotWaterV1.Models
 {
+   
+    // DATABASE CONTEXT 
+   
     public class BusinessDataContext : DbContext
     {
+        public BusinessDataContext() : base("BusinessAppConnection")
+        {
+            Database.SetInitializer(new BusinessDatabaseInitialiser());
+        }
+
         public DbSet<BusinessUser> BusinessUser { get; set; }
         public DbSet<StaffUser> StaffUser { get; set; }
         public DbSet<AdminUsers> AdminUsers { get; set; }
         public DbSet<BusinessBills> BusinessBills { get; set; }
         public DbSet<WaterUsage> WaterUsage { get; set; }
 
-        public BusinessDataContext() : base("BusinessAppConnection")
-        {
-            // Optional: enable automatic DB creation
-            Database.SetInitializer(new BusinessDatabaseInitialiser());
-        }
+        // NEW TABLES
+        public DbSet<PricingConfig> PricingConfigs { get; set; }
+        public DbSet<ReserveConfig> ReserveConfigs { get; set; }
     }
 
+   
+    // DATABASE INITIALISER (SEED DATA)
+  
     public class BusinessDatabaseInitialiser
-    : CreateDatabaseIfNotExists<BusinessDataContext>
-
+        : CreateDatabaseIfNotExists<BusinessDataContext>
     {
         protected override void Seed(BusinessDataContext context)
         {
-            base.Seed(context);
-
-            // -------------------------
+            
             // BUSINESS USERS
-            // -------------------------
+            
             var business1 = new BusinessUser()
             {
                 CompanyName = "Business 1",
@@ -59,9 +65,9 @@ namespace ScotWaterV1.Models
             context.BusinessUser.Add(business3);
             context.SaveChanges();
 
-            // -------------------------
-            // STAFF USERS (HASHED PASSWORDS)
-            // -------------------------
+           
+            // STAFF USERS
+           
             var staffuser1 = new StaffUser()
             {
                 staffUsername = "Jack",
@@ -78,9 +84,9 @@ namespace ScotWaterV1.Models
             context.StaffUser.Add(staffuser2);
             context.SaveChanges();
 
-            // -------------------------
-            // ADMIN USERS (HASHED PASSWORDS)
-            // -------------------------
+          
+            // ADMIN USERS
+            
             var adminuser1 = new AdminUsers()
             {
                 AdminUsername = "Dean",
@@ -97,9 +103,8 @@ namespace ScotWaterV1.Models
             context.AdminUsers.Add(adminuser2);
             context.SaveChanges();
 
-            // -------------------------
             // WATER USAGE
-            // -------------------------
+           
             var waterusage1 = new WaterUsage()
             {
                 FreshwaterUnitsUsed = 120,
@@ -124,9 +129,8 @@ namespace ScotWaterV1.Models
             context.WaterUsage.Add(waterusage2);
             context.SaveChanges();
 
-            // -------------------------
+          
             // BUSINESS BILLS
-            // -------------------------
             var businessbill1 = new BusinessBills()
             {
                 BillDate = waterusage1.ReadingDate,
@@ -153,6 +157,31 @@ namespace ScotWaterV1.Models
 
             context.BusinessBills.Add(businessbill1);
             context.BusinessBills.Add(businessbill2);
+
+            
+            // PRICING CONFIG 
+            
+            var pricing = new PricingConfig()
+            {
+                FreshwaterPricePerUnit = 1.00m,
+                RecycledPricePerUnit = 0.50m,
+                LowReserveMultiplier = 1.5m,
+                DiscountRate = 0.10m,
+                VATRate = 0.20m
+            };
+
+            context.PricingConfigs.Add(pricing);
+
+            
+            // RESERVE CONFIG 
+           
+            var reserve = new ReserveConfig()
+            {
+                CurrentReservePercentage = 80m
+            };
+
+            context.ReserveConfigs.Add(reserve);
+
             context.SaveChanges();
         }
     }
