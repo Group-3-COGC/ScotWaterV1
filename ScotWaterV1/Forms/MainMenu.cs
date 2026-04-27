@@ -15,6 +15,7 @@ namespace ScotWaterV1
         public frmMainMenu()
         {
             InitializeComponent();
+            this.Load += frmMainMenu_Load;
         }
 
         private void frmMainMenu_Load(object sender, EventArgs e)

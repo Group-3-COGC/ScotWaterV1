@@ -138,7 +138,6 @@
             this.btnMeterReadings.TabIndex = 14;
             this.btnMeterReadings.Text = "Business Meter Readings";
             this.btnMeterReadings.UseVisualStyleBackColor = true;
-         
             // 
             // btnAddBusiness
             // 
@@ -174,7 +173,7 @@
             this.btnChangeWaterLevel.TabIndex = 17;
             this.btnChangeWaterLevel.Text = "Change Water Levels ";
             this.btnChangeWaterLevel.UseVisualStyleBackColor = true;
-          
+            // 
             // btnChangeWaterCharges
             // 
             this.btnChangeWaterCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,7 +184,6 @@
             this.btnChangeWaterCharges.TabIndex = 16;
             this.btnChangeWaterCharges.Text = "Change Water Charges";
             this.btnChangeWaterCharges.UseVisualStyleBackColor = true;
-     
             // 
             // BtnDsplayBill
             // 
@@ -209,7 +207,6 @@
             this.BtnMeter.TabIndex = 20;
             this.BtnMeter.Text = "Meter Reading ";
             this.BtnMeter.UseVisualStyleBackColor = true;
-
             // 
             // BtnBill
             // 
@@ -221,7 +218,6 @@
             this.BtnBill.TabIndex = 19;
             this.BtnBill.Text = "Generate Bill ";
             this.BtnBill.UseVisualStyleBackColor = true;
-
             // 
             // PanelMenu
             // 
@@ -251,7 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1282, 611);
+            this.ClientSize = new System.Drawing.Size(1352, 777);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.lblWelcome);
