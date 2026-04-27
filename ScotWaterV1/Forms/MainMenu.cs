@@ -8,8 +8,7 @@ namespace ScotWaterV1
 {
     public partial class frmMainMenu : Form
     {
-        private AdminUsers currentAdmin;
-        private StaffUser currentStaff;
+        public bool IsAdmin { get; set; }
 
         public frmMainMenu()
         {
@@ -143,6 +142,14 @@ namespace ScotWaterV1
         private void MenuLeave(object sender, EventArgs e)
         {
             ((Button)sender).BackColor = Color.FromArgb(30, 42, 56);
+        }
+
+        private void btnAddNewStaffMember_Click(object sender, EventArgs e)
+        {
+            if (currentAdmin == null)
+            {
+                Message
+            }
         }
     }
 }

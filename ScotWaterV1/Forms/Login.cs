@@ -34,6 +34,7 @@ namespace ScotWaterV1
                 MessageBox.Show("Staff login successful!");
 
                 frmMainMenu menu = new frmMainMenu();
+                menu.IsAdmin = false;
                 menu.Show();
                 this.Hide();
                 return;
@@ -45,6 +46,7 @@ namespace ScotWaterV1
                 MessageBox.Show("Admin login successful!");
 
                 frmMainMenu menu = new frmMainMenu();
+                menu.IsAdmin = true;
                 menu.Show();
                 this.Hide();
                 return;
