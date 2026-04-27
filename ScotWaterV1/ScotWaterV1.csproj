@@ -108,6 +108,7 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthService.cs" />
+    <Compile Include="Models\BillingService.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Forms\MeterReadings.cs">
       <SubType>Form</SubType>
@@ -132,6 +133,8 @@
     <Compile Include="Models\BusinessUser.cs" />
     <Compile Include="Models\BusinessView.cs" />
     <Compile Include="Models\PasswordSecurity.cs" />
+    <Compile Include="Models\PricingConfig.cs" />
+    <Compile Include="Models\ReserveConfig.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\StaffUser.cs" />
     <Compile Include="Program.cs" />

@@ -13,9 +13,9 @@ namespace ScotWaterV1.Services
             _db = new BusinessDataContext();
         }
 
-        // -----------------------------
+       
         // STAFF LOGIN
-        // -----------------------------
+       
         public bool LoginStaff(string username, string password, out string errorMessage)
         {
             errorMessage = "";
@@ -47,9 +47,9 @@ namespace ScotWaterV1.Services
             return true;
         }
 
-        // -----------------------------
+       
         // ADMIN LOGIN
-        // -----------------------------
+      
         public bool LoginAdmin(string username, string password, out string errorMessage)
         {
             errorMessage = "";
@@ -76,18 +76,17 @@ namespace ScotWaterV1.Services
                 return false;
             }
 
-            // Set session
-            Session.SetAdminSession(admin.AdminID, admin.AdminUsername);
+            // Set session 
+            Session.SetAdminSession(admin.AdminUserID, admin.AdminUsername);
 
             return true;
         }
 
-        // -----------------------------
         // LOGOUT
-        // -----------------------------
+       
         public void Logout()
         {
-            Session.Clear();
+            Session.ClearSession(); 
         }
     }
 }
