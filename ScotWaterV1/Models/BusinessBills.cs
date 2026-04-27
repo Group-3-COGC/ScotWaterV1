@@ -1,30 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ScotWaterV1.Models;
 
-namespace ScotWaterV1
+namespace ScotWaterV1.Models
 {
     public class BusinessBills
     {
         [Key]
-        //get; set; attributes for business bills
-        public int BusinessBillID { get; set; } //primary key
-        public DateTime BillDate { get; set; } 
+        public int BusinessBillID { get; set; }
+
+        [Required]
+        public DateTime BillDate { get; set; }
+
+        [Required]
         public decimal TotalCharges { get; set; }
+
+        [Required]
         public decimal TotalDiscount { get; set; }
-        public decimal DiscountRate { get; set; }
+
+        [Required]
         public decimal SubTotal { get; set; }
+
+        [Required]
         public decimal VAT { get; set; }
+
+        [Required]
         public decimal BusinessFinalCost { get; set; }
 
-        //navigational properties
-        [ForeignKey("BusinessUser")]
-
+        [Required]
         public int BusinessID { get; set; }
 
         public BusinessUser BusinessUser { get; set; }
