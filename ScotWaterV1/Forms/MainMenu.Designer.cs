@@ -41,6 +41,7 @@
             this.btnWaterConsumption = new System.Windows.Forms.Button();
             this.btnMeterReadings = new System.Windows.Forms.Button();
             this.btnAddBusiness = new System.Windows.Forms.Button();
+            this.btnAddNewStaffMember = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -183,12 +184,24 @@
             this.btnAddBusiness.UseVisualStyleBackColor = true;
             this.btnAddBusiness.Click += new System.EventHandler(this.btnAddBusiness_Click);
             // 
+            // btnAddNewStaffMember
+            // 
+            this.btnAddNewStaffMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewStaffMember.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAddNewStaffMember.Location = new System.Drawing.Point(666, 284);
+            this.btnAddNewStaffMember.Name = "btnAddNewStaffMember";
+            this.btnAddNewStaffMember.Size = new System.Drawing.Size(141, 136);
+            this.btnAddNewStaffMember.TabIndex = 16;
+            this.btnAddNewStaffMember.Text = "Add new Staff Member";
+            this.btnAddNewStaffMember.UseVisualStyleBackColor = true;
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.btnAddNewStaffMember);
             this.Controls.Add(this.btnAddBusiness);
             this.Controls.Add(this.btnMeterReadings);
             this.Controls.Add(this.btnWaterConsumption);
@@ -205,6 +218,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmMainMenu";
             this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.frmMainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -227,5 +241,6 @@
         private System.Windows.Forms.Button btnWaterConsumption;
         private System.Windows.Forms.Button btnMeterReadings;
         private System.Windows.Forms.Button btnAddBusiness;
+        private System.Windows.Forms.Button btnAddNewStaffMember;
     }
 }

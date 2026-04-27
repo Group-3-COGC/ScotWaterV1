@@ -65,6 +65,12 @@
     <Compile Include="Forms\AddBusiness.Designer.cs">
       <DependentUpon>AddBusiness.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddNewStaffMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewStaffMember.Designer.cs">
+      <DependentUpon>AddNewStaffMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BusinessWaterUsage.cs">
       <SubType>Form</SubType>
     </Compile>

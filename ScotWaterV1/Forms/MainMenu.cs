@@ -12,8 +12,11 @@ namespace ScotWaterV1
             InitializeComponent();
         }
 
-        
-    
+        private void frmMainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnViewBusinesses_Click(object sender, EventArgs e)
         {
             ViewBusinesses businesses = new ViewBusinesses();
@@ -75,5 +78,6 @@ namespace ScotWaterV1
             SignOut.Show();
             this.Close();
         }
+        
     }
 }
