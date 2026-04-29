@@ -15,8 +15,6 @@ namespace ScotWaterV1.Forms
             _billId = billId;
         }
 
-
-
         private void DisplayBill_Load(object sender, EventArgs e)
         {
             try
@@ -24,7 +22,7 @@ namespace ScotWaterV1.Forms
                 using (var context = new BusinessDataContext())
                 {
                     var bill = context.BusinessBills
-                        .Include("BusinessUser")   // IMPORTANT FIX
+                        .Include("BusinessUser")
                         .Where(b => b.BusinessBillID == _billId)
                         .Select(b => new
                         {
@@ -41,12 +39,11 @@ namespace ScotWaterV1.Forms
                     if (bill == null)
                     {
                         MessageBox.Show("Bill not found.");
-                        this.Close();
                         return;
                     }
 
                     lblBusinessName.Text = bill.CompanyName;
-                    lblBillDate.Text = bill.BillDate.ToString("dd/MM/yyyy");
+                    lblBillDate.Text = bill.BillDate.ToShortDateString();
                     lblTotalCharges.Text = bill.TotalCharges.ToString("C");
                     lblDiscount.Text = bill.TotalDiscount.ToString("C");
                     lblSubTotal.Text = bill.SubTotal.ToString("C");
@@ -56,8 +53,7 @@ namespace ScotWaterV1.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading bill: " + ex.Message);
-                this.Close();
+                MessageBox.Show("An error occurred while loading the bill: " + ex.Message);
             }
         }
 
@@ -73,6 +69,60 @@ namespace ScotWaterV1.Forms
             if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void btnBillSearch_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtBillSearch.Text, out int billId))
+            {
+                LoadBill(billId);
+            }
+            else
+            {
+                MessageBox.Show("Enter a valid Bill ID.");
+            }
+        }
+
+        private void LoadBill(int billId)
+        {
+            try
+            {
+                using (var context = new BusinessDataContext())
+                {
+                    var bill = context.BusinessBills
+                        .Include("BusinessUser")
+                        .Where(b => b.BusinessBillID == billId)
+                        .Select(b => new
+                        {
+                            b.BillDate,
+                            b.TotalCharges,
+                            b.TotalDiscount,
+                            b.SubTotal,
+                            b.VAT,
+                            b.BusinessFinalCost,
+                            CompanyName = b.BusinessUser.CompanyName
+                        })
+                        .FirstOrDefault();
+
+                    if (bill == null)
+                    {
+                        MessageBox.Show("Bill not found.");
+                        return;
+                    }
+
+                    lblBusinessName.Text = bill.CompanyName;
+                    lblBillDate.Text = bill.BillDate.ToShortDateString();
+                    lblTotalCharges.Text = bill.TotalCharges.ToString("C");
+                    lblDiscount.Text = bill.TotalDiscount.ToString("C");
+                    lblSubTotal.Text = bill.SubTotal.ToString("C");
+                    lblVAT.Text = bill.VAT.ToString("C");
+                    lblFinalCost.Text = bill.BusinessFinalCost.ToString("C");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading the bill: " + ex.Message);
             }
         }
     }

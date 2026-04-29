@@ -141,7 +141,7 @@
             this.lnkForgotPassword.Location = new System.Drawing.Point(531, 536);
             this.lnkForgotPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkForgotPassword.Name = "lnkForgotPassword";
-            this.lnkForgotPassword.Size = new System.Drawing.Size(221, 25);
+            this.lnkForgotPassword.Size = new System.Drawing.Size(177, 20);
             this.lnkForgotPassword.TabIndex = 8;
             this.lnkForgotPassword.TabStop = true;
             this.lnkForgotPassword.Text = "Forgot Password ? ";
@@ -153,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1304, 814);
+            this.ClientSize = new System.Drawing.Size(1126, 639);
             this.Controls.Add(this.lnkForgotPassword);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblLoginPassword);
