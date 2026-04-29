@@ -161,7 +161,6 @@
             this.btnChangeWaterLevel.TabIndex = 17;
             this.btnChangeWaterLevel.Text = "Change Water Levels ";
             this.btnChangeWaterLevel.UseVisualStyleBackColor = true;
-            this.btnChangeWaterLevel.Click += new System.EventHandler(this.btnChangeWaterLevel_Click_1);
             // 
             // btnChangeWaterCharges
             // 
@@ -197,6 +196,7 @@
             this.BtnBill.TabIndex = 19;
             this.BtnBill.Text = "Generate Bill ";
             this.BtnBill.UseVisualStyleBackColor = true;
+            this.BtnBill.Click += new System.EventHandler(this.BtnBill_Click_1);
             // 
             // PanelMenu
             // 
