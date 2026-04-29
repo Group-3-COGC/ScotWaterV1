@@ -1,5 +1,6 @@
 ﻿using ScotWaterV1.Models;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -140,6 +141,16 @@ namespace ScotWaterV1.Forms
                         ReadingDate = dtpDate.Value,
                         IsLowReserve = isLowReserve
                     };
+
+                    bool usageAlreadyExists = db.WaterUsage.Any(u =>
+                    u.BusinessID == businessId &&
+                    DbFunctions.TruncateTime(u.ReadingDate) == dtpDate.Value.Date);
+
+                    if (usageAlreadyExists)
+                    {
+                        MessageBox.Show("Usage for this business already exists on this date.");
+                        return;
+                    }
 
                     db.WaterUsage.Add(usage);
                     db.SaveChanges();
