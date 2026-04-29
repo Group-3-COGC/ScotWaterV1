@@ -40,7 +40,7 @@ namespace ScotWaterV1.Forms
             progressBarReserveLevel.Value = value;
             trkReserveLevel.Value = value;
 
-            if (value < 30)
+            if (value < 25)
             {
                 lblWaterReserveStatus.Text = "LOW RESERVE";
                 lblWaterReserveStatus.ForeColor = System.Drawing.Color.Red;
@@ -60,19 +60,16 @@ namespace ScotWaterV1.Forms
             {
                 using (var db = new BusinessDataContext())
                 {
-                    var usage = new WaterUsage
+                    var reserve = db.ReserveConfigs.FirstOrDefault();
+
+
+                    if (reserve == null)
                     {
-                        FreshwaterUnitsUsed = trkReserveLevel.Value,
-                        RecycledUnits = 0,
-                        ReadingDate = DateTime.Now,
-                        IsLowReserve = trkReserveLevel.Value < 30,
+                        reserve = new ReserveConfig();
+                        db.ReserveConfigs.Add(reserve);
 
-                       
-                        BusinessID = 1,
-                        StaffUserID = 1
-                    };
-
-                    db.WaterUsage.Add(usage);
+                    }
+                    reserve.CurrentReservePercentage = trkReserveLevel.Value;
                     db.SaveChanges();
                 }
 
@@ -86,36 +83,28 @@ namespace ScotWaterV1.Forms
             }
         }
 
-       
+
         private void LoadLatestLevel()
         {
             using (var db = new BusinessDataContext())
             {
-                var latest = db.WaterUsage
-                    .OrderByDescending(w => w.ReadingDate)
-                    .FirstOrDefault();
+                var reserve = db.ReserveConfigs.FirstOrDefault();
 
-                if (latest == null)
+                if (reserve == null)
                 {
-                    UpdateUI(0);
+                    UpdateUI(80);
                     return;
                 }
 
-                int value = latest.FreshwaterUnitsUsed;
+                int value = (int)reserve.CurrentReservePercentage;
 
-                
                 if (value < 0) value = 0;
                 if (value > 100) value = 100;
 
                 UpdateUI(value);
             }
         }
-
-        
        
-      
-       
-
         private void btnSignOut_Click(object sender, EventArgs e)
         {
 

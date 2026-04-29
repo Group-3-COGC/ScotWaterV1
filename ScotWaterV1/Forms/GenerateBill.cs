@@ -84,14 +84,15 @@ namespace ScotWaterV1.Forms
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();
 
-                MessageBox.Show("Bill generated successfully!");
+                MessageBox.Show("Bill ID = " + bill.BusinessBillID);
+
 
                
                 SendBillEmail(bill, business);
 
                 DisplayBill displayForm = new DisplayBill(bill.BusinessBillID);
                 displayForm.Show();
-                this.Close();
+                this.Hide();
             }
         }
 
