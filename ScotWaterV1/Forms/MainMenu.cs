@@ -1,5 +1,4 @@
 ﻿using ScotWaterV1.Forms;
-using ScotWaterV1.Models;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -30,7 +29,7 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // UI SETUP (PRO STYLE)
+        // UI SETUP
         // =========================
         private void ApplyUI()
         {
@@ -38,9 +37,6 @@ namespace ScotWaterV1
 
             PanelMenu.BackColor = Color.FromArgb(33, 43, 54);
             panelMain.BackColor = Color.White;
-
-            if (panelTop != null)
-                panelTop.BackColor = Color.FromArgb(45, 45, 48);
 
             foreach (Control ctrl in PanelMenu.Controls)
             {
@@ -54,6 +50,7 @@ namespace ScotWaterV1
 
                     btn.Font = new Font("Segoe UI", 10);
                     btn.Height = 45;
+                    btn.Width = PanelMenu.Width;
 
                     btn.TextAlign = ContentAlignment.MiddleLeft;
                     btn.Padding = new Padding(15, 0, 0, 0);
@@ -68,39 +65,42 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // TOP BAR (FIXED)
+        // TOP BAR (SAFE VERSION)
         // =========================
         private void SetupTopBar()
         {
             panelTop.Controls.Clear();
+            panelTop.BackColor = Color.FromArgb(45, 45, 48);
 
-            // TITLE
-            Label lblTitle = new Label();
-            lblTitle.Text = "ScotWater System";
-            lblTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            lblTitle.ForeColor = Color.White;
-            lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(20, 15);
+            Label lblTitle = new Label
+            {
+                Text = "ScotWater System",
+                Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                ForeColor = Color.White,
+                AutoSize = true,
+                Location = new Point(20, 15)
+            };
 
-            // USER
-            Label lblUser = new Label();
-            lblUser.Text = IsAdmin ? "Admin User" : "Staff User";
-            lblUser.Font = new Font("Segoe UI", 10);
-            lblUser.ForeColor = Color.White;
-            lblUser.AutoSize = true;
-            lblUser.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblUser.Location = new Point(panelTop.Width - 220, 20);
+            Label lblUser = new Label
+            {
+                Text = IsAdmin ? "Admin User" : "Staff User",
+                Font = new Font("Segoe UI", 10),
+                ForeColor = Color.White,
+                AutoSize = true,
+                Location = new Point(300, 18)
+            };
 
-            // LOGOUT BUTTON
-            Button btnLogout = new Button();
-            btnLogout.Text = "Sign Out";
-            btnLogout.Size = new Size(90, 30);
-            btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnLogout.Location = new Point(panelTop.Width - 110, 15);
+            Button btnLogout = new Button
+            {
+                Text = "Sign Out",
+                Size = new Size(90, 30),
+                Location = new Point(200, 12),
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                BackColor = Color.FromArgb(200, 50, 50),
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat
+            };
 
-            btnLogout.BackColor = Color.FromArgb(200, 50, 50);
-            btnLogout.ForeColor = Color.White;
-            btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.FlatAppearance.BorderSize = 0;
 
             btnLogout.Click += (s, e) =>
@@ -130,7 +130,7 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // BUTTON HIGHLIGHT
+        // MENU UI EFFECTS
         // =========================
         private void MenuActive(object sender, EventArgs e)
         {
@@ -186,11 +186,6 @@ namespace ScotWaterV1
             OpenForm(new frmChangeWaterLevels());
         }
 
-        private void btnChangeWaterCharges_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmChangeWaterCharges());
-        }
-
         private void btnAddBusiness_Click(object sender, EventArgs e)
         {
             OpenForm(new frmAddBusiness());
@@ -203,13 +198,9 @@ namespace ScotWaterV1
 
         private void BtnDsplayBill_Click(object sender, EventArgs e)
         {
-            int someBillId = 1;
-            OpenForm(new DisplayBill(someBillId));
+            OpenForm(new DisplayBill(1));
         }
 
-        // =========================
-        // ADMIN ONLY
-        // =========================
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
             if (!IsAdmin)
@@ -221,18 +212,10 @@ namespace ScotWaterV1
             OpenForm(new AddNewStaffMember());
         }
 
-        // =========================
-        // SIGN OUT (OLD BUTTON)
-        // =========================
         private void btnMainMenuSignOut_Click(object sender, EventArgs e)
         {
             new frmLogin().Show();
             this.Close();
-        }
-
-        private void BtnBill_Click_1(object sender, EventArgs e)
-        {
-            OpenForm(new frmGenerateBill());
         }
     }
 }
