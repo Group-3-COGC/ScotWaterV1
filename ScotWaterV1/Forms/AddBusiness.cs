@@ -28,9 +28,52 @@ namespace ScotWaterV1.Forms
         {
             try
             {
+                //validate new entered info
+
+                if (string.IsNullOrWhiteSpace(txtBusinessName.Text))
+                {
+                    MessageBox.Show("Business name is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtAddress1.Text))
+                {
+                    MessageBox.Show("Address is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtCity.Text))
+                {
+                    MessageBox.Show("City/Location is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPostcode.Text))
+                {
+                    MessageBox.Show("Postcode is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(cbxRegion.Text))
+                {
+                    MessageBox.Show("Region is required.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtEmailAddress.Text) || !txtEmailAddress.Text.Contains("@"))
+                {
+                    MessageBox.Show("Email is required and must contain @.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
+                {
+                    MessageBox.Show("Phone number is required.");
+                    return;
+                }
+
                 var newBusiness = new BusinessUser
                 {
-                    BusinessID = int.Parse(txtBusinessID.Text),
                     CompanyName = txtBusinessName.Text,
                     Address1 = txtAddress1.Text,
                     Address2 = txtAddress2.Text,
