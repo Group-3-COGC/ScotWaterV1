@@ -172,7 +172,7 @@
             this.btnChangeWaterCharges.TabIndex = 16;
             this.btnChangeWaterCharges.Text = "Change Water Charges";
             this.btnChangeWaterCharges.UseVisualStyleBackColor = true;
-            this.btnChangeWaterCharges.Click += new System.EventHandler(this.btnChangeWaterCharges_Click);
+            
             // 
             // BtnDsplayBill
             // 
@@ -196,7 +196,7 @@
             this.BtnBill.TabIndex = 19;
             this.BtnBill.Text = "Generate Bill ";
             this.BtnBill.UseVisualStyleBackColor = true;
-            this.BtnBill.Click += new System.EventHandler(this.BtnBill_Click_1);
+            
             // 
             // PanelMenu
             // 
