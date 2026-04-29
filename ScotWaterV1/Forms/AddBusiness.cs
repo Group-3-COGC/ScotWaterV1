@@ -88,6 +88,10 @@ namespace ScotWaterV1.Forms
                     AccountNumber = txtAccountNumber.Text
                 };
 
+                bool businessExits = _context.BusinessUser.Any(b =>
+                b.CompanyName == txtBusinessName.Text.Trim() &&
+                b.Postcode == txtPostcode.Text.Trim());
+
                 _context.BusinessUser.Add(newBusiness);
                 _context.SaveChanges();
 
