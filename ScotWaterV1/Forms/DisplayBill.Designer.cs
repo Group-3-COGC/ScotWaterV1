@@ -217,7 +217,7 @@
             this.btnMainMenu.BackColor = System.Drawing.Color.White;
             this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMainMenu.Location = new System.Drawing.Point(604, 698);
+            this.btnMainMenu.Location = new System.Drawing.Point(602, 679);
             this.btnMainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMainMenu.Name = "btnMainMenu";
             this.btnMainMenu.Size = new System.Drawing.Size(133, 43);
@@ -229,10 +229,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 681);
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 647);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1328, 79);
+            this.pictureBox2.Size = new System.Drawing.Size(1328, 113);
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
@@ -292,7 +292,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Location = new System.Drawing.Point(356, 154);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 502);
+            this.groupBox1.Size = new System.Drawing.Size(656, 464);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Billing Information";
