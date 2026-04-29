@@ -221,6 +221,7 @@
             this.btnMainMenu.TabIndex = 24;
             this.btnMainMenu.Text = "Main Menu ";
             this.btnMainMenu.UseVisualStyleBackColor = false;
+            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
             // 
             // pictureBox2
             // 
@@ -244,6 +245,7 @@
             this.btnSignOut.TabIndex = 22;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // pictureBox3
             // 
@@ -304,7 +306,7 @@
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DisplayBill";
             this.Text = "Display Bill";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
