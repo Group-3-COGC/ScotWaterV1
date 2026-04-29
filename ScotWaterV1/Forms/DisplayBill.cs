@@ -24,7 +24,7 @@ namespace ScotWaterV1.Forms
                 using (var context = new BusinessDataContext())
                 {
                     var bill = context.BusinessBills
-                        .Include("BusinessUser")   // IMPORTANT FIX
+                        .Include("BusinessUser")  
                         .Where(b => b.BusinessBillID == _billId)
                         .Select(b => new
                         {
