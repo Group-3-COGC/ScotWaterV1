@@ -83,7 +83,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-       
+
         private void LoadLatestLevel()
         {
             using (var db = new BusinessDataContext())
@@ -101,15 +101,10 @@ namespace ScotWaterV1.Forms
                 if (value < 0) value = 0;
                 if (value > 100) value = 100;
 
-                UpdateUI(value);               
+                UpdateUI(value);
             }
         }
-
-        
        
-      
-       
-
         private void btnSignOut_Click(object sender, EventArgs e)
         {
 

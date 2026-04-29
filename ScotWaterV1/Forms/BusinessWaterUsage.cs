@@ -135,7 +135,7 @@ namespace ScotWaterV1.Forms
                     var usage = new WaterUsage
                     {
                         BusinessID = businessId,
-                        StaffUserID = 1, // IMPORTANT: must exist in StaffUsers table
+                        StaffUserID = Session.StaffUserID, // IMPORTANT: must exist in StaffUsers table
                         FreshwaterUnitsUsed = used,
                         RecycledUnits = recycled,
                         ReadingDate = dtpDate.Value,

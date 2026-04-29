@@ -3,6 +3,9 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace ScotWaterV1.Forms
 {
@@ -32,7 +35,6 @@ namespace ScotWaterV1.Forms
         }
 
         
-        // GENERATE BILL BUTTON CLICK
         
 
         private void btnGenerateBill_Click_1(object sender, EventArgs e)
@@ -48,11 +50,17 @@ namespace ScotWaterV1.Forms
 
             using (var context = new BusinessDataContext())
             {
+                var business = context.BusinessUser.FirstOrDefault(b => b.BusinessID == businessId);
+
+                if (business == null)
+                {
+                    MessageBox.Show("Business not found.");
+                    return;
+                }
 
                 var usage = context.WaterUsage
-               .FirstOrDefault(w => w.BusinessID == businessId &&
-                         DbFunctions.TruncateTime(w.ReadingDate) == billDate);
-
+                    .FirstOrDefault(w => w.BusinessID == businessId &&
+                             DbFunctions.TruncateTime(w.ReadingDate) == billDate);
 
                 if (usage == null)
                 {
@@ -61,8 +69,8 @@ namespace ScotWaterV1.Forms
                 }
 
                 bool billAlreadyExists = context.BusinessBills.Any(b =>
-                b.BusinessID == businessId &&
-                DbFunctions.TruncateTime(b.BillDate) == billDate);
+                    b.BusinessID == businessId &&
+                    DbFunctions.TruncateTime(b.BillDate) == billDate);
 
                 if (billAlreadyExists)
                 {
@@ -79,9 +87,9 @@ namespace ScotWaterV1.Forms
                 MessageBox.Show("Bill ID = " + bill.BusinessBillID);
 
 
-                // -------------------------------
-                // OPEN DISPLAY BILL FORM
-                // -------------------------------
+               
+                SendBillEmail(bill, business);
+
                 DisplayBill displayForm = new DisplayBill(bill.BusinessBillID);
                 displayForm.Show();
                 this.Hide();
@@ -101,6 +109,41 @@ namespace ScotWaterV1.Forms
             Main.Show();
             this.Hide();
         }
+        private void SendBillEmail(BusinessBills bill, BusinessUser business)
+        {
+            string subject = "Your Water Bill";
+            string body =
+                $"Hello {business.ContactName},\n\n" +
+                $"Your water bill has been generated.\n\n" +
+                $"Company: {business.CompanyName}\n" +
+                $"Bill ID: {bill.BusinessBillID}\n" +
+                $"Bill Date: {bill.BillDate:dd MMM yyyy}\n" +
+                $"Total Amount: £{bill.BusinessFinalCost:F2}\n\n" +
+                $"If you have any questions, contact us.\n\n" +
+                $"Regards,\nScotWater Billing Team";
+
+            try
+            {
+                MailMessage msg = new MailMessage();
+                msg.To.Add(business.ContactEmail);
+                msg.Subject = subject;
+                msg.Body = body;
+                msg.From = new MailAddress("yourcompany@example.com");
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.EnableSsl = true;
+                smtp.Credentials = new NetworkCredential("yourcompany@example.com", "yourpassword");
+
+                smtp.Send(msg);
+
+                MessageBox.Show("Bill emailed to client successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bill generated, but email failed to send.\n\nError: " + ex.Message);
+            }
+        }
+
     }
-    }
+}
 

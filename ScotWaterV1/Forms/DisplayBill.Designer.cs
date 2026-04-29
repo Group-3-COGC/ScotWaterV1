@@ -49,6 +49,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBillSearch = new System.Windows.Forms.Button();
+            this.txtBillSearch = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -214,7 +217,7 @@
             this.btnMainMenu.BackColor = System.Drawing.Color.White;
             this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMainMenu.Location = new System.Drawing.Point(604, 698);
+            this.btnMainMenu.Location = new System.Drawing.Point(602, 679);
             this.btnMainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMainMenu.Name = "btnMainMenu";
             this.btnMainMenu.Size = new System.Drawing.Size(133, 43);
@@ -226,10 +229,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 681);
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 647);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1328, 79);
+            this.pictureBox2.Size = new System.Drawing.Size(1328, 113);
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
@@ -287,12 +290,47 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(357, 152);
+            this.groupBox1.Location = new System.Drawing.Point(356, 154);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 502);
+            this.groupBox1.Size = new System.Drawing.Size(656, 464);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Billing Information";
+            // 
+            // btnBillSearch
+            // 
+            this.btnBillSearch.BackColor = System.Drawing.Color.White;
+            this.btnBillSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBillSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnBillSearch.Location = new System.Drawing.Point(428, 59);
+            this.btnBillSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBillSearch.Name = "btnBillSearch";
+            this.btnBillSearch.Size = new System.Drawing.Size(119, 34);
+            this.btnBillSearch.TabIndex = 26;
+            this.btnBillSearch.Text = "Search";
+            this.btnBillSearch.UseVisualStyleBackColor = false;
+            this.btnBillSearch.Click += new System.EventHandler(this.btnBillSearch_Click);
+            // 
+            // txtBillSearch
+            // 
+            this.txtBillSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBillSearch.Location = new System.Drawing.Point(233, 59);
+            this.txtBillSearch.Multiline = true;
+            this.txtBillSearch.Name = "txtBillSearch";
+            this.txtBillSearch.Size = new System.Drawing.Size(199, 34);
+            this.txtBillSearch.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label8.Location = new System.Drawing.Point(234, 25);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 25);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Search Bill ID";
             // 
             // DisplayBill
             // 
@@ -315,6 +353,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -339,5 +378,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBillSearch;
+        private System.Windows.Forms.TextBox txtBillSearch;
+        private System.Windows.Forms.Label label8;
     }
 }
