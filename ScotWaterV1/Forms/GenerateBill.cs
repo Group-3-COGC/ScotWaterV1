@@ -60,6 +60,16 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
+                bool billAlreadyExists = context.BusinessBills.Any(b =>
+                b.BusinessID == businessId &&
+                DbFunctions.TruncateTime(b.BillDate) == billDate);
+
+                if (billAlreadyExists)
+                {
+                    MessageBox.Show("A bill already exists for this business on this date");
+                    return;
+                }
+
                 var billingService = new BillingService();
                 BusinessBills bill = billingService.GenerateBill(usage);
 

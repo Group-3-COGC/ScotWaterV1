@@ -117,13 +117,20 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
-       
-
-
             try
             {
                 using (var db = new BusinessDataContext())
                 {
+                    var reserve = db.ReserveConfigs.FirstOrDefault();
+
+                    if (reserve == null)
+                    {
+                        MessageBox.Show("Reserve level is not configured.");
+                        return;
+                    }
+
+                    bool isLowReserve = reserve.CurrentReservePercentage < 25;
+
                     var usage = new WaterUsage
                     {
                         BusinessID = businessId,
@@ -131,7 +138,7 @@ namespace ScotWaterV1.Forms
                         FreshwaterUnitsUsed = used,
                         RecycledUnits = recycled,
                         ReadingDate = dtpDate.Value,
-                  
+                        IsLowReserve = isLowReserve
                     };
 
                     db.WaterUsage.Add(usage);
