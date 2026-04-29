@@ -60,6 +60,21 @@ namespace ScotWaterV1.Forms
                 this.Close();
             }
         }
+
+        private void btnMainMenu_Click(object sender, EventArgs e)
+        {
+            frmMainMenu main = new frmMainMenu();
+            main.Show();
+            this.Close();
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
 

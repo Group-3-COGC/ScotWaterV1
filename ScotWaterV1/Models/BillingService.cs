@@ -84,7 +84,7 @@ namespace ScotWaterV1.Models
                 if (recycledUnits >= 6)
                     return 0.15m;
 
-                if (recycledUnits >= 0)
+                if (recycledUnits >= 1)
                     return 0.05m;
 
                 return 0m;

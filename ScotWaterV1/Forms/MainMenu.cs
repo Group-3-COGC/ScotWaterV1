@@ -26,6 +26,9 @@ namespace ScotWaterV1
             SetupTopBar();
 
             btnAddNewStaff.Visible = IsAdmin;
+
+            // ensure home image is visible at start
+            pictureBox3.Visible = true;
         }
 
         // =========================
@@ -38,9 +41,11 @@ namespace ScotWaterV1
             PanelMenu.BackColor = Color.FromArgb(33, 43, 54);
             panelMain.BackColor = Color.White;
 
+            PanelMenu.AutoScroll = true;
+
             foreach (Control ctrl in PanelMenu.Controls)
             {
-                if (ctrl is Button btn)
+                if (ctrl is System.Windows.Forms.Button btn)
                 {
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.FlatAppearance.BorderSize = 0;
@@ -65,7 +70,7 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // TOP BAR (SAFE VERSION)
+        // TOP BAR
         // =========================
         private void SetupTopBar()
         {
@@ -94,7 +99,7 @@ namespace ScotWaterV1
             {
                 Text = "Sign Out",
                 Size = new Size(90, 30),
-                Location = new Point(200, 12),
+                Location = new Point(panelTop.Width - 110, 15),
                 Anchor = AnchorStyles.Top | AnchorStyles.Right,
                 BackColor = Color.FromArgb(200, 50, 50),
                 ForeColor = Color.White,
@@ -115,11 +120,14 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // LOAD FORM INTO PANEL
+        // ⭐ FIXED OPEN FORM METHOD
         // =========================
         private void OpenForm(Form form)
         {
             panelMain.Controls.Clear();
+
+            // hide home image when opening any form
+            pictureBox3.Visible = false;
 
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -130,31 +138,36 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // MENU UI EFFECTS
+        // MENU ACTIVE STATE
         // =========================
         private void MenuActive(object sender, EventArgs e)
         {
             if (currentButton != null)
                 currentButton.BackColor = Color.FromArgb(33, 43, 54);
 
-            currentButton = (Button)sender;
-            currentButton.BackColor = Color.FromArgb(0, 122, 204);
+            if (sender is System.Windows.Forms.Button btn)
+            {
+                currentButton = btn;
+                currentButton.BackColor = Color.FromArgb(0, 122, 204);
+            }
         }
 
         private void MenuHover(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-
-            if (btn != currentButton)
-                btn.BackColor = Color.FromArgb(45, 60, 75);
+            if (sender is System.Windows.Forms.Button btn)
+            {
+                if (btn != currentButton)
+                    btn.BackColor = Color.FromArgb(45, 60, 75);
+            }
         }
 
         private void MenuLeave(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-
-            if (btn != currentButton)
-                btn.BackColor = Color.FromArgb(33, 43, 54);
+            if (sender is System.Windows.Forms.Button btn)
+            {
+                if (btn != currentButton)
+                    btn.BackColor = Color.FromArgb(33, 43, 54);
+            }
         }
 
         // =========================
@@ -162,44 +175,28 @@ namespace ScotWaterV1
         // =========================
 
         private void btnViewBusinesses_Click(object sender, EventArgs e)
-        {
-            OpenForm(new ViewBusinesses());
-        }
+            => OpenForm(new ViewBusinesses());
 
         private void btnWaterConsumption_Click(object sender, EventArgs e)
-        {
-            OpenForm(new BusinessWaterUsage());
-        }
+            => OpenForm(new BusinessWaterUsage());
 
         private void btnGenerateBill_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmGenerateBill());
-        }
+            => OpenForm(new frmGenerateBill());
 
         private void btnModifyWaterPrice_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmChangeWaterCharges());
-        }
+            => OpenForm(new frmChangeWaterCharges());
 
         private void btnChangeWaterLevel_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmChangeWaterLevels());
-        }
+            => OpenForm(new frmChangeWaterLevels());
 
         private void btnAddBusiness_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmAddBusiness());
-        }
+            => OpenForm(new frmAddBusiness());
 
         private void BtnBill_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmGenerateBill());
-        }
+            => OpenForm(new frmGenerateBill());
 
         private void BtnDsplayBill_Click(object sender, EventArgs e)
-        {
-            OpenForm(new DisplayBill(1));
-        }
+            => OpenForm(new DisplayBill(1));
 
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
@@ -216,6 +213,21 @@ namespace ScotWaterV1
         {
             new frmLogin().Show();
             this.Close();
+        }
+
+        private void btnChangeWaterCharges_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmChangeWaterCharges());
+        }
+
+        private void BtnBill_Click_1(object sender, EventArgs e)
+        {
+            OpenForm(new frmGenerateBill());
+        }
+
+        private void btnChangeWaterLevel_Click_1(object sender, EventArgs e)
+        {
+            OpenForm(new frmChangeWaterLevels());
         }
     }
 }
