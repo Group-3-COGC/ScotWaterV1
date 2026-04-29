@@ -15,39 +15,49 @@ namespace ScotWaterV1.Forms
             _billId = billId;
         }
 
-       
+
 
         private void DisplayBill_Load(object sender, EventArgs e)
         {
-            using (var context = new BusinessDataContext())
+            try
             {
-                var bill = context.BusinessBills
-                    .Where(b => b.BusinessBillID == _billId)
-                    .Select(b => new
-                    {
-                        b.BillDate,
-                        b.TotalCharges,
-                        b.TotalDiscount,
-                        b.SubTotal,
-                        b.VAT,
-                        b.BusinessFinalCost,
-                        b.BusinessUser.CompanyName
-                    })
-                    .FirstOrDefault();
-
-                if (bill == null)
+                using (var context = new BusinessDataContext())
                 {
-                    MessageBox.Show("Bill not found.");
-                    return;
-                }
+                    var bill = context.BusinessBills
+                        .Include("BusinessUser")   // IMPORTANT FIX
+                        .Where(b => b.BusinessBillID == _billId)
+                        .Select(b => new
+                        {
+                            b.BillDate,
+                            b.TotalCharges,
+                            b.TotalDiscount,
+                            b.SubTotal,
+                            b.VAT,
+                            b.BusinessFinalCost,
+                            CompanyName = b.BusinessUser.CompanyName
+                        })
+                        .FirstOrDefault();
 
-                lblBusinessName.Text = bill.CompanyName;
-                lblBillDate.Text = bill.BillDate.ToShortDateString();
-                lblTotalCharges.Text = bill.TotalCharges.ToString("C");
-                lblDiscount.Text = bill.TotalDiscount.ToString("C");
-                lblSubTotal.Text = bill.SubTotal.ToString("C");
-                lblVAT.Text = bill.VAT.ToString("C");
-                lblFinalCost.Text = bill.BusinessFinalCost.ToString("C");
+                    if (bill == null)
+                    {
+                        MessageBox.Show("Bill not found.");
+                        this.Close();
+                        return;
+                    }
+
+                    lblBusinessName.Text = bill.CompanyName;
+                    lblBillDate.Text = bill.BillDate.ToString("dd/MM/yyyy");
+                    lblTotalCharges.Text = bill.TotalCharges.ToString("C");
+                    lblDiscount.Text = bill.TotalDiscount.ToString("C");
+                    lblSubTotal.Text = bill.SubTotal.ToString("C");
+                    lblVAT.Text = bill.VAT.ToString("C");
+                    lblFinalCost.Text = bill.BusinessFinalCost.ToString("C");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading bill: " + ex.Message);
+                this.Close();
             }
         }
     }
