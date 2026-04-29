@@ -34,14 +34,16 @@ namespace ScotWaterV1.Forms
         {
             BusinessBills bills = new BusinessBills();
 
-            //Input Validation for changing the water prices
-            if (comboChangeCharges.Text == string.Empty && txtNewPrice.Text == string.Empty)
+            if (comboChangeCharges.Text == string.Empty || txtNewPrice.Text == string.Empty)
             {
-                MessageBox.Show("Please select and fill the input box to change price.");
+                MessageBox.Show("Please select a charge type and enter a price.");
+                return;
             }
-            else if (comboChangeCharges.Text == string.Empty || txtNewPrice.Text == string.Empty)
+
+            if (!decimal.TryParse(txtNewPrice.Text, out decimal newPrice) || newPrice < 0)
             {
-                MessageBox.Show("Please select and fill the input box to change price.");
+                MessageBox.Show("Enter a valid price greater than or equal to 0.");
+                return;
             }
 
             //Unit Pricing
@@ -54,7 +56,7 @@ namespace ScotWaterV1.Forms
             //Drought
             double DroughtUnitPriceLow = 0.47;
             double DroughtUnitPriceMedium = 0.82;
-            double DroughtUnitPriceHigh = 1.35;
+            double DroughtUnitPriceHigh = 2.25;
 
             //Recycled
             double RecycledUnitPriceLow = 0.05;
@@ -67,51 +69,51 @@ namespace ScotWaterV1.Forms
             if (comboChangeCharges.Text == "Normal 0-40 Units")
             {
                 lblLowUsagePrice.Text = $"£{txtNewPrice.Text}";
-                NormalUnitPriceLow = Double.Parse(txtNewPrice.Text);
+                NormalUnitPriceLow = (double)newPrice;
             }
             else if (comboChangeCharges.Text == "Normal 41-80 Units")
             {
                 lblMediumUsagePrice.Text = $"£{txtNewPrice.Text}";
-                NormalUnitPriceMedium = Double.Parse(txtNewPrice.Text);
+                NormalUnitPriceMedium = (double)newPrice;
             }
             else if (comboChangeCharges.Text == "Normal 81+ Units")
             {
                 lblHighUsagePrice.Text = $"£{txtNewPrice.Text}";
-                NormalUnitPriceHigh = Double.Parse(txtNewPrice.Text);
+                NormalUnitPriceHigh = (double)newPrice;
             }
 
             // Drought Units
             if (comboChangeCharges.Text == "Drought 0-40 Units")
             {
                 lblDroughtLowUsagePrice.Text = $"£{txtNewPrice.Text}";
-                DroughtUnitPriceLow = Double.Parse(txtNewPrice.Text);
+                DroughtUnitPriceLow = (double)newPrice;
             }
             else if (comboChangeCharges.Text == "Drought 41-80 Units")
             {
                 lblDroughtMediumUsagePrice.Text = $"£{txtNewPrice.Text}";
-                DroughtUnitPriceMedium = Double.Parse(txtNewPrice.Text);
+                DroughtUnitPriceMedium = (double)newPrice;
             }
             else if (comboChangeCharges.Text == "Drought 81+ Units")
             {
                 lblDroughtHighUsagePrice.Text = $"£{txtNewPrice.Text}";
-                DroughtUnitPriceHigh = Double.Parse(txtNewPrice.Text);
+                DroughtUnitPriceHigh = (double)newPrice;
             }
 
-            // Recycled Units
-            if (comboChangeCharges.Text == "Recycled 0-5 Units")
+
+            else if (comboChangeCharges.Text == "Recycled 0 - 5 Units")
             {
-                lblRecycleLowDiscountPrice.Text = $"£{txtNewPrice.Text}";
-                RecycledUnitPriceLow = Double.Parse(txtNewPrice.Text);
+                lblRecycledLowDiscount.Text = $"£{newPrice}";
+                RecycledUnitPriceLow = (double)newPrice;
             }
             else if (comboChangeCharges.Text == "Recycled 6-20 Units")
             {
-                lblRecycleLowDiscountPrice.Text = $"£{txtNewPrice.Text}";
-                RecycledUnitPriceMedium = Double.Parse(txtNewPrice.Text);
+                lblMediumRecyclePrice.Text = $"£{newPrice}";
+                RecycledUnitPriceMedium = (double)newPrice;
             }
             else if (comboChangeCharges.Text == "Recycled 21+ Units")
             {
-                lblRecycleLowDiscountPrice.Text = $"£{txtNewPrice.Text}";
-                RecycledUnitPriceHigh = Double.Parse(txtNewPrice.Text);
+                lblHighRecyclePrice.Text = $"£{newPrice}";
+                RecycledUnitPriceHigh = (double)newPrice;
             }
 
         }
