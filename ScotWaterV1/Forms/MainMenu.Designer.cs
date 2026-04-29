@@ -113,7 +113,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(389, 134);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(0, 15);
+            this.lblWelcome.Size = new System.Drawing.Size(0, 18);
             this.lblWelcome.TabIndex = 12;
             // 
             // btnWaterConsumption
@@ -218,7 +218,6 @@
             this.BtnBill.TabIndex = 19;
             this.BtnBill.Text = "Generate Bill ";
             this.BtnBill.UseVisualStyleBackColor = true;
-
             // 
             // PanelMenu
             // 
@@ -245,7 +244,7 @@
             // 
             // frmMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1352, 777);
