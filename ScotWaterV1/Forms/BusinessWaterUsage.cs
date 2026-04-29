@@ -117,12 +117,6 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
-            var reserve = db.ReserveConfigs.FirstOrDefault();
-
-            if (reserve  == null)
-            {
-                MessageBox.Show
-            }
        
 
 
@@ -137,7 +131,7 @@ namespace ScotWaterV1.Forms
                         FreshwaterUnitsUsed = used,
                         RecycledUnits = recycled,
                         ReadingDate = dtpDate.Value,
-                        IsLowReserve = isLowReserve
+                  
                     };
 
                     db.WaterUsage.Add(usage);
