@@ -63,7 +63,7 @@ namespace ScotWaterV1.Forms
             // 
             this.txt_search.Location = new System.Drawing.Point(20, 114);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(200, 20);
+            this.txt_search.Size = new System.Drawing.Size(200, 22);
             this.txt_search.TabIndex = 1;
             // 
             // BtnSearch
@@ -130,28 +130,28 @@ namespace ScotWaterV1.Forms
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(838, 199);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(141, 20);
+            this.txtCompanyName.Size = new System.Drawing.Size(141, 22);
             this.txtCompanyName.TabIndex = 8;
             // 
             // txtPostcode
             // 
             this.txtPostcode.Location = new System.Drawing.Point(837, 245);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(141, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(141, 22);
             this.txtPostcode.TabIndex = 9;
             // 
             // txtContactName
             // 
             this.txtContactName.Location = new System.Drawing.Point(837, 291);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(141, 20);
+            this.txtContactName.Size = new System.Drawing.Size(141, 22);
             this.txtContactName.TabIndex = 10;
             // 
             // txtContactEmail
             // 
             this.txtContactEmail.Location = new System.Drawing.Point(837, 337);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(141, 20);
+            this.txtContactEmail.Size = new System.Drawing.Size(141, 22);
             this.txtContactEmail.TabIndex = 11;
             // 
             // lblEdit
@@ -162,7 +162,7 @@ namespace ScotWaterV1.Forms
             this.lblEdit.Location = new System.Drawing.Point(788, 151);
             this.lblEdit.Name = "lblEdit";
             this.lblEdit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEdit.Size = new System.Drawing.Size(190, 24);
+            this.lblEdit.Size = new System.Drawing.Size(244, 29);
             this.lblEdit.TabIndex = 12;
             this.lblEdit.Text = "Edit Businesses Here";
             // 
@@ -191,7 +191,7 @@ namespace ScotWaterV1.Forms
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Location = new System.Drawing.Point(660, 194);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 24);
+            this.label1.Size = new System.Drawing.Size(198, 29);
             this.label1.TabIndex = 15;
             this.label1.Text = "Company Name";
             // 
@@ -202,7 +202,7 @@ namespace ScotWaterV1.Forms
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(660, 240);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(135, 29);
             this.label2.TabIndex = 16;
             this.label2.Text = "Post Code";
             // 
@@ -213,7 +213,7 @@ namespace ScotWaterV1.Forms
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label3.Location = new System.Drawing.Point(660, 286);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 24);
+            this.label3.Size = new System.Drawing.Size(184, 29);
             this.label3.TabIndex = 17;
             this.label3.Text = "Contact Name ";
             // 
@@ -224,7 +224,7 @@ namespace ScotWaterV1.Forms
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label4.Location = new System.Drawing.Point(660, 332);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 24);
+            this.label4.Size = new System.Drawing.Size(181, 29);
             this.label4.TabIndex = 18;
             this.label4.Text = "Contact Email ";
             // 
@@ -241,7 +241,7 @@ namespace ScotWaterV1.Forms
             // 
             // ViewBusinesses
             // 
-            this.ClientSize = new System.Drawing.Size(1015, 650);
+            this.ClientSize = new System.Drawing.Size(1112, 601);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
