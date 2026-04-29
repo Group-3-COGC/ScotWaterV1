@@ -22,7 +22,7 @@ namespace ScotWaterV1.Forms
                 using (var context = new BusinessDataContext())
                 {
                     var bill = context.BusinessBills
-                        .Include("BusinessUser")  
+                        .Include("BusinessUser")
                         .Where(b => b.BusinessBillID == _billId)
                         .Select(b => new
                         {
@@ -36,19 +36,24 @@ namespace ScotWaterV1.Forms
                         })
                         .FirstOrDefault();
 
-                if (bill == null)
-                {
-                    MessageBox.Show("Bill not found.");
-                    return;
-                }
+                    if (bill == null)
+                    {
+                        MessageBox.Show("Bill not found.");
+                        return;
+                    }
 
-                lblBusinessName.Text = bill.CompanyName;
-                lblBillDate.Text = bill.BillDate.ToShortDateString();
-                lblTotalCharges.Text = bill.TotalCharges.ToString("C");
-                lblDiscount.Text = bill.TotalDiscount.ToString("C");
-                lblSubTotal.Text = bill.SubTotal.ToString("C");
-                lblVAT.Text = bill.VAT.ToString("C");
-                lblFinalCost.Text = bill.BusinessFinalCost.ToString("C");
+                    lblBusinessName.Text = bill.CompanyName;
+                    lblBillDate.Text = bill.BillDate.ToShortDateString();
+                    lblTotalCharges.Text = bill.TotalCharges.ToString("C");
+                    lblDiscount.Text = bill.TotalDiscount.ToString("C");
+                    lblSubTotal.Text = bill.SubTotal.ToString("C");
+                    lblVAT.Text = bill.VAT.ToString("C");
+                    lblFinalCost.Text = bill.BusinessFinalCost.ToString("C");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading the bill: " + ex.Message);
             }
         }
 
@@ -76,6 +81,48 @@ namespace ScotWaterV1.Forms
             else
             {
                 MessageBox.Show("Enter a valid Bill ID.");
+            }
+        }
+
+        private void LoadBill(int billId)
+        {
+            try
+            {
+                using (var context = new BusinessDataContext())
+                {
+                    var bill = context.BusinessBills
+                        .Include("BusinessUser")
+                        .Where(b => b.BusinessBillID == billId)
+                        .Select(b => new
+                        {
+                            b.BillDate,
+                            b.TotalCharges,
+                            b.TotalDiscount,
+                            b.SubTotal,
+                            b.VAT,
+                            b.BusinessFinalCost,
+                            CompanyName = b.BusinessUser.CompanyName
+                        })
+                        .FirstOrDefault();
+
+                    if (bill == null)
+                    {
+                        MessageBox.Show("Bill not found.");
+                        return;
+                    }
+
+                    lblBusinessName.Text = bill.CompanyName;
+                    lblBillDate.Text = bill.BillDate.ToShortDateString();
+                    lblTotalCharges.Text = bill.TotalCharges.ToString("C");
+                    lblDiscount.Text = bill.TotalDiscount.ToString("C");
+                    lblSubTotal.Text = bill.SubTotal.ToString("C");
+                    lblVAT.Text = bill.VAT.ToString("C");
+                    lblFinalCost.Text = bill.BusinessFinalCost.ToString("C");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading the bill: " + ex.Message);
             }
         }
     }
