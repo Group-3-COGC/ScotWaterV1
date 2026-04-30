@@ -116,7 +116,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(389, 134);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(0, 15);
+            this.lblWelcome.Size = new System.Drawing.Size(0, 22);
             this.lblWelcome.TabIndex = 12;
             // 
             // btnWaterConsumption
@@ -221,9 +221,9 @@
             // panelMain
             // 
             this.panelMain.Controls.Add(this.pictureBox3);
-            this.panelMain.Location = new System.Drawing.Point(0, 109);
+            this.panelMain.Location = new System.Drawing.Point(12, 109);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1126, 639);
+            this.panelMain.Size = new System.Drawing.Size(1103, 639);
             this.panelMain.TabIndex = 23;
             // 
             // pictureBox3
@@ -247,7 +247,7 @@
             // 
             // frmMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1352, 777);
