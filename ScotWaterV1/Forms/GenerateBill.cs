@@ -34,65 +34,67 @@ namespace ScotWaterV1.Forms
             dtpBillDate.Value = DateTime.Now;
         }
 
-        
-        
+
+
 
         private void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
-            if (cmbBusinessNames.SelectedValue == null)
+
             {
-                MessageBox.Show("Please select a business.");
-                return;
-            }
-
-            int businessId = (int)cmbBusinessNames.SelectedValue;
-            DateTime billDate = dtpBillDate.Value.Date;
-
-            using (var context = new BusinessDataContext())
-            {
-                var business = context.BusinessUser.FirstOrDefault(b => b.BusinessID == businessId);
-
-                if (business == null)
+                if (cmbBusinessNames.SelectedValue == null)
                 {
-                    MessageBox.Show("Business not found.");
+                    MessageBox.Show("Please select a business.");
                     return;
                 }
 
-                var usage = context.WaterUsage
-                    .FirstOrDefault(w => w.BusinessID == businessId &&
-                             DbFunctions.TruncateTime(w.ReadingDate) == billDate);
+                int businessId = (int)cmbBusinessNames.SelectedValue;
+                DateTime billDate = dtpBillDate.Value.Date;
 
-                if (usage == null)
+                using (var context = new BusinessDataContext())
                 {
-                    MessageBox.Show("No water usage found for this date.");
-                    return;
+                    var business = context.BusinessUser.FirstOrDefault(b => b.BusinessID == businessId);
+
+                    if (business == null)
+                    {
+                        MessageBox.Show("Business not found.");
+                        return;
+                    }
+
+                    var usage = context.WaterUsage
+                        .FirstOrDefault(w => w.BusinessID == businessId &&
+                                 DbFunctions.TruncateTime(w.ReadingDate) == billDate);
+
+                    if (usage == null)
+                    {
+                        MessageBox.Show("No water usage found for this date.");
+                        return;
+                    }
+
+                    bool billAlreadyExists = context.BusinessBills.Any(b =>
+                        b.BusinessID == businessId &&
+                        DbFunctions.TruncateTime(b.BillDate) == billDate);
+
+                    if (billAlreadyExists)
+                    {
+                        MessageBox.Show("A bill already exists for this business on this date");
+                        return;
+                    }
+                    var billingService = new BillingService();
+                    BusinessBills bill = billingService.GenerateBill(usage);
+
+                    context.BusinessBills.Add(bill);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Bill ID = " + bill.BusinessBillID);
+
+
+
+                    SendBillEmail(bill, business);
+
+                    DisplayBill displayForm = new DisplayBill(bill.BusinessBillID);
+                    displayForm.Show();
+                    this.Hide();
                 }
-
-                bool billAlreadyExists = context.BusinessBills.Any(b =>
-                    b.BusinessID == businessId &&
-                    DbFunctions.TruncateTime(b.BillDate) == billDate);
-
-                if (billAlreadyExists)
-                {
-                    MessageBox.Show("A bill already exists for this business on this date");
-                    return;
-                }
-
-                var billingService = new BillingService();
-                BusinessBills bill = billingService.GenerateBill(usage);
-
-                context.BusinessBills.Add(bill);
-                context.SaveChanges();
-
-                MessageBox.Show("Bill ID = " + bill.BusinessBillID);
-
-
-               
-                SendBillEmail(bill, business);
-
-                DisplayBill displayForm = new DisplayBill(bill.BusinessBillID);
-                displayForm.Show();
-                this.Hide();
             }
         }
 
