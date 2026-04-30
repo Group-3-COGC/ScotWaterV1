@@ -97,8 +97,6 @@ namespace ScotWaterV1.Forms
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();
 
-                MessageBox.Show("Bill generated successfully. Bill ID = " + bill.BusinessBillID);
-
                 SendBillEmail(bill, business);
 
                 OpenBillInMainPanel(bill.BusinessBillID);
