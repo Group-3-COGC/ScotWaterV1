@@ -96,5 +96,10 @@ namespace ScotWaterV1
                 MessageBox.Show("Password updated successfully!");
             }
         }
+
+        private void lblLoginUsername_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
