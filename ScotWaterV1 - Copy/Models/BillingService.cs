@@ -20,23 +20,14 @@ namespace ScotWaterV1.Models
             if (recycled < 0)
                 throw new ArgumentException("Recycled units cannot be negative.");
 
-            // 1. Calculate tiered charges
             decimal totalCharges = CalculateWaterCharge(freshwater, usage.IsLowReserve);
-
-            // 2. Correct discount rate
             decimal discountRate = GetRecyclingDiscountRate(recycled);
+            decimal totalDiscount = freshwater * discountRate;
 
-            // 3. Apply discount ONLY if recycled > 0
-            decimal totalDiscount = recycled > 0 ? freshwater * discountRate : 0;
-
-            // 4. Subtotal
             decimal subTotal = totalCharges - totalDiscount;
             if (subTotal < 0) subTotal = 0;
 
-            // 5. VAT
             decimal vat = subTotal * VAT_RATE;
-
-            // 6. Final cost
             decimal finalCost = subTotal + vat;
 
             return new BusinessBills
@@ -80,13 +71,10 @@ namespace ScotWaterV1.Models
 
         private decimal GetRecyclingDiscountRate(int recycledUnits)
         {
-            if (recycledUnits == 0)
-                return 0m;
-
-            if (recycledUnits >= 1 && recycledUnits <= 5)
+            if (recycledUnits <= 5)
                 return 0.05m;
 
-            if (recycledUnits >= 6 && recycledUnits <= 20)
+            if (recycledUnits <= 20)
                 return 0.15m;
 
             return 0.25m;
