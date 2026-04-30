@@ -136,7 +136,14 @@ namespace ScotWaterV1.Forms
 
                     bool isLowReserve = reserve.CurrentReservePercentage < 25;
 
-                   
+                    int staffId = Session.StaffUserID;
+
+                    
+                    if (staffId == 0)
+                    {
+                        staffId = 1; 
+                    }
+
                     var usage = new WaterUsage
                     {
                         BusinessID = businessId,
