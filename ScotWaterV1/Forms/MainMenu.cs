@@ -29,6 +29,7 @@ namespace ScotWaterV1
 
             // ensure home image is visible at start
             pictureBox3.Visible = true;
+            pictureBox3.BringToFront();
         }
 
         // =========================
@@ -135,13 +136,24 @@ namespace ScotWaterV1
         }
 
         // =========================
-        // ⭐ FIXED OPEN FORM METHOD
+        // OPEN FORM INSIDE MAIN PANEL
         // =========================
-        private void OpenForm(Form form)
+        public void OpenForm(Form form)
         {
-            panelMain.Controls.Clear();
+            // Remove existing child forms only.
+            // Do NOT clear the whole panel, because that can remove designer controls like pictureBox3.
+            for (int i = panelMain.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = panelMain.Controls[i];
 
-            // hide home image when opening any form
+                if (control is Form)
+                {
+                    panelMain.Controls.Remove(control);
+                    control.Dispose();
+                }
+            }
+
+            // hide home image when opening any form/page
             pictureBox3.Visible = false;
 
             form.TopLevel = false;
@@ -149,6 +161,7 @@ namespace ScotWaterV1
             form.Dock = DockStyle.Fill;
 
             panelMain.Controls.Add(form);
+            form.BringToFront();
             form.Show();
         }
 
@@ -211,7 +224,7 @@ namespace ScotWaterV1
             => OpenForm(new frmGenerateBill());
 
         private void BtnDsplayBill_Click(object sender, EventArgs e)
-            => OpenForm(new DisplayBill(1));
+            => OpenForm(new DisplayBill());
 
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
