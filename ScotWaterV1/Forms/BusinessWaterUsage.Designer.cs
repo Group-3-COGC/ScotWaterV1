@@ -105,7 +105,7 @@
             this.CmbBusiness.Name = "CmbBusiness";
             this.CmbBusiness.Size = new System.Drawing.Size(176, 24);
             this.CmbBusiness.TabIndex = 23;
-            this.CmbBusiness.SelectedIndexChanged += new System.EventHandler(this.CmbBusiness_SelectedIndexChanged);
+            
             // 
             // txtWaterUsed
             // 

@@ -39,65 +39,91 @@ namespace ScotWaterV1.Forms
 
         private void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
-
+            if (cmbBusinessNames.SelectedValue == null)
             {
-                if (cmbBusinessNames.SelectedValue == null)
-                {
-                    MessageBox.Show("Please select a business.");
-                    return;
-                }
+                MessageBox.Show("Please select a business.");
+                return;
+            }
 
-            int businessId = (int)cmbBusinessNames.SelectedValue;
+            if (!int.TryParse(cmbBusinessNames.SelectedValue.ToString(), out int businessId))
+            {
+                MessageBox.Show("Invalid business selected.");
+                return;
+            }
+
             DateTime billDate = dtpBillDate.Value.Date;
 
             using (var context = new BusinessDataContext())
             {
-                var business = context.BusinessUser.FirstOrDefault(b => b.BusinessID == businessId);
+                var business = context.BusinessUser
+                    .FirstOrDefault(b => b.BusinessID == businessId);
 
-                    if (business == null)
-                    {
-                        MessageBox.Show("Business not found.");
-                        return;
-                    }
-
-                var usage = context.WaterUsage
-                    .FirstOrDefault(w => w.BusinessID == businessId &&
-                             DbFunctions.TruncateTime(w.ReadingDate) == billDate);
-
-                if (usage == null)
+                if (business == null)
                 {
-                    MessageBox.Show("No water usage found for this date.");
+                    MessageBox.Show("Business not found.");
                     return;
                 }
 
-                bool billAlreadyExists = context.BusinessBills.Any(b =>
-                    b.BusinessID == businessId &&
-                    DbFunctions.TruncateTime(b.BillDate) == billDate);
+                var usage = context.WaterUsage
+                    .FirstOrDefault(w =>
+                        w.BusinessID == businessId &&
+                        DbFunctions.TruncateTime(w.ReadingDate) == billDate);
 
-                if (billAlreadyExists)
+                if (usage == null)
                 {
-                    MessageBox.Show("A bill already exists for this business on this date");
+                    MessageBox.Show("No water usage found for this business on the selected date.");
+                    return;
+                }
+
+                var existingBill = context.BusinessBills
+                    .FirstOrDefault(b =>
+                        b.BusinessID == businessId &&
+                        DbFunctions.TruncateTime(b.BillDate) == billDate);
+
+                if (existingBill != null)
+                {
+                    MessageBox.Show("A bill already exists for this business on this date. Opening existing bill.");
+
+                    OpenBillInMainPanel(existingBill.BusinessBillID);
                     return;
                 }
 
                 var billingService = new BillingService();
                 BusinessBills bill = billingService.GenerateBill(usage);
 
+                bill.BusinessID = businessId;
+                bill.BillDate = billDate;
+
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();
 
-                MessageBox.Show("Bill ID = " + bill.BusinessBillID);
+                MessageBox.Show("Bill generated successfully. Bill ID = " + bill.BusinessBillID);
 
                 SendBillEmail(bill, business);
 
-               
-                SendBillEmail(bill, business);
-
-                DisplayBill displayForm = new DisplayBill(bill.BusinessBillID);
-                displayForm.Show();
-                this.Hide();
+                OpenBillInMainPanel(bill.BusinessBillID);
             }
         }
+
+        private void OpenBillInMainPanel(int billId)
+        {
+            frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
+
+            if (mainMenu != null)
+            {
+                mainMenu.OpenForm(new DisplayBill(billId));
+                return;
+            }
+
+            mainMenu = Application.OpenForms
+                .OfType<frmMainMenu>()
+                .FirstOrDefault();
+
+            if (mainMenu != null)
+            {
+                mainMenu.OpenForm(new DisplayBill(billId));
+                return;
+            }
 
             MessageBox.Show("Bill generated, but could not open the display bill page.");
         }
