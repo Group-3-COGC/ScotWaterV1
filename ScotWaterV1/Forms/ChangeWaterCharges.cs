@@ -32,7 +32,7 @@ namespace ScotWaterV1.Forms
 
         private void btnChangePrice_Click(object sender, EventArgs e)
         {
-            BusinessBills bills = new BusinessBills();
+           
 
             if (comboChangeCharges.Text == string.Empty || txtNewPrice.Text == string.Empty)
             {
