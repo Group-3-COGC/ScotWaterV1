@@ -91,6 +91,12 @@ namespace ScotWaterV1.Forms
         // =========================
         private void btn_AddUsage_Click(object sender, EventArgs e)
         {
+            if (!Session.IsStaffLoggedIn || Session.StaffUserID == 0)
+            {
+                MessageBox.Show("No staff user is logged in. Please log in again");
+                return;
+            }
+
             if (CmbBusiness.SelectedValue == null)
             {
                 MessageBox.Show("Please select a business");
