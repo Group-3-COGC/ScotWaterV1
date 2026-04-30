@@ -82,6 +82,9 @@ namespace ScotWaterV1.Forms
                     var billingService = new BillingService();
                     BusinessBills bill = billingService.GenerateBill(usage);
 
+                    bill.BusinessID = businessId;
+                    bill.BillDate = billDate;
+
                     context.BusinessBills.Add(bill);
                     context.SaveChanges();
 
