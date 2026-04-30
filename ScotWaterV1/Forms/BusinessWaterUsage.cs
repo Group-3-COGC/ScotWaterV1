@@ -91,8 +91,6 @@ namespace ScotWaterV1.Forms
         // =========================
         private void btn_AddUsage_Click(object sender, EventArgs e)
         {
-           
-
             if (CmbBusiness.SelectedValue == null)
             {
                 MessageBox.Show("Please select a business");
@@ -103,20 +101,19 @@ namespace ScotWaterV1.Forms
 
             if (!int.TryParse(txt_Water_Used.Text, out int used) || used < 0)
             {
-                MessageBox.Show("Freshwater units must be a valid number greater than or equaly to 0.");
+                MessageBox.Show("Freshwater units must be a valid number greater than or equal to 0.");
                 return;
             }
 
             if (!int.TryParse(txtRecycledWater.Text, out int recycled) || recycled < 0)
             {
-                MessageBox.Show("Recycled units must be a valid number greater than or equal to 0");
+                MessageBox.Show("Recycled units must be a valid number greater than or equal to 0.");
                 return;
-
             }
 
             if (recycled > used)
             {
-                MessageBox.Show("Recyled units cannot be greater than freshwater units used");
+                MessageBox.Show("Recycled units cannot be greater than freshwater units used.");
                 return;
             }
 
@@ -124,8 +121,6 @@ namespace ScotWaterV1.Forms
             {
                 using (var db = new BusinessDataContext())
                 {
-                    
-
                     var reserve = db.ReserveConfigs.FirstOrDefault();
 
                     if (reserve == null)
@@ -136,18 +131,17 @@ namespace ScotWaterV1.Forms
 
                     bool isLowReserve = reserve.CurrentReservePercentage < 25;
 
+                    // FIXED: Allow Admins to add usage
                     int staffId = Session.StaffUserID;
-
-                    
                     if (staffId == 0)
                     {
-                        staffId = 1; 
+                        staffId = 1; // Ensure StaffUserID = 1 exists in StaffUsers table
                     }
 
                     var usage = new WaterUsage
                     {
                         BusinessID = businessId,
-                        StaffUserID = Session.StaffUserID, // IMPORTANT: must exist in StaffUsers table
+                        StaffUserID = staffId,   // FIXED
                         FreshwaterUnitsUsed = used,
                         RecycledUnits = recycled,
                         ReadingDate = dtpDate.Value,
@@ -155,8 +149,8 @@ namespace ScotWaterV1.Forms
                     };
 
                     bool usageAlreadyExists = db.WaterUsage.Any(u =>
-                    u.BusinessID == businessId &&
-                    DbFunctions.TruncateTime(u.ReadingDate) == dtpDate.Value.Date);
+                        u.BusinessID == businessId &&
+                        DbFunctions.TruncateTime(u.ReadingDate) == dtpDate.Value.Date);
 
                     if (usageAlreadyExists)
                     {
@@ -170,10 +164,10 @@ namespace ScotWaterV1.Forms
 
                 MessageBox.Show("Usage saved successfully!");
 
-                // refresh grid immediately
+                // Refresh grid
                 btn_ShowUsage_Click(null, null);
 
-                // clear inputs
+                // Clear inputs
                 txt_Water_Used.Clear();
                 txtRecycledWater.Clear();
             }
@@ -184,18 +178,8 @@ namespace ScotWaterV1.Forms
         }
 
         // =========================
-        // OPTIONAL AUTO REFRESH
+        // SIGN OUT + MAIN MENU
         // =========================
-        private void CmbBusiness_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // optional:
-            // btn_ShowUsage_Click(null, null);
-        }
-
-        // =========================
-        // SIGN OUT
-        // =========================
-       
         private void btnMainMenu_Click(object sender, EventArgs e)
         {
             frmMainMenu main = new frmMainMenu();
@@ -205,7 +189,6 @@ namespace ScotWaterV1.Forms
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-
             if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo)
                 == DialogResult.Yes)
             {
