@@ -48,7 +48,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1315, 128);
             this.pictureBox1.TabIndex = 3;
@@ -59,7 +59,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(203, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -84,7 +84,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 678);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1328, 79);
             this.pictureBox2.TabIndex = 18;
@@ -118,7 +118,7 @@
             // 
             this.cmbBusinessNames.FormattingEnabled = true;
             this.cmbBusinessNames.Location = new System.Drawing.Point(225, 235);
-            this.cmbBusinessNames.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBusinessNames.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBusinessNames.Name = "cmbBusinessNames";
             this.cmbBusinessNames.Size = new System.Drawing.Size(160, 24);
             this.cmbBusinessNames.TabIndex = 21;
@@ -126,7 +126,7 @@
             // dtpBillDate
             // 
             this.dtpBillDate.Location = new System.Drawing.Point(225, 297);
-            this.dtpBillDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpBillDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(265, 22);
             this.dtpBillDate.TabIndex = 26;
@@ -144,7 +144,7 @@
             // btnGenerateBill
             // 
             this.btnGenerateBill.Location = new System.Drawing.Point(537, 192);
-            this.btnGenerateBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGenerateBill.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerateBill.Name = "btnGenerateBill";
             this.btnGenerateBill.Size = new System.Drawing.Size(239, 121);
             this.btnGenerateBill.TabIndex = 30;
@@ -156,6 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1112, 601);
             this.Controls.Add(this.btnGenerateBill);
             this.Controls.Add(this.lblGenerateBillsDate);
@@ -167,7 +168,7 @@
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGenerateBill";
             this.Text = "GenerateBill";
             this.Load += new System.EventHandler(this.frmGenerateBill_Load);

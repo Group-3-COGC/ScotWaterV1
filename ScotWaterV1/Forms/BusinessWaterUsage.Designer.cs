@@ -57,9 +57,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(-3, -2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(228, 160);
+            this.pictureBox3.Size = new System.Drawing.Size(203, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 21;
             this.pictureBox3.TabStop = false;
@@ -69,10 +69,10 @@
             this.btnSignOut.BackColor = System.Drawing.Color.White;
             this.btnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSignOut.Location = new System.Drawing.Point(1027, 88);
+            this.btnSignOut.Location = new System.Drawing.Point(913, 70);
             this.btnSignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Size = new System.Drawing.Size(150, 54);
+            this.btnSignOut.Size = new System.Drawing.Size(133, 43);
             this.btnSignOut.TabIndex = 20;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = false;
@@ -82,29 +82,29 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-3, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1701, 160);
+            this.pictureBox1.Size = new System.Drawing.Size(1512, 128);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-3, 838);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(-3, 670);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1701, 160);
+            this.pictureBox2.Size = new System.Drawing.Size(1512, 128);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             // 
             // CmbBusiness
             // 
             this.CmbBusiness.FormattingEnabled = true;
-            this.CmbBusiness.Location = new System.Drawing.Point(543, 194);
-            this.CmbBusiness.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CmbBusiness.Location = new System.Drawing.Point(483, 155);
+            this.CmbBusiness.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmbBusiness.Name = "CmbBusiness";
-            this.CmbBusiness.Size = new System.Drawing.Size(198, 28);
+            this.CmbBusiness.Size = new System.Drawing.Size(176, 24);
             this.CmbBusiness.TabIndex = 23;
             // 
             // txtWaterUsed
@@ -112,10 +112,10 @@
             this.txtWaterUsed.AutoSize = true;
             this.txtWaterUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWaterUsed.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtWaterUsed.Location = new System.Drawing.Point(366, 280);
+            this.txtWaterUsed.Location = new System.Drawing.Point(325, 224);
             this.txtWaterUsed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtWaterUsed.Name = "txtWaterUsed";
-            this.txtWaterUsed.Size = new System.Drawing.Size(187, 33);
+            this.txtWaterUsed.Size = new System.Drawing.Size(156, 29);
             this.txtWaterUsed.TabIndex = 24;
             this.txtWaterUsed.Text = "Water Used ";
             // 
@@ -124,47 +124,47 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(366, 334);
+            this.label2.Location = new System.Drawing.Point(325, 267);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 33);
+            this.label2.Size = new System.Drawing.Size(203, 29);
             this.label2.TabIndex = 25;
             this.label2.Text = "Recycled Water ";
             // 
             // txt_Water_Used
             // 
-            this.txt_Water_Used.Location = new System.Drawing.Point(620, 280);
-            this.txt_Water_Used.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Water_Used.Location = new System.Drawing.Point(551, 224);
+            this.txt_Water_Used.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_Water_Used.Multiline = true;
             this.txt_Water_Used.Name = "txt_Water_Used";
-            this.txt_Water_Used.Size = new System.Drawing.Size(169, 29);
+            this.txt_Water_Used.Size = new System.Drawing.Size(151, 24);
             this.txt_Water_Used.TabIndex = 26;
             // 
             // txtRecycledWater
             // 
-            this.txtRecycledWater.Location = new System.Drawing.Point(620, 334);
-            this.txtRecycledWater.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRecycledWater.Location = new System.Drawing.Point(551, 267);
+            this.txtRecycledWater.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRecycledWater.Multiline = true;
             this.txtRecycledWater.Name = "txtRecycledWater";
-            this.txtRecycledWater.Size = new System.Drawing.Size(169, 29);
+            this.txtRecycledWater.Size = new System.Drawing.Size(151, 24);
             this.txtRecycledWater.TabIndex = 27;
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(620, 400);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpDate.Location = new System.Drawing.Point(551, 320);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(169, 26);
+            this.dtpDate.Size = new System.Drawing.Size(151, 22);
             this.dtpDate.TabIndex = 28;
             // 
             // btnAddUsage
             // 
             this.btnAddUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddUsage.Location = new System.Drawing.Point(522, 472);
-            this.btnAddUsage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddUsage.Location = new System.Drawing.Point(464, 378);
+            this.btnAddUsage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddUsage.Name = "btnAddUsage";
-            this.btnAddUsage.Size = new System.Drawing.Size(170, 51);
+            this.btnAddUsage.Size = new System.Drawing.Size(151, 41);
             this.btnAddUsage.TabIndex = 29;
             this.btnAddUsage.Text = "Add Usage ";
             this.btnAddUsage.UseVisualStyleBackColor = true;
@@ -174,11 +174,11 @@
             // 
             this.dgv_Business.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dgv_Business.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Business.Location = new System.Drawing.Point(51, 552);
-            this.dgv_Business.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_Business.Location = new System.Drawing.Point(45, 442);
+            this.dgv_Business.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_Business.Name = "dgv_Business";
             this.dgv_Business.RowHeadersWidth = 51;
-            this.dgv_Business.Size = new System.Drawing.Size(1097, 252);
+            this.dgv_Business.Size = new System.Drawing.Size(975, 202);
             this.dgv_Business.TabIndex = 30;
             // 
             // label1
@@ -186,10 +186,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(366, 398);
+            this.label1.Location = new System.Drawing.Point(325, 318);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 33);
+            this.label1.Size = new System.Drawing.Size(67, 29);
             this.label1.TabIndex = 31;
             this.label1.Text = "Date";
             // 
@@ -197,10 +197,10 @@
             // 
             this.btn_Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Show.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Show.Location = new System.Drawing.Point(783, 182);
-            this.btn_Show.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Show.Location = new System.Drawing.Point(696, 146);
+            this.btn_Show.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Show.Name = "btn_Show";
-            this.btn_Show.Size = new System.Drawing.Size(170, 51);
+            this.btn_Show.Size = new System.Drawing.Size(151, 41);
             this.btn_Show.TabIndex = 32;
             this.btn_Show.Text = "Show Details ";
             this.btn_Show.UseVisualStyleBackColor = true;
@@ -210,10 +210,10 @@
             // 
             this.btnShowUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnShowUsage.Location = new System.Drawing.Point(958, 492);
-            this.btnShowUsage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnShowUsage.Location = new System.Drawing.Point(852, 394);
+            this.btnShowUsage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowUsage.Name = "btnShowUsage";
-            this.btnShowUsage.Size = new System.Drawing.Size(170, 51);
+            this.btnShowUsage.Size = new System.Drawing.Size(151, 41);
             this.btnShowUsage.TabIndex = 33;
             this.btnShowUsage.Text = "Show Usage ";
             this.btnShowUsage.UseVisualStyleBackColor = true;
@@ -224,10 +224,10 @@
             this.btnMainMenu.BackColor = System.Drawing.Color.White;
             this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMainMenu.Location = new System.Drawing.Point(522, 895);
+            this.btnMainMenu.Location = new System.Drawing.Point(464, 716);
             this.btnMainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMainMenu.Name = "btnMainMenu";
-            this.btnMainMenu.Size = new System.Drawing.Size(150, 54);
+            this.btnMainMenu.Size = new System.Drawing.Size(133, 43);
             this.btnMainMenu.TabIndex = 34;
             this.btnMainMenu.Text = "Main Menu";
             this.btnMainMenu.UseVisualStyleBackColor = false;
@@ -237,10 +237,10 @@
             // 
             this.btn_DeleteUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_DeleteUsage.Location = new System.Drawing.Point(700, 472);
-            this.btn_DeleteUsage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_DeleteUsage.Location = new System.Drawing.Point(622, 378);
+            this.btn_DeleteUsage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_DeleteUsage.Name = "btn_DeleteUsage";
-            this.btn_DeleteUsage.Size = new System.Drawing.Size(170, 51);
+            this.btn_DeleteUsage.Size = new System.Drawing.Size(151, 41);
             this.btn_DeleteUsage.TabIndex = 35;
             this.btn_DeleteUsage.Text = "Delete Usage";
             this.btn_DeleteUsage.UseVisualStyleBackColor = true;
@@ -248,9 +248,10 @@
             // 
             // BusinessWaterUsage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 751);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1112, 601);
             this.Controls.Add(this.btn_DeleteUsage);
             this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.btnShowUsage);

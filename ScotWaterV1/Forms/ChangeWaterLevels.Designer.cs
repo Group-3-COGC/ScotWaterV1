@@ -164,6 +164,7 @@ namespace ScotWaterV1.Forms
             // 
             // frmChangeWaterLevels
             // 
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1112, 601);
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.btnMainMenu);
