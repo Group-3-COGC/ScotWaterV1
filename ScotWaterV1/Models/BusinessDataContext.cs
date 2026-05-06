@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 using ScotWaterV1.Core;
 
 namespace ScotWaterV1.Models
@@ -23,6 +24,9 @@ namespace ScotWaterV1.Models
         // NEW TABLES
         public DbSet<PricingConfig> PricingConfigs { get; set; }
         public DbSet<ReserveConfig> ReserveConfigs { get; set; }
+
+        //email table(new)
+        public DbSet<EmailConfigs> EmailConfigs { get; set; }
     }
 
    
@@ -182,7 +186,8 @@ namespace ScotWaterV1.Models
 
             context.ReserveConfigs.Add(reserve);
 
-            context.SaveChanges();
+            context.SaveChanges();  
+
         }
     }
 }

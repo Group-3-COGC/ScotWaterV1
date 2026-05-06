@@ -110,6 +110,15 @@
     <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202604291356447_InitialCreate.cs" />
+    <Compile Include="Migrations\202604291356447_InitialCreate.Designer.cs">
+      <DependentUpon>202604291356447_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202605061250191_AddEmailConfigs.cs" />
+    <Compile Include="Migrations\202605061250191_AddEmailConfigs.Designer.cs">
+      <DependentUpon>202605061250191_AddEmailConfigs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthService.cs" />
     <Compile Include="Models\BillBreakDown.cs" />
     <Compile Include="Models\BillingService.cs" />
@@ -130,6 +139,7 @@
     <Compile Include="Models\BusinessDataContext.cs" />
     <Compile Include="Models\BusinessUser.cs" />
     <Compile Include="Models\BusinessView.cs" />
+    <Compile Include="Models\EmailConfigs.cs" />
     <Compile Include="Models\PasswordSecurity.cs" />
     <Compile Include="Models\PricingConfig.cs" />
     <Compile Include="Models\ReserveConfig.cs" />
@@ -171,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewBusinesses.resx">
       <DependentUpon>ViewBusinesses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202604291356447_InitialCreate.resx">
+      <DependentUpon>202604291356447_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202605061250191_AddEmailConfigs.resx">
+      <DependentUpon>202605061250191_AddEmailConfigs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
