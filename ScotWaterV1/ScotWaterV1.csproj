@@ -111,6 +111,7 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthService.cs" />
+    <Compile Include="Models\BillBreakDown.cs" />
     <Compile Include="Models\BillingService.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Forms\ViewBusinesses.cs">
