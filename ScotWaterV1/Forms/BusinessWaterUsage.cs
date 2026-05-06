@@ -121,15 +121,7 @@ namespace ScotWaterV1.Forms
             try
             {
                 using (var db = new BusinessDataContext())
-                {
-
-                    if (!Session.IsStaffLoggedIn || Session.StaffUserID == 0)
-                    {
-                        MessageBox.Show("No staff user is logged in. Please log in again");
-                        return;
-                    }
-
-
+                {              
                     var reserve = db.ReserveConfigs.FirstOrDefault();
 
                     if (reserve == null)
