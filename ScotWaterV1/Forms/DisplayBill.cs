@@ -6,8 +6,6 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
 {
-    //Dean Caldwell
-    //06/05/2026
     public partial class DisplayBill : Form
     {
         private readonly int _billId;
@@ -24,7 +22,7 @@ namespace ScotWaterV1.Forms
             _billId = billId;
         }
 
-        // ===== LOAD =====
+        // ================= LOAD =================
         private void DisplayBill_Load(object sender, EventArgs e)
         {
             StyleGrid();
@@ -35,15 +33,9 @@ namespace ScotWaterV1.Forms
                 ClearBillLabels();
         }
 
-        // ===== LOAD BILL =====
+        // ================= LOAD SINGLE BILL =================
         private void LoadBill(int billId)
         {
-            if (billId <= 0)
-            {
-                MessageBox.Show("Enter a valid Bill ID.");
-                return;
-            }
-
             try
             {
                 using (var context = new BusinessDataContext())
@@ -70,10 +62,25 @@ namespace ScotWaterV1.Forms
                         return;
                     }
 
-                    BindBill(bill);
-                    BindBreakdownGrid(bill);
+                    // ================= LABELS =================
+                    lblBusinessName.Text = bill.CompanyName;
+                    lblBillDate.Text = bill.BillDate.ToString("dd/MM/yyyy");
+                    lblTotalCharges.Text = $"£{bill.TotalCharges:F2}";
+                    lblDiscount.Text = $"£{bill.TotalDiscount:F2}";
+                    lblSubTotal.Text = $"£{bill.SubTotal:F2}";
+                    lblVAT.Text = $"£{bill.VAT:F2}";
+                    lblFinalCost.Text = $"£{bill.BusinessFinalCost:F2}";
 
                     txtBillSearch.Text = bill.BusinessBillID.ToString();
+
+                    // ================= GRID =================
+                    dgvBillBreakdown.DataSource = new[]
+                    {
+                        new { Item = "Water Charges", Amount = bill.TotalCharges },
+                        new { Item = "Discount", Amount = -bill.TotalDiscount },
+                        new { Item = "VAT", Amount = bill.VAT },
+                        new { Item = "FINAL TOTAL", Amount = bill.BusinessFinalCost }
+                    };
                 }
             }
             catch (Exception ex)
@@ -82,34 +89,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ===== BIND MAIN BILL DATA =====
-        private void BindBill(dynamic bill)
-        {
-            lblBusinessName.Text = bill.CompanyName;
-            lblBillDate.Text = bill.BillDate.ToString("dd/MM/yyyy");
-
-            lblTotalCharges.Text = $"£{bill.TotalCharges:F2}";
-            lblDiscount.Text = $"£{bill.TotalDiscount:F2}";
-            lblSubTotal.Text = $"£{bill.SubTotal:F2}";
-            lblVAT.Text = $"£{bill.VAT:F2}";
-            lblFinalCost.Text = $"£{bill.BusinessFinalCost:F2}";
-        }
-
-        // ===== GRID DATA =====
-        private void BindBreakdownGrid(dynamic bill)
-        {
-            dgvBillBreakdown.DataSource = new[]
-            {
-                new { Item = "Water Charges", Amount = bill.TotalCharges },
-                new { Item = "Discount", Amount = -bill.TotalDiscount },
-                new { Item = "VAT", Amount = bill.VAT },
-                new { Item = "FINAL TOTAL", Amount = bill.BusinessFinalCost }
-            };
-
-            dgvBillBreakdown.Columns["Amount"].DefaultCellStyle.Format = "£0.00";
-        }
-
-        // ===== CLEAR =====
+        // ================= CLEAR =================
         private void ClearBillLabels()
         {
             lblBusinessName.Text = "-";
@@ -123,53 +103,35 @@ namespace ScotWaterV1.Forms
             dgvBillBreakdown.DataSource = null;
         }
 
-        // ===== GRID STYLE =====
+        // ================= STYLE GRID =================
         private void StyleGrid()
         {
             dgvBillBreakdown.ReadOnly = true;
             dgvBillBreakdown.AllowUserToAddRows = false;
             dgvBillBreakdown.AllowUserToDeleteRows = false;
             dgvBillBreakdown.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
             dgvBillBreakdown.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBillBreakdown.RowHeadersVisible = false;
             dgvBillBreakdown.BackgroundColor = Color.White;
-
-            dgvBillBreakdown.ColumnHeadersDefaultCellStyle.Font =
-                new Font("Segoe UI", 10, FontStyle.Bold);
-
-            dgvBillBreakdown.DefaultCellStyle.Font =
-                new Font("Segoe UI", 10);
         }
 
-        // ===== NAV =====
-        private void btnMainMenu_Click(object sender, EventArgs e)
-        {
-            frmMainMenu main = new frmMainMenu();
-            main.Show();
-            this.Close();
-        }
-
-        private void btnSignOut_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Sign out?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                frmLogin login = new frmLogin();
-                login.Show();
-                this.Close();
-            }
-        }
-
-        // ===== SEARCH =====
+        // ================= SEARCH =================
         private void btnBillSearch_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtBillSearch.Text, out int billId) || billId <= 0)
+            if (!int.TryParse(txtBillSearch.Text, out int billId))
             {
-                MessageBox.Show("Enter a valid Bill ID.");
+                MessageBox.Show("Enter valid Bill ID.");
                 return;
             }
 
             LoadBill(billId);
+        }
+
+        // ================= NAV =================
+        private void btnMainMenu_Click(object sender, EventArgs e)
+        {
+            new frmMainMenu().Show();
+            this.Close();
         }
     }
 }
