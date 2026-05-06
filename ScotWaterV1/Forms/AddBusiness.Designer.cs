@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddBusiness));
             this.btnAddNewBusiness = new System.Windows.Forms.Button();
-            this.btnM_R_SignOut = new System.Windows.Forms.Button();
-            this.btnMainMenu = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -71,7 +69,7 @@
             this.btnAddNewBusiness.BackColor = System.Drawing.Color.White;
             this.btnAddNewBusiness.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewBusiness.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddNewBusiness.Location = new System.Drawing.Point(593, 526);
+            this.btnAddNewBusiness.Location = new System.Drawing.Point(562, 500);
             this.btnAddNewBusiness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddNewBusiness.Name = "btnAddNewBusiness";
             this.btnAddNewBusiness.Size = new System.Drawing.Size(133, 43);
@@ -80,39 +78,12 @@
             this.btnAddNewBusiness.UseVisualStyleBackColor = false;
             this.btnAddNewBusiness.Click += new System.EventHandler(this.btnAddNewBusiness_Click);
             // 
-            // btnM_R_SignOut
-            // 
-            this.btnM_R_SignOut.BackColor = System.Drawing.Color.White;
-            this.btnM_R_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnM_R_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnM_R_SignOut.Location = new System.Drawing.Point(828, 50);
-            this.btnM_R_SignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnM_R_SignOut.Name = "btnM_R_SignOut";
-            this.btnM_R_SignOut.Size = new System.Drawing.Size(133, 43);
-            this.btnM_R_SignOut.TabIndex = 38;
-            this.btnM_R_SignOut.Text = "Sign Out";
-            this.btnM_R_SignOut.UseVisualStyleBackColor = false;
-            // 
-            // btnMainMenu
-            // 
-            this.btnMainMenu.BackColor = System.Drawing.Color.White;
-            this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMainMenu.Location = new System.Drawing.Point(420, 526);
-            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMainMenu.Name = "btnMainMenu";
-            this.btnMainMenu.Size = new System.Drawing.Size(133, 43);
-            this.btnMainMenu.TabIndex = 37;
-            this.btnMainMenu.Text = "Main Menu ";
-            this.btnMainMenu.UseVisualStyleBackColor = false;
-            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(-1, -5);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(203, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,10 +93,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 481);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 610);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1117, 128);
+            this.pictureBox2.Size = new System.Drawing.Size(1362, 146);
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
             // 
@@ -133,9 +104,9 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-1, -5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1156, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(1362, 128);
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
@@ -285,7 +256,7 @@
             // txtBusinessName
             // 
             this.txtBusinessName.Location = new System.Drawing.Point(336, 213);
-            this.txtBusinessName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBusinessName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBusinessName.Name = "txtBusinessName";
             this.txtBusinessName.Size = new System.Drawing.Size(132, 22);
             this.txtBusinessName.TabIndex = 57;
@@ -293,7 +264,7 @@
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(336, 245);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(132, 22);
             this.txtCity.TabIndex = 58;
@@ -301,7 +272,7 @@
             // txtAddress1
             // 
             this.txtAddress1.Location = new System.Drawing.Point(336, 278);
-            this.txtAddress1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress1.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(132, 22);
             this.txtAddress1.TabIndex = 59;
@@ -309,7 +280,7 @@
             // txtAddress2
             // 
             this.txtAddress2.Location = new System.Drawing.Point(336, 315);
-            this.txtAddress2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress2.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(132, 22);
             this.txtAddress2.TabIndex = 60;
@@ -317,7 +288,7 @@
             // txtPostcode
             // 
             this.txtPostcode.Location = new System.Drawing.Point(336, 345);
-            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(132, 22);
             this.txtPostcode.TabIndex = 61;
@@ -325,7 +296,7 @@
             // txtContactName
             // 
             this.txtContactName.Location = new System.Drawing.Point(861, 169);
-            this.txtContactName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContactName.Margin = new System.Windows.Forms.Padding(4);
             this.txtContactName.Name = "txtContactName";
             this.txtContactName.Size = new System.Drawing.Size(132, 22);
             this.txtContactName.TabIndex = 62;
@@ -333,7 +304,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Location = new System.Drawing.Point(861, 204);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(132, 22);
             this.txtPhoneNumber.TabIndex = 63;
@@ -341,7 +312,7 @@
             // txtEmailAddress
             // 
             this.txtEmailAddress.Location = new System.Drawing.Point(861, 240);
-            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(132, 22);
             this.txtEmailAddress.TabIndex = 64;
@@ -349,7 +320,7 @@
             // txtAccountName
             // 
             this.txtAccountName.Location = new System.Drawing.Point(861, 277);
-            this.txtAccountName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAccountName.Margin = new System.Windows.Forms.Padding(4);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(132, 22);
             this.txtAccountName.TabIndex = 65;
@@ -357,7 +328,7 @@
             // txtSortCode
             // 
             this.txtSortCode.Location = new System.Drawing.Point(861, 311);
-            this.txtSortCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSortCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtSortCode.Name = "txtSortCode";
             this.txtSortCode.Size = new System.Drawing.Size(132, 22);
             this.txtSortCode.TabIndex = 66;
@@ -365,7 +336,7 @@
             // txtAccountNumber
             // 
             this.txtAccountNumber.Location = new System.Drawing.Point(861, 354);
-            this.txtAccountNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAccountNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtAccountNumber.Name = "txtAccountNumber";
             this.txtAccountNumber.Size = new System.Drawing.Size(132, 22);
             this.txtAccountNumber.TabIndex = 67;
@@ -379,7 +350,7 @@
             "East",
             "West"});
             this.cbxRegion.Location = new System.Drawing.Point(336, 383);
-            this.cbxRegion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxRegion.Margin = new System.Windows.Forms.Padding(4);
             this.cbxRegion.Name = "cbxRegion";
             this.cbxRegion.Size = new System.Drawing.Size(160, 24);
             this.cbxRegion.TabIndex = 68;
@@ -387,7 +358,7 @@
             // txtBusinessID
             // 
             this.txtBusinessID.Location = new System.Drawing.Point(336, 178);
-            this.txtBusinessID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBusinessID.Margin = new System.Windows.Forms.Padding(4);
             this.txtBusinessID.Name = "txtBusinessID";
             this.txtBusinessID.Size = new System.Drawing.Size(132, 22);
             this.txtBusinessID.TabIndex = 69;
@@ -397,7 +368,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1112, 601);
+            this.ClientSize = new System.Drawing.Size(1088, 601);
             this.Controls.Add(this.txtBusinessID);
             this.Controls.Add(this.cbxRegion);
             this.Controls.Add(this.txtAccountNumber);
@@ -425,12 +396,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddNewBusiness);
-            this.Controls.Add(this.btnM_R_SignOut);
-            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAddBusiness";
             this.Text = "AddBusiness";
             this.Load += new System.EventHandler(this.frmAddBusiness_Load);
@@ -445,8 +414,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAddNewBusiness;
-        private System.Windows.Forms.Button btnM_R_SignOut;
-        private System.Windows.Forms.Button btnMainMenu;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;

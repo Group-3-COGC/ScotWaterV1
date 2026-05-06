@@ -50,7 +50,7 @@
             // 
             this.lblBusinessName.AutoSize = true;
             this.lblBusinessName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblBusinessName.Location = new System.Drawing.Point(221, 12);
+            this.lblBusinessName.Location = new System.Drawing.Point(197, 12);
             this.lblBusinessName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBusinessName.Name = "lblBusinessName";
             this.lblBusinessName.Size = new System.Drawing.Size(20, 25);
@@ -61,7 +61,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblBillDate.Location = new System.Drawing.Point(221, 54);
+            this.lblBillDate.Location = new System.Drawing.Point(197, 54);
             this.lblBillDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(20, 25);
@@ -72,7 +72,7 @@
             // 
             this.lblTotalCharges.AutoSize = true;
             this.lblTotalCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTotalCharges.Location = new System.Drawing.Point(221, 94);
+            this.lblTotalCharges.Location = new System.Drawing.Point(197, 94);
             this.lblTotalCharges.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalCharges.Name = "lblTotalCharges";
             this.lblTotalCharges.Size = new System.Drawing.Size(20, 25);
@@ -116,7 +116,7 @@
             // 
             this.lblFinalCost.AutoSize = true;
             this.lblFinalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFinalCost.Location = new System.Drawing.Point(160, 25);
+            this.lblFinalCost.Location = new System.Drawing.Point(169, 25);
             this.lblFinalCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFinalCost.Name = "lblFinalCost";
             this.lblFinalCost.Size = new System.Drawing.Size(20, 25);

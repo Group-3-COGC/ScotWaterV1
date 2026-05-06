@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeWaterCharges));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnChangeWaterCharges_MainMenu = new System.Windows.Forms.Button();
             this.btnChangeWaterCharges_SignOut = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblCurrentWaterCharge = new System.Windows.Forms.Label();
@@ -71,35 +70,21 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1069, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(1363, 128);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 516);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 647);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1069, 85);
+            this.pictureBox2.Size = new System.Drawing.Size(1363, 109);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnChangeWaterCharges_MainMenu
-            // 
-            this.btnChangeWaterCharges_MainMenu.BackColor = System.Drawing.Color.White;
-            this.btnChangeWaterCharges_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeWaterCharges_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnChangeWaterCharges_MainMenu.Location = new System.Drawing.Point(492, 545);
-            this.btnChangeWaterCharges_MainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnChangeWaterCharges_MainMenu.Name = "btnChangeWaterCharges_MainMenu";
-            this.btnChangeWaterCharges_MainMenu.Size = new System.Drawing.Size(133, 43);
-            this.btnChangeWaterCharges_MainMenu.TabIndex = 12;
-            this.btnChangeWaterCharges_MainMenu.Text = "Main Menu ";
-            this.btnChangeWaterCharges_MainMenu.UseVisualStyleBackColor = false;
-            this.btnChangeWaterCharges_MainMenu.Click += new System.EventHandler(this.btnChangeWaterCharges_MainMenu_Click);
             // 
             // btnChangeWaterCharges_SignOut
             // 
@@ -120,7 +105,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(203, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -458,7 +443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1069, 602);
+            this.ClientSize = new System.Drawing.Size(1088, 601);
             this.Controls.Add(this.txtNewPrice);
             this.Controls.Add(this.btnChangePrice);
             this.Controls.Add(this.lblChangeCharges);
@@ -466,7 +451,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnChangeWaterCharges_SignOut);
-            this.Controls.Add(this.btnChangeWaterCharges_MainMenu);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -486,7 +470,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnChangeWaterCharges_MainMenu;
         private System.Windows.Forms.Button btnChangeWaterCharges_SignOut;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblCurrentWaterCharge;

@@ -47,9 +47,10 @@ namespace ScotWaterV1.Forms
             this.pictureBox2.Location = new System.Drawing.Point(-29, 453);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1001, 125);
+            this.pictureBox2.Size = new System.Drawing.Size(1391, 125);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -57,7 +58,7 @@ namespace ScotWaterV1.Forms
             this.pictureBox1.Location = new System.Drawing.Point(-29, -33);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(986, 159);
+            this.pictureBox1.Size = new System.Drawing.Size(1391, 159);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -165,7 +166,7 @@ namespace ScotWaterV1.Forms
             // frmChangeWaterLevels
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1112, 601);
+            this.ClientSize = new System.Drawing.Size(1088, 601);
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.groupBox1);

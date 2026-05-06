@@ -50,7 +50,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(-8, 568);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1156, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(0, 0);
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
@@ -60,17 +60,17 @@
             this.pictureBox2.Location = new System.Drawing.Point(-8, -3);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1156, 128);
+            this.pictureBox2.Size = new System.Drawing.Size(1376, 128);
             this.pictureBox2.TabIndex = 36;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-8, 515);
+            this.pictureBox3.Location = new System.Drawing.Point(-8, 659);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1156, 51);
+            this.pictureBox3.Size = new System.Drawing.Size(1376, 101);
             this.pictureBox3.TabIndex = 37;
             this.pictureBox3.TabStop = false;
             // 
@@ -138,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(913, 563);
+            this.ClientSize = new System.Drawing.Size(1088, 601);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveStaff);
