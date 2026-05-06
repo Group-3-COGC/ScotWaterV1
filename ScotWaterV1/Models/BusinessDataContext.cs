@@ -23,6 +23,9 @@ namespace ScotWaterV1.Models
         // NEW TABLES
         public DbSet<PricingConfig> PricingConfigs { get; set; }
         public DbSet<ReserveConfig> ReserveConfigs { get; set; }
+
+        //email table(new)
+        public DbSet<EmailConfigs> EmailConfigs { get; set; }
     }
 
    
