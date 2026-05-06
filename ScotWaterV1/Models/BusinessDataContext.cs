@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 using ScotWaterV1.Core;
 
 namespace ScotWaterV1.Models
@@ -185,7 +186,8 @@ namespace ScotWaterV1.Models
 
             context.ReserveConfigs.Add(reserve);
 
-            context.SaveChanges();
+            context.SaveChanges();  
+
         }
     }
 }

@@ -32,6 +32,7 @@ namespace ScotWaterV1.Services
             {
                 errorMessage = "Invalid username or password.";
                 return false;
+
             }
 
             bool valid = PasswordSecurity.VerifyPassword(password, staff.staffPassword);
