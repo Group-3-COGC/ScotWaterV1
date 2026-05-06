@@ -5,6 +5,8 @@ namespace ScotWaterV1.Core
 {
     public static class PasswordSecurity
     {
+        // Dean Caldwell
+        // 06/05/2026
         public static string HashPassword(string password)
         {
             byte[] salt = new byte[16];

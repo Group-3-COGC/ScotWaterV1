@@ -12,6 +12,8 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
 {
+    //Dean Caldwell
+    //06/05/2026
     public partial class AddNewStaffMember : Form
     {
         private readonly BusinessDataContext _context = new BusinessDataContext();
@@ -45,7 +47,7 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
-            // Hash the password using your PBKDF2 security class
+            // Hash the password using the PBKDF2 security class
             string hashedPassword = PasswordSecurity.HashPassword(password);
 
             var newStaff = new StaffUser
