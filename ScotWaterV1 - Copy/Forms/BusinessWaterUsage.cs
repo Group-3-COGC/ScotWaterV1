@@ -14,6 +14,9 @@ namespace ScotWaterV1.Forms
             LoadBusinesses();
         }
 
+        // =========================
+        // LOAD COMBOBOX
+        // =========================
         private void LoadBusinesses()
         {
             using (var db = new BusinessDataContext())
@@ -24,6 +27,9 @@ namespace ScotWaterV1.Forms
             }
         }
 
+        // =========================
+        // SHOW BUSINESS DETAILS
+        // =========================
         private void btn_ShowDetails_Click(object sender, EventArgs e)
         {
             if (CmbBusiness.SelectedValue == null) return;
@@ -51,6 +57,9 @@ namespace ScotWaterV1.Forms
             }
         }
 
+        // =========================
+        // SHOW WATER USAGE
+        // =========================
         private void btn_ShowUsage_Click(object sender, EventArgs e)
         {
             if (CmbBusiness.SelectedValue == null)
@@ -67,7 +76,6 @@ namespace ScotWaterV1.Forms
                     .Where(w => w.BusinessID == businessId)
                     .Select(w => new
                     {
-                        w.WaterUsageID,
                         Business = w.BusinessUser.CompanyName,
                         Date = w.ReadingDate,
                         WaterUsed = w.FreshwaterUnitsUsed,
@@ -76,11 +84,11 @@ namespace ScotWaterV1.Forms
                     })
                     .ToList();
             }
-
-            if (dgv_Business.Columns.Contains("WaterUsageID"))
-                dgv_Business.Columns["WaterUsageID"].Visible = false;
         }
 
+        // =========================
+        // ADD USAGE (SAVE TO DB)
+        // =========================
         private void btn_AddUsage_Click(object sender, EventArgs e)
         {
             if (CmbBusiness.SelectedValue == null)
@@ -93,19 +101,19 @@ namespace ScotWaterV1.Forms
 
             if (!int.TryParse(txt_Water_Used.Text, out int used) || used < 0)
             {
-                MessageBox.Show("Freshwater units must be valid.");
+                MessageBox.Show("Freshwater units must be a valid number greater than or equal to 0.");
                 return;
             }
 
             if (!int.TryParse(txtRecycledWater.Text, out int recycled) || recycled < 0)
             {
-                MessageBox.Show("Recycled units must be valid.");
+                MessageBox.Show("Recycled units must be a valid number greater than or equal to 0.");
                 return;
             }
 
             if (recycled > used)
             {
-                MessageBox.Show("Recycled units cannot exceed freshwater units.");
+                MessageBox.Show("Recycled units cannot be greater than freshwater units used.");
                 return;
             }
 
@@ -113,44 +121,40 @@ namespace ScotWaterV1.Forms
             {
                 using (var db = new BusinessDataContext())
                 {
-
-                    if (!Session.IsStaffLoggedIn || Session.StaffUserID == 0)
-                    {
-                        MessageBox.Show("No staff user is logged in. Please log in again");
-                        return;
-                    }
-
-
                     var reserve = db.ReserveConfigs.FirstOrDefault();
+
                     if (reserve == null)
                     {
-                        MessageBox.Show("Reserve level not configured.");
+                        MessageBox.Show("Reserve level is not configured.");
                         return;
                     }
 
                     bool isLowReserve = reserve.CurrentReservePercentage < 25;
 
+                    // FIXED: Allow Admins to add usage
                     int staffId = Session.StaffUserID;
                     if (staffId == 0)
-                        staffId = 1;
+                    {
+                        staffId = 1; // Ensure StaffUserID = 1 exists in StaffUsers table
+                    }
 
                     var usage = new WaterUsage
                     {
                         BusinessID = businessId,
-                        StaffUserID = staffId,
+                        StaffUserID = staffId,   // FIXED
                         FreshwaterUnitsUsed = used,
                         RecycledUnits = recycled,
                         ReadingDate = dtpDate.Value,
                         IsLowReserve = isLowReserve
                     };
 
-                    bool exists = db.WaterUsage.Any(u =>
+                    bool usageAlreadyExists = db.WaterUsage.Any(u =>
                         u.BusinessID == businessId &&
                         DbFunctions.TruncateTime(u.ReadingDate) == dtpDate.Value.Date);
 
-                    if (exists)
+                    if (usageAlreadyExists)
                     {
-                        MessageBox.Show("Usage already exists for this date.");
+                        MessageBox.Show("Usage for this business already exists on this date.");
                         return;
                     }
 
@@ -158,8 +162,12 @@ namespace ScotWaterV1.Forms
                     db.SaveChanges();
                 }
 
-                MessageBox.Show("Usage saved successfully.");
+                MessageBox.Show("Usage saved successfully!");
+
+                // Refresh grid
                 btn_ShowUsage_Click(null, null);
+
+                // Clear inputs
                 txt_Water_Used.Clear();
                 txtRecycledWater.Clear();
             }
@@ -169,41 +177,9 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        private void btn_DeleteUsage_Click(object sender, EventArgs e)
-        {
-            if (dgv_Business.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Select a usage entry to delete.");
-                return;
-            }
-
-            int usageId = Convert.ToInt32(
-                dgv_Business.SelectedRows[0].Cells["WaterUsageID"].Value
-            );
-
-            if (MessageBox.Show("Delete this usage entry?",
-                "Confirm", MessageBoxButtons.YesNo) != DialogResult.Yes)
-            {
-                return;
-            }
-
-            using (var db = new BusinessDataContext())
-            {
-                var usage = db.WaterUsage.FirstOrDefault(u => u.WaterUsageID == usageId);
-                if (usage == null)
-                {
-                    MessageBox.Show("Usage entry not found.");
-                    return;
-                }
-
-                db.WaterUsage.Remove(usage);
-                db.SaveChanges();
-            }
-
-            MessageBox.Show("Usage deleted.");
-            btn_ShowUsage_Click(null, null);
-        }
-
+        // =========================
+        // SIGN OUT + MAIN MENU
+        // =========================
         private void btnMainMenu_Click(object sender, EventArgs e)
         {
             frmMainMenu main = new frmMainMenu();
