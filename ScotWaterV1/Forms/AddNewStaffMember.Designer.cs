@@ -111,7 +111,7 @@
             this.btnSaveStaff.TabIndex = 41;
             this.btnSaveStaff.Text = "Save Staff Member";
             this.btnSaveStaff.UseVisualStyleBackColor = true;
-           
+            this.btnSaveStaff.Click += new System.EventHandler(this.btnSaveStaff_Click);
             // 
             // label1
             // 
