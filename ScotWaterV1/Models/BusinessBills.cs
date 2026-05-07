@@ -26,7 +26,7 @@ public class BusinessBills
     public decimal BusinessFinalCost { get; set; }
 
     [Required]
-    public decimal DiscountRate { get; set; }   // ← ADD THIS BACK
+    public decimal DiscountRate { get; set; }  
 
     [Required]
     public int BusinessID { get; set; }
