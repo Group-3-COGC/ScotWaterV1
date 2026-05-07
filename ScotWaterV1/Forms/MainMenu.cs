@@ -17,9 +17,7 @@ namespace ScotWaterV1
             this.Load += frmMainMenu_Load;
         }
 
-        // =========================
-        // FORM LOAD
-        // =========================
+      
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             ApplyUI();
@@ -32,9 +30,7 @@ namespace ScotWaterV1
             pictureBox3.BringToFront();
         }
 
-        // =========================
-        // UI SETUP
-        // =========================
+       
         private void ApplyUI()
         {
             this.BackColor = Color.FromArgb(240, 242, 245);
@@ -55,7 +51,7 @@ namespace ScotWaterV1
                     btn.Width = PanelMenu.Width;
                     btn.Height = buttonHeight;
 
-                    // FIX spacing (manual stacking)
+                    // FIX spacing 
                     btn.Location = new Point(0, y);
                     y += buttonHeight;
 
@@ -85,9 +81,7 @@ namespace ScotWaterV1
             }
         }
 
-        // =========================
-        // TOP BAR
-        // =========================
+      
         private void SetupTopBar()
         {
             panelTop.Controls.Clear();
@@ -135,13 +129,10 @@ namespace ScotWaterV1
             panelTop.Controls.Add(btnLogout);
         }
 
-        // =========================
-        // OPEN FORM INSIDE MAIN PANEL
-        // =========================
+       
         public void OpenForm(Form form)
         {
-            // Remove existing child forms only.
-            // Do NOT clear the whole panel, because that can remove designer controls like pictureBox3.
+            
             for (int i = panelMain.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = panelMain.Controls[i];
@@ -165,9 +156,7 @@ namespace ScotWaterV1
             form.Show();
         }
 
-        // =========================
-        // MENU ACTIVE STATE
-        // =========================
+        
         private void MenuActive(object sender, EventArgs e)
         {
             if (currentButton != null)
@@ -198,9 +187,7 @@ namespace ScotWaterV1
             }
         }
 
-        // =========================
-        // BUTTON EVENTS
-        // =========================
+       
 
         private void btnViewBusinesses_Click(object sender, EventArgs e)
             => OpenForm(new ViewBusinesses());
