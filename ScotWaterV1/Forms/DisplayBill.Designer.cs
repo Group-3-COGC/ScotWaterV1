@@ -297,7 +297,6 @@
             this.Controls.Add(this.btnBillSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DisplayBill";
-            this.Text = "Display Bill";
             this.Load += new System.EventHandler(this.DisplayBill_Load);
             this.pnlFinal.ResumeLayout(false);
             this.pnlFinal.PerformLayout();

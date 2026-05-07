@@ -228,7 +228,6 @@ namespace ScotWaterV1.Forms
             this.Controls.Add(this.txtSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewBusinesses";
-            this.Text = "View Businesses";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinesses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
