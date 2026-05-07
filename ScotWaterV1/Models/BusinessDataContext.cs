@@ -12,7 +12,8 @@ namespace ScotWaterV1.Models
     {
         public BusinessDataContext() : base("BusinessAppConnection")
         {
-            Database.SetInitializer(new BusinessDatabaseInitialiser());
+            Database.SetInitializer<BusinessDataContext>(null);
+
         }
 
         public DbSet<BusinessUser> BusinessUser { get; set; }
