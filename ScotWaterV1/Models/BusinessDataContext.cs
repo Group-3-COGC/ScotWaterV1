@@ -37,7 +37,11 @@ namespace ScotWaterV1.Models
     {
         protected override void Seed(BusinessDataContext context)
         {
-            
+            if (context.BusinessUser.Any())
+            {
+                return;
+            }
+
             // BUSINESS USERS
             
             var business1 = new BusinessUser()
