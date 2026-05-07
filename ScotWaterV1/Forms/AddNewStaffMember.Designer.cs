@@ -102,14 +102,10 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            
             this.Name = "AddNewStaffMember";
             this.Text = "AddNewStaffMember";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
