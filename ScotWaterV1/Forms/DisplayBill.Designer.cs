@@ -18,6 +18,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayBill));
             this.btnBillSearch = new System.Windows.Forms.Button();
             this.txtBillSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,10 +51,10 @@
             this.btnBillSearch.BackColor = System.Drawing.Color.White;
             this.btnBillSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnBillSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnBillSearch.Location = new System.Drawing.Point(524, 13);
-            this.btnBillSearch.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnBillSearch.Location = new System.Drawing.Point(393, 11);
+            this.btnBillSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBillSearch.Name = "btnBillSearch";
-            this.btnBillSearch.Size = new System.Drawing.Size(158, 42);
+            this.btnBillSearch.Size = new System.Drawing.Size(118, 34);
             this.btnBillSearch.TabIndex = 26;
             this.btnBillSearch.Text = "Search";
             this.btnBillSearch.UseVisualStyleBackColor = false;
@@ -62,11 +63,10 @@
             // txtBillSearch
             // 
             this.txtBillSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtBillSearch.Location = new System.Drawing.Point(202, 14);
-            this.txtBillSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBillSearch.Location = new System.Drawing.Point(152, 11);
             this.txtBillSearch.Multiline = true;
             this.txtBillSearch.Name = "txtBillSearch";
-            this.txtBillSearch.Size = new System.Drawing.Size(264, 41);
+            this.txtBillSearch.Size = new System.Drawing.Size(199, 34);
             this.txtBillSearch.TabIndex = 27;
             // 
             // label8
@@ -74,10 +74,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(31, 30);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Location = new System.Drawing.Point(23, 24);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 25);
+            this.label8.Size = new System.Drawing.Size(119, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Search Bill ID";
             // 
@@ -86,10 +86,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(14, 25);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(10, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 25);
+            this.label7.Size = new System.Drawing.Size(90, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "Final Cost";
             // 
@@ -97,10 +96,9 @@
             // 
             this.lblFinalCost.AutoSize = true;
             this.lblFinalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFinalCost.Location = new System.Drawing.Point(169, 25);
-            this.lblFinalCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFinalCost.Location = new System.Drawing.Point(127, 20);
             this.lblFinalCost.Name = "lblFinalCost";
-            this.lblFinalCost.Size = new System.Drawing.Size(20, 25);
+            this.lblFinalCost.Size = new System.Drawing.Size(15, 20);
             this.lblFinalCost.TabIndex = 7;
             this.lblFinalCost.Text = "-";
             // 
@@ -110,19 +108,19 @@
             this.pnlFinal.Controls.Add(this.lblFinalCost);
             this.pnlFinal.Controls.Add(this.label7);
             this.pnlFinal.ForeColor = System.Drawing.Color.White;
-            this.pnlFinal.Location = new System.Drawing.Point(952, 113);
+            this.pnlFinal.Location = new System.Drawing.Point(714, 92);
+            this.pnlFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlFinal.Name = "pnlFinal";
-            this.pnlFinal.Size = new System.Drawing.Size(253, 190);
+            this.pnlFinal.Size = new System.Drawing.Size(190, 154);
             this.pnlFinal.TabIndex = 28;
             // 
             // lblVAT
             // 
             this.lblVAT.AutoSize = true;
             this.lblVAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblVAT.Location = new System.Drawing.Point(246, 54);
-            this.lblVAT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVAT.Location = new System.Drawing.Point(184, 44);
             this.lblVAT.Name = "lblVAT";
-            this.lblVAT.Size = new System.Drawing.Size(20, 25);
+            this.lblVAT.Size = new System.Drawing.Size(15, 20);
             this.lblVAT.TabIndex = 6;
             this.lblVAT.Text = "-";
             // 
@@ -131,10 +129,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(4, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 25);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Discount";
             // 
@@ -143,10 +140,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(4, 54);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(3, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 25);
+            this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "VAT";
             // 
@@ -154,10 +150,9 @@
             // 
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSubTotal.Location = new System.Drawing.Point(246, 94);
-            this.lblSubTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubTotal.Location = new System.Drawing.Point(184, 76);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(20, 25);
+            this.lblSubTotal.Size = new System.Drawing.Size(15, 20);
             this.lblSubTotal.TabIndex = 5;
             this.lblSubTotal.Text = "-";
             // 
@@ -166,10 +161,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(4, 94);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(3, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 25);
+            this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Subtotal";
             // 
@@ -177,10 +171,9 @@
             // 
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDiscount.Location = new System.Drawing.Point(246, 12);
-            this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDiscount.Location = new System.Drawing.Point(184, 10);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(20, 25);
+            this.lblDiscount.Size = new System.Drawing.Size(15, 20);
             this.lblDiscount.TabIndex = 4;
             this.lblDiscount.Text = "-";
             // 
@@ -193,9 +186,10 @@
             this.pnlTax.Controls.Add(this.label6);
             this.pnlTax.Controls.Add(this.label4);
             this.pnlTax.Controls.Add(this.lblVAT);
-            this.pnlTax.Location = new System.Drawing.Point(524, 113);
+            this.pnlTax.Location = new System.Drawing.Point(393, 92);
+            this.pnlTax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTax.Name = "pnlTax";
-            this.pnlTax.Size = new System.Drawing.Size(356, 190);
+            this.pnlTax.Size = new System.Drawing.Size(267, 154);
             this.pnlTax.TabIndex = 29;
             // 
             // label3
@@ -203,10 +197,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(4, 94);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(3, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 25);
+            this.label3.Size = new System.Drawing.Size(121, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Total Charges";
             // 
@@ -214,10 +207,9 @@
             // 
             this.lblTotalCharges.AutoSize = true;
             this.lblTotalCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTotalCharges.Location = new System.Drawing.Point(318, 94);
-            this.lblTotalCharges.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCharges.Location = new System.Drawing.Point(238, 76);
             this.lblTotalCharges.Name = "lblTotalCharges";
-            this.lblTotalCharges.Size = new System.Drawing.Size(20, 25);
+            this.lblTotalCharges.Size = new System.Drawing.Size(15, 20);
             this.lblTotalCharges.TabIndex = 3;
             this.lblTotalCharges.Text = "-";
             // 
@@ -226,10 +218,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(4, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 25);
+            this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Company Name";
             // 
@@ -238,10 +229,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(4, 54);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 25);
+            this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Bill Date";
             // 
@@ -249,10 +239,9 @@
             // 
             this.lblBusinessName.AutoSize = true;
             this.lblBusinessName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblBusinessName.Location = new System.Drawing.Point(318, 12);
-            this.lblBusinessName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBusinessName.Location = new System.Drawing.Point(238, 10);
             this.lblBusinessName.Name = "lblBusinessName";
-            this.lblBusinessName.Size = new System.Drawing.Size(20, 25);
+            this.lblBusinessName.Size = new System.Drawing.Size(15, 20);
             this.lblBusinessName.TabIndex = 1;
             this.lblBusinessName.Text = "-";
             // 
@@ -260,10 +249,9 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblBillDate.Location = new System.Drawing.Point(318, 54);
-            this.lblBillDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBillDate.Location = new System.Drawing.Point(238, 44);
             this.lblBillDate.Name = "lblBillDate";
-            this.lblBillDate.Size = new System.Drawing.Size(20, 25);
+            this.lblBillDate.Size = new System.Drawing.Size(15, 20);
             this.lblBillDate.TabIndex = 2;
             this.lblBillDate.Text = "-";
             // 
@@ -276,28 +264,30 @@
             this.pnlCharges.Controls.Add(this.label1);
             this.pnlCharges.Controls.Add(this.lblTotalCharges);
             this.pnlCharges.Controls.Add(this.label3);
-            this.pnlCharges.Location = new System.Drawing.Point(36, 113);
+            this.pnlCharges.Location = new System.Drawing.Point(27, 92);
+            this.pnlCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlCharges.Name = "pnlCharges";
-            this.pnlCharges.Size = new System.Drawing.Size(441, 190);
+            this.pnlCharges.Size = new System.Drawing.Size(331, 154);
             this.pnlCharges.TabIndex = 30;
             // 
             // dgvBillBreakdown
             // 
             this.dgvBillBreakdown.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dgvBillBreakdown.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillBreakdown.Location = new System.Drawing.Point(359, 341);
+            this.dgvBillBreakdown.Location = new System.Drawing.Point(269, 277);
+            this.dgvBillBreakdown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvBillBreakdown.Name = "dgvBillBreakdown";
             this.dgvBillBreakdown.RowHeadersWidth = 51;
             this.dgvBillBreakdown.RowTemplate.Height = 24;
-            this.dgvBillBreakdown.Size = new System.Drawing.Size(663, 250);
+            this.dgvBillBreakdown.Size = new System.Drawing.Size(497, 203);
             this.dgvBillBreakdown.TabIndex = 31;
             // 
             // DisplayBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1361, 752);
+            this.ClientSize = new System.Drawing.Size(1021, 611);
             this.Controls.Add(this.dgvBillBreakdown);
             this.Controls.Add(this.pnlCharges);
             this.Controls.Add(this.pnlTax);
@@ -305,9 +295,8 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtBillSearch);
             this.Controls.Add(this.btnBillSearch);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DisplayBill";
-            this.Text = "Display Bill";
             this.Load += new System.EventHandler(this.DisplayBill_Load);
             this.pnlFinal.ResumeLayout(false);
             this.pnlFinal.PerformLayout();

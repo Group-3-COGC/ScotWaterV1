@@ -75,7 +75,7 @@
             this.btnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSignOut.Location = new System.Drawing.Point(873, 11);
-            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(100, 35);
             this.btnSignOut.TabIndex = 17;
@@ -98,7 +98,7 @@
             this.btnMainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnMainMenu.Location = new System.Drawing.Point(454, 565);
-            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnMainMenu.Name = "btnMainMenu";
             this.btnMainMenu.Size = new System.Drawing.Size(100, 35);
             this.btnMainMenu.TabIndex = 19;
@@ -193,8 +193,8 @@
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGenerateBill";
-            this.Text = "GenerateBill";
             this.Load += new System.EventHandler(this.frmGenerateBill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

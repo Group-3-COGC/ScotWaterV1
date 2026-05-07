@@ -54,10 +54,9 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-3, -2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(-2, -2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(203, 128);
+            this.pictureBox3.Size = new System.Drawing.Size(152, 104);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 21;
             this.pictureBox3.TabStop = false;
@@ -65,30 +64,27 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1512, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(1134, 104);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-3, 670);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(-2, 544);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1512, 128);
+            this.pictureBox2.Size = new System.Drawing.Size(1134, 104);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             // 
             // CmbBusiness
             // 
             this.CmbBusiness.FormattingEnabled = true;
-            this.CmbBusiness.Location = new System.Drawing.Point(483, 155);
-            this.CmbBusiness.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbBusiness.Location = new System.Drawing.Point(362, 126);
             this.CmbBusiness.Name = "CmbBusiness";
-            this.CmbBusiness.Size = new System.Drawing.Size(176, 24);
+            this.CmbBusiness.Size = new System.Drawing.Size(133, 21);
             this.CmbBusiness.TabIndex = 23;
             // 
             // txtWaterUsed
@@ -96,10 +92,9 @@
             this.txtWaterUsed.AutoSize = true;
             this.txtWaterUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWaterUsed.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtWaterUsed.Location = new System.Drawing.Point(325, 224);
-            this.txtWaterUsed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtWaterUsed.Location = new System.Drawing.Point(244, 182);
             this.txtWaterUsed.Name = "txtWaterUsed";
-            this.txtWaterUsed.Size = new System.Drawing.Size(156, 29);
+            this.txtWaterUsed.Size = new System.Drawing.Size(124, 24);
             this.txtWaterUsed.TabIndex = 24;
             this.txtWaterUsed.Text = "Water Used ";
             // 
@@ -108,47 +103,42 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(325, 267);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(244, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(203, 29);
+            this.label2.Size = new System.Drawing.Size(163, 24);
             this.label2.TabIndex = 25;
             this.label2.Text = "Recycled Water ";
             // 
             // txt_Water_Used
             // 
-            this.txt_Water_Used.Location = new System.Drawing.Point(551, 224);
-            this.txt_Water_Used.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Water_Used.Location = new System.Drawing.Point(413, 182);
             this.txt_Water_Used.Multiline = true;
             this.txt_Water_Used.Name = "txt_Water_Used";
-            this.txt_Water_Used.Size = new System.Drawing.Size(151, 24);
+            this.txt_Water_Used.Size = new System.Drawing.Size(114, 20);
             this.txt_Water_Used.TabIndex = 26;
             // 
             // txtRecycledWater
             // 
-            this.txtRecycledWater.Location = new System.Drawing.Point(551, 267);
-            this.txtRecycledWater.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRecycledWater.Location = new System.Drawing.Point(413, 217);
             this.txtRecycledWater.Multiline = true;
             this.txtRecycledWater.Name = "txtRecycledWater";
-            this.txtRecycledWater.Size = new System.Drawing.Size(151, 24);
+            this.txtRecycledWater.Size = new System.Drawing.Size(114, 20);
             this.txtRecycledWater.TabIndex = 27;
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(551, 320);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDate.Location = new System.Drawing.Point(413, 260);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(151, 22);
+            this.dtpDate.Size = new System.Drawing.Size(114, 20);
             this.dtpDate.TabIndex = 28;
             // 
             // btnAddUsage
             // 
             this.btnAddUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddUsage.Location = new System.Drawing.Point(464, 378);
-            this.btnAddUsage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddUsage.Location = new System.Drawing.Point(348, 307);
             this.btnAddUsage.Name = "btnAddUsage";
-            this.btnAddUsage.Size = new System.Drawing.Size(151, 41);
+            this.btnAddUsage.Size = new System.Drawing.Size(113, 33);
             this.btnAddUsage.TabIndex = 29;
             this.btnAddUsage.Text = "Add Usage ";
             this.btnAddUsage.UseVisualStyleBackColor = true;
@@ -158,11 +148,10 @@
             // 
             this.dgv_Business.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dgv_Business.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Business.Location = new System.Drawing.Point(45, 442);
-            this.dgv_Business.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_Business.Location = new System.Drawing.Point(34, 359);
             this.dgv_Business.Name = "dgv_Business";
             this.dgv_Business.RowHeadersWidth = 51;
-            this.dgv_Business.Size = new System.Drawing.Size(975, 202);
+            this.dgv_Business.Size = new System.Drawing.Size(731, 164);
             this.dgv_Business.TabIndex = 30;
             // 
             // label1
@@ -170,10 +159,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(325, 318);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(244, 258);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 29);
+            this.label1.Size = new System.Drawing.Size(52, 24);
             this.label1.TabIndex = 31;
             this.label1.Text = "Date";
             // 
@@ -181,10 +169,9 @@
             // 
             this.btn_Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Show.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Show.Location = new System.Drawing.Point(696, 146);
-            this.btn_Show.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Show.Location = new System.Drawing.Point(522, 119);
             this.btn_Show.Name = "btn_Show";
-            this.btn_Show.Size = new System.Drawing.Size(151, 41);
+            this.btn_Show.Size = new System.Drawing.Size(113, 33);
             this.btn_Show.TabIndex = 32;
             this.btn_Show.Text = "Show Details ";
             this.btn_Show.UseVisualStyleBackColor = true;
@@ -194,10 +181,9 @@
             // 
             this.btnShowUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnShowUsage.Location = new System.Drawing.Point(852, 394);
-            this.btnShowUsage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowUsage.Location = new System.Drawing.Point(639, 320);
             this.btnShowUsage.Name = "btnShowUsage";
-            this.btnShowUsage.Size = new System.Drawing.Size(151, 41);
+            this.btnShowUsage.Size = new System.Drawing.Size(113, 33);
             this.btnShowUsage.TabIndex = 33;
             this.btnShowUsage.Text = "Show Usage ";
             this.btnShowUsage.UseVisualStyleBackColor = true;
@@ -207,10 +193,9 @@
             // 
             this.btn_DeleteUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteUsage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_DeleteUsage.Location = new System.Drawing.Point(622, 378);
-            this.btn_DeleteUsage.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_DeleteUsage.Location = new System.Drawing.Point(466, 307);
             this.btn_DeleteUsage.Name = "btn_DeleteUsage";
-            this.btn_DeleteUsage.Size = new System.Drawing.Size(151, 41);
+            this.btn_DeleteUsage.Size = new System.Drawing.Size(113, 33);
             this.btn_DeleteUsage.TabIndex = 35;
             this.btn_DeleteUsage.Text = "Delete Usage";
             this.btn_DeleteUsage.UseVisualStyleBackColor = true;
@@ -218,10 +203,10 @@
             // 
             // BusinessWaterUsage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1088, 601);
+            this.ClientSize = new System.Drawing.Size(816, 488);
             this.Controls.Add(this.btn_DeleteUsage);
             this.Controls.Add(this.btnShowUsage);
             this.Controls.Add(this.btn_Show);
@@ -237,9 +222,9 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BusinessWaterUsage";
-            this.Text = "BusinessWaterUsage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
