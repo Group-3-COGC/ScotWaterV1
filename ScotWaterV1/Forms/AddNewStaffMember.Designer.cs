@@ -47,8 +47,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-8, 568);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(-6, 462);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(0, 0);
             this.pictureBox1.TabIndex = 35;
@@ -57,20 +56,18 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-8, -3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(-6, -2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1376, 128);
+            this.pictureBox2.Size = new System.Drawing.Size(1032, 104);
             this.pictureBox2.TabIndex = 36;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-8, 659);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(-6, 535);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1376, 101);
+            this.pictureBox3.Size = new System.Drawing.Size(1032, 82);
             this.pictureBox3.TabIndex = 37;
             this.pictureBox3.TabStop = false;
             // 
@@ -78,10 +75,9 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(-8, -3);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(-6, -2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(203, 128);
+            this.pictureBox4.Size = new System.Drawing.Size(152, 104);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 38;
             this.pictureBox4.TabStop = false;
@@ -89,25 +85,28 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(329, 229);
+            this.txtUsername.Location = new System.Drawing.Point(247, 186);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(258, 30);
+            this.txtUsername.Size = new System.Drawing.Size(194, 26);
             this.txtUsername.TabIndex = 39;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(329, 333);
+            this.txtPassword.Location = new System.Drawing.Point(247, 271);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(258, 30);
+            this.txtPassword.Size = new System.Drawing.Size(194, 26);
             this.txtPassword.TabIndex = 40;
             // 
             // btnSaveStaff
             // 
             this.btnSaveStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveStaff.Location = new System.Drawing.Point(358, 397);
+            this.btnSaveStaff.Location = new System.Drawing.Point(268, 323);
+            this.btnSaveStaff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveStaff.Name = "btnSaveStaff";
-            this.btnSaveStaff.Size = new System.Drawing.Size(189, 39);
+            this.btnSaveStaff.Size = new System.Drawing.Size(142, 32);
             this.btnSaveStaff.TabIndex = 41;
             this.btnSaveStaff.Text = "Save Staff Member";
             this.btnSaveStaff.UseVisualStyleBackColor = true;
@@ -117,9 +116,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(324, 201);
+            this.label1.Location = new System.Drawing.Point(243, 163);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 25);
+            this.label1.Size = new System.Drawing.Size(226, 20);
             this.label1.TabIndex = 42;
             this.label1.Text = "Please enter a staff username.";
             // 
@@ -127,18 +127,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(324, 299);
+            this.label2.Location = new System.Drawing.Point(243, 243);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 25);
+            this.label2.Size = new System.Drawing.Size(223, 20);
             this.label2.TabIndex = 43;
             this.label2.Text = "Please enter a staff password.";
             // 
             // AddNewStaffMember
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1088, 601);
+            this.ClientSize = new System.Drawing.Size(816, 488);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveStaff);
@@ -148,6 +149,8 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddNewStaffMember";
             this.Text = "AddNewStaffMember";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

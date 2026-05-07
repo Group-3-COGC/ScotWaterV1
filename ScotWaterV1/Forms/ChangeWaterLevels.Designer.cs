@@ -98,7 +98,7 @@ namespace ScotWaterV1.Forms
             this.lblWaterReserveStatus.AutoSize = true;
             this.lblWaterReserveStatus.Location = new System.Drawing.Point(256, 158);
             this.lblWaterReserveStatus.Name = "lblWaterReserveStatus";
-            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 25);
+            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 20);
             this.lblWaterReserveStatus.TabIndex = 4;
             // 
             // trkReserveLevel
@@ -106,7 +106,7 @@ namespace ScotWaterV1.Forms
             this.trkReserveLevel.Location = new System.Drawing.Point(229, 99);
             this.trkReserveLevel.Maximum = 100;
             this.trkReserveLevel.Name = "trkReserveLevel";
-            this.trkReserveLevel.Size = new System.Drawing.Size(291, 56);
+            this.trkReserveLevel.Size = new System.Drawing.Size(291, 45);
             this.trkReserveLevel.TabIndex = 3;
             this.trkReserveLevel.Scroll += new System.EventHandler(this.trkReserveLevel_Scroll);
             // 
@@ -122,7 +122,7 @@ namespace ScotWaterV1.Forms
             this.lblValue.AutoSize = true;
             this.lblValue.Location = new System.Drawing.Point(12, 158);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(230, 25);
+            this.lblValue.Size = new System.Drawing.Size(191, 20);
             this.lblValue.TabIndex = 1;
             this.lblValue.Text = "Water Reserve Status:";
             // 
@@ -131,7 +131,7 @@ namespace ScotWaterV1.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 25);
+            this.label1.Size = new System.Drawing.Size(175, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Water Reserve Level";
             // 
@@ -173,6 +173,7 @@ namespace ScotWaterV1.Forms
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChangeWaterLevels";
             this.Load += new System.EventHandler(this.frmChangeWaterLevels_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
