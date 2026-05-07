@@ -15,8 +15,17 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
-        // LOAD BUSINESSES INTO COMBO BOX WHEN FORM LOADS
+        // ================= LOAD =================
         private void frmGenerateBill_Load(object sender, EventArgs e)
+        {
+            LoadBusinesses();
+            LoadBusinessGrid();
+
+            dtpBillDate.Value = DateTime.Now.Date;
+        }
+
+        // ================= LOAD COMBOBOX =================
+        private void LoadBusinesses()
         {
             using (var context = new BusinessDataContext())
             {
@@ -32,11 +41,50 @@ namespace ScotWaterV1.Forms
                 cmbBusinessNames.DataSource = businesses;
                 cmbBusinessNames.DisplayMember = "CompanyName";
                 cmbBusinessNames.ValueMember = "BusinessID";
-            }
 
-            dtpBillDate.Value = DateTime.Now.Date;
+                // ✅ AUTOCOMPLETE FIX
+                cmbBusinessNames.DropDownStyle = ComboBoxStyle.DropDown;
+                cmbBusinessNames.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cmbBusinessNames.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
         }
 
+        // ================= LOAD GRID =================
+        private void LoadBusinessGrid()
+        {
+            using (var context = new BusinessDataContext())
+            {
+                dgvBusinessesBill.DataSource = context.BusinessUser
+                    .OrderBy(b => b.CompanyName)
+                    .Select(b => new
+                    {
+                        b.BusinessID,
+                        b.CompanyName,
+                        b.ContactEmail
+                    })
+                    .ToList();
+            }
+
+            dgvBusinessesBill.ReadOnly = true;
+            dgvBusinessesBill.AllowUserToAddRows = false;
+            dgvBusinessesBill.AllowUserToDeleteRows = false;
+            dgvBusinessesBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBusinessesBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        // ================= GRID CLICK =================
+        private void dgvBusinessesBill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string name = dgvBusinessesBill.Rows[e.RowIndex]
+                    .Cells["CompanyName"].Value.ToString();
+
+                cmbBusinessNames.Text = name;
+            }
+        }
+
+        // ================= GENERATE BILL =================
         private void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
             if (cmbBusinessNames.SelectedValue == null)
@@ -82,8 +130,7 @@ namespace ScotWaterV1.Forms
 
                 if (existingBill != null)
                 {
-                    MessageBox.Show("A bill already exists for this business on this date. Opening existing bill.");
-
+                    MessageBox.Show("A bill already exists. Opening it.");
                     OpenBillInMainPanel(existingBill.BusinessBillID);
                     return;
                 }
@@ -103,6 +150,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
+        // ================= OPEN BILL =================
         private void OpenBillInMainPanel(int billId)
         {
             frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
@@ -123,26 +171,26 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
-            MessageBox.Show("Bill generated, but could not open the display bill page.");
+            MessageBox.Show("Bill generated, but could not open display page.");
         }
 
+        // ================= SIGN OUT =================
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
 
             if (mainMenu != null)
             {
-                frmLogin login = new frmLogin();
-                login.Show();
+                new frmLogin().Show();
                 mainMenu.Close();
                 return;
             }
 
-            frmLogin signOut = new frmLogin();
-            signOut.Show();
+            new frmLogin().Show();
             this.Close();
         }
 
+        // ================= MAIN MENU =================
         private void btnMainMenu_Click(object sender, EventArgs e)
         {
             frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
@@ -153,55 +201,41 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
-            frmMainMenu main = new frmMainMenu();
-            main.Show();
+            new frmMainMenu().Show();
             this.Close();
         }
 
+        // ================= EMAIL =================
         private void SendBillEmail(BusinessBills bill, BusinessUser business)
         {
             if (business == null)
             {
-                MessageBox.Show("Bill generated, but business details could not be found.");
+                MessageBox.Show("Business not found.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(business.ContactEmail) || !business.ContactEmail.Contains("@"))
+            if (string.IsNullOrWhiteSpace(business.ContactEmail))
             {
-                MessageBox.Show("Bill generated, but no valid email address was found for this business.");
+                MessageBox.Show("No email found for business.");
                 return;
             }
 
             string senderEmail = "yourcompany@example.com";
             string senderPassword = "yourpassword";
 
-            // Prevent accidental failed login attempts while placeholder details are still being used.
-            if (senderEmail == "yourcompany@example.com" || senderPassword == "yourpassword")
+            if (senderEmail.Contains("example"))
             {
-                MessageBox.Show("Bill generated, but email was not sent because email settings are still placeholders.");
+                MessageBox.Show("Email not configured yet.");
                 return;
             }
 
-            string subject = "Your Water Bill";
-
-            string contactName = string.IsNullOrWhiteSpace(business.ContactName)
-                ? business.CompanyName
-                : business.ContactName;
-
             string body =
-                $"Hello {contactName},\n\n" +
-                $"Your water bill has been generated.\n\n" +
-                $"Company: {business.CompanyName}\n" +
+                $"Hello {business.CompanyName},\n\n" +
+                $"Your bill has been generated.\n\n" +
                 $"Bill ID: {bill.BusinessBillID}\n" +
-                $"Bill Date: {bill.BillDate:dd MMM yyyy}\n" +
-                $"Total Charges: £{bill.TotalCharges:F2}\n" +
-                $"Total Discount: £{bill.TotalDiscount:F2}\n" +
-                $"Subtotal: £{bill.SubTotal:F2}\n" +
-                $"VAT: £{bill.VAT:F2}\n" +
-                $"Final Amount: £{bill.BusinessFinalCost:F2}\n\n" +
-                $"If you have any questions, please contact Scot-Water.\n\n" +
-                $"Regards,\n" +
-                $"Scot-Water Billing Team";
+                $"Date: {bill.BillDate:dd MMM yyyy}\n" +
+                $"Total: £{bill.BusinessFinalCost:F2}\n\n" +
+                $"Regards,\nScot Water";
 
             try
             {
@@ -210,20 +244,17 @@ namespace ScotWaterV1.Forms
                 {
                     msg.From = new MailAddress(senderEmail);
                     msg.To.Add(business.ContactEmail);
-                    msg.Subject = subject;
+                    msg.Subject = "Water Bill";
                     msg.Body = body;
 
                     smtp.EnableSsl = true;
                     smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
-
                     smtp.Send(msg);
                 }
-
-                MessageBox.Show("Bill emailed to client successfully.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Bill generated, but email failed to send.\n\nError: " + ex.Message);
+                MessageBox.Show("Email failed: " + ex.Message);
             }
         }
     }
