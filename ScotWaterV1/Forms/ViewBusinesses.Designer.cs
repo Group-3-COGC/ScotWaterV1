@@ -24,10 +24,7 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses = new System.Windows.Forms.DataGridView();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.BtnSearch = new System.Windows.Forms.Button();
-            this.btn_Add_business = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnV_B_MainMenu = new System.Windows.Forms.Button();
-            this.btnViewBusiness_SignOut = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.txtPostcode = new System.Windows.Forms.TextBox();
@@ -55,7 +52,7 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses.Name = "dgvBusinesses";
             this.dgvBusinesses.ReadOnly = true;
             this.dgvBusinesses.RowHeadersWidth = 51;
-            this.dgvBusinesses.Size = new System.Drawing.Size(632, 350);
+            this.dgvBusinesses.Size = new System.Drawing.Size(632, 318);
             this.dgvBusinesses.TabIndex = 0;
             this.dgvBusinesses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellClick);
             // 
@@ -63,7 +60,7 @@ namespace ScotWaterV1.Forms
             // 
             this.txt_search.Location = new System.Drawing.Point(20, 114);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(200, 22);
+            this.txt_search.Size = new System.Drawing.Size(200, 20);
             this.txt_search.TabIndex = 1;
             // 
             // BtnSearch
@@ -77,16 +74,6 @@ namespace ScotWaterV1.Forms
             this.BtnSearch.Text = "Search";
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // btn_Add_business
-            // 
-            this.btn_Add_business.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add_business.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Add_business.Location = new System.Drawing.Point(20, 506);
-            this.btn_Add_business.Name = "btn_Add_business";
-            this.btn_Add_business.Size = new System.Drawing.Size(150, 35);
-            this.btn_Add_business.TabIndex = 3;
-            this.btn_Add_business.Text = "Add Business";
-            // 
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,27 +84,6 @@ namespace ScotWaterV1.Forms
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnV_B_MainMenu
-            // 
-            this.btnV_B_MainMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnV_B_MainMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnV_B_MainMenu.Location = new System.Drawing.Point(199, 506);
-            this.btnV_B_MainMenu.Name = "btnV_B_MainMenu";
-            this.btnV_B_MainMenu.Size = new System.Drawing.Size(120, 35);
-            this.btnV_B_MainMenu.TabIndex = 5;
-            this.btnV_B_MainMenu.Text = "Main Menu";
-            this.btnV_B_MainMenu.Click += new System.EventHandler(this.btnV_B_MainMenu_Click);
-            // 
-            // btnViewBusiness_SignOut
-            // 
-            this.btnViewBusiness_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewBusiness_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnViewBusiness_SignOut.Location = new System.Drawing.Point(360, 506);
-            this.btnViewBusiness_SignOut.Name = "btnViewBusiness_SignOut";
-            this.btnViewBusiness_SignOut.Size = new System.Drawing.Size(120, 35);
-            this.btnViewBusiness_SignOut.TabIndex = 6;
-            this.btnViewBusiness_SignOut.Text = "Sign Out";
             // 
             // txtSearch
             // 
@@ -130,28 +96,28 @@ namespace ScotWaterV1.Forms
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(838, 199);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(141, 22);
+            this.txtCompanyName.Size = new System.Drawing.Size(141, 20);
             this.txtCompanyName.TabIndex = 8;
             // 
             // txtPostcode
             // 
             this.txtPostcode.Location = new System.Drawing.Point(837, 245);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(141, 22);
+            this.txtPostcode.Size = new System.Drawing.Size(141, 20);
             this.txtPostcode.TabIndex = 9;
             // 
             // txtContactName
             // 
             this.txtContactName.Location = new System.Drawing.Point(837, 291);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(141, 22);
+            this.txtContactName.Size = new System.Drawing.Size(141, 20);
             this.txtContactName.TabIndex = 10;
             // 
             // txtContactEmail
             // 
             this.txtContactEmail.Location = new System.Drawing.Point(837, 337);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(141, 22);
+            this.txtContactEmail.Size = new System.Drawing.Size(141, 20);
             this.txtContactEmail.TabIndex = 11;
             // 
             // lblEdit
@@ -162,7 +128,7 @@ namespace ScotWaterV1.Forms
             this.lblEdit.Location = new System.Drawing.Point(788, 151);
             this.lblEdit.Name = "lblEdit";
             this.lblEdit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEdit.Size = new System.Drawing.Size(244, 29);
+            this.lblEdit.Size = new System.Drawing.Size(190, 24);
             this.lblEdit.TabIndex = 12;
             this.lblEdit.Text = "Edit Businesses Here";
             // 
@@ -171,16 +137,16 @@ namespace ScotWaterV1.Forms
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1019, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(1110, 104);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-3, 547);
+            this.pictureBox2.Location = new System.Drawing.Point(-3, 517);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1025, 104);
+            this.pictureBox2.Size = new System.Drawing.Size(1116, 134);
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
@@ -191,7 +157,7 @@ namespace ScotWaterV1.Forms
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Location = new System.Drawing.Point(660, 194);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 29);
+            this.label1.Size = new System.Drawing.Size(159, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "Company Name";
             // 
@@ -202,7 +168,7 @@ namespace ScotWaterV1.Forms
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(660, 240);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 29);
+            this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "Post Code";
             // 
@@ -213,7 +179,7 @@ namespace ScotWaterV1.Forms
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label3.Location = new System.Drawing.Point(660, 286);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 29);
+            this.label3.Size = new System.Drawing.Size(147, 24);
             this.label3.TabIndex = 17;
             this.label3.Text = "Contact Name ";
             // 
@@ -224,7 +190,7 @@ namespace ScotWaterV1.Forms
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label4.Location = new System.Drawing.Point(660, 332);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 29);
+            this.label4.Size = new System.Drawing.Size(144, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "Contact Email ";
             // 
@@ -258,10 +224,7 @@ namespace ScotWaterV1.Forms
             this.Controls.Add(this.dgvBusinesses);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.BtnSearch);
-            this.Controls.Add(this.btn_Add_business);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnV_B_MainMenu);
-            this.Controls.Add(this.btnViewBusiness_SignOut);
             this.Controls.Add(this.txtSearch);
             this.Name = "ViewBusinesses";
             this.Text = "View Businesses";
@@ -279,10 +242,7 @@ namespace ScotWaterV1.Forms
         private DataGridView dgvBusinesses;
         private TextBox txt_search;
         private Button BtnSearch;
-        private Button btn_Add_business;
         private Button btnEdit;
-        private Button btnV_B_MainMenu;
-        private Button btnViewBusiness_SignOut;
         private Label txtSearch;
         private TextBox txtCompanyName;
         private TextBox txtPostcode;
