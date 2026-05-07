@@ -28,6 +28,7 @@ namespace ScotWaterV1
                 return;
             }
 
+            //Handles staff and admin login using the AuthService class
             var auth = new AuthService();
 
             // STAFF LOGIN
@@ -99,9 +100,6 @@ namespace ScotWaterV1
             }
         }
 
-        private void lblLoginUsername_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

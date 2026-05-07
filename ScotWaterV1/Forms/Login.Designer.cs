@@ -108,7 +108,7 @@
             this.lblLoginUsername.Size = new System.Drawing.Size(111, 23);
             this.lblLoginUsername.TabIndex = 5;
             this.lblLoginUsername.Text = "Username";
-            this.lblLoginUsername.Click += new System.EventHandler(this.lblLoginUsername_Click);
+          
             // 
             // lblLoginPassword
             // 
@@ -181,6 +181,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

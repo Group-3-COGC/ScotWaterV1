@@ -108,7 +108,7 @@
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 44;
             this.label1.Text = "Business ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // label2
             // 
@@ -118,7 +118,7 @@
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 45;
             this.label2.Text = "Business Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // label3
             // 
@@ -128,7 +128,7 @@
             this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 46;
             this.label3.Text = "City";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+          
             // 
             // label4
             // 
@@ -138,7 +138,7 @@
             this.label4.Size = new System.Drawing.Size(77, 13);
             this.label4.TabIndex = 47;
             this.label4.Text = "Address Line 1";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+           
             // 
             // label5
             // 
@@ -148,7 +148,7 @@
             this.label5.Size = new System.Drawing.Size(125, 13);
             this.label5.TabIndex = 48;
             this.label5.Text = "Address Line 2 (Optional)";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+           
             // 
             // label6
             // 
@@ -158,7 +158,7 @@
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 49;
             this.label6.Text = "Postcode";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            
             // 
             // label7
             // 
@@ -168,7 +168,7 @@
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 50;
             this.label7.Text = "Region";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            
             // 
             // label8
             // 
@@ -178,7 +178,7 @@
             this.label8.Size = new System.Drawing.Size(126, 13);
             this.label8.TabIndex = 51;
             this.label8.Text = "Phone Number (Optional)";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+           
             // 
             // label9
             // 
@@ -188,7 +188,7 @@
             this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 52;
             this.label9.Text = "Contact Name";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            
             // 
             // label10
             // 
@@ -198,7 +198,7 @@
             this.label10.Size = new System.Drawing.Size(73, 13);
             this.label10.TabIndex = 53;
             this.label10.Text = "Email Address";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+          
             // 
             // label11
             // 
@@ -208,7 +208,7 @@
             this.label11.Size = new System.Drawing.Size(78, 13);
             this.label11.TabIndex = 54;
             this.label11.Text = "Account Name";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+
             // 
             // label12
             // 
@@ -218,7 +218,7 @@
             this.label12.Size = new System.Drawing.Size(54, 13);
             this.label12.TabIndex = 55;
             this.label12.Text = "Sort Code";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            
             // 
             // label13
             // 
@@ -228,7 +228,7 @@
             this.label13.Size = new System.Drawing.Size(87, 13);
             this.label13.TabIndex = 56;
             this.label13.Text = "Account Number";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            
             // 
             // txtBusinessName
             // 
@@ -383,8 +383,7 @@
             this.Controls.Add(this.btnAddNewBusiness);
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmAddBusiness";
-            this.Text = "AddBusiness";
-            this.Load += new System.EventHandler(this.frmAddBusiness_Load);
+      
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlHeader.ResumeLayout(false);
