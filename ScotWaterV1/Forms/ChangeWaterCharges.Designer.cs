@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeWaterCharges));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnChangeWaterCharges_SignOut = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblCurrentWaterCharge = new System.Windows.Forms.Label();
             this.lblNormalChargePrices = new System.Windows.Forms.Label();
@@ -60,20 +58,18 @@
             this.lblChangeCharges = new System.Windows.Forms.Label();
             this.btnChangePrice = new System.Windows.Forms.Button();
             this.txtNewPrice = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pnlSelect = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1022, 104);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            
             // 
             // pictureBox2
             // 
@@ -84,25 +80,11 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // btnChangeWaterCharges_SignOut
-            // 
-            this.btnChangeWaterCharges_SignOut.BackColor = System.Drawing.Color.White;
-            this.btnChangeWaterCharges_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeWaterCharges_SignOut.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnChangeWaterCharges_SignOut.Location = new System.Drawing.Point(661, 21);
-            this.btnChangeWaterCharges_SignOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnChangeWaterCharges_SignOut.Name = "btnChangeWaterCharges_SignOut";
-            this.btnChangeWaterCharges_SignOut.Size = new System.Drawing.Size(100, 35);
-            this.btnChangeWaterCharges_SignOut.TabIndex = 17;
-            this.btnChangeWaterCharges_SignOut.Text = "Sign Out";
-            this.btnChangeWaterCharges_SignOut.UseVisualStyleBackColor = false;
-            this.btnChangeWaterCharges_SignOut.Click += new System.EventHandler(this.btnChangeWaterCharges_SignOut_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(152, 104);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -349,11 +331,11 @@
             this.groupBox1.Controls.Add(this.lblDroughtLevelPrices);
             this.groupBox1.Controls.Add(this.lblNormalChargePrices);
             this.groupBox1.Controls.Add(this.lblCurrentWaterCharge);
-            this.groupBox1.Location = new System.Drawing.Point(11, 117);
+            this.groupBox1.Location = new System.Drawing.Point(22, 6);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(458, 306);
+            this.groupBox1.Size = new System.Drawing.Size(458, 307);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -418,7 +400,7 @@
             "Recycled 0-5 Units",
             "Recycled 6-20 Units",
             "Recycled 21+ Units"});
-            this.comboChangeCharges.Location = new System.Drawing.Point(564, 200);
+            this.comboChangeCharges.Location = new System.Drawing.Point(577, 116);
             this.comboChangeCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboChangeCharges.Name = "comboChangeCharges";
             this.comboChangeCharges.Size = new System.Drawing.Size(120, 21);
@@ -429,7 +411,7 @@
             this.lblChangeCharges.AutoSize = true;
             this.lblChangeCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangeCharges.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblChangeCharges.Location = new System.Drawing.Point(505, 157);
+            this.lblChangeCharges.Location = new System.Drawing.Point(509, 87);
             this.lblChangeCharges.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChangeCharges.Name = "lblChangeCharges";
             this.lblChangeCharges.Size = new System.Drawing.Size(255, 15);
@@ -441,7 +423,7 @@
             this.btnChangePrice.BackColor = System.Drawing.Color.White;
             this.btnChangePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePrice.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnChangePrice.Location = new System.Drawing.Point(564, 346);
+            this.btnChangePrice.Location = new System.Drawing.Point(646, 175);
             this.btnChangePrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnChangePrice.Name = "btnChangePrice";
             this.btnChangePrice.Size = new System.Drawing.Size(120, 35);
@@ -452,11 +434,35 @@
             // 
             // txtNewPrice
             // 
-            this.txtNewPrice.Location = new System.Drawing.Point(564, 236);
+            this.txtNewPrice.Location = new System.Drawing.Point(512, 182);
             this.txtNewPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNewPrice.Name = "txtNewPrice";
             this.txtNewPrice.Size = new System.Drawing.Size(120, 20);
             this.txtNewPrice.TabIndex = 37;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.pnlHeader.Controls.Add(this.pictureBox3);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(816, 100);
+            this.pnlHeader.TabIndex = 38;
+            // 
+            // pnlSelect
+            // 
+            this.pnlSelect.BackColor = System.Drawing.Color.White;
+            this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSelect.Controls.Add(this.groupBox1);
+            this.pnlSelect.Controls.Add(this.btnChangePrice);
+            this.pnlSelect.Controls.Add(this.lblChangeCharges);
+            this.pnlSelect.Controls.Add(this.txtNewPrice);
+            this.pnlSelect.Controls.Add(this.comboChangeCharges);
+            this.pnlSelect.Location = new System.Drawing.Point(19, 110);
+            this.pnlSelect.Name = "pnlSelect";
+            this.pnlSelect.Size = new System.Drawing.Size(785, 337);
+            this.pnlSelect.TabIndex = 39;
             // 
             // frmChangeWaterCharges
             // 
@@ -464,33 +470,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(816, 488);
-            this.Controls.Add(this.txtNewPrice);
-            this.Controls.Add(this.btnChangePrice);
-            this.Controls.Add(this.lblChangeCharges);
-            this.Controls.Add(this.comboChangeCharges);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.btnChangeWaterCharges_SignOut);
+            this.Controls.Add(this.pnlSelect);
+            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmChangeWaterCharges";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Change Water Charges";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlSelect.ResumeLayout(false);
+            this.pnlSelect.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnChangeWaterCharges_SignOut;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblCurrentWaterCharge;
         private System.Windows.Forms.Label lblNormalChargePrices;
@@ -519,5 +517,7 @@
         private System.Windows.Forms.Label lblChangeCharges;
         private System.Windows.Forms.Button btnChangePrice;
         private System.Windows.Forms.TextBox txtNewPrice;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Panel pnlSelect;
     }
 }
