@@ -1,4 +1,9 @@
-﻿namespace ScotWaterV1.Forms
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+
+namespace ScotWaterV1.Forms
 {
     partial class AddNewStaffMember
     {
@@ -18,104 +23,127 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewStaffMember));
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSaveStaff = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.pnlSelect = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.pnlHeader.SuspendLayout();
-            this.pnlSelect.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(-8, -3);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(203, 128);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(329, 229);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(258, 30);
-            this.txtUsername.TabIndex = 39;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(329, 333);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(258, 30);
-            this.txtPassword.TabIndex = 40;
-            // 
-            // btnSaveStaff
-            // 
-            this.btnSaveStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveStaff.Location = new System.Drawing.Point(358, 397);
-            this.btnSaveStaff.Name = "btnSaveStaff";
-            this.btnSaveStaff.Size = new System.Drawing.Size(189, 39);
-            this.btnSaveStaff.TabIndex = 41;
-            this.btnSaveStaff.Text = "Save Staff Member";
-            this.btnSaveStaff.UseVisualStyleBackColor = false;
-            this.btnSaveStaff.Click += new System.EventHandler(this.btnSaveStaff_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(324, 201);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 25);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Please enter a staff username.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(324, 299);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 25);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Please enter a staff password.";
-            // 
-            // AddNewStaffMember
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1088, 601);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSaveStaff);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.pictureBox4);
-            
-            this.Name = "AddNewStaffMember";
-            this.Text = "AddNewStaffMember";
-            
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlSelect.ResumeLayout(false);
-            this.pnlSelect.PerformLayout();
-            this.ResumeLayout(false);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
 
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+
+            // ================= HEADER =================
+            this.panel1.BackColor = Color.FromArgb(0, 120, 215);
+            this.panel1.Dock = DockStyle.Top;
+            this.panel1.Size = new Size(1088, 125);
+
+            this.pictureBox1.BackColor = Color.White;
+            this.pictureBox1.Image = ((Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new Point(0, 0);
+            this.pictureBox1.Size = new Size(182, 125);
+            this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
+            this.panel1.Controls.Add(this.pictureBox1);
+
+            // ================= TEXTBOX USERNAME =================
+            this.txtUsername.Font = new Font("Segoe UI", 11F);
+            this.txtUsername.Location = new Point(320, 16);
+            this.txtUsername.Size = new Size(260, 27);
+
+            // ================= TEXTBOX PASSWORD =================
+            this.txtPassword.Font = new Font("Segoe UI", 11F);
+            this.txtPassword.Location = new Point(320, 57);
+            this.txtPassword.Size = new Size(260, 27);
+            this.txtPassword.UseSystemPasswordChar = true;
+
+            // ================= LABELS =================
+            this.label1.AutoSize = true;
+            this.label1.Font = new Font("Segoe UI", 11F);
+            this.label1.Location = new Point(20, 18);
+            this.label1.Text = "Username:";
+
+            this.label2.AutoSize = true;
+            this.label2.Font = new Font("Segoe UI", 11F);
+            this.label2.Location = new Point(20, 60);
+            this.label2.Text = "Password:";
+
+            // ================= BUTTON =================
+            this.btnSaveStaff.Text = "Save Staff Member";
+            this.btnSaveStaff.Location = new Point(250, 110);
+            this.btnSaveStaff.Size = new Size(200, 45);
+
+            this.btnSaveStaff.FlatStyle = FlatStyle.Flat;
+            this.btnSaveStaff.FlatAppearance.BorderSize = 0;
+            this.btnSaveStaff.BackColor = Color.FromArgb(0, 120, 215);
+            this.btnSaveStaff.ForeColor = Color.White;
+            this.btnSaveStaff.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            this.btnSaveStaff.Cursor = Cursors.Hand;
+
+            // Hover effect
+            this.btnSaveStaff.MouseEnter += (s, e) =>
+            {
+                this.btnSaveStaff.BackColor = Color.FromArgb(0, 90, 180);
+            };
+
+            this.btnSaveStaff.MouseLeave += (s, e) =>
+            {
+                this.btnSaveStaff.BackColor = Color.FromArgb(0, 120, 215);
+            };
+
+            this.btnSaveStaff.Click += new EventHandler(this.btnSaveStaff_Click);
+
+            // ================= PANEL =================
+            this.panel2.BackColor = Color.White;
+            this.panel2.BorderStyle = BorderStyle.FixedSingle;
+            this.panel2.Location = new Point(117, 226);
+            this.panel2.Size = new Size(750, 170);
+
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.txtUsername);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Controls.Add(this.btnSaveStaff);
+
+            // ================= FORM =================
+            this.AutoScaleDimensions = new SizeF(6F, 13F);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.BackColor = Color.White;
+            this.ClientSize = new Size(1088, 601);
+            this.Text = "Add New Staff Member";
+
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+
+            this.Load += new EventHandler(this.Form_Load);
+
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.ResumeLayout(false);
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox4;
+
+        // ================= ROUND BUTTON EFFECT =================
+        private void Form_Load(object sender, EventArgs e)
+        {
+            btnSaveStaff.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnSaveStaff.Width, btnSaveStaff.Height, 20, 20));
+        }
+
+        [System.Runtime.InteropServices.DllImport("Gdi32.dll")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse);
 
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
@@ -125,7 +153,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
 
-        private System.Windows.Forms.Panel pnlHeader;
-        private System.Windows.Forms.Panel pnlSelect;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
