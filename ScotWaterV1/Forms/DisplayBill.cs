@@ -22,7 +22,7 @@ namespace ScotWaterV1.Forms
             _billId = billId;
         }
 
-        // ================= LOAD =================
+        
         private void DisplayBill_Load(object sender, EventArgs e)
         {
             StyleGrid();
@@ -33,7 +33,7 @@ namespace ScotWaterV1.Forms
                 ClearBillLabels();
         }
 
-        // ================= LOAD SINGLE BILL =================
+        
         private void LoadBill(int billId)
         {
             try
@@ -62,7 +62,7 @@ namespace ScotWaterV1.Forms
                         return;
                     }
 
-                    // ================= LABELS =================
+                    
                     lblBusinessName.Text = bill.CompanyName;
                     lblBillDate.Text = bill.BillDate.ToString("dd/MM/yyyy");
                     lblTotalCharges.Text = $"£{bill.TotalCharges:F2}";
@@ -73,7 +73,7 @@ namespace ScotWaterV1.Forms
 
                     txtBillSearch.Text = bill.BusinessBillID.ToString();
 
-                    // ================= GRID =================
+                   
                     dgvBillBreakdown.DataSource = new[]
                     {
                         new { Item = "Water Charges", Amount = bill.TotalCharges },
@@ -89,7 +89,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ================= CLEAR =================
+       
         private void ClearBillLabels()
         {
             lblBusinessName.Text = "-";
@@ -103,7 +103,7 @@ namespace ScotWaterV1.Forms
             dgvBillBreakdown.DataSource = null;
         }
 
-        // ================= STYLE GRID =================
+       
         private void StyleGrid()
         {
             dgvBillBreakdown.ReadOnly = true;
@@ -115,7 +115,7 @@ namespace ScotWaterV1.Forms
             dgvBillBreakdown.BackgroundColor = Color.White;
         }
 
-        // ================= SEARCH =================
+       
         private void btnBillSearch_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(txtBillSearch.Text, out int billId))
@@ -127,7 +127,7 @@ namespace ScotWaterV1.Forms
             LoadBill(billId);
         }
 
-        // ================= NAV =================
+       
         private void btnMainMenu_Click(object sender, EventArgs e)
         {
             new frmMainMenu().Show();
