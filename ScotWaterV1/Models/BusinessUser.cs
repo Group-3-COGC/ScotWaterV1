@@ -10,7 +10,7 @@ namespace ScotWaterV1.Models
     public class BusinessUser
     {
         [Key]
-        //get; set; attributes for normal users
+        //get; set; properties
         public int BusinessID { get; set; } //primary key
         public string CompanyName { get; set; }
         public string Address1 { get; set; }
