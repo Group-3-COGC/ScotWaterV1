@@ -1,16 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ScotWaterV1.Models
+public class AdminUsers
 {
-    public class AdminUsers
-    {
-        [Key]
-        public int AdminUserID { get; set; }
+    [Key]
+    public int AdminUserID { get; set; }
 
-        [Required]
-        public string AdminUsername { get; set; }
+    [Required]
+    public string AdminUsername { get; set; }
 
-        [Required]
-        public string AdminPassword { get; set; }
-    }
+    [Required]
+    public string AdminPassword { get; set; }
+
+    //Failed login attempts and lockout properties to enhance security
+    public int FailedLoginAttempts { get; set; } = 0;
+    public bool IsLocked { get; set; } = false;
 }

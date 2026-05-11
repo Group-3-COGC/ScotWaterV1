@@ -14,7 +14,10 @@ namespace ScotWaterV1
         public frmLogin()
         {
             InitializeComponent();
-            txtLoginPassword.UseSystemPasswordChar = true;
+           
+            txtLoginPassword.UseSystemPasswordChar = false;
+            txtLoginPassword.PasswordChar = '*';
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

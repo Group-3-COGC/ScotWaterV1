@@ -1,93 +1,143 @@
-﻿using System.Linq;
-using ScotWaterV1.Core;
+﻿using ScotWaterV1.Core;
 using ScotWaterV1.Models;
+using System.Linq;
 
 namespace ScotWaterV1.Services
 {
     public class AuthService
     {
-        private readonly BusinessDataContext _db;
-
-        public AuthService()
-        {
-            _db = new BusinessDataContext();
-        }
-
-       
+        // ============================
         // STAFF LOGIN
-       
-        public bool LoginStaff(string username, string password, out string errorMessage)
+        // ============================
+        public bool LoginStaff(string username, string password, out string error)
         {
-            errorMessage = "";
+            error = "";
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            using (var db = new BusinessDataContext())
             {
-                errorMessage = "Please enter both username and password.";
-                return false;
+                var user = db.StaffUser.FirstOrDefault(u => u.staffUsername == username);
+
+                if (user == null)
+                {
+                    error = "Invalid username or password.";
+                    return false;
+                }
+
+                // Check if locked
+                if (user.IsLocked)
+                {
+                    error = "Your account is locked due to too many failed login attempts.";
+                    return false;
+                }
+
+                // Check password
+                if (!PasswordSecurity.VerifyPassword(password, user.staffPassword))
+                {
+                    user.FailedLoginAttempts++;
+
+                    if (user.FailedLoginAttempts >= 5)
+                    {
+                        user.IsLocked = true;
+                        error = "Your account has been locked after 5 failed attempts.";
+                    }
+                    else
+                    {
+                        int remaining = 5 - user.FailedLoginAttempts;
+                        error = $"Invalid password. {remaining} attempts remaining.";
+                    }
+
+                    db.SaveChanges();
+                    return false;
+                }
+
+                // Successful login → reset attempts
+                user.FailedLoginAttempts = 0;
+                db.SaveChanges();
+                return true;
             }
-
-            var staff = _db.StaffUser.FirstOrDefault(s => s.staffUsername == username);
-
-            if (staff == null)
-            {
-                errorMessage = "Invalid username or password.";
-                return false;
-
-            }
-
-            bool valid = PasswordSecurity.VerifyPassword(password, staff.staffPassword);
-
-            if (!valid)
-            {
-                errorMessage = "Invalid username or password.";
-                return false;
-            }
-
-            // Set session
-            Session.SetStaffSession(staff.StaffUserID, staff.staffUsername);
-            return true;
         }
 
-       
+        // ============================
         // ADMIN LOGIN
-      
-        public bool LoginAdmin(string username, string password, out string errorMessage)
+        // ============================
+        public bool LoginAdmin(string username, string password, out string error)
         {
-            errorMessage = "";
+            error = "";
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            using (var db = new BusinessDataContext())
             {
-                errorMessage = "Please enter both username and password.";
-                return false;
+                var user = db.AdminUsers.FirstOrDefault(a => a.AdminUsername == username);
+
+                if (user == null)
+                {
+                    error = "Invalid username or password.";
+                    return false;
+                }
+
+                // Check if locked
+                if (user.IsLocked)
+                {
+                    error = "Your account is locked due to too many failed login attempts.";
+                    return false;
+                }
+
+                // Check password
+                if (!PasswordSecurity.VerifyPassword(password, user.AdminPassword))
+                {
+                    user.FailedLoginAttempts++;
+
+                    if (user.FailedLoginAttempts >= 5)
+                    {
+                        user.IsLocked = true;
+                        error = "Your account has been locked after 5 failed attempts.";
+                    }
+                    else
+                    {
+                        int remaining = 5 - user.FailedLoginAttempts;
+                        error = $"Invalid password. {remaining} attempts remaining.";
+                    }
+
+                    db.SaveChanges();
+                    return false;
+                }
+
+                // Successful login → reset attempts
+                user.FailedLoginAttempts = 0;
+                db.SaveChanges();
+                return true;
             }
-
-            var admin = _db.AdminUsers.FirstOrDefault(a => a.AdminUsername == username);
-
-            if (admin == null)
-            {
-                errorMessage = "Invalid username or password.";
-                return false;
-            }
-
-            bool valid = PasswordSecurity.VerifyPassword(password, admin.AdminPassword);
-
-            if (!valid)
-            {
-                errorMessage = "Invalid username or password.";
-                return false;
-            }
-
-            // Set session 
-            Session.SetAdminSession(admin.AdminUserID, admin.AdminUsername);
-
-            return true;
         }
 
-        // LOGOUT
-       
-        public void Logout()
+        // ============================
+        // UNLOCK ACCOUNT (Admin Only)
+        // ============================
+        public bool UnlockUser(string username)
         {
-            Session.ClearSession(); 
+            using (var db = new BusinessDataContext())
+            {
+                var staff = db.StaffUser.FirstOrDefault(u => u.staffUsername == username);
+                var admin = db.AdminUsers.FirstOrDefault(a => a.AdminUsername == username);
+
+                var user = (object)staff ?? admin;
+
+                if (user == null)
+                    return false;
+
+                if (staff != null)
+                {
+                    staff.IsLocked = false;
+                    staff.FailedLoginAttempts = 0;
+                }
+
+                if (admin != null)
+                {
+                    admin.IsLocked = false;
+                    admin.FailedLoginAttempts = 0;
+                }
+
+                db.SaveChanges();
+                return true;
+            }
         }
     }
 }
