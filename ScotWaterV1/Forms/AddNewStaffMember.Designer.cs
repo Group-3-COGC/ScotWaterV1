@@ -31,90 +31,115 @@ namespace ScotWaterV1.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-
-            // ================= HEADER =================
-            this.panel1.BackColor = Color.FromArgb(0, 120, 215);
-            this.panel1.Dock = DockStyle.Top;
-            this.panel1.Size = new Size(1088, 125);
-
-            this.pictureBox1.BackColor = Color.White;
-            this.pictureBox1.Image = ((Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new Point(0, 0);
-            this.pictureBox1.Size = new Size(182, 125);
-            this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-
-            this.panel1.Controls.Add(this.pictureBox1);
-
-            // ================= TEXTBOX USERNAME =================
-            this.txtUsername.Font = new Font("Segoe UI", 11F);
-            this.txtUsername.Location = new Point(320, 16);
-            this.txtUsername.Size = new Size(260, 27);
-
-            // ================= TEXTBOX PASSWORD =================
-            this.txtPassword.Font = new Font("Segoe UI", 11F);
-            this.txtPassword.Location = new Point(320, 57);
-            this.txtPassword.Size = new Size(260, 27);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtUsername.Location = new System.Drawing.Point(320, 16);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(260, 27);
+            this.txtUsername.TabIndex = 1;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtPassword.Location = new System.Drawing.Point(320, 57);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(260, 27);
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
-
-            // ================= LABELS =================
-            this.label1.AutoSize = true;
-            this.label1.Font = new Font("Segoe UI", 11F);
-            this.label1.Location = new Point(20, 18);
-            this.label1.Text = "Username:";
-
-            this.label2.AutoSize = true;
-            this.label2.Font = new Font("Segoe UI", 11F);
-            this.label2.Location = new Point(20, 60);
-            this.label2.Text = "Password:";
-
-            // ================= BUTTON =================
-            this.btnSaveStaff.Text = "Save Staff Member";
-            this.btnSaveStaff.Location = new Point(250, 110);
-            this.btnSaveStaff.Size = new Size(200, 45);
-
-            this.btnSaveStaff.FlatStyle = FlatStyle.Flat;
+            // 
+            // btnSaveStaff
+            // 
+            this.btnSaveStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnSaveStaff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveStaff.FlatAppearance.BorderSize = 0;
-            this.btnSaveStaff.BackColor = Color.FromArgb(0, 120, 215);
-            this.btnSaveStaff.ForeColor = Color.White;
-            this.btnSaveStaff.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.btnSaveStaff.Cursor = Cursors.Hand;
-
-            
-
-            // ================= PANEL =================
-            this.panel2.BackColor = Color.White;
-            this.panel2.BorderStyle = BorderStyle.FixedSingle;
-            this.panel2.Location = new Point(117, 226);
-            this.panel2.Size = new Size(750, 170);
-
+            this.btnSaveStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveStaff.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSaveStaff.ForeColor = System.Drawing.Color.White;
+            this.btnSaveStaff.Location = new System.Drawing.Point(250, 110);
+            this.btnSaveStaff.Name = "btnSaveStaff";
+            this.btnSaveStaff.Size = new System.Drawing.Size(200, 45);
+            this.btnSaveStaff.TabIndex = 4;
+            this.btnSaveStaff.Text = "Save Staff Member";
+            this.btnSaveStaff.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Username:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 30);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Password:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1088, 125);
+            this.panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(182, 125);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtUsername);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.btnSaveStaff);
-
-            // ================= FORM =================
-            this.AutoScaleDimensions = new SizeF(6F, 13F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.White;
-            this.ClientSize = new Size(1088, 601);
-            this.Text = "Add New Staff Member";
-
+            this.panel2.Location = new System.Drawing.Point(117, 226);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(750, 170);
+            this.panel2.TabIndex = 0;
+            // 
+            // AddNewStaffMember
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1088, 601);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-
-            this.Load += new EventHandler(this.Form_Load);
-
+            this.Name = "AddNewStaffMember";
+            this.Text = "Add New Staff Member";
+            this.Load += new System.EventHandler(this.Form_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
