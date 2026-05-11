@@ -126,8 +126,6 @@ namespace ScotWaterV1.Forms
             txtSortCode.Clear();
             txtAccountNumber.Clear();
         }
-
-      
     }
 }
     
