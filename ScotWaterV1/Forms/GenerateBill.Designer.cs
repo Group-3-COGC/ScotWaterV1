@@ -18,8 +18,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGenerateBill));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnMainMenu = new System.Windows.Forms.Button();
             this.btnGenerateBill = new System.Windows.Forms.Button();
@@ -27,31 +26,16 @@
             this.lblGenerateBillsDate = new System.Windows.Forms.Label();
             this.cmbBusinessNames = new System.Windows.Forms.ComboBox();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
-            this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.dgvBusinessesBill = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinessesBill)).BeginInit();
+            this.pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(986, 104);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(152, 104);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -64,7 +48,7 @@
             // btnMainMenu
             // 
             this.btnMainMenu.Location = new System.Drawing.Point(454, 565);
-            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnMainMenu.Name = "btnMainMenu";
             this.btnMainMenu.Size = new System.Drawing.Size(100, 35);
             this.btnMainMenu.TabIndex = 4;
@@ -121,15 +105,6 @@
             this.dtpBillDate.Size = new System.Drawing.Size(250, 25);
             this.dtpBillDate.TabIndex = 3;
             // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(833, 80);
-            this.pnlHeader.TabIndex = 2;
-            // 
             // pnlSelect
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.White;
@@ -146,7 +121,7 @@
             // dgvBusinessesBill
             // 
             this.dgvBusinessesBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBusinessesBill.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBusinessesBill.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.dgvBusinessesBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
@@ -157,7 +132,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBusinessesBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBusinessesBill.EnableHeadersVisualStyles = false;
-            this.dgvBusinessesBill.GridColor = System.Drawing.Color.LightGray;
+            this.dgvBusinessesBill.GridColor = System.Drawing.Color.White;
             this.dgvBusinessesBill.Location = new System.Drawing.Point(40, 230);
             this.dgvBusinessesBill.Name = "dgvBusinessesBill";
             this.dgvBusinessesBill.ReadOnly = true;
@@ -166,35 +141,50 @@
             this.dgvBusinessesBill.Size = new System.Drawing.Size(750, 170);
             this.dgvBusinessesBill.TabIndex = 0;
             // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.pnlHeader.Controls.Add(this.pictureBox3);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(833, 104);
+            this.pnlHeader.TabIndex = 33;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(182, 104);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
             // frmGenerateBill
             // 
             this.ClientSize = new System.Drawing.Size(833, 488);
+            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.dgvBusinessesBill);
             this.Controls.Add(this.pnlSelect);
-            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnGenerateBill);
             this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
-            
             this.Name = "frmGenerateBill";
             this.Text = "GenerateBill";
             this.Load += new System.EventHandler(this.frmGenerateBill_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinessesBill)).EndInit();
+            this.pnlHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnMainMenu;
         private System.Windows.Forms.Button btnGenerateBill;
@@ -204,10 +194,10 @@
 
         private System.Windows.Forms.ComboBox cmbBusinessNames;
         private System.Windows.Forms.DateTimePicker dtpBillDate;
-
-        private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Panel pnlSelect;
 
         private System.Windows.Forms.DataGridView dgvBusinessesBill;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

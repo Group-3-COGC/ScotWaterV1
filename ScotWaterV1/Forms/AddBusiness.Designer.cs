@@ -1,16 +1,13 @@
-﻿namespace ScotWaterV1.Forms
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace ScotWaterV1.Forms
 {
     partial class frmAddBusiness
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,16 +19,13 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddBusiness));
             this.btnAddNewBusiness = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +39,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+
             this.txtBusinessName = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
@@ -58,373 +53,167 @@
             this.txtAccountNumber = new System.Windows.Forms.TextBox();
             this.cbxRegion = new System.Windows.Forms.ComboBox();
             this.txtBusinessID = new System.Windows.Forms.TextBox();
+
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pnlSelect = new System.Windows.Forms.Panel();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnAddNewBusiness
-            // 
-            this.btnAddNewBusiness.BackColor = System.Drawing.Color.White;
-            this.btnAddNewBusiness.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewBusiness.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddNewBusiness.Location = new System.Drawing.Point(382, 378);
-            this.btnAddNewBusiness.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAddNewBusiness.Name = "btnAddNewBusiness";
-            this.btnAddNewBusiness.Size = new System.Drawing.Size(100, 35);
-            this.btnAddNewBusiness.TabIndex = 43;
-            this.btnAddNewBusiness.Text = "Save ";
-            this.btnAddNewBusiness.UseVisualStyleBackColor = false;
-            this.btnAddNewBusiness.Click += new System.EventHandler(this.btnAddNewBusiness_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(152, 104);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 36;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 496);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1022, 119);
-            this.pictureBox2.TabIndex = 35;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Business ID";
-           
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Business Name";
-           
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "City";
-          
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Address Line 1";
-           
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 129);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 13);
-            this.label5.TabIndex = 48;
-            this.label5.Text = "Address Line 2 (Optional)";
-           
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(52, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Postcode";
-            
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 187);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 50;
-            this.label7.Text = "Region";
-            
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(443, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 13);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "Phone Number (Optional)";
-           
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(443, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 13);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "Contact Name";
-            
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(443, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "Email Address";
-          
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(443, 97);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 13);
-            this.label11.TabIndex = 54;
-            this.label11.Text = "Account Name";
 
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(443, 125);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 55;
-            this.label12.Text = "Sort Code";
-            
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(443, 155);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 13);
-            this.label13.TabIndex = 56;
-            this.label13.Text = "Account Number";
-            
-            // 
-            // txtBusinessName
-            // 
-            this.txtBusinessName.Location = new System.Drawing.Point(253, 40);
-            this.txtBusinessName.Name = "txtBusinessName";
-            this.txtBusinessName.Size = new System.Drawing.Size(100, 20);
-            this.txtBusinessName.TabIndex = 57;
-            // 
-            // txtCity
-            // 
-            this.txtCity.Location = new System.Drawing.Point(253, 66);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(100, 20);
-            this.txtCity.TabIndex = 58;
-            // 
-            // txtAddress1
-            // 
-            this.txtAddress1.Location = new System.Drawing.Point(253, 93);
-            this.txtAddress1.Name = "txtAddress1";
-            this.txtAddress1.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress1.TabIndex = 59;
-            // 
-            // txtAddress2
-            // 
-            this.txtAddress2.Location = new System.Drawing.Point(253, 123);
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress2.TabIndex = 60;
-            // 
-            // txtPostcode
-            // 
-            this.txtPostcode.Location = new System.Drawing.Point(253, 147);
-            this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(100, 20);
-            this.txtPostcode.TabIndex = 61;
-            // 
-            // txtContactName
-            // 
-            this.txtContactName.Location = new System.Drawing.Point(647, 9);
-            this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(100, 20);
-            this.txtContactName.TabIndex = 62;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(647, 33);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtPhoneNumber.TabIndex = 63;
-            // 
-            // txtEmailAddress
-            // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(647, 62);
-            this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtEmailAddress.TabIndex = 64;
-            // 
-            // txtAccountName
-            // 
-            this.txtAccountName.Location = new System.Drawing.Point(647, 92);
-            this.txtAccountName.Name = "txtAccountName";
-            this.txtAccountName.Size = new System.Drawing.Size(100, 20);
-            this.txtAccountName.TabIndex = 65;
-            // 
-            // txtSortCode
-            // 
-            this.txtSortCode.Location = new System.Drawing.Point(647, 120);
-            this.txtSortCode.Name = "txtSortCode";
-            this.txtSortCode.Size = new System.Drawing.Size(100, 20);
-            this.txtSortCode.TabIndex = 66;
-            // 
-            // txtAccountNumber
-            // 
-            this.txtAccountNumber.Location = new System.Drawing.Point(647, 155);
-            this.txtAccountNumber.Name = "txtAccountNumber";
-            this.txtAccountNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtAccountNumber.TabIndex = 67;
-            // 
-            // cbxRegion
-            // 
-            this.cbxRegion.FormattingEnabled = true;
-            this.cbxRegion.Items.AddRange(new object[] {
-            "North",
-            "South",
-            "East",
-            "West"});
-            this.cbxRegion.Location = new System.Drawing.Point(253, 178);
-            this.cbxRegion.Name = "cbxRegion";
-            this.cbxRegion.Size = new System.Drawing.Size(121, 21);
-            this.cbxRegion.TabIndex = 68;
-            // 
-            // txtBusinessID
-            // 
-            this.txtBusinessID.Location = new System.Drawing.Point(253, 12);
-            this.txtBusinessID.Name = "txtBusinessID";
-            this.txtBusinessID.Size = new System.Drawing.Size(100, 20);
-            this.txtBusinessID.TabIndex = 69;
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            Color mainBlue = System.Drawing.Color.FromArgb(0, 102, 204);
+
+            // ================= HEADER =================
+            this.pnlHeader.BackColor = mainBlue;
             this.pnlHeader.Controls.Add(this.pictureBox3);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(816, 107);
-            this.pnlHeader.TabIndex = 70;
-            // 
-            // pnlSelect
-            // 
+            this.pnlHeader.Size = new System.Drawing.Size(950, 90);
+
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Size = new System.Drawing.Size(170, 90);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+
+            // ================= PANEL =================
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.label1);
-            this.pnlSelect.Controls.Add(this.label2);
-            this.pnlSelect.Controls.Add(this.txtBusinessID);
-            this.pnlSelect.Controls.Add(this.label3);
-            this.pnlSelect.Controls.Add(this.cbxRegion);
-            this.pnlSelect.Controls.Add(this.label4);
-            this.pnlSelect.Controls.Add(this.txtAccountNumber);
-            this.pnlSelect.Controls.Add(this.label5);
-            this.pnlSelect.Controls.Add(this.txtSortCode);
-            this.pnlSelect.Controls.Add(this.label6);
-            this.pnlSelect.Controls.Add(this.txtAccountName);
-            this.pnlSelect.Controls.Add(this.label7);
-            this.pnlSelect.Controls.Add(this.txtEmailAddress);
-            this.pnlSelect.Controls.Add(this.label8);
-            this.pnlSelect.Controls.Add(this.txtPhoneNumber);
-            this.pnlSelect.Controls.Add(this.label9);
-            this.pnlSelect.Controls.Add(this.txtContactName);
-            this.pnlSelect.Controls.Add(this.label10);
-            this.pnlSelect.Controls.Add(this.txtPostcode);
-            this.pnlSelect.Controls.Add(this.label11);
-            this.pnlSelect.Controls.Add(this.txtAddress2);
-            this.pnlSelect.Controls.Add(this.label12);
-            this.pnlSelect.Controls.Add(this.txtAddress1);
-            this.pnlSelect.Controls.Add(this.label13);
-            this.pnlSelect.Controls.Add(this.txtCity);
-            this.pnlSelect.Controls.Add(this.txtBusinessName);
-            this.pnlSelect.Location = new System.Drawing.Point(24, 136);
-            this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(780, 224);
-            this.pnlSelect.TabIndex = 71;
-            // 
-            // frmAddBusiness
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.pnlSelect.Location = new System.Drawing.Point(35, 120);
+            this.pnlSelect.Size = new System.Drawing.Size(875, 300);
+
+            Font lblFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            Font txtFont = new System.Drawing.Font("Segoe UI", 10F);
+
+            // ================= LABELS (NO LOOPS) =================
+            this.label1.Text = "Business ID";
+            this.label2.Text = "Business Name";
+            this.label3.Text = "City";
+            this.label4.Text = "Address Line 1";
+            this.label5.Text = "Address Line 2";
+            this.label6.Text = "Postcode";
+            this.label7.Text = "Region";
+            this.label8.Text = "Phone Number";
+            this.label9.Text = "Contact Name";
+            this.label10.Text = "Email Address";
+            this.label11.Text = "Account Name";
+            this.label12.Text = "Sort Code";
+            this.label13.Text = "Account Number";
+
+            this.label1.Font = lblFont; this.label1.ForeColor = mainBlue;
+            this.label2.Font = lblFont; this.label2.ForeColor = mainBlue;
+            this.label3.Font = lblFont; this.label3.ForeColor = mainBlue;
+            this.label4.Font = lblFont; this.label4.ForeColor = mainBlue;
+            this.label5.Font = lblFont; this.label5.ForeColor = mainBlue;
+            this.label6.Font = lblFont; this.label6.ForeColor = mainBlue;
+            this.label7.Font = lblFont; this.label7.ForeColor = mainBlue;
+            this.label8.Font = lblFont; this.label8.ForeColor = mainBlue;
+            this.label9.Font = lblFont; this.label9.ForeColor = mainBlue;
+            this.label10.Font = lblFont; this.label10.ForeColor = mainBlue;
+            this.label11.Font = lblFont; this.label11.ForeColor = mainBlue;
+            this.label12.Font = lblFont; this.label12.ForeColor = mainBlue;
+            this.label13.Font = lblFont; this.label13.ForeColor = mainBlue;
+
+            this.label1.AutoSize = this.label2.AutoSize = this.label3.AutoSize =
+            this.label4.AutoSize = this.label5.AutoSize = this.label6.AutoSize =
+            this.label7.AutoSize = this.label8.AutoSize = this.label9.AutoSize =
+            this.label10.AutoSize = this.label11.AutoSize = this.label12.AutoSize =
+            this.label13.AutoSize = true;
+
+            // ================= TEXTBOX STYLE (NO LOOP) =================
+            this.txtBusinessID.Font = txtFont;
+            this.txtBusinessName.Font = txtFont;
+            this.txtCity.Font = txtFont;
+            this.txtAddress1.Font = txtFont;
+            this.txtAddress2.Font = txtFont;
+            this.txtPostcode.Font = txtFont;
+            this.txtContactName.Font = txtFont;
+            this.txtPhoneNumber.Font = txtFont;
+            this.txtEmailAddress.Font = txtFont;
+            this.txtAccountName.Font = txtFont;
+            this.txtSortCode.Font = txtFont;
+            this.txtAccountNumber.Font = txtFont;
+
+            // ================= POSITIONS =================
+            this.txtBusinessID.Location = new System.Drawing.Point(180, 20);
+            this.txtBusinessName.Location = new System.Drawing.Point(180, 60);
+            this.txtCity.Location = new System.Drawing.Point(180, 100);
+            this.txtAddress1.Location = new System.Drawing.Point(180, 140);
+            this.txtAddress2.Location = new System.Drawing.Point(180, 180);
+            this.txtPostcode.Location = new System.Drawing.Point(180, 220);
+
+            this.txtContactName.Location = new System.Drawing.Point(620, 20);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(620, 60);
+            this.txtEmailAddress.Location = new System.Drawing.Point(620, 100);
+            this.txtAccountName.Location = new System.Drawing.Point(620, 140);
+            this.txtSortCode.Location = new System.Drawing.Point(620, 180);
+            this.txtAccountNumber.Location = new System.Drawing.Point(620, 220);
+
+            this.cbxRegion.Font = txtFont;
+            this.cbxRegion.Items.AddRange(new object[] { "North", "South", "East", "West" });
+            this.cbxRegion.Location = new System.Drawing.Point(180, 260);
+
+            // ================= ADD CONTROLS =================
+            this.pnlSelect.Controls.AddRange(new Control[]
+            {
+                label1, txtBusinessID,
+                label2, txtBusinessName,
+                label3, txtCity,
+                label4, txtAddress1,
+                label5, txtAddress2,
+                label6, txtPostcode,
+                label7, cbxRegion,
+                label9, txtContactName,
+                label8, txtPhoneNumber,
+                label10, txtEmailAddress,
+                label11, txtAccountName,
+                label12, txtSortCode,
+                label13, txtAccountNumber
+            });
+
+            // ================= BUTTON =================
+            this.btnAddNewBusiness.BackColor = mainBlue;
+            this.btnAddNewBusiness.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewBusiness.FlatStyle = FlatStyle.Flat;
+            this.btnAddNewBusiness.FlatAppearance.BorderSize = 0;
+            this.btnAddNewBusiness.Location = new System.Drawing.Point(390, 440);
+            this.btnAddNewBusiness.Size = new System.Drawing.Size(170, 45);
+            this.btnAddNewBusiness.Text = "SAVE BUSINESS";
+            this.btnAddNewBusiness.Click += new System.EventHandler(this.btnAddNewBusiness_Click);
+
+            // ================= FORM =================
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(816, 488);
+            this.ClientSize = new System.Drawing.Size(950, 545);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.pnlSelect);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.btnAddNewBusiness);
-            this.Controls.Add(this.pictureBox2);
-            this.Name = "frmAddBusiness";
-      
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "Add Business";
+
             this.pnlHeader.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnAddNewBusiness;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtBusinessName;
-        private System.Windows.Forms.TextBox txtCity;
-        private System.Windows.Forms.TextBox txtAddress1;
-        private System.Windows.Forms.TextBox txtAddress2;
-        private System.Windows.Forms.TextBox txtPostcode;
-        private System.Windows.Forms.TextBox txtContactName;
-        private System.Windows.Forms.TextBox txtPhoneNumber;
-        private System.Windows.Forms.TextBox txtEmailAddress;
-        private System.Windows.Forms.TextBox txtAccountName;
-        private System.Windows.Forms.TextBox txtSortCode;
-        private System.Windows.Forms.TextBox txtAccountNumber;
-        private System.Windows.Forms.ComboBox cbxRegion;
-        private System.Windows.Forms.TextBox txtBusinessID;
-        private System.Windows.Forms.Panel pnlHeader;
-        private System.Windows.Forms.Panel pnlSelect;
+        private Button btnAddNewBusiness;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+
+        private Label label1, label2, label3, label4, label5, label6,
+                      label7, label8, label9, label10, label11, label12, label13;
+
+        private TextBox txtBusinessName, txtCity, txtAddress1, txtAddress2,
+                        txtPostcode, txtContactName, txtPhoneNumber,
+                        txtEmailAddress, txtAccountName, txtSortCode,
+                        txtAccountNumber, txtBusinessID;
+
+        private ComboBox cbxRegion;
+        private Panel pnlHeader;
+        private Panel pnlSelect;
     }
 }

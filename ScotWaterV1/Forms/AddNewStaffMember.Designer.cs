@@ -84,18 +84,7 @@ namespace ScotWaterV1.Forms
             this.btnSaveStaff.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             this.btnSaveStaff.Cursor = Cursors.Hand;
 
-            // Hover effect
-            this.btnSaveStaff.MouseEnter += (s, e) =>
-            {
-                this.btnSaveStaff.BackColor = Color.FromArgb(0, 90, 180);
-            };
-
-            this.btnSaveStaff.MouseLeave += (s, e) =>
-            {
-                this.btnSaveStaff.BackColor = Color.FromArgb(0, 120, 215);
-            };
-
-            this.btnSaveStaff.Click += new EventHandler(this.btnSaveStaff_Click);
+            
 
             // ================= PANEL =================
             this.panel2.BackColor = Color.White;
