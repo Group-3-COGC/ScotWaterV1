@@ -150,6 +150,7 @@
     <Compile Include="Models\ReserveConfig.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\StaffUser.cs" />
+    <Compile Include="Models\WaterCharge.cs" />
     <Compile Include="Models\WaterUsageRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
