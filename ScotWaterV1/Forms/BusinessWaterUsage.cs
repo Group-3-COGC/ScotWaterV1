@@ -1,6 +1,7 @@
 ﻿using ScotWaterV1.Models;
 using System;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,11 +9,46 @@ namespace ScotWaterV1.Forms
 {
     public partial class BusinessWaterUsage : Form
     {
+        private readonly Color mainBlue = Color.FromArgb(0, 102, 204);
+
         public BusinessWaterUsage()
         {
             InitializeComponent();
+            ApplyUIStyle();
             LoadBusinesses();
         }
+
+        // ================= UI STYLE ONLY =================
+        private void ApplyUIStyle()
+        {
+            this.BackColor = Color.WhiteSmoke;
+
+            StyleButton(btn_Show);
+            StyleButton(btnShowUsage);
+            StyleButton(btnAddUsage);
+            StyleButton(btn_DeleteUsage);
+            
+            
+
+            dgv_Business.BorderStyle = BorderStyle.FixedSingle;
+            dgv_Business.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgv_Business.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgv_Business.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+        }
+
+        private void StyleButton(Button btn)
+        {
+            if (btn == null) return;
+
+            btn.BackColor = mainBlue;
+            btn.ForeColor = Color.White;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btn.Cursor = Cursors.Hand;
+        }
+
+        // ================= YOUR ORIGINAL LOGIC (UNCHANGED) =================
 
         private void LoadBusinesses()
         {
@@ -112,7 +148,7 @@ namespace ScotWaterV1.Forms
             try
             {
                 using (var db = new BusinessDataContext())
-                {                  
+                {
                     var reserve = db.ReserveConfigs.FirstOrDefault();
                     if (reserve == null)
                     {
@@ -123,8 +159,7 @@ namespace ScotWaterV1.Forms
                     bool isLowReserve = reserve.CurrentReservePercentage < 25;
 
                     int staffId = Session.StaffUserID;
-                    if (staffId == 0)
-                        staffId = 1;
+                    if (staffId == 0) staffId = 1;
 
                     var usage = new WaterUsage
                     {

@@ -36,6 +36,7 @@
             this.btnShowUsage = new System.Windows.Forms.Button();
             this.btn_Show = new System.Windows.Forms.Button();
             this.dgv_Business = new System.Windows.Forms.DataGridView();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -45,6 +46,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -94,57 +96,60 @@
             // txtWaterUsed
             // 
             this.txtWaterUsed.AutoSize = true;
-            this.txtWaterUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtWaterUsed.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWaterUsed.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtWaterUsed.Location = new System.Drawing.Point(160, 73);
             this.txtWaterUsed.Name = "txtWaterUsed";
-            this.txtWaterUsed.Size = new System.Drawing.Size(118, 24);
+            this.txtWaterUsed.Size = new System.Drawing.Size(114, 25);
             this.txtWaterUsed.TabIndex = 1;
             this.txtWaterUsed.Text = "Water Used";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(160, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 24);
+            this.label2.Size = new System.Drawing.Size(147, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Recycled Water";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(160, 167);
+            this.label1.Location = new System.Drawing.Point(160, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 24);
+            this.label1.Size = new System.Drawing.Size(53, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Date";
             // 
             // txt_Water_Used
             // 
             this.txt_Water_Used.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Water_Used.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Water_Used.Location = new System.Drawing.Point(386, 73);
             this.txt_Water_Used.Name = "txt_Water_Used";
-            this.txt_Water_Used.Size = new System.Drawing.Size(151, 20);
+            this.txt_Water_Used.Size = new System.Drawing.Size(151, 25);
             this.txt_Water_Used.TabIndex = 4;
             // 
             // txtRecycledWater
             // 
             this.txtRecycledWater.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecycledWater.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecycledWater.Location = new System.Drawing.Point(386, 116);
             this.txtRecycledWater.Name = "txtRecycledWater";
-            this.txtRecycledWater.Size = new System.Drawing.Size(151, 20);
+            this.txtRecycledWater.Size = new System.Drawing.Size(151, 25);
             this.txtRecycledWater.TabIndex = 5;
             // 
             // dtpDate
             // 
+            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Location = new System.Drawing.Point(386, 169);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpDate.Size = new System.Drawing.Size(200, 25);
             this.dtpDate.TabIndex = 6;
             // 
             // btnAddUsage
@@ -154,6 +159,7 @@
             this.btnAddUsage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(180)))));
             this.btnAddUsage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.btnAddUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUsage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUsage.ForeColor = System.Drawing.Color.White;
             this.btnAddUsage.Location = new System.Drawing.Point(299, 227);
             this.btnAddUsage.Name = "btnAddUsage";
@@ -169,6 +175,7 @@
             this.btn_DeleteUsage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
             this.btn_DeleteUsage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btn_DeleteUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteUsage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteUsage.ForeColor = System.Drawing.Color.White;
             this.btn_DeleteUsage.Location = new System.Drawing.Point(457, 227);
             this.btn_DeleteUsage.Name = "btn_DeleteUsage";
@@ -184,6 +191,7 @@
             this.btnShowUsage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(180)))));
             this.btnShowUsage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
             this.btnShowUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowUsage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowUsage.ForeColor = System.Drawing.Color.White;
             this.btnShowUsage.Location = new System.Drawing.Point(640, 227);
             this.btnShowUsage.Name = "btnShowUsage";
@@ -199,6 +207,7 @@
             this.btn_Show.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.btn_Show.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btn_Show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Show.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Show.ForeColor = System.Drawing.Color.White;
             this.btn_Show.Location = new System.Drawing.Point(531, 0);
             this.btn_Show.Name = "btn_Show";
@@ -236,6 +245,17 @@
             this.dgv_Business.Size = new System.Drawing.Size(956, 180);
             this.dgv_Business.TabIndex = 2;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(241, 43);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(303, 37);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Business Water Usage ";
+            // 
             // BusinessWaterUsage
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -246,6 +266,7 @@
             this.Name = "BusinessWaterUsage";
             this.Text = "Business Water Usage";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -278,5 +299,6 @@
         private System.Windows.Forms.Button btn_DeleteUsage;
 
         private System.Windows.Forms.DataGridView dgv_Business;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
