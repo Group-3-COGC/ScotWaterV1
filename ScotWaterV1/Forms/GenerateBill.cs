@@ -2,6 +2,7 @@
 using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
@@ -220,6 +221,23 @@ namespace ScotWaterV1.Forms
             {
                 MessageBox.Show("No email found for business.");
                 return;
+            }
+
+            try
+            {
+                EmailService emailservice = new EmailService();
+
+                emailservice.SendEmail(
+                    "yourtestemail@gmail.com",
+                    "Test Email",
+                    "Email service is working"
+                    );
+
+                MessageBox.Show("Test email sent");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
