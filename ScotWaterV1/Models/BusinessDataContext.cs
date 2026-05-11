@@ -193,7 +193,20 @@ namespace ScotWaterV1.Models
 
             context.ReserveConfigs.Add(reserve);
 
-            context.SaveChanges();  
+            context.SaveChanges();
+
+
+            //email config
+            var emailConfig = new EmailConfigs()
+            {
+                SenderEmail = "Your_email@gmail.com",
+                SenderPassword = "YOUR_APP_PASSWORD",
+                SmtpHost = "smtp.gmail.com",
+                SmtpPort = 587,
+                EnableSsl = true
+            };
+
+            context.EmailConfigs.Add(emailConfig);
 
         }
     }
