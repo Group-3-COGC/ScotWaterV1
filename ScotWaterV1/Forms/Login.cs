@@ -7,8 +7,7 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1
 {
-    //Dean Caldwell
-    //06/05/2026
+    
     public partial class frmLogin : Form
     {
         public frmLogin()

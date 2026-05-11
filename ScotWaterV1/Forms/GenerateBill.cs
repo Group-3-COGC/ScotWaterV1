@@ -8,8 +8,8 @@ using System.Windows.Forms;
 
 namespace ScotWaterV1.Forms
 {
-    //Dean Caldwell
-    //06/05/2026
+    
+   
     public partial class frmGenerateBill : Form
     {
         public frmGenerateBill()
@@ -86,7 +86,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ================= GENERATE BILL =================
+        //generate bill , Jack Smith 03/05/2026
         private void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
             if (cmbBusinessNames.SelectedValue == null)
