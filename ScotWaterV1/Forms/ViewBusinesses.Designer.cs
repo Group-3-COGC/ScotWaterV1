@@ -226,7 +226,7 @@ namespace ScotWaterV1.Forms
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1200, 100);
+            this.pnlHeader.Size = new System.Drawing.Size(1144, 100);
             this.pnlHeader.TabIndex = 0;
             // 
             // pictureBox3
@@ -256,7 +256,7 @@ namespace ScotWaterV1.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1200, 650);
+            this.ClientSize = new System.Drawing.Size(1144, 686);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txt_search);

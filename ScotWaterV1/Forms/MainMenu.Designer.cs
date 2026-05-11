@@ -46,6 +46,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btn_View_Business = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -242,6 +243,7 @@
             this.PanelMenu.Controls.Add(this.btnChangeWaterCharges);
             this.PanelMenu.Controls.Add(this.btnAddNewStaff);
             this.PanelMenu.Controls.Add(this.btnChangeWaterLevel);
+            this.PanelMenu.Controls.Add(this.btn_View_Business);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.PanelMenu.Location = new System.Drawing.Point(0, 75);
@@ -281,6 +283,25 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1400, 75);
             this.panelTop.TabIndex = 0;
+            // 
+            // btn_View_Business
+            // 
+            this.btn_View_Business.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btn_View_Business.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_View_Business.FlatAppearance.BorderSize = 0;
+            this.btn_View_Business.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_View_Business.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_View_Business.ForeColor = System.Drawing.Color.White;
+            this.btn_View_Business.Location = new System.Drawing.Point(10, 491);
+            this.btn_View_Business.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btn_View_Business.Name = "btn_View_Business";
+            this.btn_View_Business.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_View_Business.Size = new System.Drawing.Size(220, 58);
+            this.btn_View_Business.TabIndex = 7;
+            this.btn_View_Business.Text = "View Businesses";
+            this.btn_View_Business.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_View_Business.UseVisualStyleBackColor = false;
+            this.btn_View_Business.Click += new System.EventHandler(this.btn_View_Business_Click);
             // 
             // frmMainMenu
             // 
@@ -326,5 +347,6 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btn_View_Business;
     }
 }

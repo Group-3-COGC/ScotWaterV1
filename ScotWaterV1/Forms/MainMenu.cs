@@ -244,5 +244,10 @@ namespace ScotWaterV1
         {
             OpenForm(new frmChangeWaterLevels());
         }
+
+        private void btn_View_Business_Click(object sender, EventArgs e)
+        {
+            OpenForm(new ViewBusinesses());
+        }
     }
 }
