@@ -23,8 +23,8 @@ namespace ScotWaterV1
         {
 
 
-            string username = txtLoginUsername.Text.Trim();
-            string password = txtLoginPassword.Text.Trim();
+            string username = txtLoginUsername.Text.Trim().ToUpper();
+            string password = txtLoginPassword.Text.Trim().ToUpper();
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
