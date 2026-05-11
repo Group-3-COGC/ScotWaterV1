@@ -10,7 +10,7 @@ namespace ScotWaterV1.Forms
     public partial class BusinessWaterUsage : Form
     {
         private readonly Color mainBlue = Color.FromArgb(0, 102, 204);
-
+        
         public BusinessWaterUsage()
         {
             InitializeComponent();
