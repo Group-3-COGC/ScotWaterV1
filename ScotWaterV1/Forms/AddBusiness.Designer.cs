@@ -114,11 +114,9 @@ namespace ScotWaterV1.Forms
             this.label12.Font = lblFont; this.label12.ForeColor = mainBlue;
             this.label13.Font = lblFont; this.label13.ForeColor = mainBlue;
 
-            this.label1.AutoSize = this.label2.AutoSize = this.label3.AutoSize =
-            this.label4.AutoSize = this.label5.AutoSize = this.label6.AutoSize =
-            this.label7.AutoSize = this.label8.AutoSize = this.label9.AutoSize =
-            this.label10.AutoSize = this.label11.AutoSize = this.label12.AutoSize =
-            this.label13.AutoSize = true;
+            
+            
+           
 
             // ================= TEXTBOX STYLE (NO LOOP) =================
             this.txtBusinessID.Font = txtFont;
