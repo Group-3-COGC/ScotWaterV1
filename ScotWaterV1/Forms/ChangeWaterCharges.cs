@@ -231,5 +231,15 @@ namespace ScotWaterV1.Forms
             new frmMainMenu().Show();
             this.Close();
         }
+
+        private void lblRecycledLowDiscount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmChangeWaterCharges_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
