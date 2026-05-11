@@ -58,8 +58,8 @@ namespace ScotWaterV1
                 return;
             }
 
-            // SHOW REAL ERROR MESSAGE (lockout, attempts left, etc.)
-            MessageBox.Show(staffError ?? adminError);
+            
+            MessageBox.Show("Incorrect username or password");
         }
 
         private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
