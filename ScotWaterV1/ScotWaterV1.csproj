@@ -144,6 +144,7 @@
     <Compile Include="Models\BusinessUser.cs" />
     <Compile Include="Models\BusinessView.cs" />
     <Compile Include="Models\EmailConfigs.cs" />
+    <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\PasswordSecurity.cs" />
     <Compile Include="Models\PricingConfig.cs" />
     <Compile Include="Models\ReserveConfig.cs" />

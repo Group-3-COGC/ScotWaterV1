@@ -222,42 +222,6 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
-            string senderEmail = "yourcompany@example.com";
-            string senderPassword = "yourpassword";
-
-            if (senderEmail.Contains("example"))
-            {
-                MessageBox.Show("Email not configured yet.");
-                return;
-            }
-
-            string body =
-                $"Hello {business.CompanyName},\n\n" +
-                $"Your bill has been generated.\n\n" +
-                $"Bill ID: {bill.BusinessBillID}\n" +
-                $"Date: {bill.BillDate:dd MMM yyyy}\n" +
-                $"Total: £{bill.BusinessFinalCost:F2}\n\n" +
-                $"Regards,\nScot Water";
-
-            try
-            {
-                using (MailMessage msg = new MailMessage())
-                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
-                {
-                    msg.From = new MailAddress(senderEmail);
-                    msg.To.Add(business.ContactEmail);
-                    msg.Subject = "Water Bill";
-                    msg.Body = body;
-
-                    smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                    smtp.Send(msg);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Email failed: " + ex.Message);
-            }
         }
     }
 }
