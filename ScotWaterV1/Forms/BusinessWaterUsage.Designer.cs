@@ -22,6 +22,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CmbBusiness = new System.Windows.Forms.ComboBox();
@@ -36,7 +37,6 @@
             this.btnShowUsage = new System.Windows.Forms.Button();
             this.btn_Show = new System.Windows.Forms.Button();
             this.dgv_Business = new System.Windows.Forms.DataGridView();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,6 +53,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1088, 125);
             this.panel1.TabIndex = 1;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(241, 43);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(303, 37);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Business Water Usage ";
             // 
             // pictureBox1
             // 
@@ -167,6 +178,7 @@
             this.btnAddUsage.TabIndex = 7;
             this.btnAddUsage.Text = "Add Usage";
             this.btnAddUsage.UseVisualStyleBackColor = false;
+            this.btnAddUsage.Click += new System.EventHandler(this.btn_AddUsage_Click);
             // 
             // btn_DeleteUsage
             // 
@@ -183,6 +195,7 @@
             this.btn_DeleteUsage.TabIndex = 8;
             this.btn_DeleteUsage.Text = "Delete Usage";
             this.btn_DeleteUsage.UseVisualStyleBackColor = false;
+            this.btn_DeleteUsage.Click += new System.EventHandler(this.btn_DeleteUsage_Click);
             // 
             // btnShowUsage
             // 
@@ -199,6 +212,7 @@
             this.btnShowUsage.TabIndex = 9;
             this.btnShowUsage.Text = "Show Usage";
             this.btnShowUsage.UseVisualStyleBackColor = false;
+            this.btnShowUsage.Click += new System.EventHandler(this.btn_ShowUsage_Click);
             // 
             // btn_Show
             // 
@@ -215,6 +229,7 @@
             this.btn_Show.TabIndex = 10;
             this.btn_Show.Text = "Show Details";
             this.btn_Show.UseVisualStyleBackColor = false;
+            this.btn_Show.Click += new System.EventHandler(this.btn_ShowDetails_Click);
             // 
             // dgv_Business
             // 
@@ -244,17 +259,6 @@
             this.dgv_Business.Name = "dgv_Business";
             this.dgv_Business.Size = new System.Drawing.Size(956, 180);
             this.dgv_Business.TabIndex = 2;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(241, 43);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(303, 37);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Business Water Usage ";
             // 
             // BusinessWaterUsage
             // 

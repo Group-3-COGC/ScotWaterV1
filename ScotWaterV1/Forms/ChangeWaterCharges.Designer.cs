@@ -19,8 +19,8 @@ namespace ScotWaterV1.Forms
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeWaterCharges));
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.comboChangeCharges = new System.Windows.Forms.ComboBox();
             this.txtNewPrice = new System.Windows.Forms.TextBox();
@@ -34,7 +34,6 @@ namespace ScotWaterV1.Forms
             this.lblRecycledLowDiscount = new System.Windows.Forms.Label();
             this.lblMediumRecyclePrice = new System.Windows.Forms.Label();
             this.lblHighRecyclePrice = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +48,16 @@ namespace ScotWaterV1.Forms
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(800, 90);
             this.pnlHeader.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
@@ -90,6 +99,7 @@ namespace ScotWaterV1.Forms
             this.btnChangePrice.TabIndex = 3;
             this.btnChangePrice.Text = "UPDATE PRICE";
             this.btnChangePrice.UseVisualStyleBackColor = false;
+            this.btnChangePrice.Click += new System.EventHandler(this.btnChangePrice_Click);
             // 
             // lblLowUsagePrice
             // 
@@ -180,17 +190,6 @@ namespace ScotWaterV1.Forms
             this.lblHighRecyclePrice.Size = new System.Drawing.Size(241, 23);
             this.lblHighRecyclePrice.TabIndex = 12;
             this.lblHighRecyclePrice.Text = "Recycled High: £0.00";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // frmChangeWaterCharges
             // 
