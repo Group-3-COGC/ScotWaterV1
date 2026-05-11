@@ -96,7 +96,7 @@ namespace ScotWaterV1.Forms
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.label3.Location = new System.Drawing.Point(45, 100);
+            this.label3.Location = new System.Drawing.Point(28, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 23);
             this.label3.TabIndex = 4;
@@ -106,9 +106,9 @@ namespace ScotWaterV1.Forms
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.label4.Location = new System.Drawing.Point(45, 140);
+            this.label4.Location = new System.Drawing.Point(28, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.Size = new System.Drawing.Size(129, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "Address Line 1";
             // 
@@ -116,9 +116,9 @@ namespace ScotWaterV1.Forms
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.label5.Location = new System.Drawing.Point(45, 180);
+            this.label5.Location = new System.Drawing.Point(28, 180);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.Size = new System.Drawing.Size(146, 23);
             this.label5.TabIndex = 8;
             this.label5.Text = "Address Line 2";
             // 
@@ -126,7 +126,7 @@ namespace ScotWaterV1.Forms
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.label6.Location = new System.Drawing.Point(45, 223);
+            this.label6.Location = new System.Drawing.Point(28, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 10;
@@ -136,7 +136,7 @@ namespace ScotWaterV1.Forms
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.label7.Location = new System.Drawing.Point(45, 260);
+            this.label7.Location = new System.Drawing.Point(28, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 23);
             this.label7.TabIndex = 12;
@@ -360,7 +360,7 @@ namespace ScotWaterV1.Forms
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(45, 60);
+            this.label2.Location = new System.Drawing.Point(28, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 23);
             this.label2.TabIndex = 2;
@@ -370,9 +370,9 @@ namespace ScotWaterV1.Forms
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(45, 20);
+            this.label1.Location = new System.Drawing.Point(28, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.Size = new System.Drawing.Size(117, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Business ID";
             // 
