@@ -118,6 +118,10 @@
     <Compile Include="Migrations\202605061250191_AddEmailConfigs.Designer.cs">
       <DependentUpon>202605061250191_AddEmailConfigs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202605111005435_AddLockoutFields.cs" />
+    <Compile Include="Migrations\202605111005435_AddLockoutFields.Designer.cs">
+      <DependentUpon>202605111005435_AddLockoutFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthService.cs" />
     <Compile Include="Models\BillBreakDown.cs" />
@@ -187,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202605061250191_AddEmailConfigs.resx">
       <DependentUpon>202605061250191_AddEmailConfigs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202605111005435_AddLockoutFields.resx">
+      <DependentUpon>202605111005435_AddLockoutFields.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
