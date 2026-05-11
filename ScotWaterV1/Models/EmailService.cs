@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,26 @@ namespace ScotWaterV1.Models
                 if (config == null)
                     throw new InvalidOperationException("Email settings have not been configured.");
 
-                using (MailMessage message = new MailMessage())
-                using (SmtpClient client = new SmtpClient(config.SmtpHost, config.SmtpPort))
-                {
-                    message.Fromv = new MailAddress(config.SenderEmail);
-                    message.To.Ass(recipentEmail);
-                }
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(config.SenderEmail);
+                message.To.Add(recipentEmail);
+                message.Subject = subject;
+                message.Body = body;
+
+                SmtpClient smtp = new SmtpClient(config.SmtpHost, config.SmtpPort);
+                smtp.EnableSsl = config.EnableSsl;
+
+                smtp.Credentials = new NetworkCredential(
+                        config.SenderEmail,
+                        config.SenderPassword
+                     );
+
+                    smtp.Send(message);
+
+                message.Dispose();
+                smtp.Dispose();
             }
         }
     }
 }
+
