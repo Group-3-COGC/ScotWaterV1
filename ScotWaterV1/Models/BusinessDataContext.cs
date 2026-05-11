@@ -22,6 +22,8 @@ namespace ScotWaterV1.Models
         public DbSet<BusinessBills> BusinessBills { get; set; }
         public DbSet<WaterUsage> WaterUsage { get; set; }
 
+        public DbSet<WaterCharge> WaterCharges { get; set; }
+
         // NEW TABLES
         public DbSet<PricingConfig> PricingConfigs { get; set; }
         public DbSet<ReserveConfig> ReserveConfigs { get; set; }

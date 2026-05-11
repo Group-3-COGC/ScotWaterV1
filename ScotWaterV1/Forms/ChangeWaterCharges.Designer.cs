@@ -21,6 +21,7 @@ namespace ScotWaterV1.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeWaterCharges));
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.comboChangeCharges = new System.Windows.Forms.ComboBox();
             this.txtNewPrice = new System.Windows.Forms.TextBox();
@@ -34,9 +35,17 @@ namespace ScotWaterV1.Forms
             this.lblRecycledLowDiscount = new System.Windows.Forms.Label();
             this.lblMediumRecyclePrice = new System.Windows.Forms.Label();
             this.lblHighRecyclePrice = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -49,6 +58,17 @@ namespace ScotWaterV1.Forms
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(800, 90);
             this.pnlHeader.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(144, 90);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // lblTitle
             // 
@@ -64,17 +84,17 @@ namespace ScotWaterV1.Forms
             // comboChangeCharges
             // 
             this.comboChangeCharges.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboChangeCharges.Location = new System.Drawing.Point(50, 120);
+            this.comboChangeCharges.Location = new System.Drawing.Point(142, 124);
             this.comboChangeCharges.Name = "comboChangeCharges";
-            this.comboChangeCharges.Size = new System.Drawing.Size(280, 25);
+            this.comboChangeCharges.Size = new System.Drawing.Size(140, 25);
             this.comboChangeCharges.TabIndex = 1;
             // 
             // txtNewPrice
             // 
             this.txtNewPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPrice.Location = new System.Drawing.Point(50, 160);
+            this.txtNewPrice.Location = new System.Drawing.Point(142, 168);
             this.txtNewPrice.Name = "txtNewPrice";
-            this.txtNewPrice.Size = new System.Drawing.Size(280, 25);
+            this.txtNewPrice.Size = new System.Drawing.Size(140, 25);
             this.txtNewPrice.TabIndex = 2;
             // 
             // btnChangePrice
@@ -84,9 +104,9 @@ namespace ScotWaterV1.Forms
             this.btnChangePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnChangePrice.ForeColor = System.Drawing.Color.White;
-            this.btnChangePrice.Location = new System.Drawing.Point(50, 200);
+            this.btnChangePrice.Location = new System.Drawing.Point(35, 212);
             this.btnChangePrice.Name = "btnChangePrice";
-            this.btnChangePrice.Size = new System.Drawing.Size(280, 40);
+            this.btnChangePrice.Size = new System.Drawing.Size(122, 40);
             this.btnChangePrice.TabIndex = 3;
             this.btnChangePrice.Text = "UPDATE PRICE";
             this.btnChangePrice.UseVisualStyleBackColor = false;
@@ -96,119 +116,180 @@ namespace ScotWaterV1.Forms
             // 
             this.lblLowUsagePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLowUsagePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblLowUsagePrice.Location = new System.Drawing.Point(400, 120);
+            this.lblLowUsagePrice.Location = new System.Drawing.Point(6, 25);
             this.lblLowUsagePrice.Name = "lblLowUsagePrice";
-            this.lblLowUsagePrice.Size = new System.Drawing.Size(223, 23);
+            this.lblLowUsagePrice.Size = new System.Drawing.Size(350, 23);
             this.lblLowUsagePrice.TabIndex = 4;
-            this.lblLowUsagePrice.Text = "Normal Low: £0.00";
+            this.lblLowUsagePrice.Text = "0–40 units :";
             // 
             // lblMediumUsagePrice
             // 
             this.lblMediumUsagePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMediumUsagePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblMediumUsagePrice.Location = new System.Drawing.Point(400, 150);
+            this.lblMediumUsagePrice.Location = new System.Drawing.Point(6, 53);
             this.lblMediumUsagePrice.Name = "lblMediumUsagePrice";
-            this.lblMediumUsagePrice.Size = new System.Drawing.Size(223, 23);
+            this.lblMediumUsagePrice.Size = new System.Drawing.Size(350, 23);
             this.lblMediumUsagePrice.TabIndex = 5;
-            this.lblMediumUsagePrice.Text = "Normal Medium: £0.00";
+            this.lblMediumUsagePrice.Text = "41–80 units :";
             // 
             // lblHighUsagePrice
             // 
             this.lblHighUsagePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHighUsagePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblHighUsagePrice.Location = new System.Drawing.Point(400, 180);
+            this.lblHighUsagePrice.Location = new System.Drawing.Point(6, 81);
             this.lblHighUsagePrice.Name = "lblHighUsagePrice";
-            this.lblHighUsagePrice.Size = new System.Drawing.Size(223, 23);
+            this.lblHighUsagePrice.Size = new System.Drawing.Size(350, 28);
             this.lblHighUsagePrice.TabIndex = 6;
-            this.lblHighUsagePrice.Text = "Normal High: £0.00";
+            this.lblHighUsagePrice.Text = "81+ units :";
             // 
             // lblDroughtLowUsagePrice
             // 
             this.lblDroughtLowUsagePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDroughtLowUsagePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblDroughtLowUsagePrice.Location = new System.Drawing.Point(400, 220);
+            this.lblDroughtLowUsagePrice.Location = new System.Drawing.Point(6, 25);
             this.lblDroughtLowUsagePrice.Name = "lblDroughtLowUsagePrice";
-            this.lblDroughtLowUsagePrice.Size = new System.Drawing.Size(201, 30);
+            this.lblDroughtLowUsagePrice.Size = new System.Drawing.Size(350, 30);
             this.lblDroughtLowUsagePrice.TabIndex = 7;
-            this.lblDroughtLowUsagePrice.Text = "Drought Low: £0.00";
+            this.lblDroughtLowUsagePrice.Text = "0–40 units : ";
             // 
             // lblDroughtMediumUsagePrice
             // 
             this.lblDroughtMediumUsagePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDroughtMediumUsagePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblDroughtMediumUsagePrice.Location = new System.Drawing.Point(400, 250);
+            this.lblDroughtMediumUsagePrice.Location = new System.Drawing.Point(6, 50);
             this.lblDroughtMediumUsagePrice.Name = "lblDroughtMediumUsagePrice";
-            this.lblDroughtMediumUsagePrice.Size = new System.Drawing.Size(236, 30);
+            this.lblDroughtMediumUsagePrice.Size = new System.Drawing.Size(350, 30);
             this.lblDroughtMediumUsagePrice.TabIndex = 8;
-            this.lblDroughtMediumUsagePrice.Text = "Drought Medium: £0.00";
+            this.lblDroughtMediumUsagePrice.Text = "41–80 units : ";
             // 
             // lblDroughtHighUsagePrice
             // 
             this.lblDroughtHighUsagePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDroughtHighUsagePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblDroughtHighUsagePrice.Location = new System.Drawing.Point(400, 280);
+            this.lblDroughtHighUsagePrice.Location = new System.Drawing.Point(6, 81);
             this.lblDroughtHighUsagePrice.Name = "lblDroughtHighUsagePrice";
-            this.lblDroughtHighUsagePrice.Size = new System.Drawing.Size(223, 40);
+            this.lblDroughtHighUsagePrice.Size = new System.Drawing.Size(350, 40);
             this.lblDroughtHighUsagePrice.TabIndex = 9;
-            this.lblDroughtHighUsagePrice.Text = "Drought High: £0.00";
+            this.lblDroughtHighUsagePrice.Text = "81+ units : ";
             // 
             // lblRecycledLowDiscount
             // 
             this.lblRecycledLowDiscount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecycledLowDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblRecycledLowDiscount.Location = new System.Drawing.Point(400, 320);
+            this.lblRecycledLowDiscount.Location = new System.Drawing.Point(6, 23);
             this.lblRecycledLowDiscount.Name = "lblRecycledLowDiscount";
-            this.lblRecycledLowDiscount.Size = new System.Drawing.Size(201, 23);
+            this.lblRecycledLowDiscount.Size = new System.Drawing.Size(350, 23);
             this.lblRecycledLowDiscount.TabIndex = 10;
-            this.lblRecycledLowDiscount.Text = "Recycled Low: £0.00";
+            this.lblRecycledLowDiscount.Text = "0–5 units :";
             // 
             // lblMediumRecyclePrice
             // 
             this.lblMediumRecyclePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMediumRecyclePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblMediumRecyclePrice.Location = new System.Drawing.Point(400, 350);
+            this.lblMediumRecyclePrice.Location = new System.Drawing.Point(6, 46);
             this.lblMediumRecyclePrice.Name = "lblMediumRecyclePrice";
-            this.lblMediumRecyclePrice.Size = new System.Drawing.Size(257, 23);
+            this.lblMediumRecyclePrice.Size = new System.Drawing.Size(218, 23);
             this.lblMediumRecyclePrice.TabIndex = 11;
-            this.lblMediumRecyclePrice.Text = "Recycled Medium: £0.00";
+            this.lblMediumRecyclePrice.Text = "41–80 units :";
             // 
             // lblHighRecyclePrice
             // 
             this.lblHighRecyclePrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHighRecyclePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblHighRecyclePrice.Location = new System.Drawing.Point(400, 380);
+            this.lblHighRecyclePrice.Location = new System.Drawing.Point(6, 76);
             this.lblHighRecyclePrice.Name = "lblHighRecyclePrice";
-            this.lblHighRecyclePrice.Size = new System.Drawing.Size(241, 23);
+            this.lblHighRecyclePrice.Size = new System.Drawing.Size(218, 28);
             this.lblHighRecyclePrice.TabIndex = 12;
-            this.lblHighRecyclePrice.Text = "Recycled High: £0.00";
+            this.lblHighRecyclePrice.Text = "21+ units : ";
             // 
-            // pictureBox3
+            // groupBox1
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(144, 90);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.groupBox1.Controls.Add(this.lblLowUsagePrice);
+            this.groupBox1.Controls.Add(this.lblHighUsagePrice);
+            this.groupBox1.Controls.Add(this.lblMediumUsagePrice);
+            this.groupBox1.Location = new System.Drawing.Point(399, 96);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(362, 124);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "💧 Standard Freshwater Rates";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblDroughtLowUsagePrice);
+            this.groupBox2.Controls.Add(this.lblDroughtHighUsagePrice);
+            this.groupBox2.Controls.Add(this.lblDroughtMediumUsagePrice);
+            this.groupBox2.Location = new System.Drawing.Point(399, 338);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(362, 124);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "💧 Low Reserve Freshwater Rates";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblRecycledLowDiscount);
+            this.groupBox3.Controls.Add(this.lblHighRecyclePrice);
+            this.groupBox3.Controls.Add(this.lblMediumRecyclePrice);
+            this.groupBox3.Location = new System.Drawing.Point(399, 226);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(362, 106);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "♻️ Recycling Discounts";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(234, 212);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(122, 40);
+            this.btnSave.TabIndex = 16;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.label1.Location = new System.Drawing.Point(9, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 21);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Select a Charge";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.label2.Location = new System.Drawing.Point(12, 172);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 21);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Enter Price";
             // 
             // frmChangeWaterCharges
             // 
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 483);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.comboChangeCharges);
             this.Controls.Add(this.txtNewPrice);
             this.Controls.Add(this.btnChangePrice);
-            this.Controls.Add(this.lblLowUsagePrice);
-            this.Controls.Add(this.lblMediumUsagePrice);
-            this.Controls.Add(this.lblHighUsagePrice);
-            this.Controls.Add(this.lblDroughtLowUsagePrice);
-            this.Controls.Add(this.lblDroughtMediumUsagePrice);
-            this.Controls.Add(this.lblDroughtHighUsagePrice);
-            this.Controls.Add(this.lblRecycledLowDiscount);
-            this.Controls.Add(this.lblMediumRecyclePrice);
-            this.Controls.Add(this.lblHighRecyclePrice);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmChangeWaterCharges";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -216,6 +297,9 @@ namespace ScotWaterV1.Forms
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +326,11 @@ namespace ScotWaterV1.Forms
         private System.Windows.Forms.Label lblMediumRecyclePrice;
         private System.Windows.Forms.Label lblHighRecyclePrice;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
