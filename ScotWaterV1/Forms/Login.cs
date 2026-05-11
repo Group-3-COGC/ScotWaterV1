@@ -22,6 +22,8 @@ namespace ScotWaterV1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+
             string username = txtLoginUsername.Text.Trim();
             string password = txtLoginPassword.Text.Trim();
 
@@ -31,7 +33,6 @@ namespace ScotWaterV1
                 return;
             }
 
-            //Handles staff and admin login using the AuthService class
             var auth = new AuthService();
 
             // STAFF LOGIN
@@ -58,8 +59,8 @@ namespace ScotWaterV1
                 return;
             }
 
-            // If both failed
-            MessageBox.Show("Invalid username or password.");
+            // SHOW REAL ERROR MESSAGE (lockout, attempts left, etc.)
+            MessageBox.Show(staffError ?? adminError);
         }
 
         private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
