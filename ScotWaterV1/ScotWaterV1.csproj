@@ -198,9 +198,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\Designer.png" />
     <Content Include="Images\ScotWater.ico" />
