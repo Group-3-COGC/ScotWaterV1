@@ -12,7 +12,7 @@ namespace ScotWaterV1.Models
     {
         public BusinessDataContext() : base("BusinessAppConnection")
         {
-            Database.SetInitializer<BusinessDataContext>(null);
+            Database.SetInitializer(new BusinessDatabaseInitialiser());
 
         }
 
