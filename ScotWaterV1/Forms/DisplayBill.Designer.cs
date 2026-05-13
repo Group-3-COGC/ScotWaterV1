@@ -41,8 +41,8 @@
             this.pnlCharges = new System.Windows.Forms.Panel();
             this.dgvBillBreakdown = new System.Windows.Forms.DataGridView();
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.pnlFinal.SuspendLayout();
             this.pnlTax.SuspendLayout();
             this.pnlCharges.SuspendLayout();
@@ -59,7 +59,7 @@
             this.btnBillSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBillSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnBillSearch.ForeColor = System.Drawing.Color.White;
-            this.btnBillSearch.Location = new System.Drawing.Point(385, 139);
+            this.btnBillSearch.Location = new System.Drawing.Point(386, 205);
             this.btnBillSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBillSearch.Name = "btnBillSearch";
             this.btnBillSearch.Size = new System.Drawing.Size(118, 34);
@@ -71,7 +71,7 @@
             // txtBillSearch
             // 
             this.txtBillSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtBillSearch.Location = new System.Drawing.Point(159, 139);
+            this.txtBillSearch.Location = new System.Drawing.Point(160, 205);
             this.txtBillSearch.Multiline = true;
             this.txtBillSearch.Name = "txtBillSearch";
             this.txtBillSearch.Size = new System.Drawing.Size(199, 34);
@@ -82,7 +82,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(32, 147);
+            this.label8.Location = new System.Drawing.Point(11, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 25);
             this.label8.TabIndex = 15;
@@ -114,9 +114,9 @@
             this.pnlFinal.BackColor = System.Drawing.Color.LightCoral;
             this.pnlFinal.Controls.Add(this.lblFinalCost);
             this.pnlFinal.Controls.Add(this.label7);
-            this.pnlFinal.Location = new System.Drawing.Point(720, 180);
+            this.pnlFinal.Location = new System.Drawing.Point(840, 246);
             this.pnlFinal.Name = "pnlFinal";
-            this.pnlFinal.Size = new System.Drawing.Size(190, 154);
+            this.pnlFinal.Size = new System.Drawing.Size(293, 154);
             this.pnlFinal.TabIndex = 4;
             // 
             // lblVAT
@@ -191,9 +191,9 @@
             this.pnlTax.Controls.Add(this.label6);
             this.pnlTax.Controls.Add(this.label4);
             this.pnlTax.Controls.Add(this.lblVAT);
-            this.pnlTax.Location = new System.Drawing.Point(395, 180);
+            this.pnlTax.Location = new System.Drawing.Point(475, 246);
             this.pnlTax.Name = "pnlTax";
-            this.pnlTax.Size = new System.Drawing.Size(267, 154);
+            this.pnlTax.Size = new System.Drawing.Size(331, 154);
             this.pnlTax.TabIndex = 3;
             // 
             // label3
@@ -268,16 +268,16 @@
             this.pnlCharges.Controls.Add(this.label1);
             this.pnlCharges.Controls.Add(this.lblTotalCharges);
             this.pnlCharges.Controls.Add(this.label3);
-            this.pnlCharges.Location = new System.Drawing.Point(27, 180);
+            this.pnlCharges.Location = new System.Drawing.Point(28, 246);
             this.pnlCharges.Name = "pnlCharges";
-            this.pnlCharges.Size = new System.Drawing.Size(331, 154);
+            this.pnlCharges.Size = new System.Drawing.Size(415, 154);
             this.pnlCharges.TabIndex = 2;
             // 
             // dgvBillBreakdown
             // 
             this.dgvBillBreakdown.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.dgvBillBreakdown.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillBreakdown.Location = new System.Drawing.Point(258, 356);
+            this.dgvBillBreakdown.Location = new System.Drawing.Point(338, 450);
             this.dgvBillBreakdown.Name = "dgvBillBreakdown";
             this.dgvBillBreakdown.RowHeadersWidth = 51;
             this.dgvBillBreakdown.Size = new System.Drawing.Size(497, 203);
@@ -289,10 +289,9 @@
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Controls.Add(this.pictureBox3);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1021, 125);
+            this.pnlHeader.Size = new System.Drawing.Size(1432, 155);
             this.pnlHeader.TabIndex = 0;
             // 
             // lblTitle
@@ -312,7 +311,7 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(182, 125);
+            this.pictureBox3.Size = new System.Drawing.Size(182, 156);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -320,7 +319,7 @@
             // DisplayBill
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1021, 611);
+            this.ClientSize = new System.Drawing.Size(1145, 687);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.dgvBillBreakdown);
             this.Controls.Add(this.pnlCharges);

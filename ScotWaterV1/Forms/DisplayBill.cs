@@ -24,6 +24,7 @@ namespace ScotWaterV1.Forms
         }
 
         
+        //load the bill id as form loads 
         private void DisplayBill_Load(object sender, EventArgs e)
         {
             StyleGrid();
@@ -34,11 +35,12 @@ namespace ScotWaterV1.Forms
                 ClearBillLabels();
         }
 
-        
+        //load the specific bill that was previously selected on the GenerateBill form 
         private void LoadBill(int billId)
         {
             try
             {
+                //search and filter through the database to grab the specific bill linked to the specific business
                 using (var context = new BusinessDataContext())
                 {
                     var bill = context.BusinessBills
@@ -56,6 +58,7 @@ namespace ScotWaterV1.Forms
                         })
                         .FirstOrDefault();
 
+                    //null check for potiential non existing bills
                     if (bill == null)
                     {
                         MessageBox.Show("Bill not found.");
@@ -63,7 +66,7 @@ namespace ScotWaterV1.Forms
                         return;
                     }
 
-                    
+                    //display the bill details on the lables
                     lblBusinessName.Text = bill.CompanyName;
                     lblBillDate.Text = bill.BillDate.ToString("dd/MM/yyyy");
                     lblTotalCharges.Text = $"£{bill.TotalCharges:F2}";
@@ -90,7 +93,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-       
+        //method that clears the bill labels and is then called on the load to clear the data each time display bill is loaded
         private void ClearBillLabels()
         {
             lblBusinessName.Text = "-";
