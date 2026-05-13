@@ -13,14 +13,14 @@ namespace ScotWaterV1.Repositories
         {
             using (var context = new BusinessDataContext())
             {
-                // Step 1: Find admin by username ONLY
+               
                 var user = context.AdminUsers
                     .FirstOrDefault(a => a.AdminUsername == username);
 
                 if (user == null)
                     return null;
 
-                // Step 2: Verify hashed password (PBKDF2)
+                
                 bool isValid = PasswordSecurity.VerifyPassword(password, user.AdminPassword);
 
                 return isValid ? user : null;

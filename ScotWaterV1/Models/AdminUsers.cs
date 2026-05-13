@@ -11,8 +11,6 @@ public class AdminUsers
 
     [Required]
     public string AdminPassword { get; set; }
-
-    //Failed login attempts and lockout properties to enhance security
-    public int FailedLoginAttempts { get; set; } = 0;
-    public bool IsLocked { get; set; } = false;
 }
+
+
