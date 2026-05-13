@@ -6,9 +6,7 @@ namespace ScotWaterV1.Services
 {
     public class AuthService
     {
-        // ============================
-        // STAFF LOGIN (Original)
-        // ============================
+        //Dean Caldwell
         public bool LoginStaff(string username, string password, out string error)
         {
             error = "";
@@ -34,9 +32,7 @@ namespace ScotWaterV1.Services
             }
         }
 
-        // ============================
-        // ADMIN LOGIN (Original)
-        // ============================
+       
         public bool LoginAdmin(string username, string password, out string error)
         {
             error = "";

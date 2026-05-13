@@ -2,6 +2,7 @@
 
 public class AdminUsers
 {
+    //Dean Caldwell
     [Key]
     public int AdminUserID { get; set; }
 

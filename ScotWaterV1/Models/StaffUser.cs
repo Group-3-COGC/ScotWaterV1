@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class StaffUser
 {
+    //Dean Caldwell
     [Key]
     public int StaffUserID { get; set; }
 
