@@ -65,7 +65,7 @@
             // txtLoginUsername
             // 
             this.txtLoginUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoginUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtLoginUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginUsername.Location = new System.Drawing.Point(403, 385);
             this.txtLoginUsername.Multiline = true;
             this.txtLoginUsername.Name = "txtLoginUsername";
@@ -75,14 +75,13 @@
             // txtLoginPassword
             // 
             this.txtLoginPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoginPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtLoginPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginPassword.Location = new System.Drawing.Point(403, 470);
             this.txtLoginPassword.Multiline = true;
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.Size = new System.Drawing.Size(320, 38);
             this.txtLoginPassword.TabIndex = 4;
             this.txtLoginPassword.UseSystemPasswordChar = true;
-          
             // 
             // lblLoginUsername
             // 
@@ -91,7 +90,7 @@
             this.lblLoginUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.lblLoginUsername.Location = new System.Drawing.Point(399, 355);
             this.lblLoginUsername.Name = "lblLoginUsername";
-            this.lblLoginUsername.Size = new System.Drawing.Size(80, 20);
+            this.lblLoginUsername.Size = new System.Drawing.Size(101, 25);
             this.lblLoginUsername.TabIndex = 5;
             this.lblLoginUsername.Text = "Username";
             // 
@@ -102,7 +101,7 @@
             this.lblLoginPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.lblLoginPassword.Location = new System.Drawing.Point(399, 440);
             this.lblLoginPassword.Name = "lblLoginPassword";
-            this.lblLoginPassword.Size = new System.Drawing.Size(76, 20);
+            this.lblLoginPassword.Size = new System.Drawing.Size(97, 25);
             this.lblLoginPassword.TabIndex = 6;
             this.lblLoginPassword.Text = "Password";
             // 
@@ -116,7 +115,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(403, 540);
+            this.btnLogin.Location = new System.Drawing.Point(404, 547);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(320, 45);
             this.btnLogin.TabIndex = 7;
@@ -128,11 +127,11 @@
             // 
             this.lnkForgotPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(82)))), ((int)(((byte)(164)))));
             this.lnkForgotPassword.AutoSize = true;
-            this.lnkForgotPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lnkForgotPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.lnkForgotPassword.Location = new System.Drawing.Point(486, 515);
             this.lnkForgotPassword.Name = "lnkForgotPassword";
-            this.lnkForgotPassword.Size = new System.Drawing.Size(144, 17);
+            this.lnkForgotPassword.Size = new System.Drawing.Size(241, 29);
             this.lnkForgotPassword.TabIndex = 8;
             this.lnkForgotPassword.TabStop = true;
             this.lnkForgotPassword.Text = "Forgot your password?";
@@ -162,7 +161,7 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1126, 639);
