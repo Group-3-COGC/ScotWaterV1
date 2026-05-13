@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace ScotWaterV1.Forms
 {
@@ -89,7 +90,7 @@ namespace ScotWaterV1.Forms
         }
 
         //generate bill , Jack Smith 03/05/2026
-        private void btnGenerateBill_Click_1(object sender, EventArgs e)
+        private async void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
             if (cmbBusinessNames.SelectedValue == null)
             {
@@ -151,7 +152,7 @@ namespace ScotWaterV1.Forms
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();
 
-                SendBillEmail(bill, business);
+                await SendBillEmail(bill, business);
 
                 OpenBillInMainPanel(bill.BusinessBillID);
             }
@@ -213,7 +214,7 @@ namespace ScotWaterV1.Forms
         }
 
         //once user clicks generate bill a confirmation email is automatically sent to the users livnked email
-        private void SendBillEmail(BusinessBills bill, BusinessUser business)
+        private async Task SendBillEmail(BusinessBills bill, BusinessUser business)
         {
             if (business == null)
             {
@@ -227,23 +228,43 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
+            string subject = "Your water bill";
+
+            string contactName = string.IsNullOrWhiteSpace(business.ContactName)
+                ? business.CompanyName : business.ContactName;
+
+            string body =
+                $"Hello {contactName}, \n\n" +
+                $"Your water bill has been generated. \n\n" +
+                $"Company: {business.CompanyName}\n" +
+                $"Bill ID: {bill.BusinessBillID} \n" +
+                $"Bill Date: {bill.BillDate:dd MMM yyyy}\n" +
+                $"Total Charges: £{bill.TotalCharges:F2}\n" +
+                $"Total Discount £{bill.TotalDiscount:F2}\n" +
+                $"Subtotal: £{bill.SubTotal:F2}\n" +
+                $"VAT: £{bill.VAT:F2}\n" +
+                $"Final Amount: £{bill.BusinessFinalCost:F2}\n\n" +
+                $"If you have any questions, please contact Scot-Water.\n\n" +
+                $"Regards, \n" +
+                $"Scot-Water Billing team";      
 
             //call the EmailService class
             try
             {
                 EmailService emailservice = new EmailService();
 
-                emailservice.SendEmail(
-                    "yourtestemail@gmail.com",
-                    "Test Email",
-                    "Email service is working"
+                await emailservice.SendMailAsync(
+                    business.ContactEmail,
+                    subject,
+                    body                   
                     );
 
+                
                 MessageBox.Show("Test email sent");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Email failed" + ex.Message);
             }
 
         }

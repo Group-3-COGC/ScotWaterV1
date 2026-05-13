@@ -38,7 +38,7 @@ namespace ScotWaterV1.Models
                         config.SenderPassword
                     );
 
-                    await smtp.SendMailAsync(message);
+                    await Task.Run(() => smtp.Send(message));
                        
                 }
             }
