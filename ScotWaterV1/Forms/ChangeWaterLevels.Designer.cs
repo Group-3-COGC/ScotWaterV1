@@ -42,7 +42,7 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(182, 125);
+            this.pictureBox3.Size = new System.Drawing.Size(182, 156);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
@@ -59,7 +59,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.groupBox1.Location = new System.Drawing.Point(20, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(540, 260);
+            this.groupBox1.Size = new System.Drawing.Size(565, 295);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "WATER LEVELS";
@@ -85,21 +85,21 @@
             this.lblWaterReserveStatus.AutoSize = true;
             this.lblWaterReserveStatus.Location = new System.Drawing.Point(44, 217);
             this.lblWaterReserveStatus.Name = "lblWaterReserveStatus";
-            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 20);
+            this.lblWaterReserveStatus.Size = new System.Drawing.Size(0, 25);
             this.lblWaterReserveStatus.TabIndex = 1;
             // 
             // trkReserveLevel
             // 
-            this.trkReserveLevel.Location = new System.Drawing.Point(230, 135);
+            this.trkReserveLevel.Location = new System.Drawing.Point(269, 135);
             this.trkReserveLevel.Maximum = 100;
             this.trkReserveLevel.Name = "trkReserveLevel";
-            this.trkReserveLevel.Size = new System.Drawing.Size(290, 45);
+            this.trkReserveLevel.Size = new System.Drawing.Size(290, 56);
             this.trkReserveLevel.TabIndex = 2;
             this.trkReserveLevel.Scroll += new System.EventHandler(this.trkReserveLevel_Scroll);
             // 
             // progressBarReserveLevel
             // 
-            this.progressBarReserveLevel.Location = new System.Drawing.Point(230, 40);
+            this.progressBarReserveLevel.Location = new System.Drawing.Point(269, 55);
             this.progressBarReserveLevel.Name = "progressBarReserveLevel";
             this.progressBarReserveLevel.Size = new System.Drawing.Size(290, 40);
             this.progressBarReserveLevel.TabIndex = 3;
@@ -110,7 +110,7 @@
             this.lblValue.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblValue.Location = new System.Drawing.Point(6, 135);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(204, 25);
+            this.lblValue.Size = new System.Drawing.Size(261, 32);
             this.lblValue.TabIndex = 4;
             this.lblValue.Text = "Water Reserve Status:";
             // 
@@ -118,9 +118,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(15, 55);
+            this.label1.Location = new System.Drawing.Point(6, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 25);
+            this.label1.Size = new System.Drawing.Size(243, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "Water Reserve Level";
             // 
@@ -132,7 +132,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1088, 125);
+            this.pnlHeader.Size = new System.Drawing.Size(1145, 156);
             this.pnlHeader.TabIndex = 1;
             // 
             // lblTitle
@@ -142,7 +142,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(243, 42);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(284, 37);
+            this.lblTitle.Size = new System.Drawing.Size(349, 46);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Change Water Levels";
             // 
@@ -153,13 +153,13 @@
             this.pnlSelect.Controls.Add(this.groupBox1);
             this.pnlSelect.Location = new System.Drawing.Point(250, 160);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(580, 280);
+            this.pnlSelect.Size = new System.Drawing.Size(615, 327);
             this.pnlSelect.TabIndex = 0;
             // 
             // frmChangeWaterLevels
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1088, 601);
+            this.ClientSize = new System.Drawing.Size(1145, 687);
             this.Controls.Add(this.pnlSelect);
             this.Controls.Add(this.pnlHeader);
             this.Name = "frmChangeWaterLevels";
