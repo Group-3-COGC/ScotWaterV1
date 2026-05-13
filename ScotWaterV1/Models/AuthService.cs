@@ -14,7 +14,7 @@ namespace ScotWaterV1.Services
 
             using (var db = new BusinessDataContext())
             {
-                // SQL Server will match DEAN, dean, Dean, etc.
+                
                 var user = db.StaffUser.FirstOrDefault(u => u.staffUsername == username);
 
                 if (user == null)
@@ -23,7 +23,7 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-                // ENFORCE CASE-SENSITIVE MATCH IN C#
+                
                 if (!string.Equals(user.staffUsername, username, StringComparison.Ordinal))
                 {
                     error = "Incorrect username";
@@ -56,7 +56,7 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-                // ENFORCE CASE-SENSITIVE MATCH IN C#
+               
                 if (!string.Equals(user.AdminUsername, username, StringComparison.Ordinal))
                 {
                     error = "Incorrect username";
