@@ -18,7 +18,7 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
-        // ================= LOAD =================
+        //Load the businesses onto the grid and load the grid itself.
         private void frmGenerateBill_Load(object sender, EventArgs e)
         {
             LoadBusinesses();
@@ -27,7 +27,7 @@ namespace ScotWaterV1.Forms
             dtpBillDate.Value = DateTime.Now.Date;
         }
 
-        // ================= LOAD COMBOBOX =================
+        //the method used to load businesses from database
         private void LoadBusinesses()
         {
             using (var context = new BusinessDataContext())
@@ -45,14 +45,14 @@ namespace ScotWaterV1.Forms
                 cmbBusinessNames.DisplayMember = "CompanyName";
                 cmbBusinessNames.ValueMember = "BusinessID";
 
-                // ✅ AUTOCOMPLETE FIX
+                
                 cmbBusinessNames.DropDownStyle = ComboBoxStyle.DropDown;
                 cmbBusinessNames.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 cmbBusinessNames.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
         }
 
-        // ================= LOAD GRID =================
+        //load the data grid view method
         private void LoadBusinessGrid()
         {
             using (var context = new BusinessDataContext())
@@ -68,6 +68,7 @@ namespace ScotWaterV1.Forms
                     .ToList();
             }
 
+
             dgvBusinessesBill.ReadOnly = true;
             dgvBusinessesBill.AllowUserToAddRows = false;
             dgvBusinessesBill.AllowUserToDeleteRows = false;
@@ -75,7 +76,7 @@ namespace ScotWaterV1.Forms
             dgvBusinessesBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        // ================= GRID CLICK =================
+        //when the specific business is clicked, display their usages in the grid
         private void dgvBusinessesBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -115,6 +116,7 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
+                //grab the usages by filtering through the database looking for the specific business chosen
                 var usage = context.WaterUsage
                     .FirstOrDefault(w =>
                         w.BusinessID == businessId &&
@@ -126,6 +128,7 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
+                //search through the database to check if a bill for that specific business already exists on that specific date
                 var existingBill = context.BusinessBills
                     .FirstOrDefault(b =>
                         b.BusinessID == businessId &&
@@ -138,6 +141,7 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
+                //close this form and automaticcally move to display bill form and display the specific bill chosen
                 var billingService = new BillingService();
                 BusinessBills bill = billingService.GenerateBill(usage);
 
@@ -153,7 +157,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ================= OPEN BILL =================
+        //opens the generate bill form inside the panel of the main menu form
         private void OpenBillInMainPanel(int billId)
         {
             frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
@@ -177,7 +181,7 @@ namespace ScotWaterV1.Forms
             MessageBox.Show("Bill generated, but could not open display page.");
         }
 
-        // ================= SIGN OUT =================
+        //signs the user out and sends them back to the login screen
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
@@ -193,7 +197,7 @@ namespace ScotWaterV1.Forms
             this.Close();
         }
 
-        // ================= MAIN MENU =================
+        
         private void btnMainMenu_Click(object sender, EventArgs e)
         {
             frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
@@ -208,7 +212,7 @@ namespace ScotWaterV1.Forms
             this.Close();
         }
 
-        // ================= EMAIL =================
+        //once user clicks generate bill a confirmation email is automatically sent to the users livnked email
         private void SendBillEmail(BusinessBills bill, BusinessUser business)
         {
             if (business == null)
@@ -223,6 +227,8 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
+
+            //call the EmailService class
             try
             {
                 EmailService emailservice = new EmailService();
