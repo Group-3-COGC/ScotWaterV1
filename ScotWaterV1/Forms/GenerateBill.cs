@@ -253,7 +253,7 @@ namespace ScotWaterV1.Forms
             {
                 EmailService emailservice = new EmailService();
 
-                await emailservice.SendMailAsync(
+                await emailservice.SendEmailAsync(
                     business.ContactEmail,
                     subject,
                     body                   
