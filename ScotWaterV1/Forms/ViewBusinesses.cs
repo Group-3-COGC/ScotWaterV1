@@ -102,9 +102,9 @@ namespace ScotWaterV1.Forms
       
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            string search = txt_search.Text.Trim().ToLower(); // FIXED HERE
+            string search = txt_search.Text.Trim().ToLower(); //when button is clicked search through database for specific business
 
-            LoadBusinesses(search);
+            LoadBusinesses(search);//call the LoadBusinesses method and carry the search variable 
             
         }   
 
@@ -116,10 +116,13 @@ namespace ScotWaterV1.Forms
                 return;
             }
 
+            //filter through the database to search for the specific business
             using (var db = new BusinessDataContext())
             { 
                 var business = db.BusinessUser.FirstOrDefault(b => b.BusinessID == selectedBusinessID);
 
+
+                //validation check to prevent saving changes if there were no changes done in the first place
                 if (business !=null)
                 {
                     bool noChanges =
@@ -139,7 +142,7 @@ namespace ScotWaterV1.Forms
                     business.ContactName = txtContactName.Text; 
                     business.ContactEmail = txtContactEmail.Text;
 
-
+                    //saves changes to database
                     db.SaveChanges();
                     MessageBox.Show("Business updated successfully");
                 }

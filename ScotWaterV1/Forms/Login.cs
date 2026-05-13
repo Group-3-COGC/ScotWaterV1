@@ -58,14 +58,14 @@ namespace ScotWaterV1
                     }
                     else
                     {
-                        MessageBox.Show(adminError); // "Incorrect username" or "Incorrect password"
+                        MessageBox.Show(adminError); // Incorrect username or Incorrect password
                         return;
                     }
                 }
                 else
                 {
                     // Staff username exists but password wrong
-                    MessageBox.Show(staffError); // "Incorrect password"
+                    MessageBox.Show(staffError); // Incorrect password
                     return;
                 }
             }

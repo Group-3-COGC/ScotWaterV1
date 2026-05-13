@@ -12,7 +12,7 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
-        
+        //set a base value for the water levels
         private void frmChangeWaterLevels_Load(object sender, EventArgs e)
         {
             trkReserveLevel.Minimum = 0;
@@ -21,6 +21,7 @@ namespace ScotWaterV1.Forms
             progressBarReserveLevel.Minimum = 0;
             progressBarReserveLevel.Maximum = 100;
 
+            //load the latest updated water levels 
             LoadLatestLevel();
         }
 
@@ -30,6 +31,7 @@ namespace ScotWaterV1.Forms
             UpdateUI(trkReserveLevel.Value);
         }
 
+        //update the UI dynamically so that depending on the level it will display LOW RESERVE or STANDARD
         private void UpdateUI(int value)
         {
             
@@ -53,7 +55,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-      
+      //saves 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -83,7 +85,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-
+        //search through the reserve configs to display the level than was selected by the staff member
         private void LoadLatestLevel()
         {
             using (var db = new BusinessDataContext())

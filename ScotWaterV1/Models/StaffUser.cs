@@ -16,7 +16,5 @@ public class StaffUser
 
     public List<WaterUsage> WaterUsage { get; set; }
 
-    // NEW FIELDS FOR PROPER ACCOUNT LOCKOUT
-    public int FailedLoginAttempts { get; set; } = 0;
-    public bool IsLocked { get; set; } = false;
+  
 }

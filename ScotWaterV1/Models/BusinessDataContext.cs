@@ -109,9 +109,15 @@ namespace ScotWaterV1.Models
                 AdminUsername = "Antoin",
                 AdminPassword = PasswordSecurity.HashPassword("444")
             };
+            var adminuser3 = new AdminUsers()
+                {
+                AdminUsername = "Mohammad",
+                AdminPassword = PasswordSecurity.HashPassword("555")
+            };
 
             context.AdminUsers.Add(adminuser1);
             context.AdminUsers.Add(adminuser2);
+            context.AdminUsers.Add(adminuser3);
             context.SaveChanges();
 
             // WATER USAGE

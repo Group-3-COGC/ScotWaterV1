@@ -1,5 +1,6 @@
 ﻿using ScotWaterV1.Core;
 using ScotWaterV1.Models;
+using System;
 using System.Linq;
 
 namespace ScotWaterV1.Services
@@ -13,6 +14,7 @@ namespace ScotWaterV1.Services
 
             using (var db = new BusinessDataContext())
             {
+                
                 var user = db.StaffUser.FirstOrDefault(u => u.staffUsername == username);
 
                 if (user == null)
@@ -21,6 +23,14 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
+                
+                if (!string.Equals(user.staffUsername, username, StringComparison.Ordinal))
+                {
+                    error = "Incorrect username";
+                    return false;
+                }
+
+                // Check password
                 if (!PasswordSecurity.VerifyPassword(password, user.staffPassword))
                 {
                     error = "Incorrect password";
@@ -41,6 +51,13 @@ namespace ScotWaterV1.Services
                 var user = db.AdminUsers.FirstOrDefault(a => a.AdminUsername == username);
 
                 if (user == null)
+                {
+                    error = "Incorrect username";
+                    return false;
+                }
+
+               
+                if (!string.Equals(user.AdminUsername, username, StringComparison.Ordinal))
                 {
                     error = "Incorrect username";
                     return false;
