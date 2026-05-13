@@ -43,10 +43,10 @@
             this.BtnDsplayBill = new System.Windows.Forms.Button();
             this.BtnBill = new System.Windows.Forms.Button();
             this.PanelMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_View_Business = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.btn_View_Business = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -96,7 +96,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Location = new System.Drawing.Point(20, 20);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(0, 15);
+            this.lblWelcome.Size = new System.Drawing.Size(0, 20);
             this.lblWelcome.TabIndex = 3;
             // 
             // btnWaterConsumption
@@ -253,6 +253,25 @@
             this.PanelMenu.TabIndex = 1;
             this.PanelMenu.WrapContents = false;
             // 
+            // btn_View_Business
+            // 
+            this.btn_View_Business.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btn_View_Business.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_View_Business.FlatAppearance.BorderSize = 0;
+            this.btn_View_Business.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_View_Business.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_View_Business.ForeColor = System.Drawing.Color.White;
+            this.btn_View_Business.Location = new System.Drawing.Point(10, 491);
+            this.btn_View_Business.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btn_View_Business.Name = "btn_View_Business";
+            this.btn_View_Business.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_View_Business.Size = new System.Drawing.Size(220, 58);
+            this.btn_View_Business.TabIndex = 7;
+            this.btn_View_Business.Text = "View Businesses";
+            this.btn_View_Business.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_View_Business.UseVisualStyleBackColor = false;
+            this.btn_View_Business.Click += new System.EventHandler(this.btn_View_Business_Click);
+            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
@@ -274,6 +293,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
+         
             // 
             // panelTop
             // 
@@ -284,28 +304,9 @@
             this.panelTop.Size = new System.Drawing.Size(1400, 75);
             this.panelTop.TabIndex = 0;
             // 
-            // btn_View_Business
-            // 
-            this.btn_View_Business.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btn_View_Business.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_View_Business.FlatAppearance.BorderSize = 0;
-            this.btn_View_Business.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_View_Business.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_View_Business.ForeColor = System.Drawing.Color.White;
-            this.btn_View_Business.Location = new System.Drawing.Point(10, 491);
-            this.btn_View_Business.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btn_View_Business.Name = "btn_View_Business";
-            this.btn_View_Business.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btn_View_Business.Size = new System.Drawing.Size(220, 58);
-            this.btn_View_Business.TabIndex = 7;
-            this.btn_View_Business.Text = "View Businesses";
-            this.btn_View_Business.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_View_Business.UseVisualStyleBackColor = false;
-            this.btn_View_Business.Click += new System.EventHandler(this.btn_View_Business_Click);
-            // 
             // frmMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1400, 800);
