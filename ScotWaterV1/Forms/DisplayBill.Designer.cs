@@ -41,8 +41,8 @@
             this.pnlCharges = new System.Windows.Forms.Panel();
             this.dgvBillBreakdown = new System.Windows.Forms.DataGridView();
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.pnlFinal.SuspendLayout();
             this.pnlTax.SuspendLayout();
             this.pnlCharges.SuspendLayout();
@@ -282,6 +282,7 @@
             this.dgvBillBreakdown.RowHeadersWidth = 51;
             this.dgvBillBreakdown.Size = new System.Drawing.Size(497, 203);
             this.dgvBillBreakdown.TabIndex = 1;
+            
             // 
             // pnlHeader
             // 
