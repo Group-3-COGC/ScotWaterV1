@@ -42,7 +42,7 @@ namespace ScotWaterV1.Forms
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtUsername.Location = new System.Drawing.Point(200, 55);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(350, 27);
+            this.txtUsername.Size = new System.Drawing.Size(350, 32);
             this.txtUsername.TabIndex = 3;
             // 
             // txtPassword
@@ -50,7 +50,7 @@ namespace ScotWaterV1.Forms
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtPassword.Location = new System.Drawing.Point(200, 105);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(350, 27);
+            this.txtPassword.Size = new System.Drawing.Size(350, 32);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -75,7 +75,7 @@ namespace ScotWaterV1.Forms
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(40, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username:";
             // 
@@ -85,7 +85,7 @@ namespace ScotWaterV1.Forms
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(40, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
@@ -99,6 +99,7 @@ namespace ScotWaterV1.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1088, 120);
             this.panel1.TabIndex = 1;
+            
             // 
             // lblTitle
             // 
@@ -107,7 +108,7 @@ namespace ScotWaterV1.Forms
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(240, 39);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(351, 37);
+            this.lblTitle.Size = new System.Drawing.Size(444, 46);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ADD NEW STAFF MEMBER";
             // 
