@@ -55,7 +55,7 @@ namespace ScotWaterV1.Forms
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1145, 113);
+            this.pnlHeader.Size = new System.Drawing.Size(1432, 113);
             this.pnlHeader.TabIndex = 8;
             // 
             // pictureBox3
@@ -225,7 +225,7 @@ namespace ScotWaterV1.Forms
             // 
             this.lblMediumRecyclePrice.Location = new System.Drawing.Point(6, 70);
             this.lblMediumRecyclePrice.Name = "lblMediumRecyclePrice";
-            this.lblMediumRecyclePrice.Size = new System.Drawing.Size(142, 37);
+            this.lblMediumRecyclePrice.Size = new System.Drawing.Size(307, 37);
             this.lblMediumRecyclePrice.TabIndex = 1;
             this.lblMediumRecyclePrice.Text = "6–20 units :";
             // 
@@ -261,7 +261,7 @@ namespace ScotWaterV1.Forms
             // 
             // frmChangeWaterCharges
             // 
-            this.ClientSize = new System.Drawing.Size(1145, 687);
+            this.ClientSize = new System.Drawing.Size(1432, 859);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);

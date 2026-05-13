@@ -41,8 +41,9 @@
             this.pnlCharges = new System.Windows.Forms.Panel();
             this.dgvBillBreakdown = new System.Windows.Forms.DataGridView();
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnPrintPdf = new System.Windows.Forms.Button();
             this.pnlFinal.SuspendLayout();
             this.pnlTax.SuspendLayout();
             this.pnlCharges.SuspendLayout();
@@ -282,7 +283,6 @@
             this.dgvBillBreakdown.RowHeadersWidth = 51;
             this.dgvBillBreakdown.Size = new System.Drawing.Size(497, 203);
             this.dgvBillBreakdown.TabIndex = 1;
-            
             // 
             // pnlHeader
             // 
@@ -316,10 +316,28 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
+            // btnPrintPdf
+            // 
+            this.btnPrintPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnPrintPdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrintPdf.FlatAppearance.BorderSize = 0;
+            this.btnPrintPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintPdf.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnPrintPdf.ForeColor = System.Drawing.Color.White;
+            this.btnPrintPdf.Location = new System.Drawing.Point(915, 504);
+            this.btnPrintPdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrintPdf.Name = "btnPrintPdf";
+            this.btnPrintPdf.Size = new System.Drawing.Size(139, 64);
+            this.btnPrintPdf.TabIndex = 28;
+            this.btnPrintPdf.Text = "Print PDF";
+            this.btnPrintPdf.UseVisualStyleBackColor = false;
+            this.btnPrintPdf.Click += new System.EventHandler(this.btnPrintPdf_Click);
+            // 
             // DisplayBill
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1145, 687);
+            this.Controls.Add(this.btnPrintPdf);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.dgvBillBreakdown);
             this.Controls.Add(this.pnlCharges);
@@ -371,5 +389,6 @@
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnPrintPdf;
     }
 }
