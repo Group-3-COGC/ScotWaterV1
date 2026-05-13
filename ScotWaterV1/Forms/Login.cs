@@ -13,55 +13,66 @@ namespace ScotWaterV1
     {
         public frmLogin()
         {
-            InitializeComponent();
-           
-            txtLoginPassword.UseSystemPasswordChar = false;
-            txtLoginPassword.PasswordChar = '*';
+         InitializeComponent();
+
+         //This hides the password characters in the password textbox.
+         txtLoginPassword.UseSystemPasswordChar = false;
+         txtLoginPassword.PasswordChar = '*';
 
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-
-            string username = txtLoginUsername.Text.Trim();
-            string password = txtLoginPassword.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Please enter both username and password.");
-                return;
+                string username = txtLoginUsername.Text.Trim();
+                string password = txtLoginPassword.Text.Trim();
+
+                // Validation to ensure both fields are filled in before attempting login.
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                {
+                    MessageBox.Show("Please enter both username and password.");
+                    return;
+                }
+
+                var auth = new AuthService();
+
+                // Try STAFF login first
+                if (auth.LoginStaff(username, password, out string staffError))
+                {
+                    frmMainMenu menu = new frmMainMenu();
+                    menu.IsAdmin = false;
+                    menu.Show();
+                    this.Hide();
+                    return;
+                }
+                else if (staffError == "Incorrect username")
+                {
+                    // Username not found in staff — check admin next
+                    if (auth.LoginAdmin(username, password, out string adminError))
+                    {
+                        frmMainMenu menu = new frmMainMenu();
+                        menu.IsAdmin = true;
+                        menu.Show();
+                        this.Hide();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(adminError); // "Incorrect username" or "Incorrect password"
+                        return;
+                    }
+                }
+                else
+                {
+                    // Staff username exists but password wrong
+                    MessageBox.Show(staffError); // "Incorrect password"
+                    return;
+                }
             }
-
-            var auth = new AuthService();
-
-            // STAFF LOGIN
-            if (auth.LoginStaff(username, password, out string staffError))
-            {
-                MessageBox.Show("Staff login successful!");
-
-                frmMainMenu menu = new frmMainMenu();
-                menu.IsAdmin = false;
-                menu.Show();
-                this.Hide();
-                return;
-            }
-
-            // ADMIN LOGIN
-            if (auth.LoginAdmin(username, password, out string adminError))
-            {
-                MessageBox.Show("Admin login successful!");
-
-                frmMainMenu menu = new frmMainMenu();
-                menu.IsAdmin = true;
-                menu.Show();
-                this.Hide();
-                return;
-            }
-
-            
-            MessageBox.Show("Incorrect username or password");
         }
+
+
 
         private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -84,7 +95,7 @@ namespace ScotWaterV1
                     return;
                 }
 
-                // ASK FOR NEW PASSWORD
+                //Asking for new password input.
                 string newPassword = Microsoft.VisualBasic.Interaction.InputBox(
                     "Enter your new password:",
                     "New Password",
@@ -96,7 +107,7 @@ namespace ScotWaterV1
                     return;
                 }
 
-                // SAVE NEW PASSWORD (PBKDF2)
+                //Hashing password and saving to database.
                 user.staffPassword = PasswordSecurity.HashPassword(newPassword);
                 db.SaveChanges();
 
