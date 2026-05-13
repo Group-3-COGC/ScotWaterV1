@@ -6,7 +6,7 @@ namespace ScotWaterV1.Services
 {
     public class AuthService
     {
-        //Dean Caldwell
+        // STAFF LOGIN
         public bool LoginStaff(string username, string password, out string error)
         {
             error = "";
@@ -17,14 +17,13 @@ namespace ScotWaterV1.Services
 
                 if (user == null)
                 {
-                    error = "Invalid username or password.";
+                    error = "Incorrect username";
                     return false;
                 }
 
-                // Check password
                 if (!PasswordSecurity.VerifyPassword(password, user.staffPassword))
                 {
-                    error = "Invalid username or password.";
+                    error = "Incorrect password";
                     return false;
                 }
 
@@ -32,7 +31,7 @@ namespace ScotWaterV1.Services
             }
         }
 
-       
+        // ADMIN LOGIN
         public bool LoginAdmin(string username, string password, out string error)
         {
             error = "";
@@ -43,14 +42,13 @@ namespace ScotWaterV1.Services
 
                 if (user == null)
                 {
-                    error = "Invalid username or password.";
+                    error = "Incorrect username";
                     return false;
                 }
 
-                // Check password
                 if (!PasswordSecurity.VerifyPassword(password, user.AdminPassword))
                 {
-                    error = "Invalid username or password.";
+                    error = "Incorrect password";
                     return false;
                 }
 
@@ -59,5 +57,3 @@ namespace ScotWaterV1.Services
         }
     }
 }
-
-
