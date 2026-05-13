@@ -10,7 +10,7 @@ namespace ScotWaterV1.Models
 {
     public class EmailService
     {
-        public void SendEmail(string recipentEmail, string subject, string body)
+        public async Task SendEmail(string recipentEmail, string subject, string body)
         {
             if (string.IsNullOrWhiteSpace(recipentEmail) || !recipentEmail.Contains("@"))
                 throw new ArgumentException("Invalid recipent email address.");
@@ -22,24 +22,25 @@ namespace ScotWaterV1.Models
                 if (config == null)
                     throw new InvalidOperationException("Email settings have not been configured.");
 
-                MailMessage message = new MailMessage();
-                message.From = new MailAddress(config.SenderEmail);
-                message.To.Add(recipentEmail);
-                message.Subject = subject;
-                message.Body = body;
+                using (MailMessage message = new MailMessage())
+                using (SmtpClient smtp = new SmtpClient(config.SmtpHost, config.SmtpPort))
+                {
+                    message.From = new MailAddress(config.SenderEmail);
+                    message.To.Add(recipentEmail);
+                    message.Subject = subject;
+                    message.Body = body;
 
-                SmtpClient smtp = new SmtpClient(config.SmtpHost, config.SmtpPort);
-                smtp.EnableSsl = config.EnableSsl;
 
-                smtp.Credentials = new NetworkCredential(
+                    smtp.EnableSsl = config.EnableSsl;
+                    smtp.Timeout = 10000;
+                    smtp.Credentials = new NetworkCredential(
                         config.SenderEmail,
                         config.SenderPassword
-                     );
+                    );
 
-                    smtp.Send(message);
-
-                message.Dispose();
-                smtp.Dispose();
+                    await smtp.SendMailAsync(message);
+                       
+                }
             }
         }
     }
