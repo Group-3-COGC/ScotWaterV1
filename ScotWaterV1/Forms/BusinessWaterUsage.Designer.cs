@@ -48,10 +48,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1088, 125);
+            this.panel1.Size = new System.Drawing.Size(1433, 125);
             this.panel1.TabIndex = 1;
             // 
             // lblTitle
@@ -61,7 +60,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(241, 43);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(303, 37);
+            this.lblTitle.Size = new System.Drawing.Size(377, 46);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Business Water Usage ";
             // 
@@ -91,9 +90,9 @@
             this.panel2.Controls.Add(this.btn_DeleteUsage);
             this.panel2.Controls.Add(this.btnShowUsage);
             this.panel2.Controls.Add(this.btn_Show);
-            this.panel2.Location = new System.Drawing.Point(83, 131);
+            this.panel2.Location = new System.Drawing.Point(84, 144);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(826, 277);
+            this.panel2.Size = new System.Drawing.Size(897, 310);
             this.panel2.TabIndex = 0;
             // 
             // CmbBusiness
@@ -101,7 +100,7 @@
             this.CmbBusiness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CmbBusiness.Location = new System.Drawing.Point(318, 4);
             this.CmbBusiness.Name = "CmbBusiness";
-            this.CmbBusiness.Size = new System.Drawing.Size(176, 21);
+            this.CmbBusiness.Size = new System.Drawing.Size(176, 24);
             this.CmbBusiness.TabIndex = 0;
             // 
             // txtWaterUsed
@@ -111,7 +110,7 @@
             this.txtWaterUsed.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtWaterUsed.Location = new System.Drawing.Point(160, 73);
             this.txtWaterUsed.Name = "txtWaterUsed";
-            this.txtWaterUsed.Size = new System.Drawing.Size(114, 25);
+            this.txtWaterUsed.Size = new System.Drawing.Size(145, 32);
             this.txtWaterUsed.TabIndex = 1;
             this.txtWaterUsed.Text = "Water Used";
             // 
@@ -122,7 +121,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(160, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.Size = new System.Drawing.Size(189, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "Recycled Water";
             // 
@@ -133,7 +132,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Location = new System.Drawing.Point(160, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 25);
+            this.label1.Size = new System.Drawing.Size(67, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Date";
             // 
@@ -143,7 +142,7 @@
             this.txt_Water_Used.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Water_Used.Location = new System.Drawing.Point(386, 73);
             this.txt_Water_Used.Name = "txt_Water_Used";
-            this.txt_Water_Used.Size = new System.Drawing.Size(151, 25);
+            this.txt_Water_Used.Size = new System.Drawing.Size(151, 29);
             this.txt_Water_Used.TabIndex = 4;
             // 
             // txtRecycledWater
@@ -152,7 +151,7 @@
             this.txtRecycledWater.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecycledWater.Location = new System.Drawing.Point(386, 116);
             this.txtRecycledWater.Name = "txtRecycledWater";
-            this.txtRecycledWater.Size = new System.Drawing.Size(151, 25);
+            this.txtRecycledWater.Size = new System.Drawing.Size(151, 29);
             this.txtRecycledWater.TabIndex = 5;
             // 
             // dtpDate
@@ -160,7 +159,7 @@
             this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Location = new System.Drawing.Point(386, 169);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 25);
+            this.dtpDate.Size = new System.Drawing.Size(200, 29);
             this.dtpDate.TabIndex = 6;
             // 
             // btnAddUsage
@@ -245,6 +244,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Business.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Business.ColumnHeadersHeight = 29;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,15 +255,16 @@
             this.dgv_Business.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Business.EnableHeadersVisualStyles = false;
             this.dgv_Business.GridColor = System.Drawing.SystemColors.Control;
-            this.dgv_Business.Location = new System.Drawing.Point(51, 415);
+            this.dgv_Business.Location = new System.Drawing.Point(0, 495);
             this.dgv_Business.Name = "dgv_Business";
-            this.dgv_Business.Size = new System.Drawing.Size(956, 180);
+            this.dgv_Business.RowHeadersWidth = 51;
+            this.dgv_Business.Size = new System.Drawing.Size(1433, 180);
             this.dgv_Business.TabIndex = 2;
             // 
             // BusinessWaterUsage
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1088, 601);
+            this.ClientSize = new System.Drawing.Size(1145, 687);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_Business);
