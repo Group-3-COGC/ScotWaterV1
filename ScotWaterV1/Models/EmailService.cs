@@ -10,7 +10,7 @@ namespace ScotWaterV1.Models
 {
     public class EmailService
     {
-        public async Task SendEmail(string recipentEmail, string subject, string body)
+        public async Task SendEmailAsync(string recipentEmail, string subject, string body)
         {
             if (string.IsNullOrWhiteSpace(recipentEmail) || !recipentEmail.Contains("@"))
                 throw new ArgumentException("Invalid recipent email address.");
