@@ -31,8 +31,7 @@ namespace ScotWaterV1.Models
                     message.Body = body;
 
 
-                    smtp.EnableSsl = config.EnableSsl;
-                    smtp.Timeout = 10000;
+                    smtp.EnableSsl = config.EnableSsl;           
                     smtp.Credentials = new NetworkCredential(
                         config.SenderEmail,
                         config.SenderPassword
