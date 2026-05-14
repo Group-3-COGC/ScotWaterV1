@@ -71,9 +71,27 @@ namespace ScotWaterV1.Models
                 Postcode = "G3 BGD"
             };
 
+            var business4 = new BusinessUser()
+            {
+                CompanyName = "Tesco",
+                ContactName = "Antoin McArthur",
+                ContactEmail = "antoin@tesco.com",
+                Postcode = "G4 CDE"
+            };
+
+            var business5 = new BusinessUser()
+            {
+                CompanyName = "Asda",
+                ContactName = "Lucy Mcphee",
+                ContactEmail = "lucy@asdastores.com",
+                Postcode = "G5 DEF"
+            };
+
             context.BusinessUser.Add(business1);
             context.BusinessUser.Add(business2);
             context.BusinessUser.Add(business3);
+            context.BusinessUser.Add(business4);
+            context.BusinessUser.Add(business5);
             context.SaveChanges();
 
            
