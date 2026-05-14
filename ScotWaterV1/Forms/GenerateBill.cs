@@ -154,8 +154,16 @@ namespace ScotWaterV1.Forms
 
 
                 OpenBillInMainPanel(bill.BusinessBillID);
-
-                await SendBillEmail(bill, business);
+                try
+                {
+                    await SendBillEmail(bill, business);
+                    MessageBox.Show("Bill email sent succesfully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bill generated, but email failed: \n\n " + ex.Message);
+                }
+                
 
                 
             }
