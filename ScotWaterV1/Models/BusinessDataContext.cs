@@ -223,7 +223,7 @@ namespace ScotWaterV1.Models
             //email config
             var emailConfig = new EmailConfigs()
             {
-                SenderEmail = "Your_email@gmail.com",
+                SenderEmail = business1.ContactEmail,
                 SenderPassword = "YOUR_APP_PASSWORD",
                 SmtpHost = "smtp.gmail.com",
                 SmtpPort = 587,
