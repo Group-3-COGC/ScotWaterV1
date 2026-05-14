@@ -152,9 +152,12 @@ namespace ScotWaterV1.Forms
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();
 
-                await SendBillEmail(bill, business);
 
                 OpenBillInMainPanel(bill.BusinessBillID);
+
+                await SendBillEmail(bill, business);
+
+                
             }
         }
 
