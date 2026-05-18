@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ScotWaterV1.Models
 {
@@ -37,6 +38,7 @@ namespace ScotWaterV1.Models
                         config.SenderPassword
                     );
 
+                    MessageBox.Show("Email config found connecting to SMTP");
                     await Task.Run(() => smtp.Send(message));
                        
                 }

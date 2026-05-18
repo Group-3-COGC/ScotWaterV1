@@ -152,6 +152,7 @@ namespace ScotWaterV1.Forms
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();
 
+                MessageBox.Show("Attempting to send email please wait");
 
                 OpenBillInMainPanel(bill.BusinessBillID);
                 try
