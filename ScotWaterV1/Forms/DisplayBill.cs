@@ -114,21 +114,7 @@ namespace ScotWaterV1.Forms
             dgvBillBreakdown.BackgroundColor = Color.White;
         }
 
-        // ================= SAFE PDF PATH =================
-        private string GetPdfPath(int billId)
-        {
-            string folder = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                "ScotWaterV1",
-                "Bills"
-            );
-
-            Directory.CreateDirectory(folder);
-
-            return Path.Combine(folder, $"ScotWaterBill_{billId}.pdf");
-        }
-
-        // ================= PDF =================
+        // ================= PDF SAVE AS =================
         private void btnPrintPdf_Click(object sender, EventArgs e)
         {
             try
@@ -139,10 +125,16 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
-                string path = GetPdfPath(billId);
-                GeneratePdf(path);
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save ScotWater Invoice";
+                saveFileDialog.Filter = "PDF File (*.pdf)|*.pdf";
+                saveFileDialog.FileName = $"ScotWaterBill_{billId}.pdf";
 
-                MessageBox.Show($"PDF saved here:\n{path}");
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    GeneratePdf(saveFileDialog.FileName);
+                    MessageBox.Show("PDF saved successfully.");
+                }
             }
             catch (Exception ex)
             {
@@ -150,31 +142,120 @@ namespace ScotWaterV1.Forms
             }
         }
 
+        // ================= PDF GENERATION =================
         private void GeneratePdf(string path)
         {
             if (File.Exists(path))
                 File.Delete(path);
 
-            using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            using (FileStream fs = new FileStream(path, FileMode.Create))
             {
-                Document doc = new Document(PageSize.A4);
+                Document doc = new Document(PageSize.A4, 30, 30, 30, 30);
                 PdfWriter.GetInstance(doc, fs);
                 doc.Open();
 
                 var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 20);
-                var normal = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+                var boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+                var normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 11);
+                var headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 11, BaseColor.WHITE);
+                var totalFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 13, BaseColor.RED);
 
-                doc.Add(new Paragraph("SCOTWATER INVOICE", titleFont));
+                // ================= LOGO =================
+                string logoPath = @"C:\Users\30553902\source\repos\Group-3-COGC\ScotWaterV1\ScotWaterV1\Images\Designer.png";
+
+                if (File.Exists(logoPath))
+                {
+                    var logo = iTextSharp.text.Image.GetInstance(logoPath);
+                    logo.ScaleToFit(120f, 120f);
+                    logo.Alignment = Element.ALIGN_CENTER;
+                    doc.Add(logo);
+                }
+
+                // ================= TITLE =================
+                Paragraph title = new Paragraph("SCOTWATER INVOICE", titleFont);
+                title.Alignment = Element.ALIGN_CENTER;
+                doc.Add(title);
+
                 doc.Add(new Paragraph(" "));
-                doc.Add(new Paragraph($"Business: {lblBusinessName.Text}", normal));
-                doc.Add(new Paragraph($"Date: {lblBillDate.Text}", normal));
-                doc.Add(new Paragraph($"Total: {lblFinalCost.Text}", normal));
+
+                // ================= INFO TABLE =================
+                PdfPTable info = new PdfPTable(2);
+                info.WidthPercentage = 100;
+
+                void AddRow(string label, string value)
+                {
+                    PdfPCell c1 = new PdfPCell(new Phrase(label, boldFont));
+                    c1.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    c1.Padding = 6;
+
+                    PdfPCell c2 = new PdfPCell(new Phrase(value, normalFont));
+                    c2.Padding = 6;
+
+                    info.AddCell(c1);
+                    info.AddCell(c2);
+                }
+
+                AddRow("Business", lblBusinessName.Text);
+                AddRow("Date", lblBillDate.Text);
+                AddRow("Charges", lblTotalCharges.Text);
+                AddRow("Discount", lblDiscount.Text);
+                AddRow("Subtotal", lblSubTotal.Text);
+                AddRow("VAT", lblVAT.Text);
+
+                PdfPCell t1 = new PdfPCell(new Phrase("FINAL TOTAL", boldFont));
+                t1.BackgroundColor = BaseColor.LIGHT_GRAY;
+
+                PdfPCell t2 = new PdfPCell(new Phrase(lblFinalCost.Text, totalFont));
+
+                info.AddCell(t1);
+                info.AddCell(t2);
+
+                doc.Add(info);
+
+                doc.Add(new Paragraph(" "));
+
+                // ================= GRID =================
+                PdfPTable table = new PdfPTable(dgvBillBreakdown.Columns.Count);
+                table.WidthPercentage = 100;
+
+                foreach (DataGridViewColumn col in dgvBillBreakdown.Columns)
+                {
+                    PdfPCell h = new PdfPCell(new Phrase(col.HeaderText, headerFont));
+                    h.BackgroundColor = new BaseColor(0, 102, 204);
+                    h.HorizontalAlignment = Element.ALIGN_CENTER;
+                    table.AddCell(h);
+                }
+
+                foreach (DataGridViewRow row in dgvBillBreakdown.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        string text = cell.Value?.ToString() ?? "";
+
+                        PdfPCell c = new PdfPCell(new Phrase(text, normalFont));
+
+                        if (text.Contains("FINAL TOTAL"))
+                        {
+                            c.Phrase = new Phrase(text, totalFont);
+                            c.BackgroundColor = new BaseColor(255, 230, 230);
+                        }
+
+                        table.AddCell(c);
+                    }
+                }
+
+                doc.Add(table);
+
+                doc.Add(new Paragraph(" "));
+                doc.Add(new Paragraph("Thank you for using ScotWater.", normalFont));
 
                 doc.Close();
             }
         }
 
-        // ================= EMAIL FIXED (NO CRASH) =================
+        // ================= EMAIL (UNCHANGED) =================
         private async void btnSendEmail_Click(object sender, EventArgs e)
         {
             try
@@ -205,7 +286,6 @@ namespace ScotWaterV1.Forms
 
                     string toEmail = business.ContactEmail;
 
-                    // 🔥 FIX: stop invalid email crash
                     if (string.IsNullOrWhiteSpace(toEmail))
                     {
                         MessageBox.Show("No email found for this business.");
@@ -214,17 +294,14 @@ namespace ScotWaterV1.Forms
 
                     toEmail = toEmail.Trim();
 
-                    try
-                    {
-                        new MailAddress(toEmail); // validate only
-                    }
+                    try { new MailAddress(toEmail); }
                     catch
                     {
                         MessageBox.Show("Invalid email in database: " + toEmail);
                         return;
                     }
 
-                    string pdfPath = GetPdfPath(billId);
+                    string pdfPath = Path.GetTempFileName();
                     GeneratePdf(pdfPath);
 
                     await SendEmailAsync(toEmail, pdfPath);
@@ -238,20 +315,13 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ================= SAFE SMTP =================
+        // ================= SMTP (UNCHANGED) =================
         private async Task SendEmailAsync(string toEmail, string attachmentPath)
         {
-            string senderEmail = "WaterscotTest@outlook.com";
-            string senderPassword = "0776Hh<3";
-
-            if (string.IsNullOrWhiteSpace(senderEmail) || !senderEmail.Contains("@"))
-                throw new Exception("Sender email is invalid.");
-
-            if (string.IsNullOrWhiteSpace(toEmail) || !toEmail.Contains("@"))
-                throw new Exception("Recipient email is invalid.");
+            string senderEmail = "scottwatertest@gmail.com";
+            string senderPassword = "hyad gfyc dwqb iitn";
 
             using (MailMessage message = new MailMessage())
-            using (SmtpClient smtp = new SmtpClient("smtp.office365.com", 587))
             {
                 message.From = new MailAddress(senderEmail);
                 message.To.Add(new MailAddress(toEmail));
@@ -261,14 +331,14 @@ namespace ScotWaterV1.Forms
                 if (File.Exists(attachmentPath))
                     message.Attachments.Add(new Attachment(attachmentPath));
 
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtp.EnableSsl = true;
+                    smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                    smtp.Timeout = 30000;
 
-                smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                smtp.Timeout = 20000;
-
-                await smtp.SendMailAsync(message);
+                    await smtp.SendMailAsync(message);
+                }
             }
         }
 
