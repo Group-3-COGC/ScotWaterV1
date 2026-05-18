@@ -44,6 +44,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnPrintPdf = new System.Windows.Forms.Button();
+            this.btnSendEmail = new System.Windows.Forms.Button();
             this.pnlFinal.SuspendLayout();
             this.pnlTax.SuspendLayout();
             this.pnlCharges.SuspendLayout();
@@ -85,7 +86,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label8.Location = new System.Drawing.Point(11, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 25);
+            this.label8.Size = new System.Drawing.Size(119, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Search Bill ID";
             // 
@@ -96,7 +97,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label7.Location = new System.Drawing.Point(10, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 25);
+            this.label7.Size = new System.Drawing.Size(90, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "Final Cost";
             // 
@@ -106,7 +107,7 @@
             this.lblFinalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblFinalCost.Location = new System.Drawing.Point(127, 20);
             this.lblFinalCost.Name = "lblFinalCost";
-            this.lblFinalCost.Size = new System.Drawing.Size(20, 25);
+            this.lblFinalCost.Size = new System.Drawing.Size(15, 20);
             this.lblFinalCost.TabIndex = 0;
             this.lblFinalCost.Text = "-";
             // 
@@ -126,7 +127,7 @@
             this.lblVAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblVAT.Location = new System.Drawing.Point(184, 44);
             this.lblVAT.Name = "lblVAT";
-            this.lblVAT.Size = new System.Drawing.Size(20, 25);
+            this.lblVAT.Size = new System.Drawing.Size(15, 20);
             this.lblVAT.TabIndex = 5;
             this.lblVAT.Text = "-";
             // 
@@ -137,7 +138,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label4.Location = new System.Drawing.Point(3, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 25);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Discount";
             // 
@@ -148,7 +149,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Location = new System.Drawing.Point(3, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 25);
+            this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "VAT";
             // 
@@ -158,7 +159,7 @@
             this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblSubTotal.Location = new System.Drawing.Point(184, 76);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(20, 25);
+            this.lblSubTotal.Size = new System.Drawing.Size(15, 20);
             this.lblSubTotal.TabIndex = 2;
             this.lblSubTotal.Text = "-";
             // 
@@ -169,7 +170,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label5.Location = new System.Drawing.Point(3, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 25);
+            this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Subtotal";
             // 
@@ -179,7 +180,7 @@
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblDiscount.Location = new System.Drawing.Point(184, 10);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(20, 25);
+            this.lblDiscount.Size = new System.Drawing.Size(15, 20);
             this.lblDiscount.TabIndex = 0;
             this.lblDiscount.Text = "-";
             // 
@@ -204,7 +205,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label3.Location = new System.Drawing.Point(3, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 25);
+            this.label3.Size = new System.Drawing.Size(121, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Total Charges";
             // 
@@ -214,7 +215,7 @@
             this.lblTotalCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTotalCharges.Location = new System.Drawing.Point(238, 76);
             this.lblTotalCharges.Name = "lblTotalCharges";
-            this.lblTotalCharges.Size = new System.Drawing.Size(20, 25);
+            this.lblTotalCharges.Size = new System.Drawing.Size(15, 20);
             this.lblTotalCharges.TabIndex = 4;
             this.lblTotalCharges.Text = "-";
             // 
@@ -225,7 +226,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 25);
+            this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Company Name";
             // 
@@ -236,7 +237,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Location = new System.Drawing.Point(3, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 25);
+            this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Bill Date";
             // 
@@ -246,7 +247,7 @@
             this.lblBusinessName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblBusinessName.Location = new System.Drawing.Point(238, 10);
             this.lblBusinessName.Name = "lblBusinessName";
-            this.lblBusinessName.Size = new System.Drawing.Size(20, 25);
+            this.lblBusinessName.Size = new System.Drawing.Size(15, 20);
             this.lblBusinessName.TabIndex = 1;
             this.lblBusinessName.Text = "-";
             // 
@@ -256,7 +257,7 @@
             this.lblBillDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblBillDate.Location = new System.Drawing.Point(238, 44);
             this.lblBillDate.Name = "lblBillDate";
-            this.lblBillDate.Size = new System.Drawing.Size(20, 25);
+            this.lblBillDate.Size = new System.Drawing.Size(15, 20);
             this.lblBillDate.TabIndex = 0;
             this.lblBillDate.Text = "-";
             // 
@@ -301,7 +302,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(212, 37);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(207, 46);
+            this.lblTitle.Size = new System.Drawing.Size(167, 37);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Display Bill ";
             // 
@@ -324,7 +325,7 @@
             this.btnPrintPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintPdf.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnPrintPdf.ForeColor = System.Drawing.Color.White;
-            this.btnPrintPdf.Location = new System.Drawing.Point(915, 504);
+            this.btnPrintPdf.Location = new System.Drawing.Point(906, 450);
             this.btnPrintPdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrintPdf.Name = "btnPrintPdf";
             this.btnPrintPdf.Size = new System.Drawing.Size(139, 64);
@@ -333,10 +334,28 @@
             this.btnPrintPdf.UseVisualStyleBackColor = false;
             this.btnPrintPdf.Click += new System.EventHandler(this.btnPrintPdf_Click);
             // 
+            // btnSendEmail
+            // 
+            this.btnSendEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnSendEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSendEmail.FlatAppearance.BorderSize = 0;
+            this.btnSendEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendEmail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSendEmail.ForeColor = System.Drawing.Color.White;
+            this.btnSendEmail.Location = new System.Drawing.Point(906, 558);
+            this.btnSendEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSendEmail.Name = "btnSendEmail";
+            this.btnSendEmail.Size = new System.Drawing.Size(139, 64);
+            this.btnSendEmail.TabIndex = 29;
+            this.btnSendEmail.Text = "Send Email";
+            this.btnSendEmail.UseVisualStyleBackColor = false;
+            this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
+            // 
             // DisplayBill
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1145, 687);
+            this.Controls.Add(this.btnSendEmail);
             this.Controls.Add(this.btnPrintPdf);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.dgvBillBreakdown);
@@ -390,5 +409,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnPrintPdf;
+        private System.Windows.Forms.Button btnSendEmail;
     }
 }

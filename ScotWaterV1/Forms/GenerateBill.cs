@@ -1,17 +1,18 @@
-﻿using ScotWaterV1.Models;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using ScotWaterV1.Models;
 using System;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Net;
 using System.Net.Mail;
-using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using PDFRect = iTextSharp.text.Rectangle;
 
 namespace ScotWaterV1.Forms
 {
-    
-   
     public partial class frmGenerateBill : Form
     {
         public frmGenerateBill()
@@ -19,16 +20,13 @@ namespace ScotWaterV1.Forms
             InitializeComponent();
         }
 
-        //Load the businesses onto the grid and load the grid itself.
         private void frmGenerateBill_Load(object sender, EventArgs e)
         {
             LoadBusinesses();
             LoadBusinessGrid();
-
             dtpBillDate.Value = DateTime.Now.Date;
         }
 
-        //the method used to load businesses from database
         private void LoadBusinesses()
         {
             using (var context = new BusinessDataContext())
@@ -46,14 +44,12 @@ namespace ScotWaterV1.Forms
                 cmbBusinessNames.DisplayMember = "CompanyName";
                 cmbBusinessNames.ValueMember = "BusinessID";
 
-                
                 cmbBusinessNames.DropDownStyle = ComboBoxStyle.DropDown;
                 cmbBusinessNames.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 cmbBusinessNames.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
         }
 
-        //load the data grid view method
         private void LoadBusinessGrid()
         {
             using (var context = new BusinessDataContext())
@@ -69,7 +65,6 @@ namespace ScotWaterV1.Forms
                     .ToList();
             }
 
-
             dgvBusinessesBill.ReadOnly = true;
             dgvBusinessesBill.AllowUserToAddRows = false;
             dgvBusinessesBill.AllowUserToDeleteRows = false;
@@ -77,7 +72,6 @@ namespace ScotWaterV1.Forms
             dgvBusinessesBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        //when the specific business is clicked, display their usages in the grid
         private void dgvBusinessesBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -89,7 +83,6 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        //generate bill , Jack Smith 03/05/2026
         private async void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
             if (cmbBusinessNames.SelectedValue == null)
@@ -108,8 +101,7 @@ namespace ScotWaterV1.Forms
 
             using (var context = new BusinessDataContext())
             {
-                var business = context.BusinessUser
-                    .FirstOrDefault(b => b.BusinessID == businessId);
+                var business = context.BusinessUser.FirstOrDefault(b => b.BusinessID == businessId);
 
                 if (business == null)
                 {
@@ -117,11 +109,9 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
-                //grab the usages by filtering through the database looking for the specific business chosen
-                var usage = context.WaterUsage
-                    .FirstOrDefault(w =>
-                        w.BusinessID == businessId &&
-                        DbFunctions.TruncateTime(w.ReadingDate) == billDate);
+                var usage = context.WaterUsage.FirstOrDefault(w =>
+                    w.BusinessID == businessId &&
+                    DbFunctions.TruncateTime(w.ReadingDate) == billDate);
 
                 if (usage == null)
                 {
@@ -129,11 +119,9 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
-                //search through the database to check if a bill for that specific business already exists on that specific date
-                var existingBill = context.BusinessBills
-                    .FirstOrDefault(b =>
-                        b.BusinessID == businessId &&
-                        DbFunctions.TruncateTime(b.BillDate) == billDate);
+                var existingBill = context.BusinessBills.FirstOrDefault(b =>
+                    b.BusinessID == businessId &&
+                    DbFunctions.TruncateTime(b.BillDate) == billDate);
 
                 if (existingBill != null)
                 {
@@ -142,7 +130,6 @@ namespace ScotWaterV1.Forms
                     return;
                 }
 
-                //close this form and automaticcally move to display bill form and display the specific bill chosen
                 var billingService = new BillingService();
                 BusinessBills bill = billingService.GenerateBill(usage);
 
@@ -154,22 +141,17 @@ namespace ScotWaterV1.Forms
 
 
                 OpenBillInMainPanel(bill.BusinessBillID);
-                try
-                {
-                    await SendBillEmail(bill, business);
-                    MessageBox.Show("Bill email sent succesfully");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Bill generated, but email failed: \n\n " + ex.Message);
-                }
-                
 
-                
+                // IMPORTANT: email runs AFTER bill is created
+                bool emailSuccess = await SendBillEmail(bill, business);
+
+                if (emailSuccess)
+                    MessageBox.Show("Bill generated + email sent successfully.");
+                else
+                    MessageBox.Show("Bill generated, but email failed.");
             }
         }
 
-        //opens the generate bill form inside the panel of the main menu form
         private void OpenBillInMainPanel(int billId)
         {
             frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
@@ -193,91 +175,101 @@ namespace ScotWaterV1.Forms
             MessageBox.Show("Bill generated, but could not open display page.");
         }
 
-        //signs the user out and sends them back to the login screen
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-            frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
-
-            if (mainMenu != null)
-            {
-                new frmLogin().Show();
-                mainMenu.Close();
-                return;
-            }
-
             new frmLogin().Show();
+            Application.OpenForms.OfType<frmMainMenu>().FirstOrDefault()?.Close();
             this.Close();
         }
 
-        
         private void btnMainMenu_Click(object sender, EventArgs e)
         {
-            frmMainMenu mainMenu = this.ParentForm as frmMainMenu;
-
-            if (mainMenu != null)
-            {
-                this.Close();
-                return;
-            }
-
             new frmMainMenu().Show();
             this.Close();
         }
 
-        //once user clicks generate bill a confirmation email is automatically sent to the users livnked email
-        private async Task SendBillEmail(BusinessBills bill, BusinessUser business)
+        // ================= EMAIL + PDF =================
+        private async Task<bool> SendBillEmail(BusinessBills bill, BusinessUser business)
         {
-            if (business == null)
-            {
-                MessageBox.Show("Business not found.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(business.ContactEmail))
-            {
-                MessageBox.Show("No email found for business.");
-                return;
-            }
-
-            string subject = "Your water bill";
-
-            string contactName = string.IsNullOrWhiteSpace(business.ContactName)
-                ? business.CompanyName : business.ContactName;
-
-            string body =
-                $"Hello {contactName}, \n\n" +
-                $"Your water bill has been generated. \n\n" +
-                $"Company: {business.CompanyName}\n" +
-                $"Bill ID: {bill.BusinessBillID} \n" +
-                $"Bill Date: {bill.BillDate:dd MMM yyyy}\n" +
-                $"Total Charges: £{bill.TotalCharges:F2}\n" +
-                $"Total Discount £{bill.TotalDiscount:F2}\n" +
-                $"Subtotal: £{bill.SubTotal:F2}\n" +
-                $"VAT: £{bill.VAT:F2}\n" +
-                $"Final Amount: £{bill.BusinessFinalCost:F2}\n\n" +
-                $"If you have any questions, please contact Scot-Water.\n\n" +
-                $"Regards, \n" +
-                $"Scot-Water Billing team";      
-
-            //call the EmailService class
             try
             {
-                EmailService emailservice = new EmailService();
+                if (business == null || string.IsNullOrWhiteSpace(business.ContactEmail))
+                    return false;
 
-                await emailservice.SendEmailAsync(
-                    business.ContactEmail,
-                    subject,
-                    body                   
-                    );
+                string pdfPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                    $"ScotWaterBill_{bill.BusinessBillID}.pdf"
+                );
 
-                
-                MessageBox.Show("Test email sent");
+                // ================= PDF =================
+                Document doc = new Document(PageSize.A4, 20, 20, 20, 20);
+                PdfWriter.GetInstance(doc, new FileStream(pdfPath, FileMode.Create));
+                doc.Open();
+
+                BaseColor blue = new BaseColor(0, 70, 140);
+                BaseColor lightGray = new BaseColor(245, 245, 245);
+
+                var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 20, blue);
+                var headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 11);
+                var valueFont = FontFactory.GetFont(FontFactory.HELVETICA, 11);
+
+                PdfPTable header = new PdfPTable(1);
+                header.WidthPercentage = 100;
+
+                PdfPCell title = new PdfPCell(new Phrase("SCOTWATER BUSINESS INVOICE", titleFont));
+                title.Border = PDFRect.NO_BORDER;
+                title.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                header.AddCell(title);
+                doc.Add(header);
+
+                PdfPTable table = new PdfPTable(2);
+                table.WidthPercentage = 100;
+
+                void Add(string a, string b)
+                {
+                    table.AddCell(new PdfPCell(new Phrase(a, headerFont)) { BackgroundColor = lightGray, Padding = 6 });
+                    table.AddCell(new PdfPCell(new Phrase(b ?? "-", valueFont)) { Padding = 6 });
+                }
+
+                Add("Business Name", business.CompanyName);
+                Add("Contact Name", business.ContactName);
+                Add("Contact Email", business.ContactEmail);
+                Add("Postcode", business.Postcode);
+                Add("Bill Date", bill.BillDate.ToString("dd/MM/yyyy"));
+
+                doc.Add(table);
+                doc.Close();
+
+                // ================= EMAIL =================
+                using (var db = new BusinessDataContext())
+                {
+                    var config = db.EmailConfigs.FirstOrDefault();
+                    if (config == null) return false;
+
+                    using (MailMessage message = new MailMessage())
+                    using (SmtpClient smtp = new SmtpClient(config.SmtpHost, config.SmtpPort))
+                    {
+                        message.From = new MailAddress(config.SenderEmail);
+                        message.To.Add(business.ContactEmail);
+                        message.Subject = "Your ScotWater Bill";
+                        message.Body = $"Hello {business.ContactName ?? business.CompanyName}, your bill is attached.";
+                        message.Attachments.Add(new Attachment(pdfPath));
+
+                        smtp.EnableSsl = config.EnableSsl;
+                        smtp.Credentials = new NetworkCredential(config.SenderEmail, config.SenderPassword);
+
+                        await smtp.SendMailAsync(message);
+                    }
+                }
+
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Email failed" + ex.Message);
+                MessageBox.Show("Email error: " + ex.Message);
+                return false;
             }
-
         }
     }
 }
