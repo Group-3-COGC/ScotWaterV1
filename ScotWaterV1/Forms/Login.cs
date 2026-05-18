@@ -74,7 +74,7 @@ namespace ScotWaterV1
         }
 
 
-
+        //Pasword reset functionality for users
         private void lnkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string username = Microsoft.VisualBasic.Interaction.InputBox(
