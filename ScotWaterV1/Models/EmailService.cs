@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ScotWaterV1.Models
 {
@@ -23,27 +20,43 @@ namespace ScotWaterV1.Models
                 if (config == null)
                     throw new InvalidOperationException("Email settings have not been configured.");
 
-                using (MailMessage message = new MailMessage())
-                using (SmtpClient smtp = new SmtpClient(config.SmtpHost, config.SmtpPort))
+                try
                 {
-                    message.From = new MailAddress(config.SenderEmail);
-                    message.To.Add(recipentEmail);
-                    message.Subject = subject;
-                    message.Body = body;
+                    using (MailMessage message = new MailMessage())
+                    using (SmtpClient smtp = new SmtpClient())
+                    {
+                        // ================= SMTP SETTINGS (OUTLOOK FIX) =================
+                        smtp.Host = config.SmtpHost;
+                        smtp.Port = config.SmtpPort;
+                        smtp.EnableSsl = config.EnableSsl;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
+                        smtp.Credentials = new NetworkCredential(
+                            config.SenderEmail,
+                            config.SenderPassword
+                        );
 
-                    smtp.EnableSsl = config.EnableSsl;           
-                    smtp.Credentials = new NetworkCredential(
-                        config.SenderEmail,
-                        config.SenderPassword
-                    );
+                        smtp.Timeout = 10000; // prevents infinite hanging
 
-                    MessageBox.Show("Email config found connecting to SMTP");
-                    await Task.Run(() => smtp.Send(message));
-                       
+                        // ================= EMAIL =================
+                        message.From = new MailAddress(config.SenderEmail);
+                        message.To.Add(recipentEmail);
+                        message.Subject = subject;
+                        message.Body = body;
+
+                        await smtp.SendMailAsync(message).ConfigureAwait(false);
+                    }
+                }
+                catch (SmtpException ex)
+                {
+                    throw new Exception("SMTP failed: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Email error: " + ex.Message);
                 }
             }
         }
     }
 }
-
