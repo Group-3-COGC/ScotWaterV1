@@ -32,6 +32,7 @@ namespace ScotWaterV1.Forms
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtStaffEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -42,7 +43,7 @@ namespace ScotWaterV1.Forms
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtUsername.Location = new System.Drawing.Point(200, 55);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(350, 32);
+            this.txtUsername.Size = new System.Drawing.Size(350, 27);
             this.txtUsername.TabIndex = 3;
             // 
             // txtPassword
@@ -50,7 +51,7 @@ namespace ScotWaterV1.Forms
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtPassword.Location = new System.Drawing.Point(200, 105);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(350, 32);
+            this.txtPassword.Size = new System.Drawing.Size(350, 27);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -61,7 +62,7 @@ namespace ScotWaterV1.Forms
             this.btnSaveStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveStaff.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSaveStaff.ForeColor = System.Drawing.Color.White;
-            this.btnSaveStaff.Location = new System.Drawing.Point(250, 150);
+            this.btnSaveStaff.Location = new System.Drawing.Point(250, 199);
             this.btnSaveStaff.Name = "btnSaveStaff";
             this.btnSaveStaff.Size = new System.Drawing.Size(220, 40);
             this.btnSaveStaff.TabIndex = 5;
@@ -75,7 +76,7 @@ namespace ScotWaterV1.Forms
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(40, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username:";
             // 
@@ -85,7 +86,7 @@ namespace ScotWaterV1.Forms
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(40, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 25);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
@@ -99,7 +100,6 @@ namespace ScotWaterV1.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1088, 120);
             this.panel1.TabIndex = 1;
-            
             // 
             // lblTitle
             // 
@@ -108,7 +108,7 @@ namespace ScotWaterV1.Forms
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(240, 39);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(444, 46);
+            this.lblTitle.Size = new System.Drawing.Size(351, 37);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ADD NEW STAFF MEMBER";
             // 
@@ -127,6 +127,7 @@ namespace ScotWaterV1.Forms
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txtStaffEmail);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtUsername);
@@ -134,8 +135,18 @@ namespace ScotWaterV1.Forms
             this.panel2.Controls.Add(this.btnSaveStaff);
             this.panel2.Location = new System.Drawing.Point(120, 200);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 220);
+            this.panel2.Size = new System.Drawing.Size(750, 253);
             this.panel2.TabIndex = 0;
+            // 
+            // txtStaffEmail
+            // 
+            this.txtStaffEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtStaffEmail.Location = new System.Drawing.Point(200, 149);
+            this.txtStaffEmail.Name = "txtStaffEmail";
+            this.txtStaffEmail.Size = new System.Drawing.Size(350, 27);
+            this.txtStaffEmail.TabIndex = 6;
+            this.txtStaffEmail.UseSystemPasswordChar = true;
+            this.txtStaffEmail.TextChanged += new System.EventHandler(this.txtStaffEmail_TextChanged);
             // 
             // AddNewStaffMember
             // 
@@ -185,5 +196,6 @@ namespace ScotWaterV1.Forms
         private Panel panel2;
         private PictureBox pictureBox1;
         private Label lblTitle;
+        private TextBox txtStaffEmail;
     }
 }

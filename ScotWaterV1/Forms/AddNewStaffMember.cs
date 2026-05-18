@@ -64,6 +64,9 @@ namespace ScotWaterV1.Forms
             txtPassword.Clear();
         }
 
-        
+        private void txtStaffEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

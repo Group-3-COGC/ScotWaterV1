@@ -16,5 +16,8 @@ public class StaffUser
 
     public List<WaterUsage> WaterUsage { get; set; }
 
-  
+    public string staffEmail { get; set; }
+
+
+
 }
