@@ -17,7 +17,7 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGenerateBill));
             this.btnGenerateBill = new System.Windows.Forms.Button();
             this.lblSelectBuisnessGB = new System.Windows.Forms.Label();
@@ -27,8 +27,8 @@
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.dgvBusinessesBill = new System.Windows.Forms.DataGridView();
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinessesBill)).BeginInit();
             this.pnlHeader.SuspendLayout();
@@ -55,7 +55,7 @@
             this.lblSelectBuisnessGB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblSelectBuisnessGB.Location = new System.Drawing.Point(20, 20);
             this.lblSelectBuisnessGB.Name = "lblSelectBuisnessGB";
-            this.lblSelectBuisnessGB.Size = new System.Drawing.Size(129, 23);
+            this.lblSelectBuisnessGB.Size = new System.Drawing.Size(108, 19);
             this.lblSelectBuisnessGB.TabIndex = 0;
             this.lblSelectBuisnessGB.Text = "Select Business";
             // 
@@ -65,7 +65,7 @@
             this.lblGenerateBillsDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblGenerateBillsDate.Location = new System.Drawing.Point(20, 60);
             this.lblGenerateBillsDate.Name = "lblGenerateBillsDate";
-            this.lblGenerateBillsDate.Size = new System.Drawing.Size(101, 23);
+            this.lblGenerateBillsDate.Size = new System.Drawing.Size(84, 19);
             this.lblGenerateBillsDate.TabIndex = 1;
             this.lblGenerateBillsDate.Text = "Select Date";
             // 
@@ -74,7 +74,7 @@
             this.cmbBusinessNames.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbBusinessNames.Location = new System.Drawing.Point(180, 18);
             this.cmbBusinessNames.Name = "cmbBusinessNames";
-            this.cmbBusinessNames.Size = new System.Drawing.Size(250, 31);
+            this.cmbBusinessNames.Size = new System.Drawing.Size(250, 25);
             this.cmbBusinessNames.TabIndex = 2;
             // 
             // dtpBillDate
@@ -82,7 +82,7 @@
             this.dtpBillDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dtpBillDate.Location = new System.Drawing.Point(180, 55);
             this.dtpBillDate.Name = "dtpBillDate";
-            this.dtpBillDate.Size = new System.Drawing.Size(250, 30);
+            this.dtpBillDate.Size = new System.Drawing.Size(250, 25);
             this.dtpBillDate.TabIndex = 3;
             // 
             // pnlSelect
@@ -103,14 +103,14 @@
             this.dgvBusinessesBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBusinessesBill.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.dgvBusinessesBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusinessesBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusinessesBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBusinessesBill.ColumnHeadersHeight = 29;
             this.dgvBusinessesBill.EnableHeadersVisualStyles = false;
             this.dgvBusinessesBill.GridColor = System.Drawing.Color.White;
@@ -132,6 +132,17 @@
             this.pnlHeader.Size = new System.Drawing.Size(1431, 104);
             this.pnlHeader.TabIndex = 33;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(243, 33);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(284, 37);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Genereate a New Bill\r\n";
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
@@ -142,17 +153,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(243, 33);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(439, 58);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Genereate a New Bill\r\n";
             // 
             // frmGenerateBill
             // 
