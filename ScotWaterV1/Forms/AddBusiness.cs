@@ -21,7 +21,7 @@ namespace ScotWaterV1.Forms
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-
+            ;
         }
 
         private void btnAddNewBusiness_Click(object sender, EventArgs e)
@@ -71,6 +71,63 @@ namespace ScotWaterV1.Forms
                     MessageBox.Show("Phone number is required.");
                     return;
                 }
+                if (string.IsNullOrWhiteSpace(txtEmailAddress.Text) || !txtEmailAddress.Text.Contains("."))
+                {
+                    MessageBox.Show("Email is required and must contain '.'");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtContactName.Text))
+                {
+                    MessageBox.Show("Contact Name is required.");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtAccountName.Text))
+                {
+                    MessageBox.Show("Account Name is required.");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtSortCode.Text))
+                {
+                    MessageBox.Show("Sort Code is required.");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtAccountNumber.Text))
+                {
+                    MessageBox.Show("Account Number is required.");
+                    return;
+                }
+                string postcode = txtPostcode.Text.Trim();
+                string cleaned = postcode.Replace(" ", "");
+
+                if (cleaned.Length < 5 || cleaned.Length > 8 || !cleaned.All(char.IsLetterOrDigit))
+                {
+                    MessageBox.Show("Postcode must be 5 to 8 characters long and contain only letters or numbers.");
+                    return;
+                }
+                string sortCode = txtSortCode.Text.Trim();
+
+                // Remove spaces if you want to allow "12 34 56"
+                string clean = sortCode.Replace(" ", "");
+
+                if (clean.Length != 6 || !clean.All(char.IsDigit))
+                {
+                    MessageBox.Show("Sort code must be exactly 6 digits.");
+                    return;
+                }
+
+                string accountNumber = txtAccountNumber.Text.Trim();
+
+               
+                cleaned = accountNumber.Replace(" ", "");
+
+                if (cleaned.Length != 8 || !cleaned.All(char.IsDigit))
+                {
+                    MessageBox.Show("Account number must be exactly 8 digits.");
+                    return;
+                }
+
+
+
 
                 var newBusiness = new BusinessUser
                 {
