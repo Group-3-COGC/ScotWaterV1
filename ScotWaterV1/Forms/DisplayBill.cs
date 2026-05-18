@@ -79,7 +79,6 @@ namespace ScotWaterV1.Forms
 
                 txtBillSearch.Text = bill.BusinessBillID.ToString();
 
-                // ✅ FIXED GRIDVIEW (THIS WAS YOUR ISSUE)
                 dgvBillBreakdown.DataSource = new[]
                 {
                     new { Item = "Water Charges", Amount = bill.TotalCharges },
@@ -129,7 +128,7 @@ namespace ScotWaterV1.Forms
             return Path.Combine(folder, $"ScotWaterBill_{billId}.pdf");
         }
 
-        // ================= PDF PRINT =================
+        // ================= PDF =================
         private void btnPrintPdf_Click(object sender, EventArgs e)
         {
             try
@@ -141,7 +140,6 @@ namespace ScotWaterV1.Forms
                 }
 
                 string path = GetPdfPath(billId);
-
                 GeneratePdf(path);
 
                 MessageBox.Show($"PDF saved here:\n{path}");
@@ -152,7 +150,6 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ================= PDF GENERATOR =================
         private void GeneratePdf(string path)
         {
             if (File.Exists(path))
@@ -169,7 +166,6 @@ namespace ScotWaterV1.Forms
 
                 doc.Add(new Paragraph("SCOTWATER INVOICE", titleFont));
                 doc.Add(new Paragraph(" "));
-
                 doc.Add(new Paragraph($"Business: {lblBusinessName.Text}", normal));
                 doc.Add(new Paragraph($"Date: {lblBillDate.Text}", normal));
                 doc.Add(new Paragraph($"Total: {lblFinalCost.Text}", normal));
@@ -178,7 +174,7 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ================= EMAIL (FIXED + GENERIC) =================
+        // ================= EMAIL FIXED (NO CRASH) =================
         private async void btnSendEmail_Click(object sender, EventArgs e)
         {
             try
@@ -207,17 +203,31 @@ namespace ScotWaterV1.Forms
                         return;
                     }
 
-                    string pdfPath = GetPdfPath(billId);
+                    string toEmail = business.ContactEmail;
 
-                    // always regenerate to avoid "file in use"
+                    // 🔥 FIX: stop invalid email crash
+                    if (string.IsNullOrWhiteSpace(toEmail))
+                    {
+                        MessageBox.Show("No email found for this business.");
+                        return;
+                    }
+
+                    toEmail = toEmail.Trim();
+
+                    try
+                    {
+                        new MailAddress(toEmail); // validate only
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid email in database: " + toEmail);
+                        return;
+                    }
+
+                    string pdfPath = GetPdfPath(billId);
                     GeneratePdf(pdfPath);
 
-                    await SendEmailAsync(
-                        business.ContactEmail,
-                        "Your ScotWater Bill",
-                        "Please find your bill attached.",
-                        pdfPath
-                    );
+                    await SendEmailAsync(toEmail, pdfPath);
 
                     MessageBox.Show("Email sent successfully.");
                 }
@@ -228,26 +238,35 @@ namespace ScotWaterV1.Forms
             }
         }
 
-        // ================= GENERIC EMAIL METHOD =================
-        private async Task SendEmailAsync(string toEmail, string subject, string body, string attachmentPath)
+        // ================= SAFE SMTP =================
+        private async Task SendEmailAsync(string toEmail, string attachmentPath)
         {
+            string senderEmail = "WaterscotTest@outlook.com";
+            string senderPassword = "0776Hh<3";
+
+            if (string.IsNullOrWhiteSpace(senderEmail) || !senderEmail.Contains("@"))
+                throw new Exception("Sender email is invalid.");
+
+            if (string.IsNullOrWhiteSpace(toEmail) || !toEmail.Contains("@"))
+                throw new Exception("Recipient email is invalid.");
+
             using (MailMessage message = new MailMessage())
             using (SmtpClient smtp = new SmtpClient("smtp.office365.com", 587))
             {
-                message.From = new MailAddress("YOUR_STUDENT_EMAIL_HERE");
-                message.To.Add(toEmail);
-                message.Subject = subject;
-                message.Body = body;
+                message.From = new MailAddress(senderEmail);
+                message.To.Add(new MailAddress(toEmail));
+                message.Subject = "Your ScotWater Bill";
+                message.Body = "Please find your bill attached.";
 
                 if (File.Exists(attachmentPath))
                     message.Attachments.Add(new Attachment(attachmentPath));
 
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential(
-                    "YOUR_STUDENT_EMAIL_HERE",
-                    "YOUR_PASSWORD"
-                );
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                smtp.Timeout = 20000;
 
                 await smtp.SendMailAsync(message);
             }
