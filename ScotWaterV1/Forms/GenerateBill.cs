@@ -83,19 +83,16 @@ namespace ScotWaterV1.Forms
             }
         }
 
+        // ================= FIXED BILL GENERATION =================
         private async void btnGenerateBill_Click_1(object sender, EventArgs e)
         {
-            if (cmbBusinessNames.SelectedValue == null)
+            if (dgvBusinessesBill.CurrentRow == null)
             {
-                MessageBox.Show("Please select a business.");
+                MessageBox.Show("Please select a business from the table.");
                 return;
             }
 
-            if (!int.TryParse(cmbBusinessNames.SelectedValue.ToString(), out int businessId))
-            {
-                MessageBox.Show("Invalid business selected.");
-                return;
-            }
+            int businessId = Convert.ToInt32(dgvBusinessesBill.CurrentRow.Cells["BusinessID"].Value);
 
             DateTime billDate = dtpBillDate.Value.Date;
 
@@ -139,10 +136,8 @@ namespace ScotWaterV1.Forms
                 context.BusinessBills.Add(bill);
                 context.SaveChanges();
 
-
                 OpenBillInMainPanel(bill.BusinessBillID);
 
-                // IMPORTANT: email runs AFTER bill is created
                 bool emailSuccess = await SendBillEmail(bill, business);
 
                 if (emailSuccess)
@@ -201,7 +196,6 @@ namespace ScotWaterV1.Forms
                     $"ScotWaterBill_{bill.BusinessBillID}.pdf"
                 );
 
-                // ================= PDF =================
                 Document doc = new Document(PageSize.A4, 20, 20, 20, 20);
                 PdfWriter.GetInstance(doc, new FileStream(pdfPath, FileMode.Create));
                 doc.Open();
@@ -224,7 +218,6 @@ namespace ScotWaterV1.Forms
                 doc.Add(header);
 
                 PdfPTable table = new PdfPTable(2);
-                table.WidthPercentage = 100;
 
                 void Add(string a, string b)
                 {
@@ -241,7 +234,6 @@ namespace ScotWaterV1.Forms
                 doc.Add(table);
                 doc.Close();
 
-                // ================= EMAIL =================
                 using (var db = new BusinessDataContext())
                 {
                     var config = db.EmailConfigs.FirstOrDefault();

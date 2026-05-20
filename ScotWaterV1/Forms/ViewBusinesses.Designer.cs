@@ -24,8 +24,8 @@ namespace ScotWaterV1.Forms
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewBusinesses));
             this.dgvBusinesses = new System.Windows.Forms.DataGridView();
             this.txt_search = new System.Windows.Forms.TextBox();
@@ -43,6 +43,7 @@ namespace ScotWaterV1.Forms
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinesses)).BeginInit();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -57,26 +58,27 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBusinesses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBusinesses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusinesses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusinesses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBusinesses.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBusinesses.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusinesses.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBusinesses.EnableHeadersVisualStyles = false;
             this.dgvBusinesses.GridColor = System.Drawing.Color.LightGray;
-            this.dgvBusinesses.Location = new System.Drawing.Point(10, 197);
+            this.dgvBusinesses.Location = new System.Drawing.Point(13, 242);
+            this.dgvBusinesses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvBusinesses.MultiSelect = false;
             this.dgvBusinesses.Name = "dgvBusinesses";
             this.dgvBusinesses.ReadOnly = true;
@@ -84,7 +86,7 @@ namespace ScotWaterV1.Forms
             this.dgvBusinesses.RowHeadersWidth = 51;
             this.dgvBusinesses.RowTemplate.Height = 35;
             this.dgvBusinesses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBusinesses.Size = new System.Drawing.Size(418, 276);
+            this.dgvBusinesses.Size = new System.Drawing.Size(557, 340);
             this.dgvBusinesses.TabIndex = 4;
             this.dgvBusinesses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellClick);
             // 
@@ -92,9 +94,10 @@ namespace ScotWaterV1.Forms
             // 
             this.txt_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_search.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txt_search.Location = new System.Drawing.Point(30, 145);
+            this.txt_search.Location = new System.Drawing.Point(40, 178);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(250, 27);
+            this.txt_search.Size = new System.Drawing.Size(333, 32);
             this.txt_search.TabIndex = 2;
             this.txt_search.Text = "b";
             // 
@@ -106,9 +109,10 @@ namespace ScotWaterV1.Forms
             this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.BtnSearch.ForeColor = System.Drawing.Color.White;
-            this.BtnSearch.Location = new System.Drawing.Point(300, 142);
+            this.BtnSearch.Location = new System.Drawing.Point(400, 175);
+            this.BtnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(110, 35);
+            this.BtnSearch.Size = new System.Drawing.Size(147, 43);
             this.BtnSearch.TabIndex = 3;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
@@ -122,9 +126,10 @@ namespace ScotWaterV1.Forms
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(615, 496);
+            this.btnEdit.Location = new System.Drawing.Point(820, 610);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(140, 45);
+            this.btnEdit.Size = new System.Drawing.Size(187, 55);
             this.btnEdit.TabIndex = 14;
             this.btnEdit.Text = "Save Changes";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -134,36 +139,40 @@ namespace ScotWaterV1.Forms
             // 
             this.txtCompanyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCompanyName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtCompanyName.Location = new System.Drawing.Point(517, 233);
+            this.txtCompanyName.Location = new System.Drawing.Point(689, 287);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(300, 25);
+            this.txtCompanyName.Size = new System.Drawing.Size(399, 30);
             this.txtCompanyName.TabIndex = 7;
             // 
             // txtPostcode
             // 
             this.txtPostcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPostcode.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPostcode.Location = new System.Drawing.Point(517, 309);
+            this.txtPostcode.Location = new System.Drawing.Point(689, 380);
+            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(300, 25);
+            this.txtPostcode.Size = new System.Drawing.Size(399, 30);
             this.txtPostcode.TabIndex = 9;
             // 
             // txtContactName
             // 
             this.txtContactName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContactName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtContactName.Location = new System.Drawing.Point(517, 384);
+            this.txtContactName.Location = new System.Drawing.Point(689, 473);
+            this.txtContactName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(300, 25);
+            this.txtContactName.Size = new System.Drawing.Size(399, 30);
             this.txtContactName.TabIndex = 11;
             // 
             // txtContactEmail
             // 
             this.txtContactEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContactEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtContactEmail.Location = new System.Drawing.Point(517, 458);
+            this.txtContactEmail.Location = new System.Drawing.Point(689, 564);
+            this.txtContactEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(300, 25);
+            this.txtContactEmail.Size = new System.Drawing.Size(399, 30);
             this.txtContactEmail.TabIndex = 13;
             // 
             // lblEdit
@@ -171,9 +180,10 @@ namespace ScotWaterV1.Forms
             this.lblEdit.AutoSize = true;
             this.lblEdit.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.lblEdit.Location = new System.Drawing.Point(512, 138);
+            this.lblEdit.Location = new System.Drawing.Point(683, 170);
+            this.lblEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEdit.Name = "lblEdit";
-            this.lblEdit.Size = new System.Drawing.Size(170, 30);
+            this.lblEdit.Size = new System.Drawing.Size(209, 37);
             this.lblEdit.TabIndex = 5;
             this.lblEdit.Text = "Edit Businesses";
             // 
@@ -182,9 +192,10 @@ namespace ScotWaterV1.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label1.Location = new System.Drawing.Point(512, 208);
+            this.label1.Location = new System.Drawing.Point(683, 256);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 19);
+            this.label1.Size = new System.Drawing.Size(138, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Company Name";
             // 
@@ -193,9 +204,10 @@ namespace ScotWaterV1.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label2.Location = new System.Drawing.Point(512, 284);
+            this.label2.Location = new System.Drawing.Point(683, 350);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 19);
+            this.label2.Size = new System.Drawing.Size(81, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "Postcode";
             // 
@@ -204,9 +216,10 @@ namespace ScotWaterV1.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label3.Location = new System.Drawing.Point(512, 358);
+            this.label3.Location = new System.Drawing.Point(683, 441);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 19);
+            this.label3.Size = new System.Drawing.Size(124, 23);
             this.label3.TabIndex = 10;
             this.label3.Text = "Contact Name";
             // 
@@ -215,20 +228,23 @@ namespace ScotWaterV1.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label4.Location = new System.Drawing.Point(512, 433);
+            this.label4.Location = new System.Drawing.Point(683, 533);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 19);
+            this.label4.Size = new System.Drawing.Size(121, 23);
             this.label4.TabIndex = 12;
             this.label4.Text = "Contact Email";
             // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Controls.Add(this.pictureBox3);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(856, 100);
+            this.pnlHeader.Size = new System.Drawing.Size(1141, 123);
             this.pnlHeader.TabIndex = 0;
             // 
             // pictureBox3
@@ -236,8 +252,9 @@ namespace ScotWaterV1.Forms
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(170, 100);
+            this.pictureBox3.Size = new System.Drawing.Size(227, 123);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -247,18 +264,30 @@ namespace ScotWaterV1.Forms
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.lblSearch.Location = new System.Drawing.Point(30, 120);
+            this.lblSearch.Location = new System.Drawing.Point(40, 148);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(55, 20);
+            this.lblSearch.Size = new System.Drawing.Size(71, 25);
             this.lblSearch.TabIndex = 1;
             this.lblSearch.Text = "Search";
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(280, 34);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(346, 58);
+            this.lblTitle.TabIndex = 2;
+            this.lblTitle.Text = "View Businesses";
+            // 
             // ViewBusinesses
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(856, 551);
+            this.ClientSize = new System.Drawing.Size(1141, 678);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txt_search);
@@ -276,12 +305,14 @@ namespace ScotWaterV1.Forms
             this.Controls.Add(this.btnEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "ViewBusinesses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Businesses";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusinesses)).EndInit();
             this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -306,6 +337,7 @@ namespace ScotWaterV1.Forms
         private Label label4;
         private Panel pnlHeader;
         private PictureBox pictureBox3;
+        private Label lblTitle;
     }
 }
 

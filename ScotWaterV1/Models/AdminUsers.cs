@@ -1,16 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-public class AdminUsers
+namespace ScotWaterV1.Models
 {
-    //Dean Caldwell
-    [Key]
-    public int AdminUserID { get; set; }
+    public class AdminUsers
+    {
+        [Key] // ⭐ THIS IS REQUIRED
+        public int AdminUserID { get; set; }
 
-    [Required]
-    public string AdminUsername { get; set; }
+        public string AdminUsername { get; set; }
+        public string AdminPassword { get; set; }
 
-    [Required]
-    public string AdminPassword { get; set; }
+        public string AdminEmail { get; set; }
+        public string ResetCode { get; set; }
+    }
 }
-
-

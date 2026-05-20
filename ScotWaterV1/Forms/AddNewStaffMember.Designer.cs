@@ -23,6 +23,8 @@ namespace ScotWaterV1.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewStaffMember));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSaveStaff = new System.Windows.Forms.Button();
@@ -32,26 +34,32 @@ namespace ScotWaterV1.Forms
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtStaffEmail = new System.Windows.Forms.TextBox();
+            this.dgvBusinesses = new System.Windows.Forms.DataGridView();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtContactEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusinesses)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtUsername.Location = new System.Drawing.Point(200, 55);
+            this.txtUsername.Location = new System.Drawing.Point(200, 19);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(350, 27);
+            this.txtUsername.Size = new System.Drawing.Size(350, 32);
             this.txtUsername.TabIndex = 3;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtPassword.Location = new System.Drawing.Point(200, 105);
+            this.txtPassword.Location = new System.Drawing.Point(200, 69);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(350, 27);
+            this.txtPassword.Size = new System.Drawing.Size(350, 32);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -62,7 +70,7 @@ namespace ScotWaterV1.Forms
             this.btnSaveStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveStaff.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSaveStaff.ForeColor = System.Drawing.Color.White;
-            this.btnSaveStaff.Location = new System.Drawing.Point(250, 199);
+            this.btnSaveStaff.Location = new System.Drawing.Point(242, 123);
             this.btnSaveStaff.Name = "btnSaveStaff";
             this.btnSaveStaff.Size = new System.Drawing.Size(220, 40);
             this.btnSaveStaff.TabIndex = 5;
@@ -74,9 +82,9 @@ namespace ScotWaterV1.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(40, 60);
+            this.label1.Location = new System.Drawing.Point(40, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username:";
             // 
@@ -84,9 +92,9 @@ namespace ScotWaterV1.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(40, 110);
+            this.label2.Location = new System.Drawing.Point(44, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
@@ -108,7 +116,7 @@ namespace ScotWaterV1.Forms
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(240, 39);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(351, 37);
+            this.lblTitle.Size = new System.Drawing.Size(444, 46);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ADD NEW STAFF MEMBER";
             // 
@@ -127,31 +135,128 @@ namespace ScotWaterV1.Forms
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txtStaffEmail);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtUsername);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.btnSaveStaff);
-            this.panel2.Location = new System.Drawing.Point(120, 200);
+            this.panel2.Location = new System.Drawing.Point(138, 137);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 253);
+            this.panel2.Size = new System.Drawing.Size(721, 184);
             this.panel2.TabIndex = 0;
             // 
-            // txtStaffEmail
+            // dgvBusinesses
             // 
-            this.txtStaffEmail.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtStaffEmail.Location = new System.Drawing.Point(200, 149);
-            this.txtStaffEmail.Name = "txtStaffEmail";
-            this.txtStaffEmail.Size = new System.Drawing.Size(350, 27);
-            this.txtStaffEmail.TabIndex = 6;
-            this.txtStaffEmail.UseSystemPasswordChar = true;
-            this.txtStaffEmail.TextChanged += new System.EventHandler(this.txtStaffEmail_TextChanged);
+            this.dgvBusinesses.AllowUserToAddRows = false;
+            this.dgvBusinesses.AllowUserToDeleteRows = false;
+            this.dgvBusinesses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBusinesses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.dgvBusinesses.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBusinesses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBusinesses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusinesses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBusinesses.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusinesses.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvBusinesses.EnableHeadersVisualStyles = false;
+            this.dgvBusinesses.GridColor = System.Drawing.Color.LightGray;
+            this.dgvBusinesses.Location = new System.Drawing.Point(138, 334);
+            this.dgvBusinesses.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvBusinesses.MultiSelect = false;
+            this.dgvBusinesses.Name = "dgvBusinesses";
+            this.dgvBusinesses.ReadOnly = true;
+            this.dgvBusinesses.RowHeadersVisible = false;
+            this.dgvBusinesses.RowHeadersWidth = 51;
+            this.dgvBusinesses.RowTemplate.Height = 35;
+            this.dgvBusinesses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBusinesses.Size = new System.Drawing.Size(535, 177);
+            this.dgvBusinesses.TabIndex = 5;
+            this.dgvBusinesses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusinesses_CellContentClick);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(776, 499);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(187, 55);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "Save Changes";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label3.Location = new System.Drawing.Point(692, 324);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 23);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "username";
+            // 
+            // txtContactName
+            // 
+            this.txtContactName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContactName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtContactName.Location = new System.Drawing.Point(703, 357);
+            this.txtContactName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(331, 30);
+            this.txtContactName.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label4.Location = new System.Drawing.Point(699, 413);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 23);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Email";
+            // 
+            // txtContactEmail
+            // 
+            this.txtContactEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContactEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtContactEmail.Location = new System.Drawing.Point(703, 449);
+            this.txtContactEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContactEmail.Name = "txtContactEmail";
+            this.txtContactEmail.Size = new System.Drawing.Size(331, 30);
+            this.txtContactEmail.TabIndex = 19;
             // 
             // AddNewStaffMember
             // 
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1088, 601);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtContactName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtContactEmail);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.dgvBusinesses);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AddNewStaffMember";
@@ -162,7 +267,9 @@ namespace ScotWaterV1.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusinesses)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -196,6 +303,11 @@ namespace ScotWaterV1.Forms
         private Panel panel2;
         private PictureBox pictureBox1;
         private Label lblTitle;
-        private TextBox txtStaffEmail;
+        private DataGridView dgvBusinesses;
+        private Button btnEdit;
+        private Label label3;
+        private TextBox txtContactName;
+        private Label label4;
+        private TextBox txtContactEmail;
     }
 }
