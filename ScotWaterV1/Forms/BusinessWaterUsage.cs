@@ -9,6 +9,7 @@ namespace ScotWaterV1.Forms
 {
     public partial class BusinessWaterUsage : Form
     {
+        //
         private readonly Color mainBlue = Color.FromArgb(0, 102, 204);
         
         public BusinessWaterUsage()
@@ -18,7 +19,7 @@ namespace ScotWaterV1.Forms
             LoadBusinesses();
         }
 
-        // ================= UI STYLE ONLY =================
+        //private method for UI styles
         private void ApplyUIStyle()
         {
             this.BackColor = Color.WhiteSmoke;
@@ -36,6 +37,7 @@ namespace ScotWaterV1.Forms
             dgv_Business.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
         }
 
+        //private method for button styles
         private void StyleButton(Button btn)
         {
             if (btn == null) return;
@@ -48,10 +50,11 @@ namespace ScotWaterV1.Forms
             btn.Cursor = Cursors.Hand;
         }
 
-        // ================= YOUR ORIGINAL LOGIC (UNCHANGED) =================
+        //load businesses method
 
         private void LoadBusinesses()
         {
+            //grabs the database and then displays the chosen data on the combo box
             using (var db = new BusinessDataContext())
             {
                 CmbBusiness.DataSource = db.BusinessUser.ToList();
@@ -60,12 +63,15 @@ namespace ScotWaterV1.Forms
             }
         }
 
+        //on event click for showing details
         private void btn_ShowDetails_Click(object sender, EventArgs e)
         {
+            //firstly check if the selected value does not exist and prevent it from passing 
             if (CmbBusiness.SelectedValue == null) return;
 
             int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
 
+            //grab data base then filter through and then apply the generated business ID to that speciic business
             using (var db = new BusinessDataContext())
             {
                 dgv_Business.DataSource = db.BusinessUser
@@ -86,9 +92,10 @@ namespace ScotWaterV1.Forms
                     .ToList();
             }
         }
-
+        //on event click for showing usage
         private void btn_ShowUsage_Click(object sender, EventArgs e)
         {
+            //firstly CHECK if selected business in combo box does not exist
             if (CmbBusiness.SelectedValue == null)
             {
                 MessageBox.Show("Select a business first");
@@ -96,7 +103,7 @@ namespace ScotWaterV1.Forms
             }
 
             int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
-
+            //grab database and also take the water usage entered, then filter through database and apply that specific water usage to that specific business
             using (var db = new BusinessDataContext())
             {
                 dgv_Business.DataSource = db.WaterUsage
@@ -116,9 +123,10 @@ namespace ScotWaterV1.Forms
             if (dgv_Business.Columns.Contains("WaterUsageID"))
                 dgv_Business.Columns["WaterUsageID"].Visible = false;
         }
-
+        //on event click for adding usage
         private void btn_AddUsage_Click(object sender, EventArgs e)
         {
+            //check if business is selected
             if (CmbBusiness.SelectedValue == null)
             {
                 MessageBox.Show("Please select a business");
@@ -126,7 +134,7 @@ namespace ScotWaterV1.Forms
             }
 
             int businessId = Convert.ToInt32(CmbBusiness.SelectedValue);
-
+            //validate entered data 
             if (!int.TryParse(txt_Water_Used.Text, out int used) || used < 0)
             {
                 MessageBox.Show("Freshwater units must be valid.");
@@ -147,8 +155,10 @@ namespace ScotWaterV1.Forms
 
             try
             {
+                //grab database
                 using (var db = new BusinessDataContext())
                 {
+                    //check reserve config to check if its available
                     var reserve = db.ReserveConfigs.FirstOrDefault();
                     if (reserve == null)
                     {
@@ -161,6 +171,7 @@ namespace ScotWaterV1.Forms
                     int staffId = Session.StaffUserID;
                     if (staffId == 0) staffId = 1;
 
+                    //create new table waterusage object so that it can load new data into it
                     var usage = new WaterUsage
                     {
                         BusinessID = businessId,
@@ -171,6 +182,7 @@ namespace ScotWaterV1.Forms
                         IsLowReserve = isLowReserve
                     };
 
+                    //check if that specific waterusage for that date and business already exists and prevent it from saving 
                     bool exists = db.WaterUsage.Any(u =>
                         u.BusinessID == businessId &&
                         DbFunctions.TruncateTime(u.ReadingDate) == dtpDate.Value.Date);
@@ -190,6 +202,7 @@ namespace ScotWaterV1.Forms
                 txt_Water_Used.Clear();
                 txtRecycledWater.Clear();
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("SAVE FAILED: " + ex.Message);
