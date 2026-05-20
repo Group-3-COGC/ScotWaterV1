@@ -151,7 +151,7 @@
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSelect.Controls.Add(this.groupBox1);
-            this.pnlSelect.Location = new System.Drawing.Point(250, 160);
+            this.pnlSelect.Location = new System.Drawing.Point(240, 201);
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(615, 327);
             this.pnlSelect.TabIndex = 0;

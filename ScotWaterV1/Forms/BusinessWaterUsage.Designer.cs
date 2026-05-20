@@ -255,10 +255,10 @@
             this.dgv_Business.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Business.EnableHeadersVisualStyles = false;
             this.dgv_Business.GridColor = System.Drawing.SystemColors.Control;
-            this.dgv_Business.Location = new System.Drawing.Point(0, 495);
+            this.dgv_Business.Location = new System.Drawing.Point(48, 460);
             this.dgv_Business.Name = "dgv_Business";
             this.dgv_Business.RowHeadersWidth = 51;
-            this.dgv_Business.Size = new System.Drawing.Size(1433, 180);
+            this.dgv_Business.Size = new System.Drawing.Size(990, 180);
             this.dgv_Business.TabIndex = 2;
             // 
             // BusinessWaterUsage
