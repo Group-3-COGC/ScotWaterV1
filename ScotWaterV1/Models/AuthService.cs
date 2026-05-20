@@ -22,8 +22,8 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-                // ================= LOCK CHECK =================
-                if (user.LockUntil != null && user.LockUntil > DateTime.Now)
+                // LOCK CHECK
+                if (user.LockUntil.HasValue && user.LockUntil > DateTime.Now)
                 {
                     TimeSpan remaining = user.LockUntil.Value - DateTime.Now;
                     error = $"Account locked. Try again in {remaining.Minutes}m {remaining.Seconds}s";
@@ -31,24 +31,29 @@ namespace ScotWaterV1.Services
                 }
 
                 // reset lock if expired
-                if (user.LockUntil != null && user.LockUntil <= DateTime.Now)
+                if (user.LockUntil.HasValue && user.LockUntil <= DateTime.Now)
                 {
                     user.LockUntil = null;
-                    user.FailedLoginAttempts = 0;
                 }
 
-                // ================= PASSWORD CHECK =================
+                // PASSWORD CHECK
                 if (!PasswordSecurity.VerifyPassword(password, user.staffPassword))
                 {
                     user.FailedLoginAttempts++;
 
                     if (user.FailedLoginAttempts >= 3)
                     {
-                        int minutes = Math.Max(1, user.FailedLoginAttempts - 2);
+                        if (user.LockLevel <= 0)
+                            user.LockLevel = 1;
+
+                        int minutes = (int)Math.Pow(2, user.LockLevel); // 2,4,8...
 
                         user.LockUntil = DateTime.Now.AddMinutes(minutes);
-                        error = $"Too many attempts. Locked for {minutes} minute(s).";
+                        user.LockLevel++;
+
                         user.FailedLoginAttempts = 0;
+
+                        error = $"Account locked for {minutes} minute(s).";
                     }
                     else
                     {
@@ -59,8 +64,9 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-                // ================= SUCCESS =================
+                // SUCCESS RESET
                 user.FailedLoginAttempts = 0;
+                user.LockLevel = 0;
                 user.LockUntil = null;
 
                 db.SaveChanges();
@@ -83,32 +89,37 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-                // ================= LOCK CHECK =================
-                if (user.LockUntil != null && user.LockUntil > DateTime.Now)
+                // LOCK CHECK
+                if (user.LockUntil.HasValue && user.LockUntil > DateTime.Now)
                 {
                     TimeSpan remaining = user.LockUntil.Value - DateTime.Now;
                     error = $"Account locked. Try again in {remaining.Minutes}m {remaining.Seconds}s";
                     return false;
                 }
 
-                if (user.LockUntil != null && user.LockUntil <= DateTime.Now)
+                if (user.LockUntil.HasValue && user.LockUntil <= DateTime.Now)
                 {
                     user.LockUntil = null;
-                    user.FailedLoginAttempts = 0;
                 }
 
-                // ================= PASSWORD CHECK =================
+                // PASSWORD CHECK
                 if (!PasswordSecurity.VerifyPassword(password, user.AdminPassword))
                 {
                     user.FailedLoginAttempts++;
 
                     if (user.FailedLoginAttempts >= 3)
                     {
-                        int minutes = Math.Max(1, user.FailedLoginAttempts - 2);
+                        if (user.LockLevel <= 0)
+                            user.LockLevel = 1;
+
+                        int minutes = (int)Math.Pow(2, user.LockLevel);
 
                         user.LockUntil = DateTime.Now.AddMinutes(minutes);
-                        error = $"Too many attempts. Locked for {minutes} minute(s).";
+                        user.LockLevel++;
+
                         user.FailedLoginAttempts = 0;
+
+                        error = $"Too many attempts. Locked for {minutes} minute(s).";
                     }
                     else
                     {
@@ -119,8 +130,9 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-                // ================= SUCCESS =================
+                // SUCCESS RESET
                 user.FailedLoginAttempts = 0;
+                user.LockLevel = 0;
                 user.LockUntil = null;
 
                 db.SaveChanges();
@@ -128,5 +140,4 @@ namespace ScotWaterV1.Services
             }
         }
     }
-    }
-
+}

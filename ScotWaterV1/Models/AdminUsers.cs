@@ -5,7 +5,7 @@ namespace ScotWaterV1.Models
 {
     public class AdminUsers
     {
-        [Key] // ⭐ THIS IS REQUIRED
+        [Key]
         public int AdminUserID { get; set; }
 
         public string AdminUsername { get; set; }
@@ -13,7 +13,10 @@ namespace ScotWaterV1.Models
 
         public string AdminEmail { get; set; }
         public string ResetCode { get; set; }
+
         public int FailedLoginAttempts { get; set; }
         public DateTime? LockUntil { get; set; }
+
+        public int LockLevel { get; set; }   
     }
 }

@@ -1,14 +1,20 @@
 ﻿using System;
 
-public class StaffUser
+namespace ScotWaterV1.Models
 {
-    public int StaffUserID { get; set; }
+    public class StaffUser
+    {
+        public int StaffUserID { get; set; }
 
-    public string staffUsername { get; set; }
-    public string staffPassword { get; set; }
+        public string staffUsername { get; set; }
+        public string staffPassword { get; set; }
 
-    public string staffEmail { get; set; }  
-    public string ResetCode { get; set; }
-    public int FailedLoginAttempts { get; set; }
-    public DateTime? LockUntil { get; set; }
+        public string staffEmail { get; set; }
+        public string ResetCode { get; set; }
+
+        public int FailedLoginAttempts { get; set; }
+        public DateTime? LockUntil { get; set; }
+
+        public int LockLevel { get; set; }   
+    }
 }
