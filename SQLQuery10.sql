@@ -1,0 +1,5 @@
+﻿ALTER TABLE StaffUser ADD FailedLoginAttempts INT DEFAULT 0;
+ALTER TABLE StaffUser ADD IsBlocked BIT DEFAULT 0;
+
+ALTER TABLE AdminUsers ADD FailedLoginAttempts INT DEFAULT 0;
+ALTER TABLE AdminUsers ADD IsBlocked BIT DEFAULT 0;

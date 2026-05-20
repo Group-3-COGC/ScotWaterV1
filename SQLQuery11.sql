@@ -1,0 +1,2 @@
+﻿ALTER TABLE AdminUsers
+ADD LockUntil DATETIME NULL;;
