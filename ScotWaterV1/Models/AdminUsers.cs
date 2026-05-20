@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ScotWaterV1.Models
 {
@@ -12,5 +13,7 @@ namespace ScotWaterV1.Models
 
         public string AdminEmail { get; set; }
         public string ResetCode { get; set; }
+        public int FailedLoginAttempts { get; set; }
+        public DateTime? LockUntil { get; set; }
     }
 }

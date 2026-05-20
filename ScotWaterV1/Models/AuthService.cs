@@ -14,7 +14,6 @@ namespace ScotWaterV1.Services
 
             using (var db = new BusinessDataContext())
             {
-                
                 var user = db.StaffUser.FirstOrDefault(u => u.staffUsername == username);
 
                 if (user == null)
@@ -23,20 +22,48 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-                
-                if (!string.Equals(user.staffUsername, username, StringComparison.Ordinal))
+                // ================= LOCK CHECK =================
+                if (user.LockUntil != null && user.LockUntil > DateTime.Now)
                 {
-                    error = "Incorrect username";
+                    TimeSpan remaining = user.LockUntil.Value - DateTime.Now;
+                    error = $"Account locked. Try again in {remaining.Minutes}m {remaining.Seconds}s";
                     return false;
                 }
 
-                // Check password
+                // reset lock if expired
+                if (user.LockUntil != null && user.LockUntil <= DateTime.Now)
+                {
+                    user.LockUntil = null;
+                    user.FailedLoginAttempts = 0;
+                }
+
+                // ================= PASSWORD CHECK =================
                 if (!PasswordSecurity.VerifyPassword(password, user.staffPassword))
                 {
-                    error = "Incorrect password";
+                    user.FailedLoginAttempts++;
+
+                    if (user.FailedLoginAttempts >= 3)
+                    {
+                        int minutes = Math.Max(1, user.FailedLoginAttempts - 2);
+
+                        user.LockUntil = DateTime.Now.AddMinutes(minutes);
+                        error = $"Too many attempts. Locked for {minutes} minute(s).";
+                        user.FailedLoginAttempts = 0;
+                    }
+                    else
+                    {
+                        error = $"Incorrect password ({user.FailedLoginAttempts}/3)";
+                    }
+
+                    db.SaveChanges();
                     return false;
                 }
 
+                // ================= SUCCESS =================
+                user.FailedLoginAttempts = 0;
+                user.LockUntil = null;
+
+                db.SaveChanges();
                 return true;
             }
         }
@@ -56,21 +83,50 @@ namespace ScotWaterV1.Services
                     return false;
                 }
 
-               
-                if (!string.Equals(user.AdminUsername, username, StringComparison.Ordinal))
+                // ================= LOCK CHECK =================
+                if (user.LockUntil != null && user.LockUntil > DateTime.Now)
                 {
-                    error = "Incorrect username";
+                    TimeSpan remaining = user.LockUntil.Value - DateTime.Now;
+                    error = $"Account locked. Try again in {remaining.Minutes}m {remaining.Seconds}s";
                     return false;
                 }
 
+                if (user.LockUntil != null && user.LockUntil <= DateTime.Now)
+                {
+                    user.LockUntil = null;
+                    user.FailedLoginAttempts = 0;
+                }
+
+                // ================= PASSWORD CHECK =================
                 if (!PasswordSecurity.VerifyPassword(password, user.AdminPassword))
                 {
-                    error = "Incorrect password";
+                    user.FailedLoginAttempts++;
+
+                    if (user.FailedLoginAttempts >= 3)
+                    {
+                        int minutes = Math.Max(1, user.FailedLoginAttempts - 2);
+
+                        user.LockUntil = DateTime.Now.AddMinutes(minutes);
+                        error = $"Too many attempts. Locked for {minutes} minute(s).";
+                        user.FailedLoginAttempts = 0;
+                    }
+                    else
+                    {
+                        error = $"Incorrect password ({user.FailedLoginAttempts}/3)";
+                    }
+
+                    db.SaveChanges();
                     return false;
                 }
 
+                // ================= SUCCESS =================
+                user.FailedLoginAttempts = 0;
+                user.LockUntil = null;
+
+                db.SaveChanges();
                 return true;
             }
         }
     }
-}
+    }
+
