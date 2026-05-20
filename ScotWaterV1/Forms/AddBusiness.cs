@@ -13,6 +13,7 @@ namespace ScotWaterV1.Forms
 {
     public partial class frmAddBusiness : Form
     {
+        
         private readonly BusinessDataContext _context = new BusinessDataContext();
         public frmAddBusiness()
         {
@@ -21,7 +22,7 @@ namespace ScotWaterV1.Forms
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-            ;
+            
         }
 
         private void btnAddNewBusiness_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace ScotWaterV1.Forms
                     MessageBox.Show("Region is required.");
                     return;
                 }
-
+                //CHECK also for "@" in email
                 if (string.IsNullOrWhiteSpace(txtEmailAddress.Text) || !txtEmailAddress.Text.Contains("@"))
                 {
                     MessageBox.Show("Email is required and must contain @.");
@@ -99,6 +100,7 @@ namespace ScotWaterV1.Forms
                 string postcode = txtPostcode.Text.Trim();
                 string cleaned = postcode.Replace(" ", "");
 
+                //only allow for 5 to 8 characters and only allow letters and digits
                 if (cleaned.Length < 5 || cleaned.Length > 8 || !cleaned.All(char.IsLetterOrDigit))
                 {
                     MessageBox.Show("Postcode must be 5 to 8 characters long and contain only letters or numbers.");
@@ -128,7 +130,7 @@ namespace ScotWaterV1.Forms
 
 
 
-
+                //load the entered data into the Business user table
                 var newBusiness = new BusinessUser
                 {
                     CompanyName = txtBusinessName.Text,
@@ -144,7 +146,7 @@ namespace ScotWaterV1.Forms
                     SortCode = txtSortCode.Text,
                     AccountNumber = txtAccountNumber.Text
                 };
-
+                //check if business already exists and not allow of duplicate businesses to be entered
                 bool businessExits = _context.BusinessUser.Any(b =>
                 b.CompanyName == txtBusinessName.Text.Trim() &&
                 b.Postcode == txtPostcode.Text.Trim());
@@ -159,6 +161,7 @@ namespace ScotWaterV1.Forms
 
                 ClearFields();
             }
+            //throw exception if there is an error saving changes
             catch (Exception ex)
             {
                 MessageBox.Show("Error saving business: " + ex.Message,
@@ -167,7 +170,7 @@ namespace ScotWaterV1.Forms
                     MessageBoxIcon.Error);
             }
         }
-
+        //clear text box fields if clicked
         private void ClearFields()
         {
             txtBusinessName.Clear();
